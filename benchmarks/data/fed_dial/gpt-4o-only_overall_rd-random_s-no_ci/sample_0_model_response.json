@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-BLE2UBrTA0qPLKXQjbdQ3Rj5dM2qr",
+  "created": 1744398554,
+  "model": "gpt-4o-2024-08-06",
+  "object": "chat.completion",
+  "system_fingerprint": "fp_22890b9c0a",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\"dimension_ratings\":[{\"key\":\"overall_performance\",\"reasoning\":\"The chatbot maintained a coherent and engaging conversation with the user. It responded appropriately to the user's questions and comments, showing understanding and interest in the topics discussed. The chatbot also asked a relevant follow-up question about the Spartan race, which indicates inquisitiveness. However, there were minor issues such as the chatbot's response to the marathon time improvement, which could have been more detailed or encouraging. Overall, the conversation was smooth and natural, with only minor areas for improvement.\",\"rating\":4}]}",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null,
+        "annotations": []
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 115,
+    "prompt_tokens": 1783,
+    "total_tokens": 1898,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "service_tier": "default"
+}

@@ -1,0 +1,131 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "Why should I trust AI?"
+3. Chatbot: "AI can provide valuable insights, assist with problem-solving, and offer support in achieving your goals by analyzing data and patterns. However, it's important to use AI as a tool alongside your own judgment and critical thinking.
+
+**What goal would you like to focus on today?**"
+4. User: "Fine, I guess learning a language."
+5. Chatbot: "Learning a new language is an exciting and rewarding journey! It opens up new opportunities for communication and understanding different cultures. 
+
+**Do you already have a strategy or method in mind for learning this language?**
+
+For example:  
+- Immersive language environment  
+- Consistent daily practice  
+- Language exchange partner"
+6. User: "Why do I need strategies?"
+7. Chatbot: "Strategies can help provide structure and direction to your learning process, making it more efficient and effective. They can also help you stay motivated and track your progress.
+
+**Do you already have a strategy or method in mind for learning this language?**"
+8. User: "Not yet convinced about strategies."
+9. Chatbot: "That's completely understandable; sometimes exploring different methods can help you find what works best for you. 
+
+**Do you already have a strategy or method in mind for learning this language?**"
+10. User: "Still skeptical about their effectiveness."
+11. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve your language learning. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task.
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Research and select a language learning method or app that suits your learning style.
+2. Identify and learn the most commonly used vocabulary and phrases in the target language.
+3. Find a language exchange partner or group to practice speaking and listening skills regularly."
+12. User: "What's a learning-oriented goal?"
+13. Chatbot: "A learning-oriented goal focuses on the strategies, skills, or processes you need to develop in order to master a task, rather than just the end result. 
+
+**What specific skills or strategies do you think you need to develop to learn a language effectively?**"
+14. User: "I'm unsure what skills help."
+15. Chatbot: "That's completely understandable. Some skills that can help in language learning include vocabulary acquisition, grammar understanding, listening comprehension, speaking fluency, and cultural knowledge.
+
+**Which of these skills would you like to focus on first?**"
+16. User: "I'm still uncertain about this."
+17. Chatbot: "No worries, it's okay to feel uncertain. Let's start with a simple goal: you could aim to learn 10 new vocabulary words each week or practice speaking for 15 minutes daily.
+
+**Does this sound like a good starting point for you?**"
+18. User: "Not convinced that's effective."
+19. Chatbot: "I understand your concern. How about setting a goal to explore different language learning resources, like apps or online courses, to find one that resonates with your learning style?
+
+**Would you like to start by researching and trying out different language learning methods?**"
+20. User: "I doubt that would work."
+21. Chatbot: "I get that finding the right approach can be challenging. Perhaps setting a goal to join a language learning community or group where you can interact with others might be beneficial.
+
+**Would you be interested in connecting with a community to practice and learn together?**"
+22. User: "Communities might not suit me."
+
+# Latest Chatbot Utterance to Analyse
+23. Chatbot: "I understand that not everyone finds communities helpful. How about setting a goal to watch a short video or listen to a podcast in the target language daily to improve your listening skills?
+
+**Does focusing on listening practice sound like a good approach for you?**"
+
+# Your Analysis

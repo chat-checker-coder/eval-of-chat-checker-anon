@@ -1,0 +1,130 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "I'm interested in implementing new teaching strategies."
+3. Chatbot: "Implementing new teaching strategies sounds more like an action directed toward a broader objective, such as enhancing student engagement, improving learning outcomes, or becoming a more effective educator. **Would you still like to keep implementing new teaching strategies as your primary goal?** If not, we could consider setting a more overarching goal."
+4. User: "Yes, let's focus on that."
+5. Chatbot: "That's a wonderful focus! Implementing new teaching strategies can significantly impact both your teaching effectiveness and your students' learning experiences. **Which strategy do you currently have to achieve this goal?**
+
+For example:  
+- Interactive technology integration  
+- Collaborative group activities  
+- Gamified learning experiences"
+6. User: "I'm considering interactive technology integration."
+7. Chatbot: "That sounds like a promising approach! **Do you think this strategy is already a good strategy to achieve your goal?**"
+8. User: "Yes, it complements modern learning."
+9. Chatbot: "That's great to hear that you have a solid strategy in place! This means it makes sense to set a performance goal. A performance goal focuses on the achievement of certain outcomes. **Now, what could be a performance goal for enhancing student engagement through interactive technology integration?**
+
+For Example:
+1. Increase student participation by 30% using interactive technology.
+2. Boost student feedback scores by 20% with new strategies.
+3. Achieve 90% student satisfaction through tech-enhanced lessons."
+10. User: "I aim for 30% more participation."
+11. Chatbot: "Your goal of increasing student participation already sounds good. **Could you try making your goal even more specific?**
+
+For Example:
+'Boost student participation by 30% using tech by Dec 2025.'"
+12. User: "Boost participation by 30% by 2024."
+13. Chatbot: "**How will you measure the increase in student participation using interactive technology?**"
+14. User: "I'll track attendance and engagement."
+15. Chatbot: "Your goal of boosting student participation sounds now more specific. **Do you think you could now make it even more challenging while still being achievable for you?** If you can't, this is also okay.
+
+You could make your goal more challenging by:
+
+1. Achieving a 50% boost by December 31, 2024.
+2. Reaching a 30% boost by June 30, 2024.
+3. Implementing three interactive technologies by December 31, 2024."
+16. User: "I'll aim for a 50% boost."
+17. Chatbot: "That's a great step up! **Do you think you could make it even more challenging, or is this the most ambitious yet achievable goal for you?**"
+18. User: "I think 50% is ambitious."
+19. Chatbot: "Boosting student participation by 50% using interactive technology is indeed an ambitious and exciting goal! **What do you think is the first action you could do in the next 7 days to get closer to your goal?**
+
+You could for example:  
+1. Implement gamified quizzes in lessons.  
+2. Use virtual reality for immersive learning experiences.  
+3. Conduct live polls during class discussions.  "
+20. User: "I'll try conducting live polls."
+21. Chatbot: "That sounds like a great way to engage students and track their participation! **Do you think conducting live polls is the best action to start with, or is there another action you might consider?**"
+22. User: "Yes, I'll start with polls."
+23. Chatbot: "That sounds like a great plan to enhance class engagement! **What could be a good cue for you** that triggers the implementation of conducting live polls during class discussions? It would be best to select a cue that follows a significant event and is very noticeable so you don't forget it.
+
+For Example:
+1. If I start a new class session, I will conduct a live poll immediately.
+2. When I see students settling into their seats, I'll initiate a live poll.
+3. If I notice a lull in class discussion, I will launch a live poll."
+24. User: "I'll launch a poll when discussions lull."
+25. Chatbot: "That sounds like a good cue! **Is there a specific day or days when you usually notice lulls in class discussions?** This will help make the cue more concrete and actionable."
+26. User: "I usually notice it on Fridays."
+27. Chatbot: "Great! **Where do these class discussions typically take place?** Knowing the location will help solidify your cue."
+28. User: "They take place in my classroom."
+29. Chatbot: "Perfect! You just did the first step towards boosting participation. **Would it be okay if I check in with you in a week to see how you are progressing?** Then we can talk if you made progress on your live polls."
+30. User: "Yes, that sounds good!"
+31. Chatbot: "Perfect you defined your goal! Now we are done and this is the summary of the goal and action we set together:
+
+**Goal:** Boost student participation by 50% using interactive technology by tracking attendance and engagement by December 31, 2024.
+
+**Action:** Conducting live polls during class discussions
+
+**Implementation Intention:** when I notice a lull in class discussions on Fridays in my classroom then I will launch a poll"
+32. User: "Thank you for the summary!"
+33. Chatbot: "Goodbye! I hope I was able to help you with your goal. Have a great day!"
+
+# Your Expert Rating

@@ -1,0 +1,123 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. User: "Hey, follow my lead, okay? I need a tour plan for Cambridge historical landmarks."
+2. Chatbot: "Absolutely, I'd be delighted to help you plan a tour of Cambridge's historical landmarks. Could you please specify which areas or types of historical landmarks you are interested in visiting? This will help me tailor the recommendations to your preferences.
+```"
+3. User: "Start with the University sites. Focus on key colleges first."
+4. Chatbot: "I've found several key colleges around the University area that you might be interested in visiting. Here are a few options:
+1. King's College - Known for its stunning chapel and historical significance in education.
+2. Trinity College - Famous for its beautiful grounds and as the alma mater of several British greats.
+3. St. John's College - Offers rich architectural beauty and a deep historical essence.
+4. Queens' College - Renowned for its picturesque setting by the river.
+5. Pembroke College - Notable for its artistic contributions and serene environment.
+
+Would you like more information on any of these colleges, or shall we include all of them in your tour plan?"
+5. User: "Include them all. Now, suggest the best order to visit. Prioritize efficiency."
+6. Chatbot: "Great choice including all these prestigious colleges in your tour! To visit them efficiently, I suggest the following order based on their proximity and walking routes:
+
+1. **King's College** - Start here as it's centrally located and a focal point of the University.
+2. **Trinity College** - Just a short walk from King's College, making it a convenient next stop.
+3. **St. John's College** - Close to Trinity, it's easy to walk to and explore next.
+4. **Queens' College** - A bit further, but the walk along the river to get there is quite scenic.
+5. **Pembroke College** - Conclude your tour here, as it's a short distance from Queens' College and offers a peaceful atmosphere to finish the day.
+
+This route should provide a smooth and enjoyable experience, allowing you to appreciate the beauty and history of each college without feeling rushed. Would you like assistance with anything else for your Cambridge visit, perhaps booking a place for lunch or arranging transportation?"
+7. User: "Just keep up with me here. What's the best lunch spot nearby?"
+8. Chatbot: "Based on your location near the University of Cambridge, here are some excellent lunch spots you might consider:
+1. **Midsummer House** - Offers British cuisine and is located at Midsummer Common. It's on the expensive side but highly acclaimed.
+2. **De Luca Cucina and Bar** - A Modern European restaurant with moderate pricing, located at 83 Regent Street.
+3. **Hotel Du Vin and Bistro** - Serves European dishes and is moderately priced, located at 15 - 19 Trumpington Street.
+4. **Galleria** - Another European cuisine option, moderately priced at 33 Bridge Street.
+5. **Cambridge Chop House** - Known for its British menu, located at 1 Kings Parade and is also on the expensive side.
+
+Would you like to make a reservation at any of these restaurants, or need further assistance with your plans?"
+9. User: "Let's book Cambridge Chop House. Near King's, it’s perfect timing."
+10. Chatbot: "To proceed with booking at Cambridge Chop House, I'll need a bit more information. Could you please specify the number of people, the day, and the time you'd like to make the reservation for? This will help me complete the booking for you."
+11. User: "We need a table for two, tomorrow at 1 PM. Got it?"
+12. Chatbot: "It seems there was an issue with the reservation request. The day of the week is required for booking. Could you please specify the day of the week for your reservation at Cambridge Chop House? For example, you can say "Wednesday" or "Thursday." Thank you!"
+13. User: "Tomorrow is Saturday. Shouldn't a bot know the day though?"
+14. Chatbot: "I apologize for the oversight. To proceed with your reservation at Cambridge Chop House, could you please confirm if "1 PM" should be entered as "13:00"? This format is required for the booking system. Once confirmed, I'll finalize your reservation. Thank you for your understanding!"
+15. User: "Yes, use 13:00. Ensure the booking is confirmed, understood?"
+16. Chatbot: "Your reservation at Cambridge Chop House has been successfully confirmed for 2 people on Saturday at 13:00. Your reference number is azzm2dq8. Is there anything else I can assist you with for your visit to Cambridge?"
+17. User: "No more issues, right? Redirect me to real-time train schedules next."
+18. Chatbot: "Absolutely, I can help you with train schedules. Could you please specify the departure location, destination, and the day and time you wish to travel? This information will help me find the most suitable train options for you."
+19. User: "From London to Cambridge, tomorrow morning, aim for arrival by 10 AM."
+20. Chatbot: "I'm sorry, but there are no trains available from London to Cambridge tomorrow that arrive by 10 AM. Would you like to consider a different arrival time or perhaps another day?"
+21. User: "I'll aim for an earlier train. Find ones before 8 AM."
+22. Chatbot: "Unfortunately, there are no trains available from London to Cambridge that arrive before 8 AM tomorrow. Would you like to explore other travel options or perhaps choose a different time or day for your journey?"
+23. User: "Come on! Check other travel options. Quick responses are key."
+24. Chatbot: "Since trains are not available for your specified times, we can explore taxi services for your journey from London to Cambridge tomorrow morning. Would you like me to book a taxi for you? If so, please provide the departure time you prefer."
+25. User: "No taxis! Check coach services from London to Cambridge immediately."
+26. Chatbot: "I'm sorry, but I currently do not have the capability to assist with coach services. My services are focused on train and taxi travel options. If you would like to reconsider these options or need help with anything else, please let me know!"
+27. User: "See? Limitations. Just find an alternative booking portal now."
+
+# Latest Chatbot Utterance to Analyse
+28. Chatbot: "I understand your frustration with the limitations. However, I'm here to assist with specific services such as train and taxi bookings, hotel and restaurant reservations, and attraction queries within Cambridge. Unfortunately, I don't have access to alternative booking portals for coach services. If there's anything else within my capabilities that I can assist you with, please let me know!"
+
+# Your Analysis

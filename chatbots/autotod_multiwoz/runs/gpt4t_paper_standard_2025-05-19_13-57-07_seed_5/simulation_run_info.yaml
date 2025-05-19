@@ -1,0 +1,95 @@
+'run_id:': gpt4t_paper_standard_2025-05-19_13-57-07_seed_5
+chatbot_id: autotod_multiwoz
+chatbot_info:
+    name: Cambridge Tourist Bot
+    description: A tourist assistance bot for Cambridge, UK that provides information
+        and booking services. It covers local establishments (restaurants, hotels),
+        transportation (trains, taxis), essential services (police, hospitals), and
+        tourist attractions. The bot assists with both informational queries and handles
+        direct bookings for accommodations, dining, and trains.
+    type: task-oriented
+    interaction_method: text-based chat interface
+    task: The chatbot should provide information about local establishments (restaurants,
+        hotels), transportation (trains, taxis), essential services (police, hospitals),
+        and tourist attractions. It should also handle direct bookings for hotels,
+        restaurants, and trains.
+    constraints:
+    - The chatbot should redirect to other resources if the user's request is not
+        suitable for the chatbot's capabilities.
+    known_limitations:
+    - Can NOT provide details about the in-room amenities of hotels.
+    available_languages:
+    - English
+user_type: standard
+selector: null
+runs_per_user: 1
+max_user_messages: 15
+typical_user_turn_length: 10 words
+max_user_turn_length: 38 words
+debug: false
+user_simulator_llm: gpt-4o-2024-08-06
+seed: 5
+chat_statistics:
+    num_dialogues: 10
+    num_dialogues_with_errors: 2
+    num_dialogues_with_chatbot_errors: 2
+    dialogues_with_chatbot_errors:
+    - generated_standard_persona_03_dialogue_1
+    - generated_standard_persona_10_dialogue_1
+    num_dialogues_with_simulator_errors: 0
+    dialogues_with_simulator_errors: []
+    num_user_turns: 97
+    avg_user_turns_per_dialogue: 9.7
+    five_num_summary_user_turns:
+        min: 5.0
+        q1: 6.5
+        median: 9.5
+        q3: 11.75
+        max: 15.0
+    num_chatbot_turns: 90
+    avg_chatbot_turns_per_dialogue: 9.0
+    five_num_summary_chatbot_turns:
+        min: 5.0
+        q1: 5.5
+        median: 8.5
+        q3: 11.5
+        max: 15.0
+    avg_avg_user_turn_length: 10.304621212121212
+    avg_user_turn_length: 10.144329896907216
+    five_num_summary_avg_user_turn_length:
+        min: 5.0
+        q1: 9.0
+        median: 10.0
+        q3: 11.0
+        max: 20.0
+    avg_avg_chatbot_turn_length: 58.718809523809526
+    avg_chatbot_turn_length: 57.666666666666664
+    five_num_summary_avg_chatbot_turn_length:
+        min: 1.0
+        q1: 40.75
+        median: 56.5
+        q3: 70.75
+        max: 124.0
+    user_turn_mtld: 91.410648686352
+    chatbot_turn_mtld: 89.49663374985352
+simulation_cost_statistics:
+    total_prompt_tokens: 89768
+    avg_prompt_tokens: 8976.8
+    five_num_summary_prompt_tokens:
+        min: 3252.0
+        q1: 5176.25
+        median: 7846.0
+        q3: 11803.25
+        max: 16875.0
+    total_completion_tokens: 1355
+    avg_completion_tokens: 135.5
+    total_tokens: 91123
+    avg_total_tokens: 9112.3
+    total_cost: 0.19733000000000003
+    avg_cost_per_dialogue: 0.019733000000000004
+    five_num_summary_cost_per_dialogue:
+        min: 0.00875
+        q1: 0.013650625
+        median: 0.018320000000000003
+        q3: 0.025555625
+        max: 0.031235000000000006

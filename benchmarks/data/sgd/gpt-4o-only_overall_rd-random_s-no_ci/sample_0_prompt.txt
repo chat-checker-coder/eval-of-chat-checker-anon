@@ -1,0 +1,136 @@
+System prompt:
+# Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+
+# Examples
+Use the following examples of other dialogues with the chatbot along with their ground truth human ratings to ground your ratings:
+
+Example 1:
+1. User: "Can you tell me what imax Adventure films are playing in Emeryville."
+2. Chatbot: "The 1 movie I found that matches your criteria is Shazam!. Does that sound good?"
+3. User: "Yes, I've heard good things about Shazam!. What time is it playing on Saturday this week?"
+4. Chatbot: "There is 1 showing at AMC Bay Street 16 at 3:30 pm."
+5. User: "Where is the theater located?"
+6. Chatbot: "The theater is located at 5614 Bay Street Suite 220."
+7. User: "Perfect."
+8. Chatbot: "Do you want to purchase ticket for the movie?"
+9. User: "No, I don't need to buy them now."
+10. Chatbot: "Ok, is there something esle I can help you with?"
+11. User: "Yes, I want to find a good place to eat there."
+12. Chatbot: "Alright, are you looking for a Chinese restaurant, Mexican restaurant, of something different?"
+13. User: "I was hoping to find a place with Spicy Noodles."
+14. Chatbot: "OK, I found 1 reatuarant in Emeryville you might like. It is the Summer Summer Thai Eatery."
+15. User: "Great. Can you make a reservation for 6:45 in the evening for 1 person."
+16. Chatbot: "You would like to make a reservation for 1 at Summer Summer Thai Eatery in Emeryville on March 2nd at 6:45 pm, is that right?"
+17. User: "Actually, I think I will eat earlier. Change the time to 1:45 pm."
+18. Chatbot: "Please confirm you woud like to change your reservation to 1:45 pm on March 2nd."
+19. User: "Yes, please make the reservation."
+20. Chatbot: "I'm sorry, Summer Summer Thai Eatery does not have a reservation for 1 available on March 2nd at that time. Would 1:30 pm would for you instead?"
+21. User: "Yes, that time is fine."
+22. Chatbot: "OK, your table has been reserved."
+23. User: "Great. I'm done now. Thanks."
+24. Chatbot: "Have a wonderful time."
+Average human rating for dimension "overall": 3.33
+
+
+Example 2:
+1. User: "I need to find a doctor."
+2. Chatbot: "What kind of doctor? What city do you want to look in?"
+3. User: "I need an Ophthalmologist in San Francisco."
+4. Chatbot: "I found 10 doctors. Alan B. Scott, M.D. is an Ophthalmologist in San Francisco."
+5. User: "Yes, that'll do."
+6. Chatbot: "Do you want to make an appointment?"
+7. User: "No, thank you. Can you get me a cab there? I need to get to 2100 Webster Street suite 214."
+8. Chatbot: "How many passengers?"
+9. User: "Just one."
+10. Chatbot: "Do you prefer a particular kind of ride?"
+11. User: "I'd like a pool ride."
+12. Chatbot: "So you need a pool ride for 1 passenger to 2100 Webster Street suite 214, is that right?"
+13. User: "Yes, that's right."
+14. Chatbot: "Your cab has been ordered and is on the way."
+15. User: "I also want to find a restaurant near there."
+16. Chatbot: "What kind of restaurant? Indian, Chinese, or something else?"
+17. User: "Can you find me a reasonably priced Thai restaurant?"
+18. Chatbot: "There's Baan Thai House & Wine Bar in San Francisco."
+19. User: "Do they have live music?"
+20. Chatbot: "No, they don't have live music."
+21. User: "Yes, that's fine. I want to make a reservation."
+22. Chatbot: "For what time?"
+23. User: "Make it for 10:30 am."
+24. Chatbot: "So you want a reservation for 2 at Baan Thai House & Wine Bar in San Francisco at 10:30 am on March 1st. Is that correct?"
+25. User: "Yes, that's right. What's the address and phone number?"
+26. Chatbot: "Sorry, I couldn't make the reservation. Can I help with anything else?"
+27. User: "No, thanks."
+28. Chatbot: "Have a nice day."
+Average human rating for dimension "overall": 2.67
+
+
+Example 3:
+1. User: "Hi, could you help me find a nice apartment to stay at please?"
+2. Chatbot: "What is your preferred location for the apartment and how many bedrooms would you prefer?"
+3. User: "One with four bedrooms in the San Ramon area will do."
+4. Chatbot: "Would you like Bel Air, a property situated at 2000 Shoreline Loop with 4 bedrooms and 3 baths, which will cost you $5,150 each month?"
+5. User: "May I know if pets are allowed on premises?"
+6. Chatbot: "Sorry, pets are not allowed in the apartment."
+7. User: "May I have their contact number and is the property furnished?"
+8. Chatbot: "You can contact them at 925-307-7099 and unfortunately, this is an unfurnished property."
+9. User: "What a pity, but it still sounds great to me."
+10. Chatbot: "Would you like me to schedule a visit to the property for you?"
+11. User: "Could you do so on the 12th of March please?"
+12. Chatbot: "Sure, please confirm your visit to Bel Air on March 12th."
+13. User: "Yes, that is great."
+14. Chatbot: "Your visit to the apartment has been scheduled."
+15. User: "Thank you! Could you also add an event to my calendar titled Property?"
+16. Chatbot: "Sure, what time is the event?"
+17. User: "Just schedule it at half past 11 in the morning will do."
+18. Chatbot: "Please confirm your request to an an event titled Property at 11:30 am on March 12th at 2000 Shoreline Loop."
+19. User: "Sure, that sounds great to me!"
+20. Chatbot: "Your event has been added to your calendar."
+21. User: "Thank you, that is all the help I need for now."
+22. Chatbot: "Sure, have a great day ahead!"
+Average human rating for dimension "overall": 3.67
+
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+User prompt:
+# Conversation to Rate
+1. User: "I need to find a one-way flight."
+2. Chatbot: "Where are you flying to?"
+3. User: "I'm flying to Chicago."
+4. Chatbot: "What city are you departing from?"
+5. User: "I'm flying from SFO."
+6. Chatbot: "What date would you like to depart?"
+7. User: "I want to leave on March 6th."
+8. Chatbot: "Would you like to fly on an Alaska Airlines flight with 0 stops, leaving at 1:35 pm for $142?"
+9. User: "No, please find another flight."
+10. Chatbot: "Would you like to fly on an American Airlines flight with 1 stop, leaving at 4:25 pm for $257?"
+11. User: "No, please find another flight."
+12. Chatbot: "Would you like to fly on a Delta Airlines flight with 0 stops, leaving at 10:05 pm for $164?"
+13. User: "Okay."
+14. Chatbot: "Can I help you with anything else?"
+15. User: "No, thank you."
+16. Chatbot: "Have a good day."
+
+# Your Expert Rating

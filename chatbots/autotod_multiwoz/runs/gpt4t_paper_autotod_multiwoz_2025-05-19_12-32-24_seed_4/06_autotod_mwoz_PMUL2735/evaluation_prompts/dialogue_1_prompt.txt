@@ -1,0 +1,86 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. User: "Hi!  I'm looking for an attraction named Kambar."
+2. Chatbot: "Kambar is a nightclub located at latitude 52.204192 and longitude 0.119187. If you need more information or directions, feel free to ask!"
+3. User: "thanks i want to get its entry fee and address"
+4. Chatbot: "You're welcome! Kambar, the nightclub, is located at latitude 52.204192 and longitude 0.119187. Unfortunately, I don't have the specific entry fee information available. It's best to check their official website or contact them directly for the most accurate details. If you need further assistance, please let me know!
+```"
+5. User: "Is there a phone number I can call to inquire about the entrance fee?"
+6. Chatbot: "I'm sorry, but I don't have access to the phone number for Kambar nightclub. I recommend visiting their official website or searching online for their contact information to inquire about the entrance fee. If there's anything else I can assist you with, please let me know!"
+7. User: "I am also interested in a place to stay, that includes free parking."
+8. Chatbot: "I found several hotels that offer free parking. Here are some options you might consider:
+1. Acorn Guest House, located at 154 Chesterton Road in the north area.
+2. Alexander Bed and Breakfast, at 56 Saint Barnabas Road in the centre area.
+3. Allenbell, at 517a Coldham Lane in the east area.
+4. Arbury Lodge Guesthouse, at 82 Arbury Road in the north area.
+5. Archway House, at 52 Gilbert Road also in the north area.
+
+Please let me know if you need more information about these hotels or if you would like to make a reservation at one of them!"
+9. User: "What are the options for 3-star hotels in the expensive price range that include free parking?"
+10. Chatbot: "Here are some 3-star hotels in the expensive price range that include free parking:
+- Gonville: Prices are $95 for a double room, $119 for a family room, and $79 for a single room.
+- Lensfield: Prices are $90 for a double room, $125 for a family room, and $65 for a single room.
+
+Please let me know if you would like more details about these hotels or if you wish to make a reservation!"
+11. User: "What do you recommend?"
+12. Chatbot: "Both Gonville and Lensfield hotels are excellent choices with 3-star ratings and include free parking in the expensive price range. If you prefer a more family-oriented option, Gonville offers a slightly higher priced family room, which might suggest better amenities or space. On the other hand, Lensfield has a more economical option for single rooms if you're traveling alone or looking for a budget-friendly choice. Please let me know if you would like to proceed with a reservation at either hotel or need further assistance!"
+13. User: "Just to confirm, does the Lensfield have free parking? If so, I'd like to book for 6 people, 3 nights, starting on Thursday."
+14. Chatbot: "The Lensfield hotel does not offer free parking. Would you still like to proceed with the booking for 6 people for 3 nights starting on Thursday?"
+15. User: "No, I would like to book the Gonville hotel instead. Can you please book a room for 6 people, 3 nights, starting on Thursday?"
+16. Chatbot: "I have successfully booked a room at the Gonville hotel for 6 people, for 3 nights starting on Thursday. Your reservation reference number is mjjb2lav. If there's anything else you need to arrange for your trip to Cambridge, feel free to ask!"
+
+# Your Expert Rating

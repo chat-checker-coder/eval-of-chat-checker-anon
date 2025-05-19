@@ -1,0 +1,150 @@
+System prompt:
+# Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A bot that helps tourists find information about restaurants, hotels,
+    attractions, trains and taxis in Cambridge, UK. The user can also book restaurants,
+    hotels and trains through the bot.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should help the user find information about restaurants, hotels,
+    attractions, trains and taxis in Cambridge, UK. The chatbot should also be able
+    to book restaurants, hotels and trains for the user.
+constraints: null
+known_limitations: null
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+# Examples
+Use the following examples of other dialogues with the chatbot along with their ground truth human ratings to ground your ratings:
+
+Example 1:
+1. User: "I am looking for a restaurant. The restaurant should be in the centre and should serve persian food"
+2. Chatbot: "I am sorry. There are no person food eateries in the centre. Would you like to find a different type of food?"
+3. User: "Yes, I am looking for a moderate price range."
+4. Chatbot: "I'm sorry, we have no persian restaurants in the centre."
+5. User: "What about modern european foods?"
+6. Chatbot: "Riverside brasserie looks good. Would you like a reservation?"
+7. User: "Does this restaurant serve alcohol?"
+8. Chatbot: "Yes, Riverside Brasserie does serve alcohol. Do you think this will meet your needs?"
+9. User: "Yes, I want a reservation for 8 people at 16:00 on Sunday."
+10. Chatbot: "Sorry, the restaurant doesn't have any openings for that date and time."
+11. User: "Do they offer free wifi for in-dining customers?"
+12. Chatbot: "Free wifi isn't available at this time. Have I answered everything?"
+13. User: "Will they take a Visa card?"
+14. Chatbot: "Yes, Riverside Brasserie accepts only Mastercard and Visa. Does this help answer your question?"
+15. User: "ok. ill check latter"
+Average human rating for dimension "overall": 2.75
+
+
+Example 2:
+1. User: "Can you help me find a Chinese restaurant please?"
+2. Chatbot: "I'm sure I can. We have 17 chinese restaurants. Is there an area of town you'd prefer?"
+3. User: "I would like to be in the centre of town, and if it could be inexpensive, that would be ideal."
+4. Chatbot: "How about the Charlie Chan restaurant?"
+5. User: "Do they have a table available for 5 people on Wednesday night?"
+6. Chatbot: "For what time please?"
+7. User: "I would like the reservation at 19:30 please."
+8. Chatbot: "I'm sorry but I was unable to make a booking. Could we try another day or time?"
+9. User: "Can you try a different restaurant in the same area and price range?"
+10. Chatbot: "I am sorry there are no others in the same area and price range."
+11. User: "What about another restaurant in a different area but same price range?"
+12. Chatbot: "I am sorry there are no others in any other areas,could I check another price range?"
+13. User: "No thank you I need it in that area and pricerange."
+14. Chatbot: "There is an asian oriental cheap restaurants called Dojo Noodle Bar. Would you like to book there instead?"
+15. User: "I suppose that would be all right."
+16. Chatbot: "A table is reserved for you at Dojo Noodle Bar. Your reference number is AEQLOL33."
+17. User: "Is outdoor seating available?"
+18. Chatbot: "The restaurant does not have outdoor seating. Would you like to know more about the restaurant?"
+19. User: "Yes, could you tell me if it is okay to BYOB there?"
+20. Chatbot: "The Dojo Noodle bar does not offer BYOB at this time. Is this still ok?"
+21. User: "Are there vegetarian options available at this restaurant?"
+22. Chatbot: "Unfortunately there are not vegetarian options available. Can I help you with anything else?"
+23. User: "Thank you for all your help today."
+Average human rating for dimension "overall": 3.00
+
+
+Example 3:
+1. User: "can you book me a train to Cambridge that leaves on Saturday."
+2. Chatbot: "There are 202 trains to cambridge on Saturday. Can you tell me your departure station and the time you'd like to travel?"
+3. User: "I would like to leave from stansted airport after 15:00"
+4. Chatbot: "I found nine trains leaving stansted airport for cambridge, leaving every hour starting at 15:24. Would you like to book that first train?"
+5. User: "I would maybe be interested in booking this train. What is the train id, price per ticket and arrival time?"
+6. Chatbot: "The train is TR1493 with the price 8.08 pounds. The arrival time is 15:52."
+7. User: "How can I acquire a physical ticket for this train booking?"
+8. Chatbot: "Tickets can be picked up at machines from any station. Would you like any more assistance?"
+9. User: "Is it possible to cancel my train ticket later on if needed?"
+10. Chatbot: "Yes, you can cancel your train for 12 GBP, though you'll be fully refunded for delayed or cancelled trains. Do you want to make a reservation?"
+11. User: "Okay thanks, I also need info for the cow pizza kitchen and bar."
+12. Chatbot: "Ok. That's a moderately-priced gastropub in the centre. Would you like the address or phone number?"
+13. User: "I would like to make a reservation for 6 people on Saturday."
+14. Chatbot: "What time would you like?"
+15. User: "I'd like the table for 19:00, please."
+16. Chatbot: "Okay. I have made a reservation for Saturday at 19:00 for six people."
+17. User: "Great, all I need is the reference number please."
+18. Chatbot: "I unfortunately do not have this info for you. The booking is now saying unsuccessful."
+19. User: "Can you try again please?"
+20. Chatbot: "Unfortunately, after trying to book again I was still unsuccessful. Would you like to try another day or time?"
+21. User: "Could you please try 18:00 on the same day?"
+22. Chatbot: "Your booking for Saturday at 18:00 was made. Your reference number is L7W1NACD. May I help you with anything else today?"
+23. User: "Does this restaurant offer free-wifi?"
+24. Chatbot: "There is no Wi-Fi available at this restaurant. Do you have any more questions for me?"
+25. User: "That is all. Thank you."
+Average human rating for dimension "overall": 2.50
+
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+User prompt:
+# Conversation to Rate
+1. User: "Hi, I am looking for a hotel to stay in in east cambridge."
+2. Chatbot: "Certainly, there are 6 guesthouses, and one hotel. Do you have any preferences I should include?"
+3. User: "The hotel in question ideally would be in the expensive price range. It doesn't need to have free parking, though."
+4. Chatbot: "Your best bet would be the Express by Holiday Inn Cambridge. It is an expensive 2-star hotel in the east area of town with free wifi and free parking."
+5. User: "If there are not any hotels that do not include free parking then that place will do."
+6. Chatbot: "Great. How many guests should I make a reservation for and what nights would you like to stay?"
+7. User: "There will be 3 guests for 2 nights starting Sunday."
+8. Chatbot: "I'm sorry, I was unable to book with those constraints, would you like to try another day or a shorter stay?"
+9. User: "Would it be possible to book this for one night?"
+10. Chatbot: "I was able to book one night starting Sunday for 3 guests. Your reference number is 1OOWMJEN. Would you like anything else?"
+11. User: "Can you tell me whether the Express by Holiday Inn Cambridge has rooms that are accessible for people with disabilities?"
+12. Chatbot: "No, the rooms at Express by Holiday Inn Cambridge aren't accessible for folks with disabilities. Do you want help with anything else?"
+13. User: "Yes, I also need a train to Birmingham New Street."
+14. Chatbot: "I just need some more information. Where are you departing from? What day and what time do you need to leave and arrive by?"
+15. User: "I would like to depart from cambridge on monday."
+16. Chatbot: "I have 19 available trains. TR6628 leaves at 08:01 and arrives at 10:44. Would you like me to book that for you?"
+17. User: "can kids stay at the hotel?"
+18. Chatbot: "Children of any age are welcome Is there anything else you would like to know?"
+19. User: "I'll be traveling with my kid, will they be able to get any discounts?"
+20. Chatbot: "Kids up to 5 years old are free. From 5 to 16 years old they get a 50% discount. Do you want to proceed with the booking?"
+21. User: "Yes please, for the same 3 people. And can I have the reference number?"
+22. Chatbot: "I've completed your booking! The reference number for your train is X4WPOS52. The total cost is 225.3 GBP and is payable at the station. Can I help with anything else?"
+23. User: "No, that'll be all. Thank you so much for all of your help!"
+
+# Your Expert Rating

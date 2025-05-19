@@ -1,0 +1,88 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. User: "Hi there! I'm planning a family vacation to Cambridge. Can you suggest some safe, kid-friendly activities? I have two children aged 8 and 10 who love exploring and learning new things."
+2. Chatbot: "Wonderful choices for a family vacation in Cambridge! For your children who love exploring and learning, I recommend visiting the "Cambridge University Botanic Gardens" for a delightful natural experience, or the "Museum of Archaeology and Anthropology" for a fascinating dive into history. Both are located centrally and are very kid-friendly. If they are interested in art, the "Broughton House Gallery" and "Cambridge Contemporary Art" are excellent places to explore creativity. How does that sound for your family's adventure?"
+3. User: "Those sound great, but are they safe and suitable for kids? Can you give more details on what activities specifically cater to their age group?"
+4. Chatbot: "I'm sorry, but it seems there are no specific listings for kid-friendly attractions in the database for Cambridge. However, the Cambridge University Botanic Gardens offers a safe and educational environment where children can learn about plant life and ecology. The Museum of Archaeology and Anthropology is also quite engaging, with exhibits that are accessible and interesting for children, often featuring interactive elements. Both places have been popular with families and are generally considered safe and suitable for children. If you need more specific activities or further details, I recommend contacting these venues directly to inquire about any special programs or events for children. Would you like assistance with anything else for your trip?"
+5. User: "Are there family-friendly restaurants nearby? My kids can be picky eaters!"
+6. Chatbot: "It appears there are no specific family-friendly restaurants listed in the immediate nearby area according to the database. However, Cambridge generally has a variety of dining options that cater to families and children. I recommend considering restaurants with a diverse menu that might appeal to your children's preferences. If you have any particular area in mind or specific cuisine preferences, I can help search again or provide more tailored recommendations. How would you like to proceed?"
+7. User: "Do you know if any restaurants offer kids' menus or activities?"
+8. Chatbot: "Unfortunately, there are no restaurants specifically listed in the central area of Cambridge that offer a kids' menu according to the current database. However, many restaurants are generally accommodating to families and can offer child-friendly options upon request. If you have any specific preferences or other areas in mind, I can help search again or suggest alternatives. Would you like to explore more options or need assistance with anything else for your trip?"
+9. User: "Are there any outdoor cafés or park kiosks for snacks?"
+10. Chatbot: "It appears there are no outdoor cafés or park kiosks specifically listed in the available attractions data for Cambridge. However, Cambridge is known for its beautiful parks and public spaces, which often have nearby cafés and snack options. If you're looking for a specific area or have other preferences, I can assist further. How may I help you today?"
+11. User: "Can you tell me more about Cambridge parks? Are they safe?"
+12. Chatbot: "Cambridge boasts several beautiful and safe parks. Some recommended options include the Cambridge University Botanic Gardens, Cherry Hinton Water Play, Milton Country Park, Sheep's Green and Lammas Land Park Fen Causeway, and Wandlebury Country Park. Each offers unique landscapes and activities, ensuring a pleasant visit. If you need more specific information about any of these parks or wish to include one in your day trip, just let me know!"
+13. User: "Which park has playgrounds? My children need to burn energy!"
+14. Chatbot: "Among the parks in Cambridge, Cherry Hinton Water Play and Sheep's Green and Lammas Land Park Fen Causeway are excellent choices for children as they both feature playgrounds where your children can enjoy and burn off some energy. Cherry Hinton also offers a water play area which is perfect for fun activities, especially in warmer weather. Would you like to include one of these parks in your itinerary, or need further details about them?"
+15. User: "Sheep's Green sounds good! Are there picnic areas there too?"
+
+# Latest Chatbot Utterance to Analyse
+16. Chatbot: "Yes, Sheep's Green and Lammas Land Park Fen Causeway not only has playgrounds but also offers lovely picnic areas where you can relax and enjoy a meal outdoors with your family. It's a great spot for a day out, especially if you're looking to combine playtime for the children with a peaceful setting for adults. Would you like to add this park to your day trip itinerary, or is there anything else you'd like to know or add to your plans?"
+
+# Your Analysis

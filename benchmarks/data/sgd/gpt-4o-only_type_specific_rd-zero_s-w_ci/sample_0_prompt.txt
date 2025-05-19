@@ -1,0 +1,66 @@
+System prompt:
+# Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Service Chatbot
+description: A multi-domain chatbot designed for interacting with users across a variety
+    of services and APIs. The chatbot can provide answers and services for requests
+    spanning 20 domains, such as banks, events, media, calendar, travel, and weather.
+type: task-oriented
+interaction_method: text-based chat interface
+task: Provide answers and services for requests spanning 20 domains, such as banks,
+    events, media, calendar, travel, and weather.
+constraints: null
+known_limitations: null
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+User prompt:
+# Conversation to Rate
+1. User: "I need to find a one-way flight."
+2. Chatbot: "Where are you flying to?"
+3. User: "I'm flying to Chicago."
+4. Chatbot: "What city are you departing from?"
+5. User: "I'm flying from SFO."
+6. Chatbot: "What date would you like to depart?"
+7. User: "I want to leave on March 6th."
+8. Chatbot: "Would you like to fly on an Alaska Airlines flight with 0 stops, leaving at 1:35 pm for $142?"
+9. User: "No, please find another flight."
+10. Chatbot: "Would you like to fly on an American Airlines flight with 1 stop, leaving at 4:25 pm for $257?"
+11. User: "No, please find another flight."
+12. Chatbot: "Would you like to fly on a Delta Airlines flight with 0 stops, leaving at 10:05 pm for $164?"
+13. User: "Okay."
+14. Chatbot: "Can I help you with anything else?"
+15. User: "No, thank you."
+16. Chatbot: "Have a good day."
+
+# Your Expert Rating

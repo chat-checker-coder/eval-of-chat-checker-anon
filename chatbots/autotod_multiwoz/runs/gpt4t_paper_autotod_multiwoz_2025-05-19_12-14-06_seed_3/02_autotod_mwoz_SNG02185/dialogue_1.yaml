@@ -1,0 +1,208 @@
+dialogue_id: 02_autotod_mwoz_SNG02185_dialogue_1
+user_name: 02_autotod_mwoz_SNG02185
+chat_history:
+-   turn_id: 1
+    role: user
+    content: I'm in need of a place to stay for the night, I'd like it to be in the
+        centre of town and have at least a 4 star rating.
+    breakdown_annotation: null
+-   turn_id: 2
+    role: dialogue_system
+    content: I found a couple of 4-star accommodations in the centre of town for you.
+        You can choose between "Alexander Bed and Breakfast" located at 56 Saint Barnabas
+        Road, contact number 01223525725, and "University Arms" located at Regent
+        Street, contact number 01223351241. Would you like to book a room at one of
+        these, or do you need more options or specific details?
+    breakdown_annotation:
+        reasoning: The chatbot's response is appropriate and relevant to the user's
+            request. The user asked for a place to stay in the center of town with
+            at least a 4-star rating. The chatbot provided two options that meet these
+            criteria, including their names, locations, and contact numbers. Additionally,
+            the chatbot offers to assist further by asking if the user wants to book
+            a room or needs more options or specific details. This response is clear,
+            informative, and facilitates the continuation of the conversation smoothly.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 3
+    role: user
+    content: Either as long as it includes free parking and internet is optional.
+    breakdown_annotation: null
+-   turn_id: 4
+    role: dialogue_system
+    content: I have confirmed that both "Alexander Bed and Breakfast" and "University
+        Arms" offer free parking. Regarding internet, it is available at both locations,
+        though it is optional for your stay. Would you like to proceed with booking
+        a room at one of these hotels? If so, please specify the hotel name, the number
+        of people, the day you plan to check in, and the duration of your stay.
+    breakdown_annotation:
+        reasoning: The chatbot's response is appropriate and relevant to the user's
+            request. The user asked for accommodations with free parking and mentioned
+            that internet is optional. The chatbot confirmed that both options provide
+            free parking and clarified the availability of internet, aligning with
+            the user's preferences. The chatbot then asked for further details to
+            proceed with the booking, which is a logical next step in the conversation.
+            There are no errors or breakdowns in the response, as it addresses the
+            user's needs and moves the conversation forward effectively.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 5
+    role: user
+    content: Do either of those have free wifi?
+    breakdown_annotation: null
+-   turn_id: 6
+    role: dialogue_system
+    content: Both "Alexander Bed and Breakfast" and "University Arms" offer free WiFi
+        for their guests. If you have any more questions or need further assistance,
+        feel free to ask!
+    breakdown_annotation:
+        reasoning: The chatbot's response directly addresses the user's question about
+            free WiFi availability at the two accommodations. It confirms that both
+            options offer free WiFi, which is relevant and informative. The response
+            is clear, concise, and provides an opportunity for the user to ask further
+            questions or proceed with the booking. There are no errors or breakdowns
+            in this response, as it aligns well with the user's inquiry and the chatbot's
+            capabilities.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 7
+    role: user
+    content: Thanks! What's the phone number for "University Arms"?
+    breakdown_annotation: null
+-   turn_id: 8
+    role: dialogue_system
+    content: The phone number for "University Arms" is 01223351241. If you need any
+        more information or assistance, please let me know!
+    breakdown_annotation:
+        reasoning: The chatbot's response directly answers the user's question by
+            providing the phone number for "University Arms," which was requested.
+            The response is clear, concise, and relevant to the user's query. Additionally,
+            the chatbot offers further assistance, which is appropriate for maintaining
+            a smooth conversation. There are no errors or breakdowns in this interaction,
+            as the chatbot fulfills its task effectively and remains within its domain
+            of providing information about local establishments.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 9
+    role: user
+    content: No thank you, I appreciate all your help!
+    breakdown_annotation: null
+-   turn_id: 10
+    role: dialogue_system
+    content: You're very welcome! I'm glad I could assist you. If you ever need help
+        in the future, please don't hesitate to reach out. Have a wonderful day!
+    breakdown_annotation:
+        reasoning: The latest chatbot utterance is a polite and appropriate closing
+            to the conversation. It acknowledges the user's gratitude and offers future
+            assistance, which aligns with the chatbot's role as a tourist assistance
+            bot. There is no breakdown in the conversation as the chatbot's response
+            is relevant, clear, and socially appropriate. The conversation ends smoothly
+            without any issues.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+finish_reason: user_ended_chat
+error: null
+ratings:
+    task_success:
+        reasoning: The chatbot successfully provided information about 4-star accommodations
+            in the center of town, confirmed the availability of free parking and
+            WiFi, and provided the contact number for 'University Arms'. It addressed
+            all the user's requests effectively.
+        rating: 5
+    efficiency:
+        reasoning: The conversation was handled efficiently with minimal turns. The
+            chatbot provided relevant information promptly and asked clarifying questions
+            only when necessary.
+        rating: 5
+    appropriateness:
+        reasoning: The chatbot's responses were appropriate and relevant to the user's
+            queries. It maintained a polite and helpful tone throughout the conversation.
+        rating: 5
+    naturalness:
+        reasoning: The responses were clear and polite, but slightly robotic in phrasing.
+            However, they were still quite natural and aligned with the task-oriented
+            nature of the bot.
+        rating: 4
+    overall_performance:
+        reasoning: Overall, the chatbot performed excellently in providing the required
+            information and assisting the user with their queries. The conversation
+            was smooth and effective, with only minor room for improvement in naturalness.
+        rating: 5
+human_rating_annotations: null
+chat_statistics:
+    start_time: '2025-05-19 12:16:10'
+    end_time: '2025-05-19 12:16:47'
+    duration: 36.900226
+    num_turns: 10
+    num_user_turns: 5
+    num_chatbot_turns: 5
+    avg_user_turn_length: 12.8
+    five_num_summary_user_turn_lengths:
+        min: 7.0
+        q1: 8.0
+        median: 8.0
+        q3: 12.0
+        max: 29.0
+    avg_chatbot_turn_length: 40.8
+    five_num_summary_chatbot_turn_lengths:
+        min: 20.0
+        q1: 27.0
+        median: 28.0
+        q3: 61.0
+        max: 68.0
+simulation_cost_statistics:
+    total_prompt_tokens: 0
+    total_completion_tokens: 0
+    total_tokens: 0
+    cost: 0.0
+breakdown_stats:
+    analysis_start_time: '2025-05-19 12:26:07'
+    analysis_end_time: '2025-05-19 12:26:21'
+    count: 0
+    avg_score: 1.0
+    turn_ids_of_breakdowns: []
+    counts_per_breakdown_type:
+        uninterpretable: 0
+        grammatical_error: 0
+        semantic_error: 0
+        wrong_information: 0
+        ignore_question: 0
+        ignore_request: 0
+        ignore_proposal: 0
+        ignore_greeting: 0
+        ignore_expectation: 0
+        unclear_intention: 0
+        topic_transition_error: 0
+        lack_of_information: 0
+        self_contradiction: 0
+        contradiction: 0
+        repetition: 0
+        lack_of_sociality: 0
+        lack_of_common_sense: 0
+        in_domain_task_failure: 0
+        update_info_failure: 0
+        clarification_failure: 0
+        redundancy: 0
+        lack_of_brevity: 0
+        lack_of_clarity: 0
+        failure_to_recognize_out_of_domain: 0
+        failure_to_communicate_capabilities: 0
+        failure_to_resolve_out_of_domain: 0
+        chatbot_crash: 0
+    detection_cost_stats:
+        prompt_tokens: 8091
+        completion_tokens: 524
+        total_tokens: 8615
+        cost: 0.016987500000000003
+eval_stats:
+    evaluation_start_time: '2025-05-19 12:29:44'
+    evaluation_end_time: '2025-05-19 12:29:49'
+    cost_stats:
+        prompt_tokens: 1298
+        completion_tokens: 230
+        total_tokens: 1528
+        cost: 0.0055450000000000004

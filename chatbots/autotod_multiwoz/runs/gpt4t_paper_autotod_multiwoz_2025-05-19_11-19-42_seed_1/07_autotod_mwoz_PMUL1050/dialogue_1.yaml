@@ -1,0 +1,148 @@
+dialogue_id: 07_autotod_mwoz_PMUL1050_dialogue_1
+user_name: 07_autotod_mwoz_PMUL1050
+chat_history:
+-   turn_id: 1
+    role: user
+    content: I'm looking for a college to visit, can you help me?
+    breakdown_annotation: null
+-   turn_id: 2
+    role: dialogue_system
+    content: 'I found several colleges in Cambridge that you might like to visit.
+        Here are some options: Christ''s College on Saint Andrew''s Street, Corpus
+        Christi on King''s Parade, Downing College on Regent Street, Emmanuel College
+        on Saint Andrew''s Street, and Gonville and Caius College on Trinity Street.
+        Please let me know if you need more information about any of these colleges
+        or if you want directions to a specific one.'
+    breakdown_annotation:
+        reasoning: The chatbot's response is relevant and informative, providing a
+            list of colleges in Cambridge that the user might be interested in visiting.
+            It also offers further assistance by asking if the user needs more information
+            or directions to a specific college. This aligns well with the user's
+            request for help in finding a college to visit. The response is clear,
+            concise, and directly addresses the user's query without any errors or
+            omissions. Therefore, there is no dialogue breakdown in this interaction.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 3
+    role: user
+    content: Can you tell me the entrance fee, postcode, and address of Christ's College?
+    breakdown_annotation: null
+-   turn_id: 4
+    role: dialogue_system
+    content: chatbot_error
+    breakdown_annotation:
+        reasoning: 'Received error: 500 Server Error: INTERNAL SERVER ERROR for url:
+            http://127.0.0.1:8401/get-answer'
+        score: 0.0
+        decision: breakdown
+        breakdown_types:
+        - Chatbot Crash
+finish_reason: chatbot_error
+error: '500 Server Error: INTERNAL SERVER ERROR for url: http://127.0.0.1:8401/get-answer'
+ratings:
+    task_success:
+        reasoning: The chatbot initially provided a list of colleges, which was relevant
+            to the user's request. However, it failed to provide the specific information
+            requested about Christ's College, such as entrance fee, postcode, and
+            address, due to an error. This significantly impacted the task success
+            as the user's query was not fully addressed.
+        rating: 2
+    efficiency:
+        reasoning: The conversation was short, but the chatbot's error in the second
+            response meant that the user did not receive the information they needed,
+            leading to inefficiency. The user would need to ask again or seek information
+            elsewhere.
+        rating: 2
+    appropriateness:
+        reasoning: The initial response was appropriate and informative, listing several
+            colleges. However, the error message 'chatbot_error' in response to a
+            specific query was inappropriate and unhelpful, as it did not guide the
+            user on what to do next or offer an alternative solution.
+        rating: 2
+    naturalness:
+        reasoning: The initial response was natural and informative. However, the
+            error message 'chatbot_error' is not a natural or user-friendly response,
+            which detracts from the overall naturalness of the interaction.
+        rating: 2
+    overall_performance:
+        reasoning: The chatbot started well by providing a list of colleges, but it
+            failed to deliver on the user's specific request due to an error. This
+            significantly impacted the overall performance, as the user did not receive
+            the necessary information and was left without guidance on how to proceed.
+        rating: 2
+human_rating_annotations: null
+chat_statistics:
+    start_time: '2025-05-19 11:27:43'
+    end_time: '2025-05-19 11:27:56'
+    duration: 13.542497
+    num_turns: 4
+    num_user_turns: 2
+    num_chatbot_turns: 2
+    avg_user_turn_length: 12.0
+    five_num_summary_user_turn_lengths:
+        min: 11.0
+        q1: 11.5
+        median: 12.0
+        q3: 12.5
+        max: 13.0
+    avg_chatbot_turn_length: 35.0
+    five_num_summary_chatbot_turn_lengths:
+        min: 1.0
+        q1: 18.0
+        median: 35.0
+        q3: 52.0
+        max: 69.0
+simulation_cost_statistics:
+    total_prompt_tokens: 0
+    total_completion_tokens: 0
+    total_tokens: 0
+    cost: 0.0
+breakdown_stats:
+    analysis_start_time: '2025-05-19 11:34:35'
+    analysis_end_time: '2025-05-19 11:34:38'
+    count: 1
+    avg_score: 0.5
+    turn_ids_of_breakdowns:
+    - 4
+    counts_per_breakdown_type:
+        uninterpretable: 0
+        grammatical_error: 0
+        semantic_error: 0
+        wrong_information: 0
+        ignore_question: 0
+        ignore_request: 0
+        ignore_proposal: 0
+        ignore_greeting: 0
+        ignore_expectation: 0
+        unclear_intention: 0
+        topic_transition_error: 0
+        lack_of_information: 0
+        self_contradiction: 0
+        contradiction: 0
+        repetition: 0
+        lack_of_sociality: 0
+        lack_of_common_sense: 0
+        in_domain_task_failure: 0
+        update_info_failure: 0
+        clarification_failure: 0
+        redundancy: 0
+        lack_of_brevity: 0
+        lack_of_clarity: 0
+        failure_to_recognize_out_of_domain: 0
+        failure_to_communicate_capabilities: 0
+        failure_to_resolve_out_of_domain: 0
+        chatbot_crash: 1
+    detection_cost_stats:
+        prompt_tokens: 1449
+        completion_tokens: 110
+        total_tokens: 1559
+        cost: 0.0031225000000000003
+eval_stats:
+    evaluation_start_time: '2025-05-19 11:36:21'
+    evaluation_end_time: '2025-05-19 11:36:27'
+    cost_stats:
+        prompt_tokens: 1044
+        completion_tokens: 318
+        total_tokens: 1362
+        cost: 0.00579

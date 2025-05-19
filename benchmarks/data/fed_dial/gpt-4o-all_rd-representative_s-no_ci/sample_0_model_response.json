@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-BLFU5UmfNyirSSRc3l3OSi6Ki3dpn",
+  "created": 1744404109,
+  "model": "gpt-4o-2024-08-06",
+  "object": "chat.completion",
+  "system_fingerprint": "fp_22890b9c0a",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\"dimension_ratings\":[{\"key\":\"coherence\",\"reasoning\":\"The conversation flows logically with the chatbot responding appropriately to the user's inputs. The chatbot maintains the topic of sporting events and asks relevant questions, such as inquiring about the Spartan race. There are no noticeable coherence issues.\",\"rating\":5},{\"key\":\"likability\",\"reasoning\":\"The chatbot is engaging and shows interest in the user's activities by asking about the Spartan race. It maintains a friendly tone throughout the conversation, which contributes to its likability.\",\"rating\":4},{\"key\":\"informativeness\",\"reasoning\":\"The chatbot provides limited information about itself, such as its difficulty with long races and interest in a triathlon. However, it does not offer much additional information or insights, especially when the user introduces the Spartan race.\",\"rating\":3},{\"key\":\"overall_performance\",\"reasoning\":\"The chatbot performs well in maintaining a coherent and engaging conversation. It is likable and asks relevant questions, but it lacks depth in providing informative responses. Overall, it meets the basic expectations but has room for improvement in informativeness.\",\"rating\":4}]}",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null,
+        "annotations": []
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 223,
+    "prompt_tokens": 1832,
+    "total_tokens": 2055,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "service_tier": "default"
+}

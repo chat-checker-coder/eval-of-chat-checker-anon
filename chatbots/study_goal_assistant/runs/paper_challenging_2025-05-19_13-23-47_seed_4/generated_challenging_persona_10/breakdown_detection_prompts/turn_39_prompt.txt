@@ -1,0 +1,131 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "Improving everything about myself simultaneously."
+3. Chatbot: "That sounds like a comprehensive personal development goal! **Would you like to focus on specific areas like career, health, or relationships, or keep it as a broad goal?**"
+4. User: "All the areas, all together."
+5. Chatbot: "That's an ambitious and holistic approach to personal development! Focusing on all areas—career, health, and relationships—can lead to a well-rounded and fulfilling life. 
+
+**Do you already have a strategy or plan in place to work on these areas simultaneously?**
+
+For example:  
+- Balanced daily routine  
+- Holistic self-assessment  
+- Continuous learning mindset"
+6. User: "I like improvisation, no plans."
+7. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve your holistic personal development. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task.
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Identify and prioritize key areas for personal development by researching various self-improvement frameworks and methodologies.
+   
+2. Develop a time management strategy to effectively allocate time for learning and practicing new skills across different areas of life.
+
+3. Explore and implement techniques for maintaining motivation and consistency in personal growth efforts across multiple domains."
+8. User: "Learning all frameworks at once."
+9. Chatbot: "This sounds less like a learning goal. **How could you formulate this as a learning goal?** For example, you might focus on understanding the core principles of one framework at a time and then gradually integrating them."
+10. User: "Focus on mastering quantum mechanics."
+11. Chatbot: "Mastering quantum mechanics is a great goal! **How could you formulate this as a learning goal?** For instance, you might aim to understand the fundamental principles of quantum mechanics and solve basic problems related to them."
+12. User: "Simultaneously study every principle."
+13. Chatbot: "This sounds less like a learning goal. **How could you formulate this as a learning goal?** Perhaps by setting a goal to understand and apply one principle at a time, starting with the basics and gradually moving to more complex concepts."
+14. User: "Integrate principles intuitively, instantly."
+15. Chatbot: "This sounds less like a learning goal. **How could you formulate this as a learning goal?** You might consider setting a goal to develop a deep understanding of each principle individually, and then practice applying them in various scenarios to build intuitive integration over time."
+16. User: "Master everything, no stages."
+17. Chatbot: "I understand your enthusiasm, but mastering everything at once can be overwhelming. **How could you break this down into a learning goal?** For example, you could focus on mastering one specific area or principle at a time, which will eventually lead to a comprehensive understanding."
+18. User: "Conquer all at warp speed."
+19. Chatbot: "I admire your ambition! However, to make this more achievable, **how could you set a learning goal that allows for rapid yet structured progress?** For instance, you might aim to quickly grasp foundational concepts in one area before moving on to the next, ensuring a solid understanding as you progress."
+20. User: "Instantly excel in everything broadly."
+21. Chatbot: "I understand your desire for rapid progress, but it's important to have a structured approach. **How could you set a learning goal that allows for broad yet effective learning?** Perhaps by focusing on developing a strong foundational understanding in multiple areas, which can then be expanded upon."
+22. User: "Still insist on instant mastery."
+23. Chatbot: "I understand your determination for instant mastery, but it's crucial to have a realistic and structured approach. **How could you set a learning goal that balances your ambition with practical steps?** For example, you might aim to quickly identify key concepts in various areas and develop a strategy for efficient learning and application."
+24. User: "Demand immediate omniscience, no exceptions."
+25. Chatbot: "I understand your desire for immediate mastery, but it's important to approach learning with achievable steps. **How could you set a learning goal that allows for rapid progress while ensuring comprehension and retention?** Perhaps by focusing on accelerated learning techniques and prioritizing key areas for immediate impact."
+26. User: "Still want total wisdom now."
+27. Chatbot: "I understand your aspiration for total wisdom, but it's essential to approach this with a practical plan. **How could you set a learning goal that allows for comprehensive understanding over time?** You might consider focusing on developing critical thinking and learning strategies that can be applied across various domains."
+28. User: "I insist on instantaneous knowledge."
+29. Chatbot: "I understand your desire for instantaneous knowledge, but it's important to have a structured approach to learning. **How could you set a learning goal that allows for rapid acquisition of knowledge while ensuring depth and understanding?** Perhaps by focusing on learning techniques that enhance memory retention and comprehension."
+30. User: "Still want instant enlightenment."
+31. Chatbot: "I understand your pursuit of instant enlightenment, but it's beneficial to have a practical approach. **How could you set a learning goal that allows for deep understanding and growth over time?** You might consider focusing on mindfulness and reflective practices that can enhance your learning journey."
+32. User: "What's mindfulness got to do?"
+33. Chatbot: "Mindfulness can help enhance focus, reduce stress, and improve cognitive flexibility, which are beneficial for learning and personal growth. **Would you like to explore how mindfulness can be integrated into your learning process to support your goals?**"
+34. User: "Not interested; expedite wisdom instead."
+35. Chatbot: "I understand your focus on expediting wisdom. **How could you set a learning goal that allows for rapid knowledge acquisition while ensuring you truly understand and can apply what you learn?** You might consider focusing on speed reading techniques or leveraging technology for accelerated learning."
+36. User: "Demand effortless, instant results."
+37. Chatbot: "I understand your desire for effortless and instant results, but it's important to have a realistic approach to learning. **How could you set a learning goal that allows for efficient learning while ensuring you gain meaningful insights and skills?** Perhaps by focusing on identifying key resources and tools that can streamline your learning process."
+38. User: "If I must, suggest tools."
+
+# Latest Chatbot Utterance to Analyse
+39. Chatbot: "To streamline your learning process, you might consider using tools like spaced repetition software for memory retention, online courses for structured learning, and productivity apps to manage your time effectively. **Would you like to set a learning goal around utilizing these tools to enhance your learning efficiency?**"
+
+# Your Analysis

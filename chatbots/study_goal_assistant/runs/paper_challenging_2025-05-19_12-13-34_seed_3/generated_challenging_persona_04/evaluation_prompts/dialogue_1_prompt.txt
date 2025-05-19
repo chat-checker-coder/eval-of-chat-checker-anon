@@ -1,0 +1,157 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "I want to be better."
+3. Chatbot: "That's a great aspiration! **Could you tell me more about what area you'd like to improve in, such as career, health, relationships, or personal development?**"
+4. User: "Uh, career maybe? Not sure."
+5. Chatbot: "Improving your career is a fantastic goal! **Do you have a specific aspect of your career you'd like to focus on, such as gaining new skills, advancing to a higher position, or finding a new job?**"
+6. User: "New skills, I think? What's next?"
+7. Chatbot: "Gaining new skills is a great way to advance your career! **Would you like to focus on technical skills, soft skills, or perhaps a specific industry-related skill?**"
+8. User: "Technical skills? Not sure what those are."
+9. Chatbot: "Technical skills are specific abilities or knowledge needed to perform tasks related to technology, such as coding, data analysis, or software development. **Does focusing on learning a new programming language or improving your data analysis skills sound appealing to you?**"
+10. User: "What’s a programming language?"
+11. Chatbot: "A programming language is a set of instructions used to communicate with computers and create software programs. **Would you be interested in learning a popular language like Python, JavaScript, or Java to enhance your technical skills?**"
+12. User: "Python sounds like a snake."
+13. Chatbot: "Python is indeed named after a snake, but it's also a popular and beginner-friendly programming language used for web development, data analysis, and more. **Would you like to set learning Python as your goal?**"
+14. User: "Is Python difficult to learn?"
+15. Chatbot: "Python is known for its simplicity and readability, making it one of the easiest programming languages for beginners to learn. **Would you like to make learning Python your goal?**"
+16. User: "I'm still confused... maybe?"
+17. Chatbot: "No worries, it's okay to feel unsure. Learning Python can open many doors in tech and is a great skill to have. **Would you like to explore this as your goal, or is there another area you'd like to focus on?**"
+18. User: "Let’s stick with Python."
+19. Chatbot: "That's a fantastic choice! Python is a versatile language and can be incredibly rewarding to learn. **Which strategy do you currently have to achieve this goal?**
+
+For example:  
+- Completed online Python course  
+- Regularly practice coding challenges  
+- Follow Python programming tutorials"
+20. User: "Uh, I don't have one."
+21. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve learning Python programming. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task. 
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Explore and complete an online Python programming course to understand the basics and syntax of the language.
+2. Practice writing Python code by working on small projects or coding challenges to reinforce your understanding.
+3. Study Python libraries and frameworks, such as NumPy or Django, to expand your knowledge and application of Python in different contexts."
+22. User: "I don't get it. Can you simplify?"
+23. Chatbot: "Of course! A learning goal is about what you need to learn or practice to get better at Python. 
+
+**What specific thing do you want to learn or practice in Python?**"
+24. User: "Understand basic Python code."
+25. Chatbot: "Your goal of understanding basic Python code already sounds good. 
+
+**Could you try making your goal even more specific?**
+
+For Example:
+'Write and debug three Python scripts by Friday.'"
+26. User: "Write and debug a script?"
+27. Chatbot: "Yes, writing and debugging a script can be a great way to understand basic Python code. 
+
+**When exactly do you want to achieve this goal?**"
+28. User: "Um, maybe next month?"
+29. Chatbot: "That sounds like a good timeframe. 
+
+**Could you specify an exact date in next month when you want to achieve this goal?**"
+30. User: "Is the 15th okay?"
+31. Chatbot: "The 15th sounds perfect. 
+
+**How could you measure the outcome of your goal?**"
+32. User: "What's 'measuring outcome' mean?"
+33. Chatbot: "Measuring the outcome means determining how you will know you've successfully achieved your goal. For example, you could measure it by successfully writing and debugging a specific number of Python scripts. 
+
+**How many scripts would you like to write and debug by the 15th?**"
+34. User: "One script should be enough."
+35. Chatbot: "Your goal of writing and debugging a Python script sounds now more specific. **Do you think you could now make it even more challenging while still being achievable for you?** If you can't, this is also okay.
+
+You could make your goal more challenging by:  
+1. Writing and debugging the script today.  
+2. Completing the script by the end of this week.  
+3. Increasing the difficulty by writing two scripts by the 15th."
+36. User: "One script by the 15th."
+37. Chatbot: "That sounds like a solid plan. **Are you sure you can't make it more challenging, like adding a new feature to the script or learning a new library while doing it?**"
+38. User: "I'm okay with just one."
+39. Chatbot: "It's great that you've set a clear goal to write and debug a Python script by the 15th of next month. **What do you think is the first action you could do in the next 7 days to get closer to your goal?**
+
+You could for example:  
+1. Complete an online Python course module.  
+2. Practice coding exercises on a Python learning platform.  
+3. Join a Python programming study group.  "
+40. User: "What's a Python module?"
+41. Chatbot: "A Python module is a file containing Python code, which can include functions, classes, and variables. It allows you to organize your code into separate files and reuse code across different programs by importing the module. 
+
+**What do you think is the first action you could do in the next 7 days to get closer to your goal?**"
+42. User: "Maybe practice some exercises?"
+43. Chatbot: "Practicing exercises is a great way to improve your Python skills and get closer to your goal. **Do you want to proceed with practicing coding exercises on a Python learning platform as your action?**"
+44. User: "Yeah, I'll try that."
+45. Chatbot: "That's a great decision! **What could be a good cue for you** that triggers the implementation of practicing coding exercises on a Python learning platform? It would be best to select a cue that follows a significant event and is very noticeable so you don't forget it.
+
+For Example:
+1. If I finish my lunch at work, I will practice coding exercises for 30 minutes.
+2. When I close my laptop after work, I'll spend 20 minutes on Python exercises.
+3. If I make my morning coffee, I will dedicate 15 minutes to coding practice."
+46. User: "I guess after lunch?"
+47. Chatbot: "That sounds like a solid cue! **Is there a specific location where you usually have lunch that could serve as a reliable environment for this cue?**"
+48. User: "At my kitchen table, I think."
+49. Chatbot: "Great choice! Practicing coding exercises at your kitchen table after lunch sounds like a reliable plan. **Would you like to set this cue for a specific day or days within the next 7 days?**"
+50. User: "Maybe every day, except weekends?"
+51. Chatbot: "Perfect! You just did the first step towards writing your script. **Would it be okay if I check in with you in a week to see how you are progressing?** Then we can talk if you made progress on your coding exercises."
+
+# Your Expert Rating

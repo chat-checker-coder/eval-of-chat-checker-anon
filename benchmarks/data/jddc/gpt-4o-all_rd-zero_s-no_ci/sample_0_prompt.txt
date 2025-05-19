@@ -1,0 +1,77 @@
+System prompt:
+# Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+User prompt:
+# Conversation to Rate
+1. User: "在"
+2. Chatbot: "请问还有其他还可以帮到您的吗?"
+3. User: "不对啊"
+4. User: "不是一百么"
+5. User: "为什么会是[数字x]块钱"
+6. User: "在不"
+7. User: "[ORDERID_10515484]"
+8. User: "[ORDERID_10492232]"
+9. Chatbot: "要求价保是吗?"
+10. User: "对啊"
+11. User: "之前为什么给我保的是[数字x]块钱"
+12. Chatbot: "亲爱的，您可以在前台，我的-客户服务-价格保护，中自行申请的呢#E-s[数字x]"
+13. User: "我申请不了"
+14. User: "上面说没有降价"
+15. Chatbot: "稍等哈"
+16. User: "我用的优惠劵"
+17. Chatbot: "亲爱的，这边系统需要您两个订单收货地址一样的呢"
+18. Chatbot: "请您修改一下哈"
+19. User: "[ORDERID_10382410]"
+20. Chatbot: "稍等哈"
+21. User: "好"
+22. Chatbot: "这边查到产生差价"
+23. User: "嗯"
+24. User: "怎么说"
+25. Chatbot: "这边会给您退款哈"
+26. User: "好的谢谢"
+27. Chatbot: "请问还有其他还可以帮到您的吗?"
+28. User: "没有了"
+29. Chatbot: "感谢您对京东的支持，祝您生活愉快，再见!"
+30. User: "怎么给你五星"
+31. User: "#E-s[数字x]"
+32. Chatbot: "#E-s[数字x]"
+33. Chatbot: "#E-s[数字x]"
+34. User: "好了"
+35. Chatbot: "#E-s[数字x]"
+36. User: "什么时候能解决好"
+37. Chatbot: "预计会在[数字x]-[数字x]天到账哈"
+38. User: "好的"
+39. User: "谢谢"
+40. Chatbot: "#E-s[数字x]"
+41. User: "#E-s[数字x]"
+42. Chatbot: "#E-s[数字x]"
+
+# Your Expert Rating

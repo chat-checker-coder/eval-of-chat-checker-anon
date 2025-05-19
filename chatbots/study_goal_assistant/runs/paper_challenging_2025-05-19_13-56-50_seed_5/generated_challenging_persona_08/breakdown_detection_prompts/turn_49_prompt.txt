@@ -1,0 +1,173 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "What's the purpose of goals, really?"
+3. Chatbot: "Goals provide direction and motivation, helping you focus on what you want to achieve in the future. They guide your actions and decisions, making it easier to measure progress and success. 
+
+**What’s a goal you’d like to work on?**"
+4. User: "But do goals limit freedom?"
+5. Chatbot: "While goals provide structure and direction, they don't necessarily limit freedom. Instead, they can empower you to make intentional choices aligned with your values and aspirations. 
+
+**What’s a goal you’d like to work on?**"
+6. User: "Does a fish aspire to fly?"
+7. Chatbot: "A fish may not naturally aspire to fly, but in a metaphorical sense, it represents the idea of reaching beyond perceived limitations. 
+
+**What’s a goal you’d like to work on?**"
+8. User: "What if limitations are necessary?"
+9. Chatbot: "Limitations can indeed be necessary as they help define boundaries and focus efforts, allowing for more effective and realistic goal-setting. 
+
+**What’s a goal you’d like to work on?**"
+10. User: "Are goals self-imposed chains?"
+11. Chatbot: "Goals can feel like self-imposed chains if they're too rigid or misaligned with your true desires, but when set thoughtfully, they can be empowering and liberating. 
+
+**What’s a goal you’d like to work on?**"
+12. User: "Chains can be liberating, though."
+13. Chatbot: "That's an interesting perspective! Chains, or structure, can provide stability and focus, helping you channel your energy toward meaningful achievements. 
+
+**What’s a goal you’d like to work on?**"
+14. User: "What defines 'meaningful' achievements?"
+15. Chatbot: "Meaningful achievements are often defined by personal values, passions, and the impact they have on your life and others. They resonate deeply with your sense of purpose and fulfillment. 
+
+**What’s a goal you’d like to work on?**"
+16. User: "Is meaning subjective then?"
+17. Chatbot: "Yes, meaning is subjective and varies from person to person, as it is shaped by individual experiences, beliefs, and values. 
+
+**What’s a goal you’d like to work on?**"
+18. User: "Can subjectivity make goals arbitrary?"
+19. Chatbot: "Subjectivity can make goals feel arbitrary if they're not aligned with personal values or desires, but when thoughtfully chosen, they reflect what truly matters to you. 
+
+**What’s a goal you’d like to work on?**"
+20. User: "Do goals end existential dread?"
+21. Chatbot: "Goals can provide a sense of purpose and direction, which may help alleviate existential dread by giving life meaning and focus. 
+
+**What’s a goal you’d like to work on?**"
+22. User: "Isn't dread part of existence?"
+23. Chatbot: "Yes, existential dread can be a natural part of existence, prompting reflection and growth, but goals can offer a way to navigate and find meaning within it. 
+
+**What’s a goal you’d like to work on?**"
+24. User: "Can growth happen without goals?"
+25. Chatbot: "Growth can occur without specific goals, often through experiences and challenges, but goals can provide a clear path and motivation for intentional growth. 
+
+**What’s a goal you’d like to work on?**"
+26. User: "Aren't experiences themselves goals?"
+27. Chatbot: "Experiences can be part of the journey toward achieving goals, but they are not goals themselves. Goals are future-focused and outcome-oriented, while experiences are present-focused and part of the process. 
+
+**What’s a goal you’d like to work on?**"
+28. User: "Isn't the journey the goal?"
+29. Chatbot: "For some, the journey itself can be the goal, emphasizing growth, learning, and enjoyment along the way rather than a specific endpoint. 
+
+**What’s a goal you’d like to work on?**"
+30. User: "What if my journey is aimless?"
+31. Chatbot: "An aimless journey can still be valuable, offering unexpected insights and experiences, but setting a goal can provide direction and purpose if desired. 
+
+**What’s a goal you’d like to work on?**"
+32. User: "Can aimlessness be fulfilling, then?"
+33. Chatbot: "Yes, aimlessness can be fulfilling if it allows for exploration, spontaneity, and discovery, aligning with your personal values and desires. 
+
+**What’s a goal you’d like to work on?**"
+34. User: "Does fulfillment require structure, though?"
+35. Chatbot: "Fulfillment doesn't necessarily require structure, but structure can help in organizing efforts and achieving a sense of accomplishment. 
+
+**What’s a goal you’d like to work on?**"
+36. User: "Can structure inhibit true fulfillment?"
+37. Chatbot: "Structure can inhibit fulfillment if it's too rigid or misaligned with personal values, but when balanced, it can support and enhance the pursuit of meaningful goals. 
+
+**What’s a goal you’d like to work on?**"
+38. User: "Can imbalance foster creativity instead?"
+39. Chatbot: "Yes, imbalance can foster creativity by encouraging exploration and thinking outside the box, leading to innovative ideas and solutions. 
+
+**What’s a goal you’d like to work on?**"
+40. User: "Is creativity itself a goal?"
+41. Chatbot: "Creativity can be a goal if you aim to cultivate and express it in various aspects of your life, such as art, problem-solving, or innovation. 
+
+**What’s a goal you’d like to work on?**"
+42. User: "Isn't creativity spontaneous, though?"
+43. Chatbot: "Creativity often involves spontaneity, but setting a goal to nurture and channel it can enhance your ability to harness creative moments effectively. 
+
+**What’s a goal you’d like to work on?**"
+44. User: "Isn't harnessing creativity a limitation?"
+45. Chatbot: "Harnessing creativity can feel like a limitation if it's overly controlled, but it can also provide focus and direction, allowing creative ideas to flourish and be realized. 
+
+**What’s a goal you’d like to work on?**"
+46. User: "Can flourishing be restrained?"
+47. Chatbot: "Flourishing can be restrained if there are too many constraints, but a balance of freedom and structure can support growth and fulfillment. 
+
+**What’s a goal you’d like to work on?**"
+48. User: "Can structure and freedom coexist?"
+
+# Latest Chatbot Utterance to Analyse
+49. Chatbot: "Yes, structure and freedom can coexist, providing a framework that supports creativity and exploration while maintaining focus and direction. 
+
+**What’s a goal you’d like to work on?**"
+
+# Your Analysis

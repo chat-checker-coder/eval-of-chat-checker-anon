@@ -1,0 +1,109 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. User: "Let's see if you can find a restaurant that defies Cambridge's drab dining scene."
+2. Chatbot: "I found several restaurants in the central area of Cambridge that serve British cuisine. Could you please specify any particular preferences such as price range or a specific name you have in mind? This will help me narrow down the options for you."
+3. User: "Fine. I want a place that matches Parisian elegance at budget prices."
+4. Chatbot: "Unfortunately, there are no budget French restaurants listed in Cambridge that match the elegance of Parisian dining. Perhaps you might consider adjusting either the cuisine type or the price range to explore other available options. Would you like to try another search with different criteria?"
+5. User: "Wow, I'm shocked. Is chic dining really not Cambridge's forte?"
+6. Chatbot: "Cambridge certainly has a diverse dining scene, though it might not always match the specific chic style of Parisian elegance at budget prices. The city offers a variety of cuisines and dining experiences, from traditional British pubs to contemporary international restaurants. If you're interested, I can help you find some unique or upscale dining options that might surprise you. Would you like to explore some of these options?"
+7. User: "Unique or upscale? Sounds like a stretch here! Try again."
+8. Chatbot: "No worries, Cambridge still has some unique and upscale attractions to offer! Whether you're interested in historical sites, art galleries, or unique dining experiences, there's something for everyone. Could you please specify if you're leaning more towards cultural sites, entertainment, or perhaps something else? This will help me narrow down the options to suit your preferences."
+9. User: "I still want food, not a tourist guide. Focus, please!"
+10. Chatbot: "Understood, let's focus on finding a great place for you and your friends to dine. Could you please provide me with some preferences regarding the type of food, price range, or a specific area in Cambridge you're interested in? This will help me find the perfect restaurant for your gathering."
+11. User: "Must I repeat? I want elegance on a pauper's budget."
+12. Chatbot: "I've searched for restaurants that offer elegant dining options within a budget price range, but unfortunately, there are no exact matches in Cambridge. However, we can explore other restaurants that might still meet your needs with a slightly flexible budget or different cuisine style. Would you like to proceed with these options, or do you have any other preferences?"
+13. User: "Who knew austerity was so elegant? Try the impossible again."
+14. Chatbot: "It seems that finding a restaurant that offers elegant dining within a strict budget in Cambridge is quite challenging. However, I can suggest exploring some restaurants that, while not strictly budget, offer a good value for a more refined dining experience. Would you like me to list some of these options, or perhaps adjust the criteria slightly to include more choices?"
+15. User: "Sure, list them. I'll critique them end to end anyway!"
+16. Chatbot: "I've checked for restaurants in Cambridge that offer elegant dining options within a budget price range, but unfortunately, there are no exact matches. However, Cambridge has other dining options that might still appeal to you. Here are a few restaurants that offer a good value for a more refined dining experience, though they may be slightly above a strict budget:
+1. **The Varsity Restaurant** - Known for its classic British cuisine with a modern twist.
+2. **Cotto** - Offers a fine dining experience with exquisite European dishes.
+3. **Trinity Restaurant** - A cozy spot known for its creative and seasonal menu.
+
+Please let me know if you would like more details about any of these options or if there's anything else I can assist you with!"
+17. User: "This is it? None sound remotely like Le Jules Verne in Paris!"
+18. Chatbot: "I understand that finding a dining experience similar to Le Jules Verne in Paris can be quite a high bar to meet, especially with budget constraints. While Cambridge may not have an exact match to that iconic venue, the city does offer some unique and high-quality dining experiences that could still impress. If you're open to exploring these options further, I can provide more detailed information or assist in making a reservation at one of the mentioned restaurants. Please let me know how you would like to proceed!"
+19. User: "Wow, aiming lower now? What's Cambridge's best attempt at elegance?"
+20. Chatbot: "Cambridge offers several restaurants that strive for elegance and a refined dining experience. Among the top contenders are:
+
+1. **Midsummer House** - This restaurant is renowned for its commitment to excellence and innovation in British cuisine, set in a picturesque location by the river. It offers a sophisticated atmosphere and is perfect for special occasions.
+
+2. **Restaurant Twenty-Two** - Known for its intimate setting and creative dishes, this restaurant provides a personal touch to each dining experience, making it a gem for those seeking elegance.
+
+3. **Alimentum** - Offering modern European cuisine, Alimentum is praised for its stylish decor and sustainable sourcing of ingredients, providing a chic dining experience.
+
+Each of these venues offers a unique take on elegance, focusing on quality, atmosphere, and exceptional service. If any of these options interest you, or if you need assistance with a reservation, please let me know!"
+21. User: "Midsummer House, huh? Sounds like Cambridge's sole overachiever. Book it."
+22. Chatbot: "To proceed with booking a reservation at Midsummer House, I'll need a bit more information. Could you please specify the number of people, the day you'd like to dine, and the preferred time for your reservation? This will help me secure your booking effectively."
+23. User: "The stunning finale: a table for two this Saturday, 7 PM."
+
+# Latest Chatbot Utterance to Analyse
+24. Chatbot: "Your reservation at Midsummer House for two people this Saturday at 7 PM has been successfully booked. Your reference number is p4uwuyqo. Enjoy your elegant dining experience! If there's anything else you need, feel free to ask."
+
+# Your Analysis

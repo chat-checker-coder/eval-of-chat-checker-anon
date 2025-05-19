@@ -1,0 +1,133 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "Hey there! I'm looking to find a balance between my music career and establishing a consistent daily routine. Any ideas?"
+3. Chatbot: "Finding balance between your music career and a daily routine sounds like a great goal! **Does that mean your goal is to create a balanced lifestyle, or are you striving for a higher goal like advancing your music career, improving time management, or enhancing personal well-being?**"
+4. User: "Let's focus on a balanced lifestyle."
+5. Chatbot: "Achieving a balanced lifestyle is a wonderful goal that can lead to greater happiness and well-being. **Do you already have a strategy or plan in place to help you achieve this balanced lifestyle?**
+
+For example:  
+- Regular exercise routine  
+- Healthy meal planning  
+- Consistent sleep schedule"
+6. User: "Not really, I'm winging it!"
+7. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve a balanced lifestyle. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task.
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Research different components of a balanced lifestyle, such as nutrition, exercise, and mental well-being, to understand how they contribute to overall health.
+   
+2. Learn about time management techniques to effectively allocate time for work, leisure, and self-care activities.
+
+3. Explore mindfulness and stress-reduction practices to incorporate into daily routines for improved mental and emotional balance."
+8. User: "I'll start with time management."
+9. Chatbot: "Great choice! Time management is crucial for maintaining a balanced lifestyle. 
+
+**What specific strategies or techniques would you like to learn about time management?**"
+10. User: "I'd love tips on prioritizing."
+11. Chatbot: "Your goal of prioritizing tasks effectively already sounds good. **Could you try making your goal even more specific?**
+
+For Example:
+Identify three task prioritization strategies by Friday, 2025-05-23."
+12. User: "How about by this Friday?"
+13. Chatbot: "That sounds great! **How many strategies do you want to learn by this Friday?**"
+14. User: "I'll learn two strategies."
+15. Chatbot: "Your goal of learning two task prioritization strategies sounds now more specific. 
+
+**Do you think you could now make it even more challenging while still being achievable for you?** If you can't, this is also okay.
+
+You could make your goal more challenging by:
+1. Learning one strategy today.
+2. Learning both strategies by Wednesday.
+3. Identifying four strategies before choosing two."
+16. User: "I'll stick with two."
+17. Chatbot: "Your goal of learning two task prioritization strategies by this Friday is a great step towards improving your productivity. **What do you think is the first action you could do in the next 7 days to get closer to your goal?**
+
+You could for example:  
+1. Read a book on task prioritization.  
+2. Watch 2 YouTube videos on prioritization techniques.  
+3. Attend a webinar on effective task management.  "
+18. User: "I'll watch two YouTube videos!"
+19. Chatbot: "That's a great choice! Watching YouTube videos can be a quick and effective way to learn new strategies. **What could be a good cue for you** that triggers the implementation of watching these videos? It would be best to select a cue that follows a significant event and is very noticeable so you don't forget it.
+
+For Example:
+1. If I finish my lunch at work, I will watch two YouTube videos on task prioritization.
+2. When I sit down at my desk after dinner, I'll watch two YouTube videos on task prioritization.
+3. If I make my morning coffee, I will watch two YouTube videos on task prioritization."
+20. User: "When I make my evening tea."
+21. Chatbot: "That's a great cue! Making evening tea is a consistent and noticeable event. **On which day or days do you plan to watch the videos while making your evening tea?**"
+22. User: "I'll watch them on Thursday."
+23. Chatbot: "Great choice! Watching the videos on Thursday will give you time to apply the strategies before your goal deadline on Friday. **Where will you be making your evening tea on Thursday?**"
+24. User: "In my cozy kitchen!"
+25. Chatbot: "Perfect! You just did the first step towards learning strategies. **Would it be okay if I check in with you in a week to see how you are progressing?** Then we can talk if you made progress on your video watching."
+26. User: "Sure, sounds good to me!"
+27. Chatbot: "Perfect you defined your goal! Now we are done and this is the summary of the goal and action we set together:
+
+**Goal:** Learn two task prioritization strategies by this Friday.
+
+**Action:** Watch two YouTube videos on task prioritization strategies.
+
+**Implementation Intention:** when I make my evening tea in my cozy kitchen on Thursday then watch two YouTube videos on task prioritization strategies."
+28. User: "Thanks for the help! Can't wait!  "
+29. Chatbot: "Goodbye! I hope I was able to help you with your goal. Have a great day!"
+
+# Your Expert Rating

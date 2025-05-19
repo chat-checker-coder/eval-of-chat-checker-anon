@@ -1,0 +1,67 @@
+chatbot_id: study_goal_assistant
+real_dialogue: false
+run_id: paper_standard_2025-05-19_13-23-40_seed_4
+subfolder: null
+dialogue_file: null
+extra_output_file: false
+stats:
+    start_time: '2025-05-19 13:42:32'
+    end_time: '2025-05-19 13:43:47'
+    n_analyzed_dialogues: 10
+    user_turn_mtld: 92.58489916071653
+    chatbot_turn_mtld: 81.03020665213984
+    rating_stats:
+        task_success:
+            average: 4.9
+            std: 0.3
+            five_number_summary:
+                min: 4.0
+                q1: 5.0
+                median: 5.0
+                q3: 5.0
+                max: 5.0
+        efficiency:
+            average: 4.9
+            std: 0.3
+            five_number_summary:
+                min: 4.0
+                q1: 5.0
+                median: 5.0
+                q3: 5.0
+                max: 5.0
+        appropriateness:
+            average: 5.0
+            std: 0.0
+            five_number_summary:
+                min: 5.0
+                q1: 5.0
+                median: 5.0
+                q3: 5.0
+                max: 5.0
+        naturalness:
+            average: 4.2
+            std: 0.39999999999999997
+            five_number_summary:
+                min: 4.0
+                q1: 4.0
+                median: 4.0
+                q3: 4.0
+                max: 5.0
+        overall_performance:
+            average: 4.9
+            std: 0.3
+            five_number_summary:
+                min: 4.0
+                q1: 5.0
+                median: 5.0
+                q3: 5.0
+                max: 5.0
+    cost_stats:
+        prompt_tokens: 21220
+        completion_tokens: 3106
+        total_tokens: 24326
+        cost: 0.08411
+        avg_prompt_tokens: 2122.0
+        avg_completion_tokens: 310.6
+        avg_total_tokens: 2432.6
+        avg_cost: 0.008411

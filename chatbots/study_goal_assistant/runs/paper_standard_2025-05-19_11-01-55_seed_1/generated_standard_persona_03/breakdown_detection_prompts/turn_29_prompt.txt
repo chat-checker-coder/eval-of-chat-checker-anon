@@ -1,0 +1,139 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "I want to improve my work-life balance."
+3. Chatbot: "Improving your work-life balance is a wonderful goal that can lead to greater happiness and well-being. **Which strategy do you currently have to achieve this goal?**
+
+For example:  
+- Set clear work boundaries  
+- Schedule regular personal time  
+- Prioritize tasks effectively"
+4. User: "I set clear work boundaries."
+5. Chatbot: "That sounds like a solid strategy. **Do you think this strategy is already a good strategy to achieve your goal?**"
+6. User: "Yes, but I need help."
+7. Chatbot: "That's great to hear that you have a solid strategy in place! This means it makes sense to set a performance goal. A performance goal focuses on the achievement of certain outcomes. **What could be a performance goal for improving your work-life balance?**
+
+For Example:
+1. Limit work emails to 30 minutes daily.
+2. Take two 15-minute breaks during work hours.
+3. Leave work by 5 PM every day."
+8. User: "I'd like to take two breaks."
+9. Chatbot: "Your goal of taking two 15-minute breaks during work hours already sounds good. **Could you try making your goal even more specific?**
+
+For Example:
+'Take 15-minute breaks at 11:30 AM and 3:00 PM.'"
+10. User: "Take breaks at 11 AM and 3 PM."
+11. Chatbot: "**When exactly do you want to start implementing this goal?**"
+12. User: "I'll start this Monday."
+13. Chatbot: "Your goal of taking 15-minute breaks sounds now more specific. **Do you think you could now make it even more challenging while still being achievable for you?** If you can't, this is also okay.
+
+You could make your goal more challenging by:  
+1. Starting your breaks today at 11 AM and 3 PM.  
+2. Taking 20-minute breaks instead of 15 minutes.  
+3. Adding a 5-minute mindfulness exercise during each break."
+14. User: "I'll add mindfulness exercises!"
+15. Chatbot: "That's a great addition! **Do you think you could make it even more challenging, or is this the right level for you?**"
+16. User: "This feels like the right level!"
+17. Chatbot: "It's wonderful that you've set a goal to incorporate breaks and mindfulness into your routine. **What do you think is the first action you could do in the next 7 days to get closer to your goal?**
+
+You could for example:  
+1. Set phone reminders for break times.  
+2. Download a mindfulness app.  
+3. Find a quiet spot for breaks.  "
+18. User: "I'll download a mindfulness app."
+19. Chatbot: "Downloading a mindfulness app is a great step towards achieving your goal. **Do you think this action is the best to reach your goal, or is there another action you want to consider?**"
+20. User: "I'll set phone reminders too."
+21. Chatbot: "Downloading a mindfulness app is a great step towards enhancing your well-being. **What could be a good cue for you** that triggers the implementation of this action? It would be best to select a cue that follows a significant event and is very noticeable so you don't forget it.
+
+For Example:
+1. If I finish my morning coffee, I will download a mindfulness app.
+2. When I close my laptop for a break, I'll download a mindfulness app.
+3. If I see the clock strike 11 AM, I will download a mindfulness app."
+22. User: "When I close my laptop."
+23. Chatbot: "That's a great cue! **Is there a specific day and location where you usually close your laptop that you can associate with downloading the mindfulness app?**"
+24. User: "In my home office, daily."
+25. Chatbot: "That sounds like a reliable and consistent cue. **Would you like to proceed with this implementation intention: "When I close my laptop in my home office daily, I'll download a mindfulness app"?**"
+26. User: "Yes, let's proceed with that."
+27. Chatbot: "Perfect! You just did the first step towards taking mindful breaks. Would it be okay if I check in with you in a week to see how you are progressing? Then we can talk if you made progress on downloading the app."
+28. User: "Yes, that sounds good. Thanks!"
+
+# Latest Chatbot Utterance to Analyse
+29. Chatbot: "Perfect you defined your goal! Now we are done and this is the summary of the goal and action we set together:
+
+**Goal:** Take 15-minute breaks at 11 AM and 3 PM starting this Monday, with a 5-minute mindfulness exercise during each break.
+
+**Action:** Download a mindfulness app.
+
+**Implementation Intention:** When I close my laptop in my home office daily, I'll download a mindfulness app."
+
+# Your Analysis

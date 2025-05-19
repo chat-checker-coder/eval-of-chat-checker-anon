@@ -1,0 +1,94 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. User: "Can I book an underwater dining experience in Cambridge?"
+2. Chatbot: "I'm sorry, but there are no restaurants offering underwater dining experiences in Cambridge. If you're interested in other unique dining experiences or have any other preferences, please let me know, and I'd be happy to assist further!"
+3. User: "How about dining with a view of the Cambridge Martian Embassy?"
+4. Chatbot: "I'm sorry, but there are no restaurants with a view of the Cambridge Martian Embassy. If you have any other specific dining preferences or locations in mind, please let me know, and I'll be happy to help you find a suitable restaurant in Cambridge!"
+5. User: "Alright, what about dinner on a hot air balloon over Cambridge?"
+6. Chatbot: "I'm sorry, but there are no dining experiences available on a hot air balloon over Cambridge. If you're interested in other unique or adventurous dining options, or if you have any other preferences, please let me know, and I'd be delighted to assist you in finding a wonderful dining experience in Cambridge!"
+7. User: "How about dining in a secret underground labyrinth in Cambridge?"
+8. Chatbot: "I'm sorry, but there are no dining experiences available in a secret underground labyrinth in Cambridge. If you have any other specific dining themes or locations in mind, please let me know, and I'll be happy to help you explore other unique or interesting dining options in Cambridge!"
+9. User: "Can I order food delivered by a fleet of friendly pigeons?"
+10. Chatbot: "I'm sorry, but there are no services available in Cambridge that offer food delivery via a fleet of friendly pigeons. If you're interested in other unique delivery methods or have any other preferences for food delivery, please let me know, and I'd be happy to assist you with alternative options!"
+11. User: "Can you book a gourmet dinosaur dinner party at a museum?"
+12. Chatbot: "I'm sorry, but there are no dining experiences available that include a gourmet dinosaur dinner party at a museum in Cambridge. If you have any other specific dining themes or locations in mind, or if you're interested in exploring other unique dining experiences, please let me know, and I'll be happy to assist you further!"
+13. User: "What about tea with time-traveling professors on a river punt?"
+14. Chatbot: "I'm sorry, but there are no experiences available that offer tea with time-traveling professors on a river punt in Cambridge. If you're interested in other unique or themed experiences, or if you have any other specific ideas in mind, please let me know, and I'd be delighted to help you find an enjoyable activity in Cambridge!"
+15. User: "Can I book a picnic with singing robots in the Botanic Garden?"
+16. Chatbot: "I'm sorry, but there are no experiences available that offer a picnic with singing robots in the Botanic Garden in Cambridge. If you're interested in other unique or themed picnics, or if you have any other specific ideas in mind, please let me know, and I'd be happy to help you explore other enjoyable activities in Cambridge!"
+17. User: "Alright, book me a river cruise with dancing llamas!"
+18. Chatbot: "I'm sorry, but there are no river cruises available that feature dancing llamas in Cambridge. If you're interested in other types of river cruises or unique experiences, please let me know your preferences, and I'd be delighted to assist you in finding an enjoyable activity!"
+19. User: "Dancing llamas at a rooftop rave in Cambridge, then?"
+20. Chatbot: "I'm sorry, but there are no events featuring dancing llamas at a rooftop rave in Cambridge. If you're interested in other types of rooftop events or unique experiences, please let me know your preferences, and I'd be happy to assist you in finding an enjoyable activity in Cambridge!"
+21. User: "How about rock-climbing lessons with squirrel instructors?"
+
+# Latest Chatbot Utterance to Analyse
+22. Chatbot: "I'm sorry, but there are no rock-climbing lessons available with squirrel instructors in Cambridge. If you're interested in rock-climbing lessons or other adventurous activities, please let me know your preferences, and I'd be happy to help you find suitable options!"
+
+# Your Analysis

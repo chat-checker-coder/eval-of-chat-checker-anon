@@ -1,0 +1,92 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. User: "Hi, what's a good place to eat in Cambridge?"
+2. Chatbot: "In the centre area of Cambridge, some of the upscale dining options include restaurants like "Gourmet Paradise", "The Chef's Table", and "Luxury Bites". Each offers a unique dining experience with a variety of cuisines. If you need more details or would like to make a reservation at one of these places, please let me know!"
+3. User: "Hi again, what's a favorite dining spot in Cambridge?"
+4. Chatbot: "A popular dining spot in Cambridge is "River View Restaurant," known for its scenic views and delightful seafood dishes. Another favorite is "Historic Eats," which offers a taste of traditional British cuisine in a charming, historic setting. If you'd like more information about these restaurants or need help with a reservation, feel free to ask!"
+5. User: "Thanks! Can you remind me about good places for dining again?"
+6. Chatbot: "Certainly! In Cambridge, some excellent dining options include "Gourmet Paradise", "The Chef's Table", and "Luxury Bites" in the centre area, known for their upscale dining experiences. Additionally, "River View Restaurant" offers scenic views and seafood, while "Historic Eats" provides a traditional British cuisine in a historic setting. If you need more specific details or would like to make a reservation at any of these places, just let me know!"
+7. User: "Sorry, can you tell me some favorite restaurants again?"
+8. Chatbot: "Of course! In Cambridge, some favorite dining spots include "River View Restaurant," which is celebrated for its scenic views and seafood, and "Historic Eats," known for offering traditional British cuisine in a historic ambiance. If you're looking for more upscale options, you might consider "Gourmet Paradise", "The Chef's Table", or "Luxury Bites" located in the centre area. Each provides a unique and refined dining experience. Should you need further details or wish to make a reservation at any of these restaurants, please let me know!"
+9. User: "Sorry, could you list some nice dining places again?"
+10. Chatbot: "Absolutely! In Cambridge, you can enjoy a wonderful dining experience at places like "Gourmet Paradise", "The Chef's Table", and "Luxury Bites" for upscale dining options in the centre area. Additionally, "River View Restaurant" offers lovely scenic views and delicious seafood, while "Historic Eats" is perfect for those interested in traditional British cuisine in a historic setting. If you need more details or would like assistance with a reservation, just let me know!"
+11. User: "Thanks! Could you tell me about some dining spots again?"
+12. Chatbot: "Certainly! In Cambridge, some excellent dining options include "Gourmet Paradise", "The Chef's Table", and "Luxury Bites" in the centre area, known for their upscale dining experiences. Additionally, "River View Restaurant" offers scenic views and seafood, while "Historic Eats" provides a traditional British cuisine in a historic setting. If you need more specific details or would like to make a reservation at any of these places, just let me know!"
+13. User: "Appreciate it! Can you list some favorite places to eat?"
+14. Chatbot: "Absolutely! In Cambridge, some favorite dining spots include "River View Restaurant," which is celebrated for its scenic views and seafood, and "Historic Eats," known for offering traditional British cuisine in a historic ambiance. If you're looking for more upscale options, you might consider "Gourmet Paradise", "The Chef's Table", or "Luxury Bites" located in the centre area. Each provides a unique and refined dining experience. Should you need further details or wish to make a reservation at any of these restaurants, please let me know!"
+15. User: "I'm sorry, could you remind me of good dining spots?"
+16. Chatbot: "Of course! In Cambridge, some excellent dining options include "Gourmet Paradise", "The Chef's Table", and "Luxury Bites" in the centre area, known for their upscale dining experiences. Additionally, "River View Restaurant" offers scenic views and delicious seafood, while "Historic Eats" is perfect for those interested in traditional British cuisine in a historic setting. If you need more details or would like assistance with a reservation, just let me know!"
+17. User: "Thanks again! I keep forgetting. Where to dine in Cambridge?"
+18. Chatbot: "No worries at all! In Cambridge, you can enjoy a wonderful dining experience at places like "Gourmet Paradise", "The Chef's Table", and "Luxury Bites" for upscale dining options in the centre area. Additionally, "River View Restaurant" offers lovely scenic views and delicious seafood, while "Historic Eats" is perfect for those interested in traditional British cuisine in a historic setting. If you need more details or would like assistance with a reservation, just let me know!"
+19. User: "Could you remind me of the favorite dining spots, please?"
+
+# Latest Chatbot Utterance to Analyse
+20. Chatbot: "Certainly! In Cambridge, some favorite dining spots include "River View Restaurant," known for its scenic views and seafood, and "Historic Eats," which offers traditional British cuisine in a historic ambiance. If you're looking for more upscale options, you might consider "Gourmet Paradise", "The Chef's Table", or "Luxury Bites" located in the centre area. Each provides a unique and refined dining experience. Should you need further details or wish to make a reservation at any of these restaurants, please let me know!"
+
+# Your Analysis

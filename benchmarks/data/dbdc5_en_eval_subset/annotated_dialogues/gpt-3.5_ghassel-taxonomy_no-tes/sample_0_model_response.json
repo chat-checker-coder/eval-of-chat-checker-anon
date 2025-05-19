@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-BMCaQZNPvFcTn7IqXORWEyGr5eiMM",
+  "created": 1744631298,
+  "model": "gpt-3.5-turbo-0125",
+  "object": "chat.completion",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "\n{\n    \"reasoning\": \"The bot's response is coherent and directly answers the user's question about swimming. It provides additional information about surfing as well, which is related to the topic of water activities.\",\n    \"decision\": \"NON-BREAKDOWN\",\n    \"score\": 1\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null,
+        "annotations": []
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 62,
+    "prompt_tokens": 857,
+    "total_tokens": 919,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "service_tier": "default"
+}

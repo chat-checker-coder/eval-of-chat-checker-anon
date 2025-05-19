@@ -1,0 +1,139 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "I want to improve my mental wellbeing, but I'm scared I'll mess it up."
+3. Chatbot: "Improving your mental wellbeing is a wonderful goal, and it's okay to feel apprehensive. **Does that mean your goal is to enhance your mental wellbeing, or are you striving for a higher goal like achieving a balanced lifestyle, reducing stress, or building resilience?**"
+4. User: "I think reducing stress, but scared."
+5. Chatbot: "Reducing stress is an important and commendable goal, and it's completely normal to feel scared about it. **Do you already have a strategy or a procedure in mind to help you reduce stress?**
+
+For example:  
+- Regular meditation practice  
+- Consistent exercise routine  
+- Time management skills"
+6. User: "Not sure, feel overwhelmed."
+7. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve reducing stress. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task. 
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Research and practice mindfulness techniques to help manage and reduce stress levels.
+2. Learn about time management strategies to better organize tasks and reduce stress from feeling overwhelmed.
+3. Explore and implement relaxation exercises, such as deep breathing or progressive muscle relaxation, to help alleviate stress."
+8. User: "Mindfulness sounds nice, but hard."
+9. Chatbot: "I understand that mindfulness can seem challenging at first, but breaking it down into smaller, manageable steps can make it more approachable. 
+
+**What specific aspect of mindfulness would you like to learn or practice to help reduce stress?**"
+10. User: "Taking deep breaths seems doable."
+11. Chatbot: "That's a great start! Focusing on deep breathing can be a powerful way to reduce stress and promote relaxation. 
+
+**Would you like to set a learning goal to explore and practice deep breathing techniques?**"
+12. User: "Yes, but what if I fail?"
+13. Chatbot: "It's completely normal to feel uncertain, but remember that learning is a process, and it's okay to take small steps and make mistakes along the way. Each attempt is a step towards improvement, and the key is to be patient and kind to yourself.
+
+**Would you like to set a learning goal to explore and practice deep breathing techniques, focusing on gradual progress and self-compassion?**"
+14. User: "Okay, yes, I'll try."
+15. Chatbot: "Your goal of exploring and practicing deep breathing techniques already sounds good. **Could you try making your goal even more specific?**
+
+For Example:
+Learn 3 deep breathing techniques by Friday, practice daily."
+16. User: "Learn 1 technique by Friday."
+17. Chatbot: "Your goal of learning a deep breathing technique by Friday sounds now more specific. **Do you think you could now make it even more challenging while still being achievable for you?** If you can't, this is also okay.
+
+You for example could make your goal challenging by:  
+1. Learning a deep breathing technique today.  
+2. Practicing the technique daily until Friday.  
+3. Or increasing the difficulty by mastering 3 techniques."
+18. User: "I'm afraid to push myself."
+19. Chatbot: "I understand your concern, and it's important to set goals that feel right for you. **Would you like to keep your original goal, or is there a small step you feel comfortable adding to make it slightly more challenging?**"
+20. User: "I'll stick with the original."
+21. Chatbot: "It's great that you've set a goal to learn a deep breathing technique by Friday. **What do you think is the first action you could do in the next 7 days to get closer to your goal?**
+
+You could for example:  
+1. Watch 3 YouTube videos on deep breathing techniques.  
+2. Read a book chapter on deep breathing exercises.  
+3. Attend a workshop on stress-reduction breathing methods.  "
+22. User: "I'm leaning towards YouTube videos."
+23. Chatbot: "That sounds like a practical and accessible way to learn a deep breathing technique. **Do you want to proceed with watching 3 YouTube videos on deep breathing techniques as your action?**"
+24. User: "I'm scared it'll be too hard."
+25. Chatbot: "It's completely normal to feel a bit apprehensive when trying something new. YouTube videos often offer a range of difficulty levels, so you can start with beginner-friendly content. **Would you like to start with just one video to see how it goes?**"
+26. User: "Alright, I'll try one."
+
+# Latest Chatbot Utterance to Analyse
+27. Chatbot: "That's a great step towards learning deep breathing techniques! **What could be a good cue for you** that triggers the implementation of watching the video? It would be best to select a cue that follows a significant event and is very noticeable so you don't forget it.
+
+For Example:
+1. If I finish my lunch break at work, I will watch 1 YouTube video on deep breathing techniques.
+2. When I sit down at my desk in the morning, I'll watch 1 YouTube video on deep breathing techniques.
+3. If I make my morning coffee, I will watch 1 YouTube video on deep breathing techniques."
+
+# Your Analysis

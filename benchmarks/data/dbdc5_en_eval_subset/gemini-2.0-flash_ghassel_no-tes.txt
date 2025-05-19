@@ -1,0 +1,32 @@
+######### Data Stats #########
+File Num : 		194
+System Utterance Num : 	1940
+O Label Num : 		901
+T Label Num : 		90
+X Label Num : 		949
+
+######### Results #########
+Accuracy : 		0.571134 (1108/1940)
+
+Lenient Accuracy : 	0.621134 (1205/1940)
+
+Precision (X) : 	0.566638 (659/1163)
+Recall    (X) : 	0.694415 (659/949)
+F-measure (X) : 	0.624053
+
+Precision (T+X) : 	0.730009 (849/1163)
+Recall    (T+X) : 	0.668504 (849/1270)
+F-measure (T+X) : 	0.697904
+
+Avg F1 per dialogue : 	0.660249
+
+Avg Lenient Accuracy per dialogue : 	0.621134
+
+JS divergence (O,T,X) : 	0.267740
+JS divergence (O,T+X) : 	0.177697
+JS divergence (O+T,X) : 	0.178486
+
+Mean squared error (O,T,X) : 	0.134683
+Mean squared error (O,T+X) : 	0.176334
+Mean squared error (O+T,X) : 	0.179072
+###########################

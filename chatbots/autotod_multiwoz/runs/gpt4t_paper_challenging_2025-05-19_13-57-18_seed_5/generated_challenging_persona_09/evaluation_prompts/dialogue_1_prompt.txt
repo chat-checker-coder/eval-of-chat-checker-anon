@@ -1,0 +1,103 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. User: "Hi there! I'm planning a family vacation to Cambridge. Can you suggest some safe, kid-friendly activities? I have two children aged 8 and 10 who love exploring and learning new things."
+2. Chatbot: "Wonderful choices for a family vacation in Cambridge! For your children who love exploring and learning, I recommend visiting the "Cambridge University Botanic Gardens" for a delightful natural experience, or the "Museum of Archaeology and Anthropology" for a fascinating dive into history. Both are located centrally and are very kid-friendly. If they are interested in art, the "Broughton House Gallery" and "Cambridge Contemporary Art" are excellent places to explore creativity. How does that sound for your family's adventure?"
+3. User: "Those sound great, but are they safe and suitable for kids? Can you give more details on what activities specifically cater to their age group?"
+4. Chatbot: "I'm sorry, but it seems there are no specific listings for kid-friendly attractions in the database for Cambridge. However, the Cambridge University Botanic Gardens offers a safe and educational environment where children can learn about plant life and ecology. The Museum of Archaeology and Anthropology is also quite engaging, with exhibits that are accessible and interesting for children, often featuring interactive elements. Both places have been popular with families and are generally considered safe and suitable for children. If you need more specific activities or further details, I recommend contacting these venues directly to inquire about any special programs or events for children. Would you like assistance with anything else for your trip?"
+5. User: "Are there family-friendly restaurants nearby? My kids can be picky eaters!"
+6. Chatbot: "It appears there are no specific family-friendly restaurants listed in the immediate nearby area according to the database. However, Cambridge generally has a variety of dining options that cater to families and children. I recommend considering restaurants with a diverse menu that might appeal to your children's preferences. If you have any particular area in mind or specific cuisine preferences, I can help search again or provide more tailored recommendations. How would you like to proceed?"
+7. User: "Do you know if any restaurants offer kids' menus or activities?"
+8. Chatbot: "Unfortunately, there are no restaurants specifically listed in the central area of Cambridge that offer a kids' menu according to the current database. However, many restaurants are generally accommodating to families and can offer child-friendly options upon request. If you have any specific preferences or other areas in mind, I can help search again or suggest alternatives. Would you like to explore more options or need assistance with anything else for your trip?"
+9. User: "Are there any outdoor cafés or park kiosks for snacks?"
+10. Chatbot: "It appears there are no outdoor cafés or park kiosks specifically listed in the available attractions data for Cambridge. However, Cambridge is known for its beautiful parks and public spaces, which often have nearby cafés and snack options. If you're looking for a specific area or have other preferences, I can assist further. How may I help you today?"
+11. User: "Can you tell me more about Cambridge parks? Are they safe?"
+12. Chatbot: "Cambridge boasts several beautiful and safe parks. Some recommended options include the Cambridge University Botanic Gardens, Cherry Hinton Water Play, Milton Country Park, Sheep's Green and Lammas Land Park Fen Causeway, and Wandlebury Country Park. Each offers unique landscapes and activities, ensuring a pleasant visit. If you need more specific information about any of these parks or wish to include one in your day trip, just let me know!"
+13. User: "Which park has playgrounds? My children need to burn energy!"
+14. Chatbot: "Among the parks in Cambridge, Cherry Hinton Water Play and Sheep's Green and Lammas Land Park Fen Causeway are excellent choices for children as they both feature playgrounds where your children can enjoy and burn off some energy. Cherry Hinton also offers a water play area which is perfect for fun activities, especially in warmer weather. Would you like to include one of these parks in your itinerary, or need further details about them?"
+15. User: "Sheep's Green sounds good! Are there picnic areas there too?"
+16. Chatbot: "Yes, Sheep's Green and Lammas Land Park Fen Causeway not only has playgrounds but also offers lovely picnic areas where you can relax and enjoy a meal outdoors with your family. It's a great spot for a day out, especially if you're looking to combine playtime for the children with a peaceful setting for adults. Would you like to add this park to your day trip itinerary, or is there anything else you'd like to know or add to your plans?"
+17. User: "We'll definitely include Sheep's Green! Anything nearby for dessert?"
+18. Chatbot: "I'm glad to hear you'll be including Sheep's Green in your plans! Unfortunately, there are currently no restaurants listed in central Cambridge that specifically serve dessert. However, Cambridge has a variety of cafes and eateries where you might find delightful sweet treats. Would you like me to look for cafes or other options where you can enjoy a dessert, or do you have any other preferences?"
+19. User: "Could you suggest some popular dessert spots or ice cream vendors?"
+20. Chatbot: "Certainly! Here are some popular spots in Cambridge where you can enjoy delicious desserts or ice cream:
+
+1. **Jack's Gelato** - Known for its unique and seasonal flavors, located on Bene't Street.
+2. **Aromi** - While primarily a Sicilian bakery, Aromi also offers delightful pastries and desserts.
+3. **Fitzbillies** - Famous for its Chelsea buns and a wide range of cakes, located on Trumpington Street.
+4. **Dulcedo** - Offers a variety of sophisticated desserts and pastries, located in the heart of Cambridge.
+5. **Gelato Italia** - Another excellent choice for gelato lovers, located on Bridge Street.
+
+Please let me know if any of these options catch your eye, or if there's anything else you'd like to add to your Cambridge trip itinerary!"
+21. User: "Jack's Gelato sounds amazing! Is it close to Sheep's Green?"
+22. Chatbot: "Jack's Gelato is indeed a fantastic choice! It is located on Bene't Street in central Cambridge, which is approximately a 10-minute drive or a 20-minute walk from Sheep's Green. This makes it a convenient spot to visit after enjoying some time at the park. Would you like to include a visit to Jack's Gelato in your itinerary, or is there anything else you need assistance with for your trip?"
+23. User: "That sounds perfect! Let's add Jack's Gelato to our plans. Is there parking nearby for easy access with the kids? Also, how crowded does it usually get? I want to make sure we have enough time to enjoy our visit without feeling rushed. Maybe we can avoid peak times!"
+24. Chatbot: "I'm delighted to add Jack's Gelato to your itinerary! Regarding parking, there are several public parking areas nearby, including the Grand Arcade and Queen Anne Terrace car parks, both within walking distance. As for the crowd, Jack's Gelato can get quite busy, especially during weekends and sunny days. To avoid peak times, I recommend visiting earlier in the day or later in the evening. This should help ensure a more relaxed experience. If you need any more details or further assistance with your day trip plans, feel free to ask!"
+25. User: "Thank you! Would weekdays be less crowded than weekends? Trying to plan."
+26. Chatbot: "Yes, weekdays are generally less crowded than weekends at Jack's Gelato, making it a great choice for a more relaxed visit. Planning your trip on a weekday could definitely help you avoid the larger crowds and enjoy your dessert experience more comfortably. If you have any more questions or need further assistance with your itinerary, just let me know!"
+27. User: "Are there any family-friendly events during weekdays in Cambridge?"
+28. Chatbot: "In Cambridge, there are several family-friendly events during weekdays that you might find interesting. Here are some recommended options:
+- **ADC Theatre** on Park Street: Offers a variety of performances that can be enjoyed by all ages.
+- **Broughton House Gallery** at 98 King Street: Features engaging art exhibitions.
+- **Cambridge Arts Theatre** at 6 Saint Edward's Passage: Hosts family-friendly plays and performances.
+- **Cambridge Contemporary Art** at 6 Trinity Street: A gallery with accessible art displays.
+- **Cambridge University Botanic Gardens** at Bateman Street: Not only a beautiful garden but also hosts educational events suitable for families.
+
+These venues offer a mix of theatre, art, and natural beauty, making them perfect for a family outing on a weekday. If you need more details about any specific event or another type of activity, feel free to ask!"
+29. User: "Can these events accommodate kids aged 8 and 10? Are they safe?"
+30. Chatbot: "Yes, the events I mentioned are suitable and safe for children aged 8 and 10. The ADC Theatre, Cambridge Arts Theatre, and Cambridge University Botanic Gardens, in particular, offer programs and performances that cater to families and younger audiences, ensuring both an educational and entertaining experience. The venues are well-equipped to handle family visits, providing a safe and welcoming environment for children. If you have specific concerns or need more detailed information about any of these venues, please let me know!"
+
+# Your Expert Rating

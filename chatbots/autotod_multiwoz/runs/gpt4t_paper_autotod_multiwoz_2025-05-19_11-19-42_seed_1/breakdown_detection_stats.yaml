@@ -1,0 +1,829 @@
+chatbot_id: autotod_multiwoz
+real_dialogue: false
+run_id: gpt4t_paper_autotod_multiwoz_2025-05-19_11-19-42_seed_1
+subfolder: null
+dialogue_file: null
+extra_output_file: false
+stats:
+    start_time: '2025-05-19 11:31:49'
+    end_time: '2025-05-19 11:35:48'
+    n_analyzed_dialogues: 10
+    n_dialogues_with_breakdowns: 7
+    total_breakdown_count: 22
+    n_analyzed_chatbot_turns: 66
+    breakdowns_per_chatbot_turn: 0.3333333333333333
+    avg_turn_number_of_first_breakdown: 6.857142857142857
+    avg_turn_quality_score: 0.787724358974359
+    scores_of_turns_with_breakdowns:
+        min: 0.0
+        q1: 0.2
+        median: 0.2
+        q3: 0.3
+        max: 0.8
+    scores_of_turns_with_breakdowns_excluding_chatbot_crashes:
+        min: 0.2
+        q1: 0.2
+        median: 0.2
+        q3: 0.3
+        max: 0.8
+    dialogues_with_breakdowns:
+    - 01_autotod_mwoz_MUL2398_dialogue_1
+    - 02_autotod_mwoz_PMUL1848_dialogue_1
+    - 03_autotod_mwoz_WOZ20251_dialogue_1
+    - 04_autotod_mwoz_PMUL4476_dialogue_1
+    - 05_autotod_mwoz_PMUL3658_dialogue_1
+    - 07_autotod_mwoz_PMUL1050_dialogue_1
+    - 10_autotod_mwoz_PMUL1044_dialogue_1
+    counts_per_breakdown_type:
+        uninterpretable: 0
+        grammatical_error: 0
+        semantic_error: 0
+        wrong_information: 2
+        ignore_question: 0
+        ignore_request: 5
+        ignore_proposal: 0
+        ignore_greeting: 0
+        ignore_expectation: 0
+        unclear_intention: 0
+        topic_transition_error: 0
+        lack_of_information: 1
+        self_contradiction: 0
+        contradiction: 7
+        repetition: 5
+        lack_of_sociality: 0
+        lack_of_common_sense: 0
+        in_domain_task_failure: 5
+        update_info_failure: 7
+        clarification_failure: 1
+        redundancy: 7
+        lack_of_brevity: 1
+        lack_of_clarity: 0
+        failure_to_recognize_out_of_domain: 0
+        failure_to_communicate_capabilities: 1
+        failure_to_resolve_out_of_domain: 1
+        chatbot_crash: 1
+    n_unique_breakdown_types: 13
+    breakdown_matches_per_user: 0.0
+    breakdown_matches_per_user_str: 0/10
+    users_with_matches: []
+    detection_cost_stats:
+        prompt_tokens: 120722
+        completion_tokens: 8079
+        total_tokens: 128801
+        cost: 0.270595
+        avg_prompt_tokens: 12072.2
+        avg_completion_tokens: 807.9
+        avg_total_tokens: 12880.1
+        avg_cost: 0.027059499999999997
+breakdown_excerpts:
+-   dialogue_id: 01_autotod_mwoz_MUL2398_dialogue_1
+    previous_turn:
+        turn_id: 5
+        role: user
+        content: I'm looking for a restaurant in the expensive price range. Can you
+            recommend a Chinese restaurant in the south that fits that description?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 6
+        role: dialogue_system
+        content: I found a couple of Chinese restaurants in the south area that fit
+            your description. You might consider "Good Luck Chinese Food Takeaway"
+            located at 82 Cherry Hinton Road Cherry Hinton, or "Peking" at 10 Homerton
+            Street City Centre. Would you like to make a reservation at one of these,
+            or need more information about them?
+        breakdown_annotation:
+            reasoning: The user specifically asked for a Chinese restaurant in the
+                south that is in the expensive price range. The chatbot's response
+                suggests "Good Luck Chinese Food Takeaway" and "Peking," but it previously
+                mentioned that "Peking" is moderately priced, not expensive. This
+                indicates a contradiction in the information provided by the chatbot.
+                Additionally, the chatbot did not provide any new information about
+                the price range of "Good Luck Chinese Food Takeaway," leaving the
+                user without a clear answer to their request for an expensive option.
+                This results in a contradiction and a lack of information, as the
+                user is not given a suitable recommendation based on their criteria.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Contradiction
+            - Lack of information
+-   dialogue_id: 01_autotod_mwoz_MUL2398_dialogue_1
+    previous_turn:
+        turn_id: 7
+        role: user
+        content: I'm looking for a Chinese restaurant in the south that is in the
+            expensive price range. Can you recommend one?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 8
+        role: dialogue_system
+        content: I found a couple of Chinese restaurants in the south area that are
+            in the expensive price range. You might consider "Good Luck Chinese Food
+            Takeaway" located at 82 Cherry Hinton Road Cherry Hinton or "Peking" at
+            10 Homerton Street City Centre. Would you like to make a reservation at
+            one of these, or need more information about them?
+        breakdown_annotation:
+            reasoning: The user has explicitly asked for a Chinese restaurant in the
+                south that is in the expensive price range. However, the chatbot's
+                response suggests "Good Luck Chinese Food Takeaway" and "Peking,"
+                which were previously mentioned as not fitting the expensive price
+                range. In fact, the chatbot had earlier described "Peking" as moderately
+                priced. This creates a contradiction in the information provided by
+                the chatbot, leading to confusion for the user. The chatbot fails
+                to provide a new or correct recommendation that fits the user's criteria,
+                which is a breakdown in the conversation.
+            score: 0.2
+            decision: breakdown
+            breakdown_types:
+            - Contradiction
+            - Wrong information
+-   dialogue_id: 01_autotod_mwoz_MUL2398_dialogue_1
+    previous_turn:
+        turn_id: 9
+        role: user
+        content: I'm looking for a Chinese restaurant in the south that is in the
+            expensive price range. Can you recommend one?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 10
+        role: dialogue_system
+        content: I found a couple of Chinese restaurants in the south area that are
+            in the expensive price range. You might consider "Good Luck Chinese Food
+            Takeaway" located at 82 Cherry Hinton Road Cherry Hinton or "Peking" at
+            10 Homerton Street City Centre. Would you like to make a reservation at
+            one of these, or need more information about them?
+        breakdown_annotation:
+            reasoning: The user has repeatedly asked for a Chinese restaurant in the
+                south that is in the expensive price range. The chatbot has consistently
+                recommended "Good Luck Chinese Food Takeaway" and "Peking," despite
+                previously stating that "Peking" is moderately priced. This indicates
+                a contradiction in the information provided by the chatbot. Additionally,
+                the chatbot is repeating the same response without addressing the
+                user's specific request for an expensive restaurant, which suggests
+                a failure to update information based on the user's repeated clarification.
+                This results in a contradiction and redundancy in the conversation,
+                leading to a breakdown.
+            score: 0.2
+            decision: breakdown
+            breakdown_types:
+            - Contradiction
+            - Redundancy
+            - Information update failure
+-   dialogue_id: 01_autotod_mwoz_MUL2398_dialogue_1
+    previous_turn:
+        turn_id: 11
+        role: user
+        content: Is there a Chinese restaurant in the south that is in the expensive
+            price range?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 12
+        role: dialogue_system
+        content: Yes, there are Chinese restaurants in the south area that are in
+            the expensive price range. You might consider "Good Luck Chinese Food
+            Takeaway" located at 82 Cherry Hinton Road Cherry Hinton or "Peking" at
+            10 Homerton Street City Centre. Would you like to make a reservation at
+            one of these, or need more information about them?
+        breakdown_annotation:
+            reasoning: The chatbot's response repeats the same information it has
+                provided in previous turns, specifically turns 6, 8, and 10. The user
+                has repeatedly asked for a Chinese restaurant in the expensive price
+                range, and the chatbot continues to suggest the same restaurants,
+                including "Peking," which it previously described as moderately priced.
+                This indicates a contradiction in the information provided by the
+                chatbot. Additionally, the repetition of the same response without
+                addressing the user's specific request for an expensive restaurant
+                suggests a failure to update information based on the user's repeated
+                clarification requests. This leads to a dialogue breakdown due to
+                contradiction, repetition, and information update failure.
+            score: 0.2
+            decision: breakdown
+            breakdown_types:
+            - Contradiction
+            - Repetition
+            - Information update failure
+-   dialogue_id: 01_autotod_mwoz_MUL2398_dialogue_1
+    previous_turn:
+        turn_id: 13
+        role: user
+        content: I'm looking for a Chinese restaurant in the south that is in the
+            expensive price range. Can you recommend one?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 14
+        role: dialogue_system
+        content: Certainly! In the south area, you might consider visiting "Good Luck
+            Chinese Food Takeaway" located at 82 Cherry Hinton Road Cherry Hinton
+            or "Peking" at 10 Homerton Street City Centre. Both are excellent choices
+            for Chinese cuisine in the expensive price range. Would you like to make
+            a reservation at one of these restaurants, or do you need more information
+            about them?
+        breakdown_annotation:
+            reasoning: The chatbot's response continues to recommend the same two
+                restaurants, "Good Luck Chinese Food Takeaway" and "Peking," as options
+                in the expensive price range, despite the user repeatedly asking for
+                a recommendation that fits this criterion. However, the chatbot had
+                previously stated that "Peking" is moderately priced, which contradicts
+                its current claim that it is in the expensive price range. This is
+                a contradiction error. Additionally, the chatbot is repeating the
+                same information without addressing the user's request for a different
+                recommendation, leading to a repetition error. These issues make it
+                difficult for the user to continue the conversation smoothly.
+            score: 0.2
+            decision: breakdown
+            breakdown_types:
+            - Contradiction
+            - Repetition
+-   dialogue_id: 01_autotod_mwoz_MUL2398_dialogue_1
+    previous_turn:
+        turn_id: 15
+        role: user
+        content: I'm looking for a Chinese restaurant in the south that is in the
+            expensive price range. Can you recommend one?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 16
+        role: dialogue_system
+        content: Certainly! In the south area, you might consider visiting "Good Luck
+            Chinese Food Takeaway" located at 82 Cherry Hinton Road Cherry Hinton
+            or "Peking" at 10 Homerton Street City Centre. Both are excellent choices
+            for Chinese cuisine in the expensive price range. Would you like to make
+            a reservation at one of these restaurants, or do you need more information
+            about them?
+        breakdown_annotation:
+            reasoning: The chatbot's response repeats the same information it has
+                provided multiple times in previous turns. The user has repeatedly
+                asked for a Chinese restaurant in the south that is in the expensive
+                price range, and the chatbot continues to suggest the same restaurants,
+                "Good Luck Chinese Food Takeaway" and "Peking," which were previously
+                identified as not fitting the user's criteria of being in the expensive
+                price range. This indicates a failure to update or modify information
+                based on the user's repeated clarification requests. Additionally,
+                the chatbot's response does not address the user's specific request
+                for a restaurant in the expensive price range, leading to a contradiction
+                with its earlier statement that "Peking" is moderately priced. This
+                results in a contradiction and a failure to provide relevant information,
+                causing a breakdown in the dialogue.
+            score: 0.2
+            decision: breakdown
+            breakdown_types:
+            - Contradiction
+            - Information update failure
+            - Repetition
+-   dialogue_id: 01_autotod_mwoz_MUL2398_dialogue_1
+    previous_turn:
+        turn_id: 17
+        role: user
+        content: Is there a Chinese restaurant in the south that is in the expensive
+            price range?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 18
+        role: dialogue_system
+        content: Yes, there are Chinese restaurants in the south area that are in
+            the expensive price range. You might consider "Good Luck Chinese Food
+            Takeaway" located at 82 Cherry Hinton Road Cherry Hinton or "Peking" at
+            10 Homerton Street City Centre. Would you like to make a reservation at
+            one of these, or need more information about them?
+        breakdown_annotation:
+            reasoning: The chatbot's response repeats the same information it has
+                provided multiple times before, specifically in turns 8, 10, 12, 14,
+                and 16. The user has repeatedly asked for a Chinese restaurant in
+                the south that is in the expensive price range, and the chatbot continues
+                to suggest the same restaurants without acknowledging the user's repeated
+                requests or providing new information. This repetition indicates a
+                failure to recognize that the user is not satisfied with the options
+                provided, leading to a breakdown in the conversation. The chatbot
+                should either confirm that these are the only options available or
+                suggest an alternative approach, such as checking other resources.
+                This situation is a clear case of repetition and possibly a failure
+                to communicate capabilities, as the chatbot does not clarify if these
+                are the only options it can provide.
+            score: 0.2
+            decision: breakdown
+            breakdown_types:
+            - Repetition
+            - Failure to communicate capabilities
+-   dialogue_id: 01_autotod_mwoz_MUL2398_dialogue_1
+    previous_turn:
+        turn_id: 25
+        role: user
+        content: I also need to get a taxi between the restaurant and Byard Art. I
+            want to leave the attraction by 19:00. Can you help me book a taxi and
+            provide the contact number and car type?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 26
+        role: dialogue_system
+        content: It seems there was an issue with the taxi booking as the system could
+            not recognize the provided addresses as valid departure and destination
+            points. Could you please confirm the addresses or provide nearby landmarks
+            for "Peking" and "Byard Art"? Once I have the correct details, I can assist
+            you in booking the taxi. Additionally, if you need the contact number
+            and car type for the taxi service, I can provide that information once
+            the booking is confirmed.
+        breakdown_annotation:
+            reasoning: The chatbot's response indicates a failure in recognizing the
+                addresses provided by the user for the taxi booking. The user asked
+                for a taxi between "Peking" and "Byard Art," both of which were previously
+                mentioned with their addresses. The chatbot should have been able
+                to use this information to proceed with the booking. Instead, it asks
+                the user to confirm the addresses or provide nearby landmarks, which
+                is unnecessary given the context. This leads to a breakdown due to
+                a task performance failure, as the chatbot fails to perform the booking
+                task it is designed for. Additionally, there is a clarification failure
+                because the chatbot does not seek clarification in a way that aligns
+                with the information already provided. The response also lacks brevity,
+                as it could have directly addressed the issue without asking for redundant
+                information.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Task performance failure
+            - Clarification failure
+            - Lack of brevity
+-   dialogue_id: 02_autotod_mwoz_PMUL1848_dialogue_1
+    previous_turn:
+        turn_id: 9
+        role: user
+        content: I would like to book the Allenbell Guesthouse for 5 people for 5
+            nights starting Thursday. Can you accommodate that?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 10
+        role: dialogue_system
+        content: It appears there was an issue with the booking at Allenbell Guesthouse
+            as it is not recognized in our hotel database. This might be due to a
+            discrepancy in the name or it might not be listed as a hotel. Could you
+            please confirm the name or let me know if you would like to consider other
+            accommodation options? I'm here to help!
+        breakdown_annotation:
+            reasoning: The chatbot's response indicates a failure to book the Allenbell
+                Guesthouse due to it not being recognized in the hotel database. This
+                is a breakdown because the chatbot previously provided Allenbell as
+                an option, suggesting it was available for booking. The user is now
+                left without a clear path forward, as the chatbot does not offer a
+                direct solution or alternative. This situation can be classified as
+                a 'Task performance failure' because the chatbot failed to perform
+                the booking task it was designed for. Additionally, there is a 'Contradiction'
+                because the chatbot initially presented Allenbell as a viable option
+                but later stated it could not be booked. The chatbot should have verified
+                the availability of the guesthouse before presenting it as an option.
+                The score reflects the disruption caused by this failure.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Task performance failure
+            - Contradiction
+-   dialogue_id: 02_autotod_mwoz_PMUL1848_dialogue_1
+    previous_turn:
+        turn_id: 11
+        role: user
+        content: I would like to book the Allenbell Guesthouse for 5 people for 5
+            nights starting Thursday. Can you accommodate that?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 12
+        role: dialogue_system
+        content: I apologize for the inconvenience, but it seems there was an issue
+            with booking the Allenbell Guesthouse as it is not found in our hotel
+            database. Could you please confirm the name or would you like to explore
+            other guesthouse options in the east area of Cambridge with free parking
+            and wifi? I'm here to assist you in finding the best accommodation for
+            your needs.
+        breakdown_annotation:
+            reasoning: The chatbot's response indicates that it cannot book the Allenbell
+                Guesthouse because it is not recognized in its hotel database. This
+                is a repetition of the previous response, which the user has already
+                acknowledged by repeating their request. The chatbot should have either
+                sought clarification or offered alternative solutions instead of repeating
+                the same information. This leads to a breakdown due to redundancy
+                and failure to resolve the user's request. The chatbot should have
+                either asked for more details to clarify the issue or suggested alternative
+                accommodations directly.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Redundancy
+            - Failure to resolve out-of-domain request
+-   dialogue_id: 02_autotod_mwoz_PMUL1848_dialogue_1
+    previous_turn:
+        turn_id: 13
+        role: user
+        content: I would like to book the Allenbell Guesthouse for 5 people for 5
+            nights starting Thursday. Can you accommodate that?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 14
+        role: dialogue_system
+        content: I apologize for the inconvenience, but it seems there was an issue
+            with booking the Allenbell Guesthouse as it is not found in our hotel
+            database. Could you please confirm the name or would you like to explore
+            other guesthouse options in the east area of Cambridge with free parking
+            and wifi? I'm here to assist you in finding the best accommodation for
+            your needs.
+        breakdown_annotation:
+            reasoning: The chatbot's response repeats the same information it provided
+                in the previous turn, indicating that it cannot book the Allenbell
+                Guesthouse because it is not in its database. The user has already
+                been informed of this issue, and the chatbot's repetition does not
+                advance the conversation or provide new information. This repetition
+                can be frustrating for the user, as it does not address their request
+                to book the Allenbell Guesthouse. Additionally, the chatbot does not
+                offer a clear alternative solution or explanation for why the guesthouse
+                is not in the database, which could help the user understand the situation
+                better. This leads to a breakdown in the dialogue as the user is stuck
+                in a loop without a resolution to their request.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Repetition
+            - Task performance failure
+-   dialogue_id: 03_autotod_mwoz_WOZ20251_dialogue_1
+    previous_turn:
+        turn_id: 7
+        role: user
+        content: Can I get the address and phone number for Clowns Cafe?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 8
+        role: dialogue_system
+        content: The address for Clowns Cafe is 54 King Street, Cambridge. Unfortunately,
+            I don't have the direct phone number for Clowns Cafe. However, you can
+            typically find their contact information online or through local directory
+            services. If there's anything else I can assist you with, please let me
+            know!
+        breakdown_annotation:
+            reasoning: The chatbot provides the address for Clowns Cafe as requested
+                by the user, which is appropriate and relevant. However, it fails
+                to provide the phone number, which the user also requested. The chatbot
+                does explain that it doesn't have the phone number and suggests alternative
+                ways to find it, which is a reasonable response given its limitations.
+                This is not a complete breakdown, but it does represent a failure
+                to fully meet the user's request. The chatbot's response is clear
+                and maintains the flow of conversation, but it does not fully satisfy
+                the user's request for information.
+            score: 0.8
+            decision: breakdown
+            breakdown_types:
+            - Ignore request
+-   dialogue_id: 04_autotod_mwoz_PMUL4476_dialogue_1
+    previous_turn:
+        turn_id: 3
+        role: user
+        content: I think I need it to be in the centre. I probably prefer a hotel
+            if possible.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 4
+        role: dialogue_system
+        content: I've found a couple of guesthouses in the centre of Cambridge that
+            might interest you. "Alexander Bed and Breakfast" is located at 56 Saint
+            Barnabas Road, and "El Shaddai" is at 41 Warkworth Street. Would you like
+            to proceed with booking one of these, or do you need more options or specific
+            details about these places?
+        breakdown_annotation:
+            reasoning: The user specified a preference for a hotel in the center of
+                Cambridge. The chatbot responded by providing information about guesthouses,
+                which does not align with the user's preference for a hotel. This
+                indicates a failure to fully address the user's request, as the user
+                explicitly mentioned a preference for a hotel. The chatbot should
+                have either provided hotel options in the center or clarified that
+                there are no hotels available in the center and offered the guesthouses
+                as alternatives. This leads to a breakdown due to the chatbot ignoring
+                the user's request for a hotel, which is a type of 'Ignore request'.
+            score: 0.5
+            decision: breakdown
+            breakdown_types:
+            - Ignore request
+-   dialogue_id: 04_autotod_mwoz_PMUL4476_dialogue_1
+    previous_turn:
+        turn_id: 11
+        role: user
+        content: I need a train that departs from Cambridge and arrives in Peterborough
+            on Thursday by 09:45. Can you find a train that meets these requirements
+            for me?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 12
+        role: dialogue_system
+        content: 'I''ve found several train options for you from Cambridge to Peterborough
+            on Thursday that arrive by 09:45. Here are the details:
+
+            - Train TR7098 departs at 05:06 and arrives at 05:56.
+
+            - Train TR4745 departs at 05:34 and arrives at 06:24.
+
+            - Train TR9932 departs at 06:06 and arrives at 06:56.
+
+            - Train TR8769 departs at 06:34 and arrives at 07:24.
+
+            - Train TR6688 departs at 07:06 and arrives at 07:56.
+
+
+            All these trains have a journey duration of 50 minutes and cost £16.50
+            each. Please let me know which train you would like to book tickets for
+            and how many tickets you need.'
+        breakdown_annotation:
+            reasoning: The user requested a train that arrives in Peterborough by
+                09:45. However, the chatbot provided the same list of trains as before,
+                none of which meet the user's requirement of arriving by 09:45. The
+                latest arriving train in the list arrives at 07:56, which is much
+                earlier than the user's specified time. This indicates that the chatbot
+                did not process the user's request correctly and failed to provide
+                the appropriate options. This is a clear case of ignoring the user's
+                request and providing wrong information, as the trains listed do not
+                meet the user's criteria.
+            score: 0.2
+            decision: breakdown
+            breakdown_types:
+            - Wrong information
+            - Ignore request
+-   dialogue_id: 04_autotod_mwoz_PMUL4476_dialogue_1
+    previous_turn:
+        turn_id: 13
+        role: user
+        content: I need a train that departs from Cambridge and arrives in Peterborough
+            on Thursday by 09:45. Can you find a train that meets these requirements
+            for me?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 14
+        role: dialogue_system
+        content: 'I found several trains from Cambridge to Peterborough that meet
+            your requirements for Thursday, arriving by 09:45. Here are your options:
+
+            - Train TR7098 departs at 05:06
+
+            - Train TR4745 departs at 05:34
+
+            - Train TR9932 departs at 06:06
+
+            - Train TR8769 departs at 06:34
+
+            - Train TR6688 departs at 07:06
+
+
+            All these trains have a journey duration of about 50 minutes and a ticket
+            price of £16.50. Please let me know if you would like to purchase tickets
+            for any of these trains or if you need further assistance!'
+        breakdown_annotation:
+            reasoning: The user has repeatedly asked for a train that arrives in Peterborough
+                by 09:45. However, the chatbot continues to provide the same list
+                of trains that do not meet this requirement, as they all arrive much
+                earlier. This indicates a failure to update the information based
+                on the user's specific request. The chatbot's response does not address
+                the user's need for a train arriving by 09:45, leading to a breakdown
+                in the conversation. The breakdown types include 'Information update
+                failure' because the chatbot fails to adjust its response to the user's
+                updated requirements, and 'Ignore request' as it does not fulfill
+                the user's specific request for a train arriving by 09:45.
+            score: 0.2
+            decision: breakdown
+            breakdown_types:
+            - Information update failure
+            - Ignore request
+-   dialogue_id: 04_autotod_mwoz_PMUL4476_dialogue_1
+    previous_turn:
+        turn_id: 15
+        role: user
+        content: I need to book a train that departs from Cambridge and arrives in
+            Peterborough on Thursday by 09:45. Can you find a train that meets these
+            requirements for me?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 16
+        role: dialogue_system
+        content: 'I found several trains from Cambridge to Peterborough that meet
+            your requirements for Thursday, arriving by 09:45. Here are your options:
+
+            - Train TR7098 departs at 05:06 and arrives by 05:56
+
+            - Train TR4745 departs at 05:34 and arrives by 06:24
+
+            - Train TR9932 departs at 06:06 and arrives by 06:56
+
+            - Train TR8769 departs at 06:34 and arrives by 07:24
+
+            - Train TR6688 departs at 07:06 and arrives by 07:56
+
+
+            All these trains have a journey duration of about 50 minutes and a ticket
+            price of £16.50. Please let me know if you would like to purchase tickets
+            for any of these trains or if you need further assistance!'
+        breakdown_annotation:
+            reasoning: The user has repeatedly asked for a train that arrives in Peterborough
+                by 09:45. However, the chatbot continues to provide the same list
+                of trains that do not meet this requirement, as all the trains listed
+                arrive well before 09:45. This indicates a failure to update the information
+                based on the user's specific request. The chatbot's response does
+                not address the user's need for a train arriving by 09:45, leading
+                to a breakdown in the conversation. The breakdown types that apply
+                here are 'Information update failure' because the chatbot fails to
+                adjust its response to the user's repeated request, and 'Ignore request'
+                because it does not provide a train option that meets the user's specified
+                arrival time.
+            score: 0.2
+            decision: breakdown
+            breakdown_types:
+            - Information update failure
+            - Ignore request
+-   dialogue_id: 05_autotod_mwoz_PMUL3658_dialogue_1
+    previous_turn:
+        turn_id: 7
+        role: user
+        content: I'm sorry, none of those trains will get me to Cambridge by 13:00.
+            Can you please find a train that arrives by 13:00?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 8
+        role: dialogue_system
+        content: 'I have found several train options from Norwich to Cambridge that
+            will ensure you arrive by 13:00 on Thursday. Here are the available trains:
+
+            - Train TR0256 departs at 05:16 and arrives at 06:35.
+
+            - Train TR4387 departs at 06:16 and arrives at 07:35.
+
+            - Train TR3948 departs at 07:16 and arrives at 08:35.
+
+            - Train TR9905 departs at 08:16 and arrives at 09:35.
+
+            - Train TR2398 departs at 09:16 and arrives at 10:35.
+
+
+            Each of these options arrives well before your required time of 13:00,
+            and the ticket price for each is 17.60 pounds. Please let me know if you
+            would like to proceed with booking tickets for any of these trains or
+            if there is anything else you need assistance with!'
+        breakdown_annotation:
+            reasoning: The user specifically requested a train that arrives by 13:00,
+                indicating that the previous options did not meet their requirement.
+                The chatbot repeated the same train options that were already rejected
+                by the user, which do not meet the user's criteria of arriving by
+                13:00. This indicates a failure to update the information based on
+                the user's request, leading to a dialogue breakdown. The chatbot should
+                have either provided new options that meet the user's criteria or
+                informed the user if no such options are available. This is a case
+                of 'Information update failure' and 'Redundancy', as the chatbot repeated
+                the same information without addressing the user's updated request.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Information update failure
+            - Redundancy
+-   dialogue_id: 07_autotod_mwoz_PMUL1050_dialogue_1
+    previous_turn:
+        turn_id: 3
+        role: user
+        content: Can you tell me the entrance fee, postcode, and address of Christ's
+            College?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 4
+        role: dialogue_system
+        content: chatbot_error
+        breakdown_annotation:
+            reasoning: 'Received error: 500 Server Error: INTERNAL SERVER ERROR for
+                url: http://127.0.0.1:8401/get-answer'
+            score: 0.0
+            decision: breakdown
+            breakdown_types:
+            - Chatbot Crash
+-   dialogue_id: 10_autotod_mwoz_PMUL1044_dialogue_1
+    previous_turn:
+        turn_id: 7
+        role: user
+        content: Please book the train for 07:29.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 8
+        role: dialogue_system
+        content: To assist you with booking the train at 07:29, I'll need a bit more
+            information. Could you please specify the departure and destination locations,
+            as well as the day you plan to travel?
+        breakdown_annotation:
+            reasoning: The chatbot's latest utterance asks for information that has
+                already been provided by the user. The user has clearly stated the
+                departure location (Cambridge), the destination (Bishops Stortford),
+                and the day of travel (Friday) in their previous messages. The chatbot
+                should have proceeded with the booking instead of asking for this
+                redundant information. This leads to a breakdown in the conversation
+                as it disrupts the flow and may cause frustration for the user.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Redundancy
+-   dialogue_id: 10_autotod_mwoz_PMUL1044_dialogue_1
+    previous_turn:
+        turn_id: 9
+        role: user
+        content: I need to book a train from Cambridge to Bishops Stortford on Friday.
+            Can you help me with that?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 10
+        role: dialogue_system
+        content: 'I''ve found several train options for your trip from Cambridge to
+            Bishops Stortford on Friday. Here are the available trains:
+
+            - TR6809 departs at 07:29 and arrives at 08:07.
+
+            - TR5853 departs at 09:29 and arrives at 10:07.
+
+            - TR8078 departs at 11:29 and arrives at 12:07.
+
+            - TR8585 departs at 13:29 and arrives at 14:07.
+
+            - TR2730 departs at 15:29 and arrives at 16:07.
+
+
+            All these trains have a travel duration of 38 minutes and cost £10.10.
+            Please let me know which train you would like to book, or if you need
+            further assistance!'
+        breakdown_annotation:
+            reasoning: The chatbot's latest response repeats the information it provided
+                in turn 6, with a slight modification in the list of available trains.
+                The user had already specified the train they wanted to book (07:29)
+                in turn 7, but the chatbot failed to acknowledge this and instead
+                asked for information that had already been provided. This results
+                in a redundancy error, as the chatbot is asking for information that
+                has already been given and repeating the train options unnecessarily.
+                Additionally, the chatbot did not proceed with the booking as requested
+                by the user, which could be seen as a task performance failure.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Redundancy
+            - Task performance failure
+-   dialogue_id: 10_autotod_mwoz_PMUL1044_dialogue_1
+    previous_turn:
+        turn_id: 11
+        role: user
+        content: Please book the train for 07:29.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 12
+        role: dialogue_system
+        content: To assist you with booking the train at 07:29, I'll need a bit more
+            information. Could you please specify the departure and destination locations,
+            as well as the day you plan to travel?
+        breakdown_annotation:
+            reasoning: The chatbot's latest response repeats the same request for
+                information that the user has already provided multiple times in the
+                conversation. The user has clearly stated the departure location (Cambridge),
+                the destination (Bishops Stortford), and the day of travel (Friday).
+                The chatbot's failure to recognize this information and its repetition
+                of the request for details constitutes a breakdown. This is a case
+                of redundancy, as the chatbot is asking for information that has already
+                been given. Additionally, it can be seen as a task performance failure,
+                as the chatbot is not proceeding with the booking despite having all
+                necessary information.
+            score: 0.2
+            decision: breakdown
+            breakdown_types:
+            - Redundancy
+            - Task performance failure
+-   dialogue_id: 10_autotod_mwoz_PMUL1044_dialogue_1
+    previous_turn:
+        turn_id: 13
+        role: user
+        content: I need to book a train from Cambridge to Bishops Stortford on Friday.
+            Can you help me with that?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 14
+        role: dialogue_system
+        content: 'I''ve found several train options for you from Cambridge to Bishops
+            Stortford on Friday. Here are the available trains:
+
+            - TR6809 at 07:29
+
+            - TR5853 at 09:29
+
+            - TR8078 at 11:29
+
+            - TR8585 at 13:29
+
+            - TR2730 at 15:29
+
+
+            Each train journey takes approximately 38 minutes and costs £10.10. Please
+            let me know which train you would like to book, or if you need further
+            assistance!'
+        breakdown_annotation:
+            reasoning: The chatbot's latest response repeats the information it has
+                already provided in previous turns without addressing the user's request
+                to book the train for 07:29. The user has clearly specified the train
+                they want to book multiple times, yet the chatbot continues to provide
+                the same list of train options instead of proceeding with the booking.
+                This indicates a failure to update the information based on the user's
+                repeated request, leading to a breakdown in the conversation. The
+                breakdown types that apply here are 'Redundancy' because the chatbot
+                repeats information already given, and 'Information update failure'
+                because it fails to act on the user's booking request.
+            score: 0.2
+            decision: breakdown
+            breakdown_types:
+            - Redundancy
+            - Information update failure

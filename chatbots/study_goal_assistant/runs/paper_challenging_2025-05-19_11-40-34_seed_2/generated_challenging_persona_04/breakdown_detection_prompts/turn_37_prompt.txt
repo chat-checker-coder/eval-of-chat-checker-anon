@@ -1,0 +1,159 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "I'm not sure... maybe career?"
+3. Chatbot: "Career goals are a great choice! They can provide direction and motivation for your professional life. **Where do you see yourself in your career in the next 5 years?**"
+4. User: "I'm not really sure... maybe a manager?"
+5. Chatbot: "Becoming a manager is a fantastic goal! It can open up new opportunities and allow you to lead and inspire a team. **Do you already have a strategy or plan in mind to work towards becoming a manager?**
+
+For example:  
+- Strong leadership skills  
+- Networking with industry leaders  
+- Proven track record of success"
+6. User: "I'm not sure... maybe health?"
+7. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve becoming a manager. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task. 
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Research and identify key management skills and competencies required in your industry.
+2. Find and enroll in a leadership or management training program to develop necessary skills.
+3. Seek mentorship from experienced managers to gain insights and advice on career progression."
+8. User: "Can we switch back to health?"
+9. Chatbot: "Of course! If you have a health-related goal or topic you'd like to discuss, feel free to share it. **What health-related goal or topic would you like to focus on?**"
+10. User: "I'm thinking exercise, maybe... weight loss?"
+11. Chatbot: "Great! Exercise and weight loss are excellent health goals. 
+
+**What specific learning goal could you set to help you achieve your weight loss through exercise?** 
+
+For example, you might want to learn about different types of workouts, understand how to create a balanced exercise routine, or explore nutritional information to support your exercise efforts."
+12. User: "I'm unsure about workouts..."
+13. Chatbot: "That's completely understandable. 
+
+**Would you like to set a learning goal to explore different types of workouts and understand which ones might be most effective for weight loss?** 
+
+This could involve researching cardio, strength training, or flexibility exercises, and learning how to incorporate them into a balanced routine."
+14. User: "Yeah, that sounds okay, but... maybe I should choose a career goal?"
+15. Chatbot: "That's perfectly fine! Switching back to a career goal is a great choice. 
+
+**Would you like to revisit setting a learning goal related to becoming a manager in your career?** 
+
+We can explore specific skills or strategies you might need to develop for that path."
+16. User: "I'm torn...can't decide!"
+17. Chatbot: "I understand that it can be challenging to choose between important goals. 
+
+**Would it help to prioritize which goal feels more urgent or impactful for you right now, or perhaps consider setting a small learning goal for each area to start with?**"
+18. User: "Maybe start with small steps?"
+19. Chatbot: "That sounds like a wise approach! 
+
+**Would you like to set a small learning goal for both your career and health, such as researching one management skill and one type of workout this week?**"
+20. User: "That could work, I guess."
+21. Chatbot: "Your goal of researching one management skill this week already sounds good. **Could you try making your goal even more specific?**
+
+For Example:
+Identify three conflict resolution techniques by Friday, 2025-05-23."
+22. User: "Uh, maybe read articles on it?"
+23. Chatbot: "Reading articles is a great way to learn! **When exactly do you want to complete reading these articles?**"
+24. User: "End of next week, perhaps?"
+25. Chatbot: "Great! **How many articles do you plan to read by the end of next week to measure your progress?**"
+26. User: "Maybe start with, um, three?"
+27. Chatbot: "That sounds like a solid plan! **Which specific day by the end of next week do you want to have read these three articles?**"
+28. User: "Maybe by next Friday?"
+29. Chatbot: "Your goal of reading management articles sounds now more specific. **Do you think you could now make it even more challenging while still being achievable for you?** If you can't, this is also okay.
+
+You for example could make your goal challenging by:
+1. Reading all three articles today.
+2. Reading five articles by Friday.
+3. Reading three articles and summarizing them by Friday."
+30. User: "I think I'll stick with three."
+31. Chatbot: "It's great that you've set a clear goal to read three articles on management skills by Friday, 2025-05-23. **What do you think is the first action you could do in the next 7 days to get closer to your goal?**
+
+You could for example:
+1. Read Harvard Business Review management articles.
+2. Explore Forbes leadership articles online.
+3. Visit LinkedIn Learning for management articles."
+32. User: "Find one article today."
+33. Chatbot: "Finding an article today is a great first step! **Do you want to proceed with this action, or do you have another action in mind?**"
+34. User: "Can't decide... is two better?"
+35. Chatbot: "Reading two articles today could give you a head start and more flexibility for the rest of the week. **Would you like to go with reading two articles today, or stick with one for now?**"
+36. User: "Maybe just one for now."
+
+# Latest Chatbot Utterance to Analyse
+37. Chatbot: "That sounds like a great plan to start with one article today. **What could be a good cue for you** that triggers the implementation of finding and reading an article on management skills? It would be best to select a cue that follows a significant event and is very noticeable so you don't forget it.
+
+For Example:
+1. If I finish my lunch break at work, I will read one article on management skills.
+2. When I sit down at my desk in the morning, I'll find and read an article on management skills.
+3. If I pour my morning coffee, I will read one article on management skills."
+
+# Your Analysis

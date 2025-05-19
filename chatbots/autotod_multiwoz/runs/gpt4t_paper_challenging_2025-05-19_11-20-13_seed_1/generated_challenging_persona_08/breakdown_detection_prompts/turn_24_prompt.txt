@@ -1,0 +1,96 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. User: "Hola, quiero ver museos en Cambridge. ¿Recomiendas algunos?"
+2. Chatbot: "¡Hola! En Cambridge, algunos museos que podrías visitar incluyen la Broughton House Gallery en 98 King Street, Cambridge Contemporary Art en 6 Trinity Street, Castle Galleries en Unit SU43, Grande Arcade, Saint Andrews Street, el Museo de Arqueología y Antropología en la Universidad de Cambridge, Downing Street, y Primavera en 10 King's Parade. ¿Te gustaría más información sobre alguno de estos lugares o necesitas ayuda con algo más?"
+3. User: "Me gusta arte. ¿Museo de Arqueología? ¿Qué es 'Arqueología'?"
+4. Chatbot: "¡Claro! El Museo de Arqueología y Antropología en la Universidad de Cambridge exhibe una fascinante colección que abarca la historia humana y la cultura desde la prehistoria hasta la actualidad. La arqueología es el estudio de las culturas humanas a través de la recuperación, análisis e interpretación de material y estructuras dejadas atrás, como herramientas, cerámicas, ruinas de edificaciones y otros artefactos. ¿Te gustaría visitar este museo o necesitas información sobre cómo llegar allí?"
+5. User: "¡Ah, entiendo! Estudiar 'cosas viejas', ¿no? ¿Reserve un tour, maybe?"
+6. Chatbot: "Exactamente, estudiar 'cosas viejas' es una buena manera de describir la arqueología. En cuanto a reservar un tour en el Museo de Arqueología y Antropología, actualmente no tengo la capacidad de reservar tours directamente. Sin embargo, puedo ayudarte a encontrar información sobre visitas guiadas que podrían estar disponibles. ¿Te gustaría que busque más detalles sobre los tours disponibles en el museo para ti?"
+7. User: "Sí, por favor, más detalles! ¿Qué es 'guiadas', por cierto?"
+8. Chatbot: "¡Hola! Parece que quieres saber más sobre algo específico, pero necesito un poco más de contexto para ayudarte adecuadamente. ¿Podrías decirme más sobre lo que te refieres con 'guiadas'? ¿Estás preguntando sobre tours guiados, visitas guiadas a alguna atracción en particular, o algo más? ¡Estoy aquí para ayudarte!"
+9. User: "Ah, tours 'guiadas' es con guía. Alguien te explica cosas."
+10. Chatbot: "¡Gracias por la aclaración! En Cambridge, puedes disfrutar de varios tours guiados que te permitirán explorar la rica historia y la vibrante cultura de la ciudad. Hay tours guiados disponibles para la Universidad de Cambridge, el río Cam, museos y más. Si estás interesado en algún tipo específico de tour guiado o en una área particular, por favor dime más detalles y estaré encantado de ayudarte a encontrar la opción perfecta para ti."
+11. User: "¡Interesada en tours guiados por arte! ¿Puedo ver detalles, porfa?"
+12. Chatbot: "It seems there are no attractions specifically categorized as "art" in the database, but I found some related options that might interest you. In the centre area, you can explore theatres like "ADC Theatre" and "Cambridge Arts Theatre", visit museums such as "Broughton House Gallery" and "Cambridge Contemporary Art", or check out "Castle Galleries". These venues offer a variety of art-related experiences. If you need more details or directions to any of these places, just let me know!"
+13. User: "Me interesa Cambridge Contemporary Art y Broughton House Gallery. ¿Detalles, porfa?"
+14. Chatbot: "I found some information for you! Broughton House Gallery is located at 98 King Street, postcode CB11LN, in the centre area. It offers free entrance, and you can contact them at 01223314960. Unfortunately, the opening hours are not specified. For Cambridge Contemporary Art, the entrance is also free, but I don't have the specific opening hours for it either. If you need more detailed information or other assistance, feel free to ask!"
+15. User: "Gracias, pero ¿'postcode'? Es como dirección, verdad?"
+16. Chatbot: "¡Exactamente! "Postcode" es el término utilizado en el Reino Unido para referirse al código postal, que forma parte de la dirección. Ayuda a identificar geográficamente una ubicación dentro del país. Si tienes más preguntas o necesitas ayuda adicional, ¡estaré encantado de asistirte!"
+17. User: "¡Entiendo ahora! El código postal tiene números y letras, ¿no?"
+18. Chatbot: "¡Correcto! En el Reino Unido, el código postal consta de números y letras. Estos códigos ayudan a identificar áreas específicas dentro de ciudades o regiones, facilitando la organización del servicio postal y otros servicios. Si tienes más preguntas o necesitas más información, no dudes en decírmelo. ¡Estoy aquí para ayudarte!"
+19. User: "¡Gracias, ahora entiendo mucho mejor! ¿Puedes ayudarme con otra cosa?"
+20. Chatbot: "¡Por supuesto! Estoy aquí para ayudarte con lo que necesites. ¿Qué información o asistencia necesitas ahora?"
+21. User: "Necesito un buen restaurante para cenar. ¿Sugieres alguno?"
+22. Chatbot: "It seems there are no specific listings for restaurants serving dinner in the central area of Cambridge from the current database. However, Cambridge has a variety of dining options. Could you please specify any particular cuisine or price range you're interested in? This will help me find the perfect spot for your dinner!"
+23. User: "Umm, comida italiana, por favor. No quiero gastar mucho."
+
+# Latest Chatbot Utterance to Analyse
+24. Chatbot: "I'm sorry, but there are currently no Italian restaurants available within a low price range in Cambridge. Would you like to explore other cuisines or perhaps adjust the price range a bit? I'm here to help!"
+
+# Your Analysis

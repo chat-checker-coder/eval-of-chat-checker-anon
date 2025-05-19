@@ -1,0 +1,131 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "I aim to lead tech projects."
+3. Chatbot: "That's an exciting goal! Leading tech projects can be incredibly rewarding and a great opportunity to make a significant impact.
+
+**Do you already have a strategy or procedure in mind to achieve this goal?**
+
+For example:  
+- Strong project management skills  
+- Experience in agile methodologies  
+- Technical expertise in relevant field"
+4. User: "I have some project management skills."
+5. Chatbot: "That's a great start! Having project management skills is definitely beneficial.
+
+**Do you think this strategy is already a good strategy to achieve your goal of leading tech projects?**"
+6. User: "It needs more depth, especially in leadership."
+7. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve your goal of leading tech projects. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task.
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Research effective project management methodologies and tools used in leading tech projects.
+2. Develop skills in communication and team leadership to effectively manage and motivate a tech team.
+3. Learn about risk management strategies specific to technology projects to anticipate and mitigate potential challenges."
+8. User: "Develop skills in team leadership."
+9. Chatbot: "Your goal of developing skills in team leadership already sounds good. **Could you try making your goal even more specific?**
+
+For Example:
+'Implement three team leadership strategies by June 30, 2025.'"
+10. User: "Implement two leadership strategies by December 2024."
+11. Chatbot: "**How will you measure the success of implementing these two leadership strategies?**"
+12. User: "By team feedback and project outcomes."
+13. Chatbot: "Your goal of 'implementing leadership strategies' sounds now more specific. 
+
+**Do you think you could now make it even more challenging while still being achievable for you?** If you can't, this is also okay.
+
+You could make your goal more challenging by:  
+1. Implementing two strategies by June 2024.  
+2. Gathering team feedback by March 2024.  
+3. Increasing difficulty by implementing three strategies."
+14. User: "I'll aim for three strategies."
+15. Chatbot: "It's great to see your commitment to implementing three leadership strategies by December 2024. **What do you think is the first action you could do in the next 7 days to get closer to your goal?**
+
+You could for example:  
+1. Read three books on leadership strategies.  
+2. Attend a leadership workshop or seminar.  
+3. Interview successful tech project leaders.  "
+16. User: "Attend a leadership workshop online."
+17. Chatbot: "Attending a leadership workshop online is a great way to gain insights and learn new strategies. **Do you want to proceed with this action, or do you have another action in mind?**"
+18. User: "Yes, I'll proceed with that."
+19. Chatbot: "Attending a leadership workshop online is a fantastic choice for personal and professional growth. **What could be a good cue for you** that triggers the implementation of this action? It would be best to select a cue that follows a significant event and is very noticeable so you don't forget it.
+
+For Example:
+1. If I finish my lunch break at work, I will attend a leadership workshop online.
+2. When I log off from my work computer at 5 PM, I'll join a leadership workshop.
+3. If I complete my morning coffee routine, I will schedule a leadership workshop session."
+20. User: "When I log off at 5 PM."
+21. Chatbot: "Great choice! Logging off at 5 PM is a clear and consistent cue. **Where will you be when you log off at 5 PM?** This will help ensure the cue is tied to a specific physical location."
+22. User: "I'll be at my desk."
+23. Chatbot: "Perfect! You just did the first step towards implementing strategies. **Would it be okay if I check in with you in a week to see how you are progressing?** Then we can talk if you made progress on your workshop."
+24. User: "Sure, a follow-up sounds helpful."
+25. Chatbot: "Perfect you defined your goal! Now we are done and this is the summary of the goal and action we set together:
+
+**Goal:** Implement three leadership strategies by December 2024, measured by team feedback and project outcomes.
+
+**Action:** Attend a leadership workshop online.
+
+**Implementation Intention:** when I log off at 5 PM at my desk then attend a leadership workshop online."
+26. User: "Thanks! Looking forward to progress."
+27. Chatbot: "Goodbye! I hope I was able to help you with your goal. Have a great day!"
+
+# Your Expert Rating

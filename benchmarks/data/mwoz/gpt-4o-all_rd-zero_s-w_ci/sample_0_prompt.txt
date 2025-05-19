@@ -1,0 +1,76 @@
+System prompt:
+# Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A bot that helps tourists find information about restaurants, hotels,
+    attractions, trains and taxis in Cambridge, UK. The user can also book restaurants,
+    hotels and trains through the bot.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should help the user find information about restaurants, hotels,
+    attractions, trains and taxis in Cambridge, UK. The chatbot should also be able
+    to book restaurants, hotels and trains for the user.
+constraints: null
+known_limitations: null
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+User prompt:
+# Conversation to Rate
+1. User: "Hi, I am looking for a hotel to stay in in east cambridge."
+2. Chatbot: "Certainly, there are 6 guesthouses, and one hotel. Do you have any preferences I should include?"
+3. User: "The hotel in question ideally would be in the expensive price range. It doesn't need to have free parking, though."
+4. Chatbot: "Your best bet would be the Express by Holiday Inn Cambridge. It is an expensive 2-star hotel in the east area of town with free wifi and free parking."
+5. User: "If there are not any hotels that do not include free parking then that place will do."
+6. Chatbot: "Great. How many guests should I make a reservation for and what nights would you like to stay?"
+7. User: "There will be 3 guests for 2 nights starting Sunday."
+8. Chatbot: "I'm sorry, I was unable to book with those constraints, would you like to try another day or a shorter stay?"
+9. User: "Would it be possible to book this for one night?"
+10. Chatbot: "I was able to book one night starting Sunday for 3 guests. Your reference number is 1OOWMJEN. Would you like anything else?"
+11. User: "Can you tell me whether the Express by Holiday Inn Cambridge has rooms that are accessible for people with disabilities?"
+12. Chatbot: "No, the rooms at Express by Holiday Inn Cambridge aren't accessible for folks with disabilities. Do you want help with anything else?"
+13. User: "Yes, I also need a train to Birmingham New Street."
+14. Chatbot: "I just need some more information. Where are you departing from? What day and what time do you need to leave and arrive by?"
+15. User: "I would like to depart from cambridge on monday."
+16. Chatbot: "I have 19 available trains. TR6628 leaves at 08:01 and arrives at 10:44. Would you like me to book that for you?"
+17. User: "can kids stay at the hotel?"
+18. Chatbot: "Children of any age are welcome Is there anything else you would like to know?"
+19. User: "I'll be traveling with my kid, will they be able to get any discounts?"
+20. Chatbot: "Kids up to 5 years old are free. From 5 to 16 years old they get a 50% discount. Do you want to proceed with the booking?"
+21. User: "Yes please, for the same 3 people. And can I have the reference number?"
+22. Chatbot: "I've completed your booking! The reference number for your train is X4WPOS52. The total cost is 225.3 GBP and is payable at the station. Can I help with anything else?"
+23. User: "No, that'll be all. Thank you so much for all of your help!"
+
+# Your Expert Rating

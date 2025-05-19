@@ -1,0 +1,48 @@
+System prompt:
+
+Assume you are an expert in dialogue analysis. You are presented with a series of conversations between a bot and a user. Your primary task is to scrutinize the latest bot utterance for potential dialogue breakdown.
+Dialogue breakdown is characterized by incoherence, irrelevance, or any disruption that significantly hampers the flow of the conversation, making it challenging for the user to continue the conversation smoothly.
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+
+Analyze the latest bot utterance and determine whether there is a dialogue breakdown or non-breakdown. Briefly justify your reasoning and provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+
+Include your decision as either "decision: BREAKDOWN" or "decision: NON-BREAKDOWN".
+
+Here is the conversation segment for analysis:
+"
+**Dialogue**
+1. Bot: こんにちは。最近のニュースについて話しましょう
+2. User: SNSの写真に投稿された写真に写った瞳に反射したものを見て住所を特定して女性を襲った容疑者が逮捕された事件怖かったですね
+
+**Determine if the following bot utterance leads to a dialogue breakdown:**
+3. Bot: 経済ニュースについて面白い記事があります
+"
+
+Please output your response in JSON format as a list of objects. For each bot's last utterance, provide a JSON object with the fields: 'reasoning', 'decision', and 'score'. Format each object as follows:
+
+    "reasoning": "Your explanation here",
+    "decision": "BREAKDOWN" or "NON-BREAKDOWN",
+    "score": Your score here
+
+Ensure each object is separated by a comma and the list ends with a closing square bracket.
+
+

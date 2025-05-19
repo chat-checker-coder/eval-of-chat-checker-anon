@@ -1,0 +1,94 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. User: "I'm looking for kid-friendly restaurants in Cambridge. Any suggestions?"
+2. Chatbot: "I can help you find kid-friendly restaurants in Cambridge. Could you please specify any price range or particular area in Cambridge you're interested in? This will help me narrow down the options for you."
+3. User: "I need options that aren't too pricey and are central."
+4. Chatbot: "Unfortunately, there are no restaurants in the central area of Cambridge that meet your criteria of being not too pricey and offering kid-friendly food options. Would you like to adjust your search criteria or explore other areas in Cambridge? I'm here to help!"
+5. User: "Let's explore other central areas, maybe a bit north or east."
+6. Chatbot: "I found a restaurant that matches your criteria! "Missing Sock" offers kid-friendly, international cuisine in the north or east areas of central Cambridge and is not too pricey. If you'd like more details about this restaurant or need assistance with a reservation, please let me know!"
+7. User: "Great, can you also suggest nearby play areas for the kids?"
+8. Chatbot: "I'm sorry, but there are no play areas listed in the north or east areas of central Cambridge according to the database. Would you like to explore other types of attractions nearby or perhaps consider other areas for play areas? I'm here to help with any further information or suggestions you might need!"
+9. User: "Are there any parks or open spaces near 'Missing Sock'?"
+10. Chatbot: "There are several parks and open spaces near 'Missing Sock' that you might enjoy visiting. These include Cambridge University Botanic Gardens located at Bateman Street, Cherry Hinton Water Play at Cherry Hinton Hall on Cherry Hinton Road, Milton Country Park at Milton, Sheep's Green and Lammas Land Park on Fen Causeway at Newnham Road, and Wandlebury Country Park at Wandlebury Ring in the Gog Magog Hills, Babraham."
+11. User: "Thanks, those are quite spread out. Which one's closest?"
+12. Chatbot: "The closest park to 'Missing Sock' is the Cambridge University Botanic Gardens located at Bateman Street. It's a beautiful place to relax and enjoy nature. If you need directions or more information about this park, feel free to ask!"
+13. User: "Botanic Gardens works. Anything for the kids at the garden?"
+14. Chatbot: "The Cambridge University Botanic Gardens offers a variety of attractions that are great for children, including interactive educational displays, a variety of plant collections, and spacious areas for picnics and play. They often host family-friendly events and workshops, especially during the weekends and school holidays. It's a wonderful place for kids to learn about nature and enjoy the outdoors. If you need more specific details about upcoming events or any particular facilities, feel free to ask!"
+15. User: "Are there accessible rest areas? Don't want them too tired."
+16. Chatbot: "Yes, the Cambridge University Botanic Gardens, as well as many other parks and attractions in Cambridge, are equipped with accessible rest areas. These areas provide comfortable seating and are designed to be accessible for everyone, ensuring that visitors can relax and rejuvenate without getting too tired. If you need information on specific locations of these rest areas within the garden or any other park, just let me know!"
+17. User: "Good to know. Any other kid-friendly places near the gardens?"
+18. Chatbot: "Some wonderful kid-friendly places near the gardens include Broughton House Gallery, Cambridge Contemporary Art, Cambridge University Botanic Gardens, Castle Galleries, and the Museum of Archaeology and Anthropology. These attractions offer a variety of experiences suitable for children and are located conveniently close to the gardens."
+19. User: "Are these places free? I don't want extra expenses."
+20. Chatbot: "The Cambridge University Botanic Gardens usually have an entry fee, while the Museum of Archaeology and Anthropology offers free admission. For the galleries like Broughton House Gallery, Cambridge Contemporary Art, and Castle Galleries, they might have free entry or special exhibitions that require a ticket. I recommend checking their official websites or contacting them directly for the most accurate and up-to-date information regarding any fees. Would you like assistance with anything else, perhaps details on specific attractions or help planning your visit?"
+21. User: "Checking websites sounds time-consuming. What's the best next stop?"
+
+# Latest Chatbot Utterance to Analyse
+22. Chatbot: "If you're looking for a convenient next stop after visiting the gardens, I recommend heading to the Museum of Archaeology and Anthropology. It's close by, offers free admission, and provides an educational and engaging experience for both adults and children. Would you like directions to the museum, or perhaps information on any specific exhibits there?"
+
+# Your Analysis

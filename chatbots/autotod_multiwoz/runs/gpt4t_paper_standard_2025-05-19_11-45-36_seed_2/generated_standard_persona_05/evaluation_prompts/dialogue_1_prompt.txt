@@ -1,0 +1,80 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. User: "Hi there! I'm excited to be visiting Cambridge soon. I'm a tech enthusiast, and I'm wondering if there are any tech-themed attractions or activities you can recommend?"
+2. Chatbot: "I've found some tech-themed attractions in Cambridge that you might enjoy! Here are a few options:
+1. The Cambridge Science Centre - A hands-on science and technology museum perfect for enthusiasts of all ages.
+2. The Centre for Computing History - Explore the history of computing and engage with vintage computers and interactive exhibits.
+3. IdeaSpace - A hub for entrepreneurs and innovators, often hosting tech talks and workshops.
+
+Please let me know if you would like more information about any of these attractions or if there's anything else I can assist you with!"
+3. User: "Thanks! Can you tell me more about the Centre for Computing History?"
+4. Chatbot: "The Centre for Computing History is a fascinating museum dedicated to preserving and exploring the history of computing. It's located at Rene Court, Coldhams Road in Cambridge. The museum features a vast collection of vintage computers and offers interactive exhibits where you can experience the evolution of computing technology firsthand. They also host various workshops and events that delve into the impact of computing on society. Visiting hours are typically from 10:00 a.m. to 5:00 p.m., Wednesday to Sunday. Would you like assistance with directions or perhaps information on upcoming events at the museum?"
+5. User: "Sounds perfect! Could you provide info on upcoming events there?"
+6. Chatbot: "I'm glad you're interested in the Centre for Computing History! Unfortunately, I don't have specific information on upcoming events at the museum available right now. I recommend visiting their official website or contacting them directly to get the most accurate and up-to-date details on their events schedule. Is there anything else I can assist you with or another attraction you'd like to explore?"
+7. User: "That's okay! Can you help me find tech-themed cafes nearby?"
+8. Chatbot: "I've found some tech-themed cafes nearby for you to explore. Could you please specify if you have any particular preferences in terms of price range or any other specific requirements? This will help me narrow down the options to better suit your needs."
+9. User: "I prefer mid-range cafes with innovative tech decor or features."
+10. Chatbot: "I'm sorry, but there are no tech-themed cafes with mid-range prices in the nearby area listed in our database. Would you like to explore other types of cafes or perhaps adjust the price range or area? I'm here to assist you in finding a great spot!"
+11. User: "How about high-tech restaurants instead? Open to recommendations!"
+12. Chatbot: "I'm sorry for the confusion, but could you please clarify if you're looking for restaurants with a high-tech theme or if you meant something else? Additionally, it would be helpful to know if you have any specific preferences regarding the type of cuisine or other details like price range or specific area in Cambridge you're interested in."
+13. User: "I’m looking for restaurants with a high-tech theme, mid-price range."
+14. Chatbot: "I've checked for restaurants with a high-tech theme in the mid-price range, but unfortunately, there are no restaurants matching those specific criteria. If you have any other preferences or if you'd like to explore different themes or price ranges, please let me know and I'd be happy to assist further!"
+15. User: "I'll explore other options then. Thanks for your help!"
+16. Chatbot: "You're welcome! If you decide on any other preferences or need assistance with anything else, feel free to reach out. Enjoy exploring Cambridge and have a great day!"
+17. User: "Thanks! I'll do that. Excited for my visit."
+
+# Your Expert Rating

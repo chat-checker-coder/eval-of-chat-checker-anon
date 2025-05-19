@@ -1,0 +1,137 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "Improving everything about myself simultaneously."
+3. Chatbot: "That sounds like a comprehensive personal development goal! **Would you like to focus on specific areas like career, health, or relationships, or keep it as a broad goal?**"
+4. User: "All the areas, all together."
+5. Chatbot: "That's an ambitious and holistic approach to personal development! Focusing on all areas—career, health, and relationships—can lead to a well-rounded and fulfilling life. 
+
+**Do you already have a strategy or plan in place to work on these areas simultaneously?**
+
+For example:  
+- Balanced daily routine  
+- Holistic self-assessment  
+- Continuous learning mindset"
+6. User: "I like improvisation, no plans."
+7. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve your holistic personal development. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task.
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Identify and prioritize key areas for personal development by researching various self-improvement frameworks and methodologies.
+   
+2. Develop a time management strategy to effectively allocate time for learning and practicing new skills across different areas of life.
+
+3. Explore and implement techniques for maintaining motivation and consistency in personal growth efforts across multiple domains."
+8. User: "Learning all frameworks at once."
+9. Chatbot: "This sounds less like a learning goal. **How could you formulate this as a learning goal?** For example, you might focus on understanding the core principles of one framework at a time and then gradually integrating them."
+10. User: "Focus on mastering quantum mechanics."
+11. Chatbot: "Mastering quantum mechanics is a great goal! **How could you formulate this as a learning goal?** For instance, you might aim to understand the fundamental principles of quantum mechanics and solve basic problems related to them."
+12. User: "Simultaneously study every principle."
+13. Chatbot: "This sounds less like a learning goal. **How could you formulate this as a learning goal?** Perhaps by setting a goal to understand and apply one principle at a time, starting with the basics and gradually moving to more complex concepts."
+14. User: "Integrate principles intuitively, instantly."
+15. Chatbot: "This sounds less like a learning goal. **How could you formulate this as a learning goal?** You might consider setting a goal to develop a deep understanding of each principle individually, and then practice applying them in various scenarios to build intuitive integration over time."
+16. User: "Master everything, no stages."
+17. Chatbot: "I understand your enthusiasm, but mastering everything at once can be overwhelming. **How could you break this down into a learning goal?** For example, you could focus on mastering one specific area or principle at a time, which will eventually lead to a comprehensive understanding."
+18. User: "Conquer all at warp speed."
+19. Chatbot: "I admire your ambition! However, to make this more achievable, **how could you set a learning goal that allows for rapid yet structured progress?** For instance, you might aim to quickly grasp foundational concepts in one area before moving on to the next, ensuring a solid understanding as you progress."
+20. User: "Instantly excel in everything broadly."
+21. Chatbot: "I understand your desire for rapid progress, but it's important to have a structured approach. **How could you set a learning goal that allows for broad yet effective learning?** Perhaps by focusing on developing a strong foundational understanding in multiple areas, which can then be expanded upon."
+22. User: "Still insist on instant mastery."
+23. Chatbot: "I understand your determination for instant mastery, but it's crucial to have a realistic and structured approach. **How could you set a learning goal that balances your ambition with practical steps?** For example, you might aim to quickly identify key concepts in various areas and develop a strategy for efficient learning and application."
+24. User: "Demand immediate omniscience, no exceptions."
+25. Chatbot: "I understand your desire for immediate mastery, but it's important to approach learning with achievable steps. **How could you set a learning goal that allows for rapid progress while ensuring comprehension and retention?** Perhaps by focusing on accelerated learning techniques and prioritizing key areas for immediate impact."
+26. User: "Still want total wisdom now."
+27. Chatbot: "I understand your aspiration for total wisdom, but it's essential to approach this with a practical plan. **How could you set a learning goal that allows for comprehensive understanding over time?** You might consider focusing on developing critical thinking and learning strategies that can be applied across various domains."
+28. User: "I insist on instantaneous knowledge."
+29. Chatbot: "I understand your desire for instantaneous knowledge, but it's important to have a structured approach to learning. **How could you set a learning goal that allows for rapid acquisition of knowledge while ensuring depth and understanding?** Perhaps by focusing on learning techniques that enhance memory retention and comprehension."
+30. User: "Still want instant enlightenment."
+31. Chatbot: "I understand your pursuit of instant enlightenment, but it's beneficial to have a practical approach. **How could you set a learning goal that allows for deep understanding and growth over time?** You might consider focusing on mindfulness and reflective practices that can enhance your learning journey."
+32. User: "What's mindfulness got to do?"
+33. Chatbot: "Mindfulness can help enhance focus, reduce stress, and improve cognitive flexibility, which are beneficial for learning and personal growth. **Would you like to explore how mindfulness can be integrated into your learning process to support your goals?**"
+34. User: "Not interested; expedite wisdom instead."
+35. Chatbot: "I understand your focus on expediting wisdom. **How could you set a learning goal that allows for rapid knowledge acquisition while ensuring you truly understand and can apply what you learn?** You might consider focusing on speed reading techniques or leveraging technology for accelerated learning."
+36. User: "Demand effortless, instant results."
+37. Chatbot: "I understand your desire for effortless and instant results, but it's important to have a realistic approach to learning. **How could you set a learning goal that allows for efficient learning while ensuring you gain meaningful insights and skills?** Perhaps by focusing on identifying key resources and tools that can streamline your learning process."
+38. User: "If I must, suggest tools."
+39. Chatbot: "To streamline your learning process, you might consider using tools like spaced repetition software for memory retention, online courses for structured learning, and productivity apps to manage your time effectively. **Would you like to set a learning goal around utilizing these tools to enhance your learning efficiency?**"
+40. User: "Sure, let's explore these tools."
+41. Chatbot: "Your goal of utilizing spaced repetition software, online courses, and productivity apps already sounds good. **Could you try making your goal even more specific?**
+
+For Example:
+'Explore three productivity apps by Friday to boost learning.'"
+42. User: "Test every productivity app available."
+43. Chatbot: "Testing every productivity app sounds ambitious! **When exactly do you want to complete this testing?**"
+44. User: "Yesterday! No time to waste."
+45. Chatbot: "I understand the urgency! **How could you measure the outcome of testing these productivity apps?**"
+46. User: "How smoothly my chaos runs."
+47. Chatbot: "It sounds like you want to improve your workflow. **Could you specify a measurable outcome, like the number of apps tested or a specific improvement in your workflow by a certain date?**"
+48. User: "All chaos streamlined by tonight."
+49. Chatbot: "Your goal of 'streamlining workflow by tonight' sounds now more specific. **Do you think you could now make it even more challenging while still being achievable for you?** If you can't, this is also okay.
+
+You could make your goal more challenging by:  
+1. Testing all apps and implementing changes by 18:00 today.  
+2. Completing the task by 16:00 today.  
+3. Increasing the difficulty by testing 5 additional apps."
+50. User: "Test 5 more apps now."
+51. Chatbot: "Great! Testing 5 more apps will definitely make your goal more challenging. **Do you think you could make it even more challenging, or is this the limit for today?**"
+
+# Your Expert Rating

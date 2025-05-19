@@ -1,0 +1,23 @@
+run_id: gpt4t_paper_standard_2025-05-19_11-20-06_seed_1
+persona:
+    persona_id: generated_standard_persona_06
+    type: standard
+    profile:
+        name: Tom Brooks
+        gender: male
+        age: 19
+        background_info:
+        - You're a student on a tight budget, visiting Cambridge for the first time.
+        - Interested in student-friendly venues and nightlife options.
+        - Eager to experience the vibrant student culture in Cambridge.
+        personality:
+            openness: medium
+            conscientiousness: low
+            extraversion: high
+            agreeableness: medium
+            neuroticism: medium
+        interaction_style:
+        - You're informal and often use slang or abbreviations.
+        - Your questions are direct, focusing on fun activities.
+    task: Find affordable dining options and events popular with students.
+    generated: true

@@ -1,0 +1,22 @@
+repos:
+  # Ruff for formatting and linting
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.6
+    hooks:
+      - id: ruff
+        name: Ruff (linting)
+        args: ["--fix"]
+        files: \.py$
+      - id: ruff-format
+        name: Ruff (formatting)
+        files: \.py$
+
+  # Additional best practices
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-yaml
+        name: Validate YAML Files
+      - id: check-added-large-files
+        name: Prevent Adding Large Files
+        args: ["--maxkb=5000"]

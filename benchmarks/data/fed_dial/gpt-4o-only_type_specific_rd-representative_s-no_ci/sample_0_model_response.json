@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-BLEadog3PfyxciaFQC8V4qJG2v71G",
+  "created": 1744400671,
+  "model": "gpt-4o-2024-08-06",
+  "object": "chat.completion",
+  "system_fingerprint": "fp_22890b9c0a",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\"dimension_ratings\":[{\"key\":\"coherence\",\"reasoning\":\"The conversation flows well, with the chatbot responding appropriately to the user's inputs. It maintains the topic of sporting events and asks relevant questions, such as inquiring about the Spartan race. There are no noticeable coherence issues.\",\"rating\":5},{\"key\":\"likability\",\"reasoning\":\"The chatbot is engaging and shows interest in the user's activities. It asks questions and expresses curiosity about the Spartan race, which makes it more likable. There are no negative or off-putting responses.\",\"rating\":5},{\"key\":\"informativeness\",\"reasoning\":\"The chatbot provides some information about its own experience with marathons and expresses interest in a triathlon. However, it doesn't provide much additional information or insights beyond acknowledging the user's input.\",\"rating\":3},{\"key\":\"overall_performance\",\"reasoning\":\"The chatbot performs well in maintaining a coherent and engaging conversation. It is likable and shows interest in the user's activities. However, it could be more informative by providing more details or insights about the topics discussed.\",\"rating\":4}]}",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null,
+        "annotations": []
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 218,
+    "prompt_tokens": 1832,
+    "total_tokens": 2050,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "service_tier": "default"
+}

@@ -1,0 +1,631 @@
+dialogue_id: generated_challenging_persona_07_dialogue_1
+user_name: generated_challenging_persona_07
+chat_history:
+-   turn_id: 1
+    role: dialogue_system
+    content: 'Hi! I’m here to help you achieve your goals!
+
+        Together, we’ll define a goal step by step and set your first action to get
+        started. **If you have any questions**, need clarification, or would like
+        additional advice, **don’t hesitate to ask me**.
+
+
+        **So, what’s a goal you’d like to work on?**'
+    breakdown_annotation:
+        reasoning: The chatbot's latest utterance is a clear and friendly introduction
+            to its purpose and capabilities. It invites the user to engage by asking
+            about their goal, which is relevant to the task of goal setting. The chatbot
+            also encourages the user to ask questions if needed, which is a good practice
+            for ensuring clarity and understanding. There are no grammatical errors,
+            semantic errors, or any other issues that would lead to a breakdown. The
+            chatbot's response is well-aligned with its task-oriented nature and does
+            not ignore any user input, as this is the initial interaction. Therefore,
+            there is no breakdown in this interaction.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 2
+    role: user
+    content: Uh, fitness I think? Maybe... more exercises, but not sure which ones?
+    breakdown_annotation: null
+-   turn_id: 3
+    role: dialogue_system
+    content: '"More exercises" sounds more like an action directed toward a broader
+        objective, such as improving overall fitness, building muscle strength, or
+        increasing endurance. **Would you still like to keep "more exercises" as your
+        primary goal?** If not, we could consider setting a more overarching goal.'
+    breakdown_annotation:
+        reasoning: The chatbot's response is relevant to the user's input about wanting
+            to do more exercises. It correctly identifies that 'more exercises' is
+            more of an action than a specific goal and suggests considering a broader
+            objective. This aligns with the chatbot's purpose of helping the user
+            set a specific and challenging goal. The chatbot also offers the user
+            a choice to either keep 'more exercises' as the primary goal or to consider
+            a more overarching goal, which is a good way to guide the user in the
+            goal-setting process. There is no indication of a breakdown as the response
+            is clear, relevant, and encourages further dialogue.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 4
+    role: user
+    content: I just want to do stuff.
+    breakdown_annotation: null
+-   turn_id: 5
+    role: dialogue_system
+    content: '"Doing stuff" sounds more like an action directed toward a broader objective,
+        such as improving your physical health, increasing your energy levels, or
+        developing a consistent exercise routine. **Would you still like to keep "doing
+        stuff" as your primary goal?** If not, we could consider setting a more overarching
+        goal.'
+    breakdown_annotation:
+        reasoning: The chatbot's latest response attempts to guide the user towards
+            setting a more specific goal by interpreting the user's vague statement
+            "I just want to do stuff." The chatbot suggests that "doing stuff" could
+            be related to broader objectives like improving physical health or developing
+            a consistent exercise routine. It then asks the user if they want to keep
+            "doing stuff" as their primary goal or consider a more overarching goal.
+            This response is consistent with the chatbot's purpose of helping the
+            user formulate a specific and challenging goal. The chatbot is trying
+            to clarify the user's intention and guide them towards a more defined
+            goal, which is appropriate given the user's vague input. There is no breakdown
+            in this interaction as the chatbot is performing its task effectively
+            by seeking clarification and offering guidance.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 6
+    role: user
+    content: Energy, I think? Or maybe consistency?
+    breakdown_annotation: null
+-   turn_id: 7
+    role: dialogue_system
+    content: "Improving your energy levels or developing consistency are both fantastic\
+        \ goals that can have a positive impact on many areas of your life. **Which\
+        \ strategy do you currently have to achieve this goal?**\n\nFor example: \
+        \ \n- Follow a structured workout plan  \n- Set specific, achievable goals\
+        \  \n- Track progress with a fitness app"
+    breakdown_annotation:
+        reasoning: The chatbot's latest response acknowledges the user's input about
+            wanting to improve energy levels or develop consistency, which aligns
+            with the user's expressed interests. The chatbot then asks about the user's
+            current strategy to achieve these goals, providing examples to guide the
+            user. This is a relevant and helpful follow-up question that encourages
+            the user to think about their current approach and how they might refine
+            it. The response is clear, relevant, and maintains the flow of the conversation
+            without any breakdowns. There are no errors or omissions in the chatbot's
+            response that would disrupt the conversation.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 8
+    role: user
+    content: Uh, I don't have one?
+    breakdown_annotation: null
+-   turn_id: 9
+    role: dialogue_system
+    content: "Alright, this sounds more like we should first set a learning oriented\
+        \ goal to make sure you follow the best strategy to achieve increased energy\
+        \ and a consistent exercise routine. **What could be your learning oriented\
+        \ goal?**\n\nFor Example:\n1. Research different types of exercises and their\
+        \ benefits to determine which ones align with your energy-boosting goals.\n\
+        \   \n2. Learn about the role of nutrition and hydration in maintaining energy\
+        \ levels and supporting a consistent exercise routine.\n\n3. Study time management\
+        \ techniques to effectively incorporate regular exercise into your daily schedule."
+    breakdown_annotation:
+        reasoning: The chatbot's latest response is relevant to the user's previous
+            input, where the user expressed a lack of strategy for achieving their
+            goal of increasing energy and consistency in exercise. The chatbot suggests
+            setting a learning-oriented goal, which aligns with the user's need to
+            develop a strategy. The examples provided are clear and relevant to the
+            user's context. The chatbot maintains the conversation's focus on goal
+            setting and provides actionable suggestions. There is no indication of
+            a breakdown as the response is coherent, relevant, and provides guidance
+            that fits within the chatbot's purpose of helping users set and achieve
+            goals.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 10
+    role: user
+    content: Time management maybe? But, confused.
+    breakdown_annotation: null
+-   turn_id: 11
+    role: dialogue_system
+    content: Time management is a great area to focus on for developing a consistent
+        exercise routine. **Would you like to set a learning goal to explore time
+        management techniques that can help you incorporate regular exercise into
+        your daily schedule?**
+    breakdown_annotation:
+        reasoning: The chatbot's latest response is relevant to the user's input about
+            focusing on time management. It acknowledges the user's interest in time
+            management and suggests setting a learning goal related to it, which aligns
+            with the user's expressed confusion and need for guidance. The chatbot
+            maintains the conversation's focus on goal setting and provides a clear
+            next step for the user. There is no indication of a breakdown as the response
+            is coherent, relevant, and encourages the user to continue the conversation
+            smoothly.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 12
+    role: user
+    content: Uh, not sure. Maybe?
+    breakdown_annotation: null
+-   turn_id: 13
+    role: dialogue_system
+    content: No worries, it's okay to feel unsure. **Would you like to explore different
+        time management strategies to see which ones might work best for you in fitting
+        exercise into your routine?**
+    breakdown_annotation:
+        reasoning: The chatbot's latest response is appropriate and aligns with the
+            user's expressed uncertainty. The chatbot acknowledges the user's uncertainty
+            and offers a suggestion to explore different time management strategies,
+            which is relevant to the user's previous mention of time management. The
+            response is clear, maintains the topic, and encourages the user to continue
+            the conversation by exploring options. There is no indication of a breakdown
+            as the chatbot is guiding the user towards a more specific goal, which
+            is its intended function.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 14
+    role: user
+    content: Explore strategies? Like which ones?
+    breakdown_annotation: null
+-   turn_id: 15
+    role: dialogue_system
+    content: You could explore strategies like the Pomodoro Technique, time blocking,
+        or setting specific time slots for exercise in your calendar. **Would you
+        like to set a learning goal to explore these time management strategies to
+        help you with your exercise routine?**
+    breakdown_annotation:
+        reasoning: The chatbot's latest response is relevant to the user's inquiry
+            about exploring time management strategies. It provides specific examples
+            of strategies (Pomodoro Technique, time blocking, setting specific time
+            slots) that the user can explore, which aligns with the user's interest
+            in exploring strategies. The chatbot also offers to help set a learning
+            goal related to these strategies, which is consistent with its task of
+            guiding the user in goal setting. There is no indication of a breakdown
+            as the response is clear, informative, and directly addresses the user's
+            question. Therefore, there is no dialogue breakdown in this instance.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 16
+    role: user
+    content: Um, maybe Pomodoro? Sounds fun.
+    breakdown_annotation: null
+-   turn_id: 17
+    role: dialogue_system
+    content: 'Your goal of exploring the Pomodoro Technique already sounds good. **Could
+        you try making your goal even more specific?**
+
+
+        For Example:
+
+        Identify three Pomodoro strategies for exercise by Friday.'
+    breakdown_annotation:
+        reasoning: The chatbot's latest utterance is relevant to the user's previous
+            input about exploring the Pomodoro Technique. It encourages the user to
+            make their goal more specific, which aligns with the task of guiding the
+            user in setting a specific and challenging goal. The example provided
+            is clear and helps the user understand how to specify their goal. There
+            is no indication of a breakdown as the chatbot is performing its task
+            effectively by guiding the user towards a more specific goal. The conversation
+            flows smoothly without any errors or omissions.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 18
+    role: user
+    content: Three strategies? By Friday, huh?
+    breakdown_annotation: null
+-   turn_id: 19
+    role: dialogue_system
+    content: Yes, identifying three strategies by a specific day like Friday can make
+        your goal more concrete. **Would you like to set this as your specific goal,
+        or do you have another day in mind?**
+    breakdown_annotation:
+        reasoning: The chatbot's latest response is appropriate and aligns with its
+            task of helping the user set a specific goal. It acknowledges the user's
+            mention of 'by Friday' and suggests setting a specific deadline, which
+            is a good practice in goal setting. The chatbot also offers flexibility
+            by asking if the user has another day in mind, which shows consideration
+            for the user's preferences. There is no indication of a breakdown as the
+            response is clear, relevant, and encourages the user to make a decision
+            about their goal. The conversation can continue smoothly from this point.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 20
+    role: user
+    content: Uh, Friday seems okay.
+    breakdown_annotation: null
+-   turn_id: 21
+    role: dialogue_system
+    content: "Your goal of identifying three Pomodoro strategies for exercise by Friday\
+        \ sounds now more specific. **Do you think you could now make it even more\
+        \ challenging while still being achievable for you?** If you can't, this is\
+        \ also okay.\n\nYou could make your goal challenging by:  \n1. Identifying\
+        \ three strategies today.  \n2. Choosing a strategy by Wednesday.  \n3. Identifying\
+        \ five strategies by Friday."
+    breakdown_annotation:
+        reasoning: The chatbot's latest utterance is coherent and relevant to the
+            ongoing conversation about setting a specific and challenging goal. It
+            acknowledges the user's current goal and suggests ways to make it more
+            challenging, which aligns with the task of guiding the user in goal setting.
+            The suggestions provided are clear and actionable, and the chatbot also
+            reassures the user that it's okay if they can't make the goal more challenging,
+            which is considerate of the user's potential limitations. There is no
+            indication of any breakdown types such as ignoring the user's input, providing
+            wrong information, or lacking clarity. The conversation can continue smoothly
+            from this point.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 22
+    role: user
+    content: Three seems hard now.
+    breakdown_annotation: null
+-   turn_id: 23
+    role: dialogue_system
+    content: I understand, and it's important to set a goal that feels achievable.
+        **Would you like to stick with identifying three strategies by Friday, or
+        perhaps adjust it to two strategies to make it more manageable?**
+    breakdown_annotation:
+        reasoning: The chatbot's response is appropriate and aligns with its task
+            of helping the user set a specific and achievable goal. The user expressed
+            that identifying three strategies seems hard, and the chatbot responded
+            by offering an alternative that makes the goal more manageable. This shows
+            the chatbot is attentive to the user's needs and is providing a supportive
+            suggestion. There is no indication of a breakdown as the chatbot is facilitating
+            the goal-setting process effectively.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 24
+    role: user
+    content: Two strategies by Friday, maybe.
+    breakdown_annotation: null
+-   turn_id: 25
+    role: dialogue_system
+    content: That sounds like a more manageable goal. **Do you think you could make
+        it even more challenging by trying to implement one of the strategies by Friday
+        as well?**
+    breakdown_annotation:
+        reasoning: The chatbot's latest utterance is coherent and relevant to the
+            ongoing conversation. It acknowledges the user's adjustment to a more
+            manageable goal and suggests a way to make it more challenging, which
+            aligns with the task of guiding the user in setting a specific and challenging
+            goal. The chatbot is effectively engaging the user in the goal-setting
+            process without any errors or breakdowns. There are no signs of ignoring
+            the user's input, providing wrong information, or any other breakdown
+            types. The conversation flows smoothly, and the chatbot's suggestion is
+            appropriate and clear.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 26
+    role: user
+    content: Implement? By Friday? Um, confused.
+    breakdown_annotation: null
+-   turn_id: 27
+    role: dialogue_system
+    content: I apologize for the confusion. I meant trying out one of the strategies
+        you identify by Friday. **Would you like to keep the goal as identifying two
+        strategies by Friday, or try one of them as well?**
+    breakdown_annotation:
+        reasoning: The chatbot's latest response addresses the user's confusion by
+            clarifying what it meant by 'implementing' a strategy. It offers the user
+            a choice between sticking with the original goal of identifying two strategies
+            by Friday or adding the challenge of trying one of them. This response
+            is clear, relevant, and provides options, which aligns with the chatbot's
+            task of guiding the user in setting a specific and challenging goal. There
+            is no indication of a breakdown as the chatbot is responsive to the user's
+            needs and provides a clear path forward.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 28
+    role: user
+    content: Just identify two strategies.
+    breakdown_annotation: null
+-   turn_id: 29
+    role: dialogue_system
+    content: "It's great that you've set a clear goal to identify two Pomodoro strategies\
+        \ for exercise by Friday. **What do you think is the first action you could\
+        \ do in the next 7 days to get closer to your goal?**\n\nYou could for example:\
+        \  \n1. Read articles on Pomodoro exercise strategies.  \n2. Watch videos\
+        \ on Pomodoro workout techniques.  \n3. Listen to podcasts about Pomodoro\
+        \ fitness methods.  "
+    breakdown_annotation:
+        reasoning: The chatbot's latest response is appropriate and aligns with its
+            task of guiding the user in setting and achieving goals. The user has
+            decided on a specific goal, and the chatbot is now helping the user to
+            think about the first action step towards achieving that goal. The suggestions
+            provided (reading articles, watching videos, listening to podcasts) are
+            relevant and actionable, helping the user to move forward. There is no
+            indication of a breakdown as the chatbot is facilitating the user's progress
+            towards their goal effectively.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 30
+    role: user
+    content: Podcasts maybe? But distracted.
+    breakdown_annotation: null
+-   turn_id: 31
+    role: dialogue_system
+    content: Listening to podcasts is a great way to learn while multitasking. **Do
+        you think listening to a podcast about Pomodoro exercise strategies while
+        doing a simple task could help you stay focused?**
+    breakdown_annotation:
+        reasoning: The chatbot's latest response is relevant to the user's previous
+            statement about being distracted. It suggests a way to incorporate learning
+            about Pomodoro exercise strategies into the user's routine by multitasking,
+            which aligns with the user's interest in podcasts. The chatbot's question
+            is clear and encourages the user to consider a practical approach to achieving
+            their goal. There is no indication of a breakdown as the response is coherent,
+            relevant, and maintains the flow of the conversation.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 32
+    role: user
+    content: Uh, maybe. I'll try.
+    breakdown_annotation: null
+-   turn_id: 33
+    role: dialogue_system
+    content: 'That''s a great idea! **What could be a good cue for you** that triggers
+        the implementation of listening to podcasts about Pomodoro exercise strategies
+        while doing a simple task? It would be best to select a cue that follows a
+        significant event and is very noticeable so you don''t forget it.
+
+
+        For Example:
+
+        1. If I start my morning coffee, I''ll listen to a Pomodoro exercise podcast.
+
+        2. When I begin my lunch break, I''ll play a podcast on Pomodoro strategies.
+
+        3. If I start my evening walk, I''ll tune into a Pomodoro exercise podcast.'
+    breakdown_annotation:
+        reasoning: The chatbot's latest response is relevant and continues to guide
+            the user in setting a specific action plan. It suggests creating an 'if-then'
+            plan, which aligns with the chatbot's task of helping the user formulate
+            an implementation intention. The examples provided are clear and help
+            the user understand how to integrate the action into their routine. There
+            is no indication of a breakdown as the response is coherent, relevant,
+            and aids in progressing the conversation towards the user's goal.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 34
+    role: user
+    content: Um, after lunch maybe?
+    breakdown_annotation: null
+-   turn_id: 35
+    role: dialogue_system
+    content: That sounds like a good cue! **Is there a specific location where you
+        usually have lunch that could serve as a reliable environment for this cue?**
+    breakdown_annotation:
+        reasoning: The chatbot's latest utterance is relevant and follows logically
+            from the user's previous response. The user mentioned 'after lunch' as
+            a cue for listening to podcasts, and the chatbot is attempting to make
+            the cue more specific by asking about the location where the user usually
+            has lunch. This is a reasonable step in helping the user set a clear implementation
+            intention, which aligns with the chatbot's goal-setting task. There are
+            no breakdowns in terms of ignoring the user's input, providing wrong information,
+            or lacking clarity. The conversation is progressing smoothly towards helping
+            the user set a specific and actionable plan.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 36
+    role: user
+    content: Usually at my desk.
+    breakdown_annotation: null
+-   turn_id: 37
+    role: dialogue_system
+    content: Great! **Would you like to set the cue as "When I finish lunch at my
+        desk, I'll listen to podcasts about Pomodoro exercise strategies while doing
+        a simple task"?** This way, it's tied to a specific location and event.
+    breakdown_annotation:
+        reasoning: The chatbot's latest utterance is consistent with the ongoing conversation.
+            It acknowledges the user's input about having lunch at their desk and
+            suggests a specific implementation intention that ties the action of listening
+            to podcasts to a specific cue (finishing lunch at the desk). This is in
+            line with the chatbot's task of helping the user set a specific and actionable
+            goal. The chatbot's response is clear, relevant, and provides a logical
+            next step for the user to consider. There are no signs of a breakdown
+            in this interaction.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 38
+    role: user
+    content: Sure, that sounds okay.
+    breakdown_annotation: null
+-   turn_id: 39
+    role: dialogue_system
+    content: Perfect! You just did the first step towards identifying strategies.
+        **Would it be okay if I check in with you in a week to see how you are progressing?**
+        Then we can talk if you made progress on your podcast listening.
+    breakdown_annotation:
+        reasoning: The chatbot's latest utterance is coherent and follows the context
+            of the conversation. It acknowledges the user's decision and suggests
+            a follow-up action, which is to check in with the user in a week. This
+            is relevant to the task of goal setting and aligns with the user's previous
+            statements about listening to podcasts. The chatbot's suggestion to check
+            in is a logical next step in the goal-setting process, and it does not
+            ignore any user input or requests. There are no grammatical errors, semantic
+            errors, or contradictions present. The chatbot's intention is clear, and
+            it maintains the topic of the conversation without any unnecessary transitions.
+            Therefore, there is no dialogue breakdown in this utterance.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 40
+    role: user
+    content: I guess that's fine!
+    breakdown_annotation: null
+-   turn_id: 41
+    role: dialogue_system
+    content: 'Perfect you defined your goal! Now we are done and this is the summary
+        of the goal and action we set together:
+
+
+        **Goal:** Identify two Pomodoro strategies for exercise by Friday.
+
+
+        **Action:** Listen to podcasts about Pomodoro exercise strategies while doing
+        a simple task.
+
+
+        **Implementation Intention:** when I finish lunch at my desk then listen to
+        podcasts about Pomodoro exercise strategies while doing a simple task'
+    breakdown_annotation:
+        reasoning: The chatbot's latest utterance provides a clear summary of the
+            goal, action, and implementation intention that were collaboratively set
+            with the user. It effectively recaps the conversation and confirms the
+            user's commitment to the goal. The summary is concise and aligns with
+            the user's previous inputs, ensuring clarity and continuity in the dialogue.
+            There are no errors or omissions in the information provided, and it does
+            not ignore any user input. The chatbot's response is relevant, clear,
+            and supportive, facilitating a smooth continuation of the conversation.
+            Therefore, there is no dialogue breakdown in this utterance.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 42
+    role: user
+    content: Wait, we're done? Oh, okay.
+    breakdown_annotation: null
+-   turn_id: 43
+    role: dialogue_system
+    content: Goodbye! I hope I was able to help you with your goal. Have a great day!
+    breakdown_annotation:
+        reasoning: The chatbot's final utterance is a polite and appropriate closing
+            to the conversation. It acknowledges the completion of the task and wishes
+            the user well, which is a suitable way to end the interaction. There are
+            no breakdowns in this utterance as it does not ignore any user input,
+            provides a clear intention, and maintains the flow of the conversation.
+            The chatbot's response is consistent with its role as a goal-setting assistant
+            and does not introduce any new topics or errors.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+finish_reason: chatbot_ended_chat
+error: null
+ratings:
+    task_success:
+        reasoning: The chatbot successfully guided the user through the process of
+            setting a specific goal and formulating an implementation intention. It
+            helped the user refine their vague goal of 'doing stuff' into a more specific
+            goal of identifying two Pomodoro strategies for exercise by Friday. The
+            chatbot also assisted in setting an implementation intention related to
+            listening to podcasts. However, the user seemed confused at times, indicating
+            that the chatbot could have been clearer in its guidance.
+        rating: 4
+    efficiency:
+        reasoning: The conversation was somewhat lengthy, with 43 turns, and the user
+            expressed confusion multiple times. The chatbot repeated similar questions
+            and suggestions, which could have been streamlined to make the process
+            more efficient. The user needed several prompts to arrive at a specific
+            goal, indicating that the process could have been more direct.
+        rating: 3
+    appropriateness:
+        reasoning: The chatbot maintained an appropriate tone throughout the conversation,
+            providing relevant suggestions and examples. It avoided giving medical
+            advice and stayed within its constraints. However, it could have been
+            more responsive to the user's confusion and adjusted its approach accordingly.
+        rating: 4
+    naturalness:
+        reasoning: The chatbot's responses were generally clear and polite, but they
+            sometimes felt repetitive and slightly robotic. The use of structured
+            lists and repeated phrases made the conversation feel less natural. The
+            chatbot could have used more varied language to improve the naturalness
+            of the interaction.
+        rating: 3
+    overall_performance:
+        reasoning: Overall, the chatbot performed its task of helping the user set
+            a goal and an implementation intention. However, the process was not as
+            efficient or natural as it could have been, and the user expressed confusion
+            at several points. The chatbot could improve by being more concise and
+            responsive to the user's needs.
+        rating: 3
+human_rating_annotations: null
+chat_statistics:
+    start_time: '2025-05-19 12:20:38'
+    end_time: '2025-05-19 12:21:51'
+    duration: 72.791264
+    num_turns: 43
+    num_user_turns: 21
+    num_chatbot_turns: 22
+    avg_user_turn_length: 4.9523809523809526
+    five_num_summary_user_turn_lengths:
+        min: 4.0
+        q1: 4.0
+        median: 5.0
+        q3: 5.0
+        max: 12.0
+    avg_chatbot_turn_length: 45.77272727272727
+    five_num_summary_chatbot_turn_lengths:
+        min: 16.0
+        q1: 32.5
+        median: 40.0
+        q3: 52.5
+        max: 95.0
+simulation_cost_statistics:
+    total_prompt_tokens: 27743
+    total_completion_tokens: 174
+    total_tokens: 27917
+    cost: 0.052697500000000015
+breakdown_stats:
+    analysis_start_time: '2025-05-19 12:34:19'
+    analysis_end_time: '2025-05-19 12:35:35'
+    count: 0
+    avg_score: 1.0
+    turn_ids_of_breakdowns: []
+    counts_per_breakdown_type:
+        uninterpretable: 0
+        grammatical_error: 0
+        semantic_error: 0
+        wrong_information: 0
+        ignore_question: 0
+        ignore_request: 0
+        ignore_proposal: 0
+        ignore_greeting: 0
+        ignore_expectation: 0
+        unclear_intention: 0
+        topic_transition_error: 0
+        lack_of_information: 0
+        self_contradiction: 0
+        contradiction: 0
+        repetition: 0
+        lack_of_sociality: 0
+        lack_of_common_sense: 0
+        in_domain_task_failure: 0
+        update_info_failure: 0
+        clarification_failure: 0
+        redundancy: 0
+        lack_of_brevity: 0
+        lack_of_clarity: 0
+        failure_to_recognize_out_of_domain: 0
+        failure_to_communicate_capabilities: 0
+        failure_to_resolve_out_of_domain: 0
+        chatbot_crash: 0
+    detection_cost_stats:
+        prompt_tokens: 49058
+        completion_tokens: 2787
+        total_tokens: 51845
+        cost: 0.09835500000000001
+eval_stats:
+    evaluation_start_time: '2025-05-19 12:40:08'
+    evaluation_end_time: '2025-05-19 12:40:17'
+    cost_stats:
+        prompt_tokens: 2545
+        completion_tokens: 371
+        total_tokens: 2916
+        cost: 0.0100725

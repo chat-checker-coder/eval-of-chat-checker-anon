@@ -1,0 +1,141 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "I want to improve my mental wellbeing, but I'm scared I'll mess it up."
+3. Chatbot: "Improving your mental wellbeing is a wonderful goal, and it's okay to feel apprehensive. **Does that mean your goal is to enhance your mental wellbeing, or are you striving for a higher goal like achieving a balanced lifestyle, reducing stress, or building resilience?**"
+4. User: "I think reducing stress, but scared."
+5. Chatbot: "Reducing stress is an important and commendable goal, and it's completely normal to feel scared about it. **Do you already have a strategy or a procedure in mind to help you reduce stress?**
+
+For example:  
+- Regular meditation practice  
+- Consistent exercise routine  
+- Time management skills"
+6. User: "Not sure, feel overwhelmed."
+7. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve reducing stress. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task. 
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Research and practice mindfulness techniques to help manage and reduce stress levels.
+2. Learn about time management strategies to better organize tasks and reduce stress from feeling overwhelmed.
+3. Explore and implement relaxation exercises, such as deep breathing or progressive muscle relaxation, to help alleviate stress."
+8. User: "Mindfulness sounds nice, but hard."
+9. Chatbot: "I understand that mindfulness can seem challenging at first, but breaking it down into smaller, manageable steps can make it more approachable. 
+
+**What specific aspect of mindfulness would you like to learn or practice to help reduce stress?**"
+10. User: "Taking deep breaths seems doable."
+11. Chatbot: "That's a great start! Focusing on deep breathing can be a powerful way to reduce stress and promote relaxation. 
+
+**Would you like to set a learning goal to explore and practice deep breathing techniques?**"
+12. User: "Yes, but what if I fail?"
+13. Chatbot: "It's completely normal to feel uncertain, but remember that learning is a process, and it's okay to take small steps and make mistakes along the way. Each attempt is a step towards improvement, and the key is to be patient and kind to yourself.
+
+**Would you like to set a learning goal to explore and practice deep breathing techniques, focusing on gradual progress and self-compassion?**"
+14. User: "Okay, yes, I'll try."
+15. Chatbot: "Your goal of exploring and practicing deep breathing techniques already sounds good. **Could you try making your goal even more specific?**
+
+For Example:
+Learn 3 deep breathing techniques by Friday, practice daily."
+16. User: "Learn 1 technique by Friday."
+17. Chatbot: "Your goal of learning a deep breathing technique by Friday sounds now more specific. **Do you think you could now make it even more challenging while still being achievable for you?** If you can't, this is also okay.
+
+You for example could make your goal challenging by:  
+1. Learning a deep breathing technique today.  
+2. Practicing the technique daily until Friday.  
+3. Or increasing the difficulty by mastering 3 techniques."
+18. User: "I'm afraid to push myself."
+19. Chatbot: "I understand your concern, and it's important to set goals that feel right for you. **Would you like to keep your original goal, or is there a small step you feel comfortable adding to make it slightly more challenging?**"
+20. User: "I'll stick with the original."
+21. Chatbot: "It's great that you've set a goal to learn a deep breathing technique by Friday. **What do you think is the first action you could do in the next 7 days to get closer to your goal?**
+
+You could for example:  
+1. Watch 3 YouTube videos on deep breathing techniques.  
+2. Read a book chapter on deep breathing exercises.  
+3. Attend a workshop on stress-reduction breathing methods.  "
+22. User: "I'm leaning towards YouTube videos."
+23. Chatbot: "That sounds like a practical and accessible way to learn a deep breathing technique. **Do you want to proceed with watching 3 YouTube videos on deep breathing techniques as your action?**"
+24. User: "I'm scared it'll be too hard."
+25. Chatbot: "It's completely normal to feel a bit apprehensive when trying something new. YouTube videos often offer a range of difficulty levels, so you can start with beginner-friendly content. **Would you like to start with just one video to see how it goes?**"
+26. User: "Alright, I'll try one."
+27. Chatbot: "That's a great step towards learning deep breathing techniques! **What could be a good cue for you** that triggers the implementation of watching the video? It would be best to select a cue that follows a significant event and is very noticeable so you don't forget it.
+
+For Example:
+1. If I finish my lunch break at work, I will watch 1 YouTube video on deep breathing techniques.
+2. When I sit down at my desk in the morning, I'll watch 1 YouTube video on deep breathing techniques.
+3. If I make my morning coffee, I will watch 1 YouTube video on deep breathing techniques."
+28. User: "When I have morning coffee."
+29. Chatbot: "That sounds like a reliable cue! **Is there a specific day this week when you plan to have your morning coffee and watch the video?**"
+30. User: "Maybe tomorrow? Feels overwhelming."
+31. Chatbot: "I understand that it can feel overwhelming, but taking small steps can make a big difference. **Would you like to set the cue for tomorrow morning when you have your coffee, or would another day this week feel more manageable for you?**"
+32. User: "I guess tomorrow works."
+33. Chatbot: "Perfect! You just did the first step towards learning deep breathing. **Would it be okay if I check in with you in a week to see how you are progressing?** Then we can talk if you made progress on your video watching."
+34. User: "Thanks, appreciate the support."
+35. Chatbot: "Perfect you defined your goal! Now we are done and this is the summary of the goal and action we set together:
+
+**Goal:** Learn 1 deep breathing technique by Friday.
+
+**Action:** Watch 1 YouTube video on deep breathing techniques.
+
+**Implementation Intention:** when I have morning coffee tomorrow then Watch 1 YouTube video on deep breathing techniques."
+36. User: "Thank you, feeling hopeful now!"
+37. Chatbot: "Goodbye! I hope I was able to help you with your goal. Have a great day!"
+
+# Your Expert Rating

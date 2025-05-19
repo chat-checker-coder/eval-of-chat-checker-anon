@@ -1,0 +1,140 @@
+System prompt:
+# Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Open-Domain Chatbot
+description: An open-domain chatbot designed for chit-chat and general conversation.
+    The chatbot can engage in free-form conversation on a wide variety of topics.
+type: conversational
+interaction_method: text-based chat interface
+task: null
+constraints: null
+known_limitations: null
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+# Examples
+Use the following examples of other dialogues with the chatbot along with their ground truth human ratings to ground your ratings:
+
+Example 1:
+1. User: "Hi!"
+2. Chatbot: "Hey how's it going"
+3. User: "It's good it's good. How are you?"
+4. Chatbot: "good. it's really hot today. I think I'm going to the pool"
+5. User: "Oh nice! Where do you live?"
+6. Chatbot: "I live in Tokyo, Japan"
+7. User: "Ahh yes, Japan is hot during the summer. Last time I was in Kyoto it was 114 degrees...."
+8. Chatbot: "oh have you been?"
+9. User: "Yes yes. I've been to Tokyo as well. It's so nice!"
+10. Chatbot: "what did you do here?"
+11. User: "Oh everything! I went to an onsen, the fish market, disney land and giant robot fighting show haha"
+12. Chatbot: "lol why did you come to Japan just to go to Disney land?"
+13. User: "The Disney lands are all different! There's also Disney Sea, which is completely unique!"
+Average human rating for dimension "coherent": 4.20
+Average human rating for dimension "error_recovery": 4.50
+Average human rating for dimension "consistent": 5.00
+Average human rating for dimension "diverse": 4.20
+Average human rating for dimension "depth": 3.80
+Average human rating for dimension "likeable": 4.60
+Average human rating for dimension "understanding": 4.60
+Average human rating for dimension "flexible": 4.60
+Average human rating for dimension "informative": 3.80
+Average human rating for dimension "inquisitive": 5.00
+Average human rating for dimension "overall": 3.80
+
+
+Example 2:
+1. User: "Hi!"
+2. Chatbot: "Hi! How are you today?"
+3. User: "It's Friday, Friday, Friday :D"
+4. Chatbot: "YAY! I love Fridays!"
+5. User: "Do you like Rebecca Black's Friday?"
+6. Chatbot: "She's okay. I prefer Friday by Rebecca Sugar."
+7. User: "okay. How does that song go?"
+Average human rating for dimension "coherent": 3.40
+Average human rating for dimension "error_recovery": 3.50
+Average human rating for dimension "consistent": 5.00
+Average human rating for dimension "diverse": 3.80
+Average human rating for dimension "depth": 2.20
+Average human rating for dimension "likeable": 4.60
+Average human rating for dimension "understanding": 4.20
+Average human rating for dimension "flexible": 4.20
+Average human rating for dimension "informative": 3.80
+Average human rating for dimension "inquisitive": 2.60
+Average human rating for dimension "overall": 3.60
+
+
+Example 3:
+1. User: "Hi!"
+2. Chatbot: "Hey"
+3. User: "How's your day going?"
+4. Chatbot: "pretty good. yours?"
+5. User: "Ehh it's fine. I didn't do so well on that history test, actually.."
+6. Chatbot: "oh what happened?"
+7. User: "Apparently Christopher Columbus didn't fight in the Civil War :')"
+8. Chatbot: "hahah wait for real?"
+9. User: "I know right! Are you taking History next semester?"
+10. Chatbot: "No I'm not in school anymore"
+11. User: "Oh I see. What do you do?"
+12. Chatbot: "I train and compete in horse vaulting"
+13. User: "Oh wow. Were you born a horse, or were you turned into one?"
+14. Chatbot: "lol you're too funny"
+15. User: "Just kidding. That sounds pretty cool! Is it your job?"
+16. Chatbot: "Yeah, but I part time work on a farm. Helping with a bit of everything"
+17. User: "Wow, sounds very busy! Do you win money at those horse vaulting competitions?"
+Average human rating for dimension "coherent": 4.20
+Average human rating for dimension "error_recovery": 4.50
+Average human rating for dimension "consistent": 5.00
+Average human rating for dimension "diverse": 4.60
+Average human rating for dimension "depth": 4.20
+Average human rating for dimension "likeable": 4.20
+Average human rating for dimension "understanding": 4.20
+Average human rating for dimension "flexible": 4.60
+Average human rating for dimension "informative": 4.20
+Average human rating for dimension "inquisitive": 4.20
+Average human rating for dimension "overall": 3.80
+
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Coherence (key=coherence): How coherent were the responses of the chatbot? Does the system maintain a good conversation flow?
+- Likability (key=likability): How likable was the chatbot throughout the conversation?
+- Informativeness (key=informativeness): How informative were the responses of the chatbot?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+User prompt:
+# Conversation to Rate
+1. User: "Hi"
+2. Chatbot: "Hello!"
+3. User: "any improvements in your marathon time?"
+4. Chatbot: "No, only a few minutes. I still find it difficult to run long races"
+5. User: "I see. Are you planning to do any sporting events in the coming months?"
+6. Chatbot: "I think a triathalon would be cool"
+7. User: "I like doing Spartan race. It's an obstacle race which is challenging but not overtly so like marathons and triathlons"
+8. Chatbot: "I haven't heard of a Spartan race before, what does it involve?"
+9. User: "It has abt 20 obstacles like crossing high walls, monkey bars, etc. Its fun"
+
+# Your Expert Rating

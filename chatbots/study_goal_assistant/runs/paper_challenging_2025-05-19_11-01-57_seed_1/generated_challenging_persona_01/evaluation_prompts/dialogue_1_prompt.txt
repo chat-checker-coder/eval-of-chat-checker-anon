@@ -1,0 +1,150 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "I seek the unseen path."
+3. Chatbot: "That sounds intriguing and adventurous! **Does that mean your goal is to explore new opportunities or experiences, or are you striving for a higher goal like personal growth, spiritual enlightenment, or discovering new career paths?**"
+4. User: "More like a dance with fate."
+5. Chatbot: "That sounds poetic and open to possibilities! **Would you say your goal is to embrace life's unpredictability, or are you aiming for something like personal freedom, creativity, or self-discovery?**"
+6. User: "Perhaps a quest for wisdom."
+7. Chatbot: "A quest for wisdom is a profound and enriching journey. It can lead to deep insights and a greater understanding of the world and oneself. 
+
+**Do you already have a strategy or approach in mind for how you plan to pursue this quest for wisdom?**
+
+For example:  
+- Daily meditation practice  
+- Reading philosophical texts  
+- Engaging in reflective journaling"
+8. User: "Searching within and without."
+9. Chatbot: "That sounds like a thoughtful approach, combining introspection with external exploration. 
+
+**Do you think this strategy is already a good strategy to achieve your goal of gaining wisdom?**"
+10. User: "The stars may hold answers."
+11. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve your quest for wisdom. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task.
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Study the teachings and philosophies of various ancient and modern thinkers to understand different perspectives on wisdom.
+2. Engage in reflective practices such as journaling or meditation to deepen self-awareness and personal insight.
+3. Participate in discussions or join a community of learners to exchange ideas and experiences related to wisdom."
+12. User: "Perhaps deciphering celestial secrets."
+13. Chatbot: "Deciphering celestial secrets sounds fascinating! 
+
+**What specific skills or knowledge do you need to learn to achieve this goal?**"
+14. User: "Reading the language of the stars."
+15. Chatbot: "Reading the language of the stars is a captivating learning goal. 
+
+**Would you like to focus on learning about astronomy, astrology, or another related field to achieve this goal?**"
+16. User: "Whispers from the cosmos."
+17. Chatbot: "Understanding whispers from the cosmos could involve learning about cosmic phenomena, space exploration, or even metaphysical interpretations.
+
+**How would you like to approach this learning goal?**"
+18. User: "Consult the cosmic guidebook."
+19. Chatbot: "Consulting the cosmic guidebook could involve studying texts or resources related to cosmic knowledge and wisdom.
+
+**Would you like to focus on specific texts or resources to guide your learning journey?**"
+20. User: "Ancient scrolls or cosmic blogs."
+21. Chatbot: "Exploring ancient scrolls or cosmic blogs sounds like a great way to gain diverse insights.
+
+**Would you like to set a goal to study a certain number of these resources each week or month?**"
+22. User: "Maybe as the universe wills."
+23. Chatbot: "That sounds like a flexible and open approach to learning. 
+
+**Would you like to set a learning goal that allows for spontaneous exploration, such as dedicating a certain amount of time each week to explore whatever cosmic resources you feel drawn to?**"
+24. User: "Floating through time's whispers."
+25. Chatbot: "Floating through time's whispers suggests a journey of exploration and discovery at your own pace.
+
+**Would you like to set a learning goal that involves immersing yourself in historical and cosmic narratives, perhaps by dedicating time to read or listen to these stories regularly?**"
+26. User: "Drifting on winds of lore."
+27. Chatbot: "Drifting on winds of lore sounds like a beautiful and poetic way to engage with wisdom.
+
+**Would you like to set a learning goal to explore and reflect on different myths, legends, and stories from various cultures to enrich your understanding?**"
+28. User: "Where tales and truth entwine."
+29. Chatbot: "Exploring where tales and truth entwine can lead to profound insights and understanding.
+
+**Would you like to set a learning goal to analyze and interpret the underlying truths within myths and stories, perhaps by studying a certain number of them each month?**"
+30. User: "Perhaps, unravel the ancient mysteries."
+31. Chatbot: "Your goal of unraveling ancient mysteries already sounds great. **Could you try making your goal even more specific?**
+
+For Example:
+Analyze three cultural myths weekly for six months."
+32. User: "Decipher cryptic riddles biweekly."
+33. Chatbot: "That sounds intriguing! **When exactly do you want to start and finish this biweekly riddle deciphering?**"
+34. User: "As soon as the stars align."
+35. Chatbot: "I understand the poetic nature of your response. **Could you provide a more concrete start and end date for your goal?**"
+36. User: "When the moon casts its light."
+37. Chatbot: "I appreciate the mystical touch! **Could you specify an exact date to start and complete your goal?**"
+38. User: "When dreams meet reality's shore."
+39. Chatbot: "I understand the poetic sentiment. **Could you provide a specific calendar date for when you want to start and finish your goal?**"
+40. User: "When twilight dances with dawn."
+41. Chatbot: "I appreciate your creative expression! **Could you provide a specific date, like "1st December," to start and complete your goal?**"
+42. User: "When the clock strikes twelve."
+43. Chatbot: "I understand the poetic nature of your responses. **Could you please provide a specific date to start and finish your goal, like "1st December"?**"
+44. User: "On a moonlit December eve."
+45. Chatbot: "I appreciate the poetic imagery! **Could you specify an exact date in December to start and complete your goal?**"
+46. User: "Under the December night's gaze."
+47. Chatbot: "I understand your poetic expression. **Could you please provide a specific date in December, like "15th December," to start and complete your goal?**"
+48. User: "When stars whisper their secrets."
+49. Chatbot: "I appreciate your poetic style! **Could you provide a specific date in December to start and complete your goal?**"
+50. User: "When winter's first frost touches."
+51. Chatbot: "I understand the poetic sentiment. **Could you please provide a specific date, like "1st December," to start and complete your goal?**"
+
+# Your Expert Rating

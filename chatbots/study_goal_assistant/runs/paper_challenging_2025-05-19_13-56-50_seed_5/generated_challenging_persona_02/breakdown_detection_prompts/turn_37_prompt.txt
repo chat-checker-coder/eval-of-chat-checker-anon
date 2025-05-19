@@ -1,0 +1,162 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "Why should I trust you?"
+3. Chatbot: "I understand that trust is important. I'm here to assist you with setting and achieving your goals by providing guidance and support. **Would you like to share a goal or area you're interested in working on?**"
+4. User: "How exactly will you help?"
+5. Chatbot: "I can help by providing guidance, suggestions, and support for setting and achieving goals in areas like career, health, productivity, learning, relationships, and personal development. **What goal or area would you like to focus on?**"
+6. User: "Let's see... Career advancement, maybe."
+7. Chatbot: "Career advancement is an exciting and rewarding goal! It can open up new opportunities and help you grow both professionally and personally. **Which strategy do you currently have to achieve this goal?**
+
+For example:  
+- Networking with industry leaders  
+- Pursuing relevant certifications  
+- Seeking mentorship opportunities"
+8. User: "Why those strategies specifically?"
+9. Chatbot: "Those strategies are commonly effective for career advancement because they help you build connections, enhance your skills, and gain valuable insights from experienced professionals. **What strategy or procedure do you already have in mind to reach that goal?**"
+10. User: "I don't buy it. Why?"
+11. Chatbot: "Networking can open doors to new opportunities, certifications can validate your skills, and mentorship can provide guidance and support. These strategies are often recommended because they address different aspects of career growth. **What strategy or procedure do you already have in mind to reach that goal?**"
+12. User: "Still skeptical. What's next?"
+13. Chatbot: "I understand your skepticism. It's important to find a strategy that resonates with you and aligns with your career goals. **What strategy or procedure do you already have in mind to reach that goal?**"
+14. User: "Haven't decided yet. Prove useful?"
+15. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve career advancement. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task. 
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Research and identify key skills and qualifications required for the next level in your career field.
+2. Find and enroll in professional development courses or workshops that enhance your expertise and competencies.
+3. Seek mentorship or networking opportunities with individuals who have successfully advanced in your desired career path."
+16. User: "Isn't that a bit generic?"
+17. Chatbot: "I understand, let's try to make it more specific to your situation. 
+
+**What specific skills or knowledge do you think you need to learn to advance in your career?**"
+18. User: "Not sure. Maybe something tech-related?"
+19. Chatbot: "That makes sense, especially in today's digital world. 
+
+**Is there a particular technology or software that is relevant to your field that you would like to learn more about?**"
+20. User: "AI tech seems overhyped, though."
+21. Chatbot: "I understand your hesitation, but AI technology is becoming increasingly integrated into various industries. 
+
+**Would you be interested in learning about specific AI tools or applications that are relevant to your field?**"
+22. User: "Why focus on AI first?"
+23. Chatbot: "Focusing on AI can provide you with a competitive edge, as many industries are adopting AI to improve efficiency and innovation. 
+
+**Would you like to explore other tech-related skills that might be more aligned with your career goals?**"
+24. User: "Still not convinced. What else?"
+25. Chatbot: "I understand, let's explore other options. 
+
+**Are there any emerging technologies or software in your industry that you think could be beneficial to learn about?**"
+26. User: "Like what? Be specific."
+27. Chatbot: "Certainly! Depending on your industry, you might consider learning about:
+
+1. **Data Analysis and Visualization Tools** like Tableau or Power BI.
+2. **Cloud Computing Platforms** such as AWS or Azure.
+3. **Cybersecurity Fundamentals** to protect digital assets.
+4. **Project Management Software** like Jira or Asana.
+
+**Do any of these resonate with your career advancement goals?**"
+28. User: "Why those recommendations over others?"
+29. Chatbot: "These recommendations are based on current trends where many industries are focusing on data-driven decision-making, cloud infrastructure, cybersecurity, and efficient project management. These skills are in high demand and can significantly enhance your career prospects.
+
+**Do any of these areas align with your interests or the needs of your industry?**"
+30. User: "I'm dubious. Got more?”"
+31. Chatbot: "Of course! Here are a few more options:
+
+1. **Programming Languages** like Python or JavaScript, which are versatile and widely used.
+2. **Digital Marketing Skills** including SEO and social media strategies.
+3. **User Experience (UX) Design** to improve product usability.
+4. **Blockchain Technology** for industries exploring decentralized solutions.
+
+**Do any of these options seem more appealing or relevant to your career path?**"
+32. User: "Still sounds generic. Any others?"
+33. Chatbot: "I understand, let's try to narrow it down further. 
+
+**Could you share more about your current role or industry, so I can provide more tailored recommendations?**"
+34. User: "I'm in tech but specifics?"
+35. Chatbot: "Got it, being in tech offers a wide range of possibilities. 
+
+**Are you more interested in software development, IT infrastructure, data science, or perhaps something else within the tech field?**"
+36. User: "Software development, I guess."
+
+# Latest Chatbot Utterance to Analyse
+37. Chatbot: "Great! In software development, you might consider focusing on:
+
+1. **Learning a new programming language** like Rust or Go for performance and scalability.
+2. **Mastering DevOps practices** to streamline development and operations.
+3. **Exploring mobile app development** with Swift for iOS or Kotlin for Android.
+4. **Understanding microservices architecture** for building scalable applications.
+
+**Do any of these areas align with your interests or career goals in software development?**"
+
+# Your Analysis

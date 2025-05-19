@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-BPTvKtDIus7SgZqSz5x5f7SxeSqGn",
+  "created": 1745412926,
+  "model": "gpt-4-0613",
+  "object": "chat.completion",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "[\n    {\n        \"reasoning\": \"The bot's response is irrelevant to the user's input. The user simply greeted the bot, but the bot responded with a statement about its favorite singer, which is not related to the user's greeting. This disrupts the flow of the conversation.\",\n        \"decision\": \"BREAKDOWN\",\n        \"score\": 0.2\n    }\n]",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null,
+        "annotations": []
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 80,
+    "prompt_tokens": 308,
+    "total_tokens": 388,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "service_tier": "default"
+}

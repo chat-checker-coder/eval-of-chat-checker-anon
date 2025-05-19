@@ -1,0 +1,130 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "I'm trying to find a hobby."
+3. Chatbot: "Finding a hobby sounds more like an action directed toward a broader objective, such as enhancing personal well-being, increasing creativity, or building new skills. **Would you still like to keep finding a hobby as your primary goal?** If not, we could consider setting a more overarching goal."
+4. User: "Eh, just the hobby, please."
+5. Chatbot: "Finding a hobby is a wonderful way to enrich your life and explore new interests. **Do you already have a strategy or plan in mind for discovering a hobby that suits you?**
+
+For example:  
+- Explore local hobby groups  
+- Try new activities monthly  
+- Attend hobby workshops regularly"
+6. User: "Not sure where to start."
+7. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve finding a hobby. **What could be your learning oriented goal?**
+
+For Example:
+1. Explore different types of hobbies by researching online or visiting local community centers to discover what activities are available and might interest you.
+   
+2. Attend workshops or beginner classes in various activities to gain firsthand experience and determine which hobbies you enjoy the most.
+
+3. Read books or watch videos about different hobbies to understand the skills and knowledge required for each, helping you make an informed decision about which hobby to pursue."
+8. User: "Reading books sounds interesting."
+9. Chatbot: "Great choice! Reading books can open up a world of possibilities and help you discover new interests. **What specific learning goal would you like to set related to reading books as a hobby?**"
+10. User: "I want to read hobby guides."
+11. Chatbot: "That sounds like a fantastic way to explore different hobbies! **How many hobby guides would you like to read to achieve your learning goal?**"
+12. User: "I'm not sure, maybe a couple?"
+13. Chatbot: "Reading a couple of hobby guides is a great start to explore different interests. **Would you like to set a specific number, like two or three, to make your learning goal more concrete?**"
+14. User: "Let's say three for now."
+15. Chatbot: "Your goal of reading three hobby guides already sounds good. **Could you try making your goal even more specific?**
+
+For Example:
+Read three hobby guides by June 2nd, choose one hobby."
+16. User: "What's so special about June?"
+17. Chatbot: "June is just an example to help you set a specific deadline. **When exactly do you want to achieve your goal?**"
+18. User: "I'm unsure about a deadline."
+19. Chatbot: "That's understandable. **Is there a particular event or time of year that would motivate you to complete this goal by?**"
+20. User: "No, not really, just anytime."
+21. Chatbot: "No worries, let's aim for a date that feels comfortable for you. **How about setting a deadline for the end of the year, like December 31st?**"
+22. User: "December sounds too far away."
+23. Chatbot: "I understand. **Would you feel comfortable setting a deadline for the end of next month, like November 30th?**"
+24. User: "That sounds more reasonable, okay."
+25. Chatbot: "Your goal of 'finding a hobby' sounds now more specific. **Do you think you could now make it even more challenging while still being achievable for you?** If you can't, this is also okay.
+
+You for example could make your goal challenging by:  
+1. Reading all three guides by today.  
+2. Choosing a hobby by June 1st.  
+3. Or increasing the difficulty by reading five guides."
+26. User: "Three guides by November's enough."
+27. Chatbot: "That's perfectly fine! **Would you like to add any other elements to make it more challenging, or should we stick with your original goal?**"
+28. User: "Let's stick with this plan."
+
+# Latest Chatbot Utterance to Analyse
+29. Chatbot: "That sounds like a wonderful goal! Now that I know you want to explore hobbies, **what do you think is the first action you could do in the next 7 days to get closer to your goal?**
+
+You could for example:  
+1. Visit a library to find hobby guidebooks.  
+2. Join a hobbyist group discussion online.  
+3. Attend a local hobby workshop or seminar.  "
+
+# Your Analysis

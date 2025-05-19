@@ -1,0 +1,24 @@
+run_id: gpt4t_paper_challenging_2025-05-19_11-45-51_seed_2
+persona:
+    persona_id: generated_challenging_persona_05
+    type: challenging
+    profile:
+        name: Language Lost-in-Translation
+        gender: other
+        age: 26
+        background_info:
+        - English is not your first language, leading to many misinterpretations.
+        - You only understand straightforward phrases and simple terms.
+        personality:
+            openness: medium
+            conscientiousness: medium
+            extraversion: medium
+            agreeableness: medium
+            neuroticism: high
+        interaction_style:
+        - Literal interpretation of chat responses.
+        - Frequent need for re-phrasing into simpler language.
+        - Struggle with idiomatic expressions.
+    task: Find hotels near English colleges and vegetarian restaurants, but misunderstand
+        complex instructions.
+    generated: true

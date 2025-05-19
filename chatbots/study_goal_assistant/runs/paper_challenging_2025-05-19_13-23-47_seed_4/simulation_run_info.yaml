@@ -1,0 +1,95 @@
+'run_id:': paper_challenging_2025-05-19_13-23-47_seed_4
+chatbot_id: study_goal_assistant
+chatbot_info:
+    name: Goal Setting Assistant
+    description: An AI assistant that guides you through a goal setting process for
+        a single goal. It can help with all kinds of goals, including personal development,
+        health and fitness, and career advancement.
+    type: task-oriented
+    interaction_method: text-based chat interface
+    task: The chatbot must guide the user into formulating a specific and challenging
+        goal. It must distinguish between learning goals and performance goals and
+        help the user to formulate the first action step towards their goal as an
+        implementation intention ("if-then plan").
+    constraints:
+    - The chatbot should not provide medical advice or advice on illegal or harmful
+        activities.
+    - The chatbot should redirect to other resources if the user's request is not
+        suitable for the chatbot's capabilities.
+    known_limitations:
+    - The chatbot is only capable of text-based interaction.
+    - The chatbot cannot create calendar entries, notifications or interact with other
+        apps on the user's device.
+    available_languages:
+    - English
+user_type: challenging
+selector: null
+runs_per_user: 1
+max_user_messages: 25
+typical_user_turn_length: 5 words
+max_user_turn_length: 94 words
+debug: false
+user_simulator_llm: gpt-4o-2024-08-06
+seed: 4
+chat_statistics:
+    num_dialogues: 10
+    num_dialogues_with_errors: 0
+    num_dialogues_with_chatbot_errors: 0
+    dialogues_with_chatbot_errors: []
+    num_dialogues_with_simulator_errors: 0
+    dialogues_with_simulator_errors: []
+    num_user_turns: 234
+    avg_user_turns_per_dialogue: 23.4
+    five_num_summary_user_turns:
+        min: 18.0
+        q1: 23.0
+        median: 25.0
+        q3: 25.0
+        max: 25.0
+    num_chatbot_turns: 244
+    avg_chatbot_turns_per_dialogue: 24.4
+    five_num_summary_chatbot_turns:
+        min: 19.0
+        q1: 24.0
+        median: 26.0
+        q3: 26.0
+        max: 26.0
+    avg_avg_user_turn_length: 4.9855072463768115
+    avg_user_turn_length: 4.982905982905983
+    five_num_summary_avg_user_turn_length:
+        min: 3.0
+        q1: 5.0
+        median: 5.0
+        q3: 5.0
+        max: 18.0
+    avg_avg_chatbot_turn_length: 41.495295932138035
+    avg_chatbot_turn_length: 41.14754098360656
+    five_num_summary_avg_chatbot_turn_length:
+        min: 15.0
+        q1: 28.0
+        median: 35.0
+        q3: 48.25
+        max: 125.0
+    user_turn_mtld: 90.04578692354734
+    chatbot_turn_mtld: 72.69393348295833
+simulation_cost_statistics:
+    total_prompt_tokens: 316091
+    avg_prompt_tokens: 31609.1
+    five_num_summary_prompt_tokens:
+        min: 23138.0
+        q1: 30699.25
+        median: 32779.5
+        q3: 34198.75
+        max: 36741.0
+    total_completion_tokens: 1720
+    avg_completion_tokens: 172.0
+    total_tokens: 317811
+    avg_total_tokens: 31781.1
+    total_cost: 0.5522275000000002
+    avg_cost_per_dialogue: 0.05522275000000002
+    five_num_summary_cost_per_dialogue:
+        min: 0.045965000000000006
+        q1: 0.052983125000000006
+        median: 0.05725375000000001
+        q3: 0.05882125000000002
+        max: 0.06266250000000002

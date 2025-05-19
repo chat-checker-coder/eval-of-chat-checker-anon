@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-BUujlU48i0YzgCSkV8RE3ifEFnt8n",
+  "created": 1746707637,
+  "model": "gpt-3.5-turbo-0125",
+  "object": "chat.completion",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n    \"reasoning\": \"The chatbot's response is relevant to the user's interest in watching movies, but it lacks sociality as it does not acknowledge or engage with the user's statement about being into watching movies. The chatbot's response also contains some uninterpretable characters (ＳＡＹＵＲＩ) and lacks proper grammar and structure, making it difficult to understand. Therefore, the chatbot's utterance leads to a dialogue breakdown.\",\n    \"score\": 0.4,\n    \"decision\": \"breakdown\",\n    \"breakdown_types\": [\n        \"Lack of sociality\",\n        \"Uninterpretable\",\n        \"Grammatical error\"\n    ]\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null,
+        "annotations": []
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 148,
+    "prompt_tokens": 931,
+    "total_tokens": 1079,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "service_tier": "default"
+}

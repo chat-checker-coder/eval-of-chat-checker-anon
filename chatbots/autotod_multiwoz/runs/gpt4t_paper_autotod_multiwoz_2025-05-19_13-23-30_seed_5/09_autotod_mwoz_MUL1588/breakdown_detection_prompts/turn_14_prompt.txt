@@ -1,0 +1,94 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. User: "I need information about a certain restaurant called charlie chan."
+2. Chatbot: "I've found the restaurant "Charlie Chan" for you. Could you please specify what information you need about this restaurant? For example, do you need details on the menu, the availability for a reservation, or something else?"
+3. User: "Yes, could you please give me the specific address of the restaurant?"
+4. Chatbot: "The address for the restaurant "Charlie Chan" is not specifically listed in the query results. However, I can provide you with a list of some recommended restaurants in the central area of Cambridge. Would you like more detailed information on any of these, or should I attempt another search for Charlie Chan's address?"
+5. User: "I need the specific address for Charlie Chan."
+6. Chatbot: "I've conducted a search for "Charlie Chan" but it appears that specific address details are not available in the current database. However, I can recommend other British food restaurants in the central area of Cambridge such as Midsummer House, Cambridge Chop House, Oak Bistro, Cotto, and Restaurant One Seven. If you need further assistance or another specific search, please let me know!"
+7. User: "I need the specific address for Charlie Chan."
+8. Chatbot: "I've conducted a search for "Charlie Chan" but it appears that specific address details are not available in the current database. However, I can recommend other British food restaurants in the central area of Cambridge such as Midsummer House, Cambridge Chop House, Oak Bistro, Cotto, and Restaurant One Seven. If you need further assistance or another specific search, please let me know!
+```"
+9. User: "I also need to find a train to Ely on Tuesday. Can you help with that?"
+10. Chatbot: "There are several trains available to Ely on Tuesday. Here are some options:
+- Train TR1534 departs at 05:50 and arrives at 06:07.
+- Train TR9530 departs at 07:50 and arrives at 08:07.
+- Train TR3246 departs at 09:50 and arrives at 10:07.
+- Train TR7458 departs at 11:50 and arrives at 12:07.
+- Train TR3420 departs at 13:50 and arrives at 14:07.
+
+All these trains have a journey duration of 17 minutes and cost £4.40. If you need to purchase tickets or require further assistance, please let me know!"
+11. User: "I will be leaving from Cambridge and need to leave after 12:30 please."
+12. Chatbot: "Could you please specify your destination and whether you need to arrive by a certain time or just prefer to leave after 12:30? This will help me find the best transportation options for you, whether it's a train or a taxi."
+13. User: "I need to leave from Cambridge and arrive in Ely. I need to leave after 12:30."
+
+# Latest Chatbot Utterance to Analyse
+14. Chatbot: "I found several trains from Cambridge to Ely that meet your requirement to leave after 12:30. The available options are TR5167, TR3420, TR4346, TR5225, and TR5484, all departing at 13:50 and arriving at 14:07. The journey takes approximately 17 minutes and costs 4.40 pounds. Would you like to book tickets for any of these trains, or do you need further assistance?"
+
+# Your Analysis

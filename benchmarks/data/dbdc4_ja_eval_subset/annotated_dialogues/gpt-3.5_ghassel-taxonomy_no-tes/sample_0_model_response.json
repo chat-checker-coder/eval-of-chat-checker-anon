@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-BMYxDsIJI3RjrXWuKfu7o5PuEVz43",
+  "created": 1744717279,
+  "model": "gpt-3.5-turbo-0125",
+  "object": "chat.completion",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "\n    {\n        \"reasoning\": \"The bot's utterance is coherent and relevant to the user's response. It continues the conversation by introducing itself, expressing politeness, and asking a follow-up question about the user's place of residence. The language used is appropriate and maintains the flow of the conversation.\",\n        \"decision\": \"NON-BREAKDOWN\",\n        \"score\": 1\n    }",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null,
+        "annotations": []
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 83,
+    "prompt_tokens": 912,
+    "total_tokens": 995,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "service_tier": "default"
+}

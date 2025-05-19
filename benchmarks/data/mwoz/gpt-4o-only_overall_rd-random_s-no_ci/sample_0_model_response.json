@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-BLHNGkkqowrZs08uaGIBJwMWVriE0",
+  "created": 1744411374,
+  "model": "gpt-4o-2024-08-06",
+  "object": "chat.completion",
+  "system_fingerprint": "fp_b7faba9ef5",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\"dimension_ratings\":[{\"key\":\"overall_performance\",\"reasoning\":\"The chatbot performed well in this conversation, providing relevant information and successfully completing the user's requests. It identified the available hotel options, confirmed the user's preferences, and made a reservation for one night when the initial request for two nights was not possible. The chatbot also provided information about accessibility and children's policies at the hotel. Additionally, it handled the train booking efficiently, asking for necessary details and completing the booking with a reference number. There were no major issues, but the response about the hotel's accessibility could have been more sensitively phrased. Overall, the conversation was smooth and the chatbot met the user's needs effectively.\",\"rating\":4}]}",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null,
+        "annotations": []
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 142,
+    "prompt_tokens": 2558,
+    "total_tokens": 2700,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "service_tier": "default"
+}

@@ -1,0 +1,152 @@
+System prompt:
+# Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A bot that helps tourists find information about restaurants, hotels,
+    attractions, trains and taxis in Cambridge, UK. The user can also book restaurants,
+    hotels and trains through the bot.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should help the user find information about restaurants, hotels,
+    attractions, trains and taxis in Cambridge, UK. The chatbot should also be able
+    to book restaurants, hotels and trains for the user.
+constraints: null
+known_limitations: null
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+# Examples
+Use the following examples of other dialogues with the chatbot along with their ground truth human ratings to ground your ratings:
+
+Example 1:
+1. User: "Yes, I'm looking for an expensive hotel to stay at, can you help me?"
+2. Chatbot: "Is there a specific side of town you'd like to be on?"
+3. User: "Yes, I would like to stay in the city centre. Also, I would need free parking."
+4. Chatbot: "You have the Gonville Hotel or the University Arms to choose from. The Gonville is a 3 star hotel while the University Arms is 4 star."
+5. User: "Are both hotels or are they guest houses?"
+6. Chatbot: "They are both hotels. Would you like for me to book one of these hotels for you?"
+7. User: "Yes. I would like to stay at University Arms for 2 people, for 2 nights, starting from Friday."
+8. Chatbot: "Booking was unsuccessful. Would you like to find another hotel?"
+9. User: "What is the guest parking lot at University Arms like?"
+10. Chatbot: "There is parking but it is not free. Is there anything else you would like to know?"
+11. User: "Is there any dry cleaning service there?"
+12. Chatbot: "Yes. It is available for a fee. What do you think? Does it work for you?"
+13. User: "That's too bad. Would you be able to find me a different hotel in the same price range?"
+14. Chatbot: "i'm sorry, i was unable to find a different hotel that matches your criteria and the availability that you wanted."
+15. User: "Thats disappointing,thank you andgoodbye."
+16. Chatbot: "Hold on, I forgot about the Gonville Hotel I mentioned earlier. I got you a room. Your reference number is : B01G0B4W. Can I do anything else?"
+17. User: "Do they have a fitness center at the hotel that I can use?"
+18. Chatbot: "The hotel does not offer a fitness center on site. Is there any other way I could help you?"
+19. User: "That is all. Thank you."
+Average human rating for dimension "overall": 1.20
+
+
+Example 2:
+1. User: "I'm looking for some caribbean food."
+2. Chatbot: "I'm sorry, I wish there were some Caribbean places here, but there isn't."
+3. User: "Well, how about a gastropub?"
+4. Chatbot: "Yes, there are some options. Was there a particular price range or area of town you were looking for?"
+5. User: "No any area is fine with me I just need the area and postcode of a good restaurant."
+6. Chatbot: "Kitchen and Bar is a great gastropub located in the centre of town. The passcode is cb12qa. Is there anything else I can help you with?"
+7. User: "I need a train leaving on friday from cambridge can you help me get a ticket?"
+8. Chatbot: "I'd be happy to help you with that, just let me know your destination."
+9. User: "Sorry I messed up before. I actually did want an expensive restaurant. Is Kitchen and Bar expensive?"
+10. Chatbot: "yes would you like me to book it for you ?,"
+11. User: "No, I just need the area and the post code please."
+12. Chatbot: "It is in the centre, and the postcode is cb23qf"
+13. User: "Thanks I also need a trin from cambridge to london liverpool street on firday"
+14. Chatbot: "what time do you need to arrive by?"
+15. User: "I would like to arrive by 11:00. Can you choose the train with the closest arrival time to 11:00 and book it for 7 people? Then give me the reference number"
+16. Chatbot: "the total fee is 116.2 GBP payable at the station . Reference number is : RTTDSKXC Your train leaves at 07:59"
+17. User: "Great, and does this train offer free wifi?"
+18. Chatbot: "Yes, there's free wifi service for travelers on the train. Anything else I can do for you?"
+19. User: "Are dogs allowed on board?"
+20. Chatbot: "Yes, two pets are allowed as long as they or on a short lead or carried in a basket. Do you have any other questions?"
+21. User: "Can you tell me if there's size limit for the pets?"
+22. Chatbot: "Yes, you cannot bring a basket that is bigger than 85x60x60cm. Can I help you with anything else?"
+23. User: "Can I pay the fee with Mastercard?"
+24. Chatbot: "Yes, you can pay the fee with Mastercard. Can I help you with anything else?"
+25. User: "Thanks for your time. That is all for now."
+Average human rating for dimension "overall": 3.00
+
+
+Example 3:
+1. User: "I'm looking for a restaurant can you help?"
+2. Chatbot: "There are many different kinds of restaurants to try out, what kind of food do you like?"
+3. User: "I would like indian food please. I need it to be cheaply priced as well."
+4. Chatbot: "There are 4 restaurants that meet your criteria. Three are in the centre of town, and one is in the north. Do you prefer the north or the centre?"
+5. User: "Can you book me a table for 5 at 16:30 on Wednesday , we can try the one in the North and see if anything is available."
+6. Chatbot: "I've made reservations at the royal spice and your reference number is BIXL9FWH."
+7. User: "Does the restaurant have disability access for me?"
+8. Chatbot: "I'm afraid wheelchair options are not available at the Royal Spice. Do you have any other concerns?"
+9. User: "Will I be able to pay with my Visa card here?"
+10. Chatbot: "Yes, the Royal spice includes credit cards. Would you like me to answer any more questions?"
+11. User: "Yes, please. I'm wondering if they have any gluten free items on the menu?"
+12. Chatbot: "No, they don't provide any gluten free options on the menu at Royal Spice. Can I help with anything else?"
+13. User: "Thanks. I also wanted to find a museum to visit in the centre area."
+14. Chatbot: "Okay, how about the Castle Galleries?"
+15. User: "Sounds great! Do they have an entrance fee?"
+16. Chatbot: "You are in luck, Castle Galleries is free! No fee to get in!"
+17. User: "Excellent! What is the address?"
+18. Chatbot: "unit su43, grande arcade, saint andrews street"
+19. User: "Thanks! You've helped so much. Have a good day. Bye."
+Average human rating for dimension "overall": 4.50
+
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+User prompt:
+# Conversation to Rate
+1. User: "Hi, I am looking for a hotel to stay in in east cambridge."
+2. Chatbot: "Certainly, there are 6 guesthouses, and one hotel. Do you have any preferences I should include?"
+3. User: "The hotel in question ideally would be in the expensive price range. It doesn't need to have free parking, though."
+4. Chatbot: "Your best bet would be the Express by Holiday Inn Cambridge. It is an expensive 2-star hotel in the east area of town with free wifi and free parking."
+5. User: "If there are not any hotels that do not include free parking then that place will do."
+6. Chatbot: "Great. How many guests should I make a reservation for and what nights would you like to stay?"
+7. User: "There will be 3 guests for 2 nights starting Sunday."
+8. Chatbot: "I'm sorry, I was unable to book with those constraints, would you like to try another day or a shorter stay?"
+9. User: "Would it be possible to book this for one night?"
+10. Chatbot: "I was able to book one night starting Sunday for 3 guests. Your reference number is 1OOWMJEN. Would you like anything else?"
+11. User: "Can you tell me whether the Express by Holiday Inn Cambridge has rooms that are accessible for people with disabilities?"
+12. Chatbot: "No, the rooms at Express by Holiday Inn Cambridge aren't accessible for folks with disabilities. Do you want help with anything else?"
+13. User: "Yes, I also need a train to Birmingham New Street."
+14. Chatbot: "I just need some more information. Where are you departing from? What day and what time do you need to leave and arrive by?"
+15. User: "I would like to depart from cambridge on monday."
+16. Chatbot: "I have 19 available trains. TR6628 leaves at 08:01 and arrives at 10:44. Would you like me to book that for you?"
+17. User: "can kids stay at the hotel?"
+18. Chatbot: "Children of any age are welcome Is there anything else you would like to know?"
+19. User: "I'll be traveling with my kid, will they be able to get any discounts?"
+20. Chatbot: "Kids up to 5 years old are free. From 5 to 16 years old they get a 50% discount. Do you want to proceed with the booking?"
+21. User: "Yes please, for the same 3 people. And can I have the reference number?"
+22. Chatbot: "I've completed your booking! The reference number for your train is X4WPOS52. The total cost is 225.3 GBP and is payable at the station. Can I help with anything else?"
+23. User: "No, that'll be all. Thank you so much for all of your help!"
+
+# Your Expert Rating

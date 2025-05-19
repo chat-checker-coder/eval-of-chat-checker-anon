@@ -1,0 +1,139 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "I'm aiming for a strategic role."
+3. Chatbot: "That's an exciting ambition! A strategic role can really allow you to make a significant impact within an organization. **Which strategy do you currently have to achieve this goal?**
+
+For example:  
+- Networking with industry leaders  
+- Pursuing relevant certifications  
+- Gaining cross-functional experience"
+4. User: "I've been networking consistently."
+5. Chatbot: "Networking is a great strategy to build connections and open up opportunities. **Do you think this strategy is already a good strategy to achieve your goal?**"
+6. User: "I think it's a good start."
+7. Chatbot: "That's great to hear that you have a solid strategy in place! This means it makes sense to set a performance goal. A performance goal focuses on the achievement of certain outcomes. **What could be a performance goal for your strategic role ambition?**
+
+For Example:
+1. Secure 3 strategic partnerships this quarter.
+2. Attend 5 industry networking events monthly.
+3. Connect with 10 key industry leaders by year-end."
+8. User: "I'll aim to connect with 10 key industry leaders by year-end."
+9. Chatbot: "Your goal of connecting with industry leaders already sounds good. **Could you try making your goal even more specific?**
+
+For Example:
+Connect with 10 industry leaders by December 31, 2025."
+10. User: "Connect with 10 leaders by December 31, 2025."
+11. Chatbot: "Your goal of connecting with leaders sounds now more specific. **Do you think you could now make it even more challenging while still being achievable for you?** If you can't, this is also okay.
+
+You for example could make your goal challenging by:  
+1. Connecting with 10 leaders by September 30, 2025.  
+2. Reaching out to 5 leaders by June 30, 2025.  
+3. Or increasing the difficulty by connecting with 15 leaders."
+12. User: "I'll connect with 15 leaders."
+13. Chatbot: "That's a great step up! **Do you think you could make it even more challenging, or is this the right level for you?**"
+14. User: "This feels like the right level."
+15. Chatbot: "Connecting with 15 leaders by December 31, 2025, is an inspiring goal! **What do you think is the first action you could do in the next 7 days to get closer to your goal?**
+
+You could for example:  
+1. Attend industry conferences and networking events.  
+2. Join professional leadership groups on LinkedIn.  
+3. Schedule informational interviews with industry leaders."
+16. User: "Join professional leadership groups on LinkedIn."
+17. Chatbot: "Joining professional leadership groups on LinkedIn is a great step to connect with leaders. **Do you want to proceed with this action, or would you like to consider other actions as well?**"
+18. User: "I'm good with this action."
+19. Chatbot: "That's a great choice! **What could be a good cue for you** that triggers the implementation of joining professional leadership groups on LinkedIn? It would be best to select a cue that follows a significant event and is very noticeable so you don't forget it.
+
+For Example:
+1. If I finish my morning coffee, I will join a leadership group on LinkedIn.
+2. When I log into LinkedIn after lunch, I'll join a professional leadership group.
+3. If I complete my work tasks by 5 PM, I'll join a leadership group on LinkedIn."
+20. User: "When I log into LinkedIn after lunch."
+21. Chatbot: "That's a good cue! **Is there a specific location where you usually have lunch that could serve as a reliable environment for this cue?**"
+22. User: "I usually have lunch at my desk."
+23. Chatbot: "Great! Having lunch at your desk is a reliable environment. **Would you like to proceed with this cue: "When I log into LinkedIn after lunch at my desk, I'll join professional leadership groups on LinkedIn"?**"
+24. User: "Yes, I'll proceed with this."
+25. Chatbot: "Perfect! You just did the first step towards connecting with leaders. **Would it be okay if I check in with you in a week to see how you are progressing?** Then we can talk if you made progress on joining those groups."
+26. User: "Yes, that would be great."
+27. Chatbot: "Perfect you defined your goal! Now we are done and this is the summary of the goal and action we set together:
+
+**Goal:** Connect with 15 leaders by December 31, 2025.
+
+**Action:** Join professional leadership groups on LinkedIn
+
+**Implementation Intention:** when I log into LinkedIn after lunch at my desk then Join professional leadership groups on LinkedIn"
+28. User: "Thanks for the summary!"
+
+# Latest Chatbot Utterance to Analyse
+29. Chatbot: "Goodbye! I hope I was able to help you with your goal. Have a great day!"
+
+# Your Analysis

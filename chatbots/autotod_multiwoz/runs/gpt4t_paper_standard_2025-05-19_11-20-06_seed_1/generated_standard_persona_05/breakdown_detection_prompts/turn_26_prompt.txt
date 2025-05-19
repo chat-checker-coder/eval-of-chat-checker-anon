@@ -1,0 +1,109 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. User: "Can you suggest some art galleries and historical architectures in Cambridge?"
+2. Chatbot: "In Cambridge, I couldn't find any art galleries listed in the database. However, for historical architecture, you can visit several notable sites including "All Saints Church" at Jesus Lane, "Great Saint Mary's Church" at Market Square, "Holy Trinity Church" on Market Street, "Little Saint Mary's Church" at Little Saint Mary's Lane, and "Old Schools" on Trinity Lane. These attractions are all centrally located and offer a glimpse into the rich architectural history of the city."
+3. User: "Great! Anything unique about their architecture or history?"
+4. Chatbot: "Each of these historical sites in Cambridge has its own unique architectural style and history. "All Saints Church" features a stunning Arts and Crafts style, while "Great Saint Mary's Church" offers a panoramic view of the city from its tower and is known for its role in university life. "Holy Trinity Church" is famous for its association with the preacher Charles Simeon. "Little Saint Mary's Church" is known for its intimate and ornate interior, and "Old Schools" is significant as the main administrative center of the University of Cambridge. These sites not only provide architectural beauty but also a deep connection to the history of Cambridge. If you need more detailed information or wish to visit any of these, just let me know!"
+5. User: "Thanks for the info! Can you help book a tour?"
+6. Chatbot: "I'd be happy to help you book a tour! Could you please specify the area or type of attraction you're interested in visiting in Cambridge? Additionally, if you have a specific attraction in mind, feel free to mention its name.
+```"
+7. User: "I'm interested in a tour covering all these historical sites."
+8. Chatbot: "To help you find a tour covering historical sites in Cambridge, could you please specify if you have any particular historical sites in mind or if there's a specific area you're interested in? This will help me provide you with the best options.
+```"
+9. User: "No specific area, just those sites you mentioned earlier."
+10. Chatbot: "Thank you for clarifying! Since you're interested in historical sites in general, I'll look for tours that cover a variety of historical attractions in Cambridge. Could you please specify the day you'd like to take the tour? This will help me find the best options for you.
+```"
+11. User: "I'd like to take the tour this coming Saturday. Thanks!"
+12. Chatbot: "I've found several historical site tours in Cambridge that you can join this coming Saturday. Here are a few options: "Cambridge Historical Highlights Walking Tour," "Cambridge University & City Tour," and "Historic Cambridge: A Guided Walking Tour." Please let me know if you would like more details about these tours or if you wish to book one."
+13. User: "Could you provide more details about the 'Cambridge University & City Tour'?"
+14. Chatbot: "The "Cambridge University & City Tour" includes visits to several notable attractions in the central area of Cambridge. Here are some highlights:
+- ADC Theatre: Known for its vibrant theatrical performances.
+- All Saints Church: Famous for its stunning architecture.
+- Ballare: A popular nightclub for evening entertainment.
+- Broughton House Gallery: A museum showcasing local and international art.
+- Cambridge Arts Theatre: Offers a variety of theatrical productions.
+
+This tour provides a comprehensive overview of Cambridge's university life and city culture. If you're interested in booking this tour for Saturday or need further information, please let me know!"
+15. User: "Sounds interesting! Can I book the Cambridge University & City Tour?"
+16. Chatbot: "To assist you with booking the Cambridge University & City Tour, could you please provide me with the number of people attending, the day you'd like to go, and the preferred time for the tour?
+```"
+17. User: "Just one person, this Saturday, preferably in the morning."
+18. Chatbot: "I've found several attractions for your visit this Saturday morning. You can choose from the ADC Theatre, All Saints Church, Broughton House Gallery, Cambridge Arts Theatre, and Cambridge Contemporary Art. If you'd like to proceed with booking the Cambridge University & City Tour specifically, please confirm, and I'll make the necessary arrangements for you."
+19. User: "Yes, please proceed with booking the Cambridge University & City Tour."
+20. Chatbot: "Could you please provide more details about the booking? Specifically, how many people will be attending, on which day you'd like to go, and the preferred time for the tour?"
+21. User: "Just one person, this Saturday, preferably in the morning."
+22. Chatbot: "I've found several attractions for your visit to Cambridge this Saturday morning. You can choose from the ADC Theatre, All Saints Church, Broughton House Gallery, Cambridge Arts Theatre, and Cambridge Contemporary Art. Each offers a unique cultural experience. Please let me know if you would like more information on any of these options or if you need assistance with anything else!"
+23. User: "I prefer the tour, not individual visits. Can you confirm?"
+24. Chatbot: "I understand you prefer a guided tour rather than individual visits to attractions. To proceed with booking the Cambridge University & City Tour for one person this Saturday morning, I'll need to confirm the exact time you'd like to start the tour. Could you please specify a preferred starting time?"
+25. User: "I'd like to start the tour around 10:00 AM, please."
+
+# Latest Chatbot Utterance to Analyse
+26. Chatbot: "I've checked the availability for the Cambridge University & City Tour for one person at around 10:00 AM this Saturday, but unfortunately, there are no tours available at that specific time. Would you like to consider a different time on Saturday, or perhaps another day? Please let me know how you would like to proceed!"
+
+# Your Analysis

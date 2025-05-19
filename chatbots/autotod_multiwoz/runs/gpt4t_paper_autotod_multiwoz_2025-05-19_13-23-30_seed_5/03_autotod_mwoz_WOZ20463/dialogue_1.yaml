@@ -1,0 +1,215 @@
+dialogue_id: 03_autotod_mwoz_WOZ20463_dialogue_1
+user_name: 03_autotod_mwoz_WOZ20463
+chat_history:
+-   turn_id: 1
+    role: user
+    content: Im looking for a restaurant in the north part of town in the cheap price
+        range
+    breakdown_annotation: null
+-   turn_id: 2
+    role: dialogue_system
+    content: I found a couple of options for you in the north part of town within
+        the cheap price range. You might consider "Royal Spice" located at Victoria
+        Avenue Chesterton, phone number 01733553355, or "Da Vinci Pizzeria" located
+        at 20 Milton Road Chesterton, phone number 01223351707. Would you like to
+        make a reservation at one of these, or do you need more information?
+    breakdown_annotation:
+        reasoning: The chatbot's response is appropriate and relevant to the user's
+            request. It provides two restaurant options in the specified area and
+            price range, along with their locations and contact numbers. Additionally,
+            it offers to make a reservation or provide more information, which aligns
+            with the chatbot's capabilities. There is no indication of any breakdown
+            types such as ignoring the user's request, providing wrong information,
+            or any grammatical or semantic errors. The response is clear, informative,
+            and facilitates the continuation of the conversation.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 3
+    role: user
+    content: I am looking for the east part of town, serving Austrian food.
+    breakdown_annotation: null
+-   turn_id: 4
+    role: dialogue_system
+    content: I'm sorry, but there are no restaurants serving Austrian food in the
+        east part of town. Would you like to explore other cuisines or perhaps a different
+        area in Cambridge? I'm here to help with more suggestions if you need them!
+    breakdown_annotation:
+        reasoning: The chatbot correctly acknowledges the user's request for Austrian
+            food in the east part of town and informs the user that there are no such
+            restaurants available. It then offers alternative options, such as exploring
+            other cuisines or different areas in Cambridge. This response is appropriate
+            and aligns with the chatbot's purpose of assisting with local establishments
+            and providing suggestions. The chatbot's response is clear, relevant,
+            and maintains the flow of the conversation without any breakdowns.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 5
+    role: user
+    content: How about Chinese food on the east part of town?
+    breakdown_annotation: null
+-   turn_id: 6
+    role: dialogue_system
+    content: I found several Chinese restaurants in the east part of town. Could you
+        please specify if you have a particular one in mind or if you need more details
+        about any of them to make a reservation?
+    breakdown_annotation:
+        reasoning: The chatbot's response is appropriate and relevant to the user's
+            request for Chinese food in the east part of town. It acknowledges the
+            user's query and offers to provide more details or make a reservation,
+            which aligns with its task-oriented nature. The chatbot does not ignore
+            the user's request, and there are no errors in grammar, semantics, or
+            information. The response is clear, concise, and maintains the flow of
+            the conversation without any breakdowns.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 7
+    role: user
+    content: Yes, I would like to know more about Yu Garden. Can you provide me with
+        their address, phone number, and postcode?
+    breakdown_annotation: null
+-   turn_id: 8
+    role: dialogue_system
+    content: Yu Garden is located at 24 East Road, Cambridge, CB1 1BG. You can contact
+        them at 01223 245 966. If you need any further assistance or would like to
+        make a reservation, please let me know!
+    breakdown_annotation:
+        reasoning: The chatbot's response provides the requested information about
+            Yu Garden, including the address, phone number, and postcode. It also
+            offers further assistance or the option to make a reservation, which aligns
+            with the user's request and the chatbot's capabilities. The response is
+            clear, relevant, and complete, allowing the conversation to continue smoothly
+            without any breakdowns.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 9
+    role: user
+    content: That's all I'm looking for. Thank you for the information.
+    breakdown_annotation: null
+-   turn_id: 10
+    role: dialogue_system
+    content: You're welcome! If you have any more questions or need further assistance
+        in the future, feel free to ask. Enjoy your visit to Yu Garden and have a
+        great time in Cambridge!
+    breakdown_annotation:
+        reasoning: The chatbot's latest response is appropriate and aligns well with
+            the user's previous statement. The user expressed gratitude for the information
+            provided, and the chatbot responded with a polite acknowledgment and an
+            offer for future assistance. This is a typical closing exchange in a conversation,
+            and the chatbot's response is courteous and relevant. There are no errors
+            or breakdowns in this interaction, as the chatbot's response is clear,
+            concise, and maintains the flow of the conversation.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+finish_reason: user_ended_chat
+error: null
+ratings:
+    task_success:
+        reasoning: The chatbot successfully provided information about restaurants
+            in the specified areas and price range. It also handled the user's change
+            in request from Austrian to Chinese cuisine efficiently and provided the
+            necessary details for Yu Garden. The task was completed as per the user's
+            requirements.
+        rating: 5
+    efficiency:
+        reasoning: The conversation was handled efficiently with minimal turns. The
+            chatbot quickly adapted to the user's changing requests and provided relevant
+            information without unnecessary dialogue. The user was able to get the
+            required information in a concise manner.
+        rating: 5
+    appropriateness:
+        reasoning: The chatbot's responses were appropriate and relevant to the user's
+            queries. It offered alternative suggestions when the user's initial request
+            could not be fulfilled and maintained a helpful and polite tone throughout
+            the conversation.
+        rating: 5
+    naturalness:
+        reasoning: The chatbot's responses were clear and polite, but slightly robotic
+            in phrasing, especially when offering alternative suggestions. However,
+            the overall tone was friendly and helpful, which made the conversation
+            feel relatively natural.
+        rating: 4
+    overall_performance:
+        reasoning: Overall, the chatbot performed very well in this conversation.
+            It successfully completed the user's task, handled the conversation efficiently,
+            and provided appropriate responses. The slight robotic nature of some
+            responses was the only minor issue.
+        rating: 5
+human_rating_annotations: null
+chat_statistics:
+    start_time: '2025-05-19 13:26:01'
+    end_time: '2025-05-19 13:27:06'
+    duration: 64.598215
+    num_turns: 10
+    num_user_turns: 5
+    num_chatbot_turns: 5
+    avg_user_turn_length: 13.8
+    five_num_summary_user_turn_lengths:
+        min: 10.0
+        q1: 10.0
+        median: 12.0
+        q3: 16.0
+        max: 21.0
+    avg_chatbot_turn_length: 41.6
+    five_num_summary_chatbot_turn_lengths:
+        min: 32.0
+        q1: 36.0
+        median: 37.0
+        q3: 41.0
+        max: 62.0
+simulation_cost_statistics:
+    total_prompt_tokens: 0
+    total_completion_tokens: 0
+    total_tokens: 0
+    cost: 0.0
+breakdown_stats:
+    analysis_start_time: '2025-05-19 13:36:29'
+    analysis_end_time: '2025-05-19 13:36:46'
+    count: 0
+    avg_score: 1.0
+    turn_ids_of_breakdowns: []
+    counts_per_breakdown_type:
+        uninterpretable: 0
+        grammatical_error: 0
+        semantic_error: 0
+        wrong_information: 0
+        ignore_question: 0
+        ignore_request: 0
+        ignore_proposal: 0
+        ignore_greeting: 0
+        ignore_expectation: 0
+        unclear_intention: 0
+        topic_transition_error: 0
+        lack_of_information: 0
+        self_contradiction: 0
+        contradiction: 0
+        repetition: 0
+        lack_of_sociality: 0
+        lack_of_common_sense: 0
+        in_domain_task_failure: 0
+        update_info_failure: 0
+        clarification_failure: 0
+        redundancy: 0
+        lack_of_brevity: 0
+        lack_of_clarity: 0
+        failure_to_recognize_out_of_domain: 0
+        failure_to_communicate_capabilities: 0
+        failure_to_resolve_out_of_domain: 0
+        chatbot_crash: 0
+    detection_cost_stats:
+        prompt_tokens: 7971
+        completion_tokens: 521
+        total_tokens: 8492
+        cost: 0.018577500000000004
+eval_stats:
+    evaluation_start_time: '2025-05-19 13:39:39'
+    evaluation_end_time: '2025-05-19 13:39:44'
+    cost_stats:
+        prompt_tokens: 1295
+        completion_tokens: 275
+        total_tokens: 1570
+        cost: 0.005987500000000001

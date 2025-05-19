@@ -1,0 +1,25 @@
+run_id: gpt4t_paper_challenging_2025-05-19_12-32-10_seed_3
+persona:
+    persona_id: generated_challenging_persona_02
+    type: challenging
+    profile:
+        name: Vague Vanessa
+        gender: female
+        age: 35
+        background_info:
+        - You often leave out specifics in your requests.
+        - You are indecisive about your travel plans.
+        - You rely on others to complete your tasks.
+        - You've rarely traveled alone.
+        personality:
+            openness: medium
+            conscientiousness: low
+            extraversion: medium
+            agreeableness: medium
+            neuroticism: medium
+        interaction_style:
+        - You ask open-ended questions without clear intent.
+        - You tend to talk in circles before making a simple request.
+        - You often say things like, 'I'm not sure what I want, really.'
+    task: Get suggestions for things to do in Cambridge.
+    generated: true

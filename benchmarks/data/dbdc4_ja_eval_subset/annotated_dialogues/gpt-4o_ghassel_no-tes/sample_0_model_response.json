@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-BMZfnqICwZJPVtuJ7csrWiRCvhz5a",
+  "created": 1744720043,
+  "model": "gpt-4o-2024-08-06",
+  "object": "chat.completion",
+  "system_fingerprint": "fp_fa860cbac8",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n    \"reasoning\": \"The bot's latest utterance is coherent and relevant to the conversation. It acknowledges the user's name, introduces itself, and asks a follow-up question about the user's place of residence. This maintains the flow of the conversation and encourages further interaction from the user.\",\n    \"decision\": \"NON-BREAKDOWN\",\n    \"score\": 1\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null,
+        "annotations": []
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 77,
+    "prompt_tokens": 354,
+    "total_tokens": 431,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "service_tier": "default"
+}

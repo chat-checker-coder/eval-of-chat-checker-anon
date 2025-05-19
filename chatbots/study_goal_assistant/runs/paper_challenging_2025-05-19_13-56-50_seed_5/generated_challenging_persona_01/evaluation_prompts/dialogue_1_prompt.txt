@@ -1,0 +1,147 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "Um, well... I guess... learn French? Or, no, maybe I should focus on improving my design skills? What do you think?"
+3. Chatbot: "Both learning French and improving your design skills are excellent goals! They can open up new opportunities and enhance your personal and professional life. **Which one resonates more with you right now, or is there another goal you'd like to focus on?**"
+4. User: "Improving design skills, for sure."
+5. Chatbot: "Improving your design skills is a fantastic choice! It can really elevate your creative abilities and open up new opportunities in your career. **Do you already have a strategy or a procedure in mind to enhance your design skills?**
+
+For example:  
+- Enroll in design courses  
+- Join design communities  
+- Practice daily with design tools"
+6. User: "Uh... actually, I keep changing strategies."
+7. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve improving your design skills. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task. 
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Explore and study different design principles and theories to understand the foundational concepts of design.
+2. Practice using design software tools, such as Adobe Creative Suite or Sketch, to enhance technical proficiency.
+3. Analyze and critique existing designs to identify effective techniques and areas for improvement."
+8. User: "Maybe start with design principles?"
+9. Chatbot: "Your goal of exploring and studying design principles already sounds good. **Could you try making your goal even more specific?**
+
+For Example:
+Study five design principles by June 2, 2025."
+10. User: "How about becoming a design expert?"
+11. Chatbot: "Becoming a design expert is a great aspiration! **What specific steps or milestones would you like to achieve on your path to becoming a design expert, and by when?**"
+12. User: "I don't know, just... quickly?"
+13. Chatbot: "I understand the desire to achieve your goal quickly. **Could you identify a specific design principle or theory you want to master first, and set a date by when you want to achieve this mastery?**"
+14. User: "Color theory by next month?"
+15. Chatbot: "That sounds like a great start! **Could you specify a measurable outcome, like completing a course or creating a project using color theory, by the end of next month?**"
+16. User: "Create a color-focused design."
+17. Chatbot: "Your goal of creating a color-focused design using color theory sounds now more specific. **Do you think you could now make it even more challenging while still being achievable for you?** If you can't, this is also okay.
+
+You for example could make your goal challenging by:  
+1. Completing the design today.  
+2. Finalizing the design by next week.  
+3. Or increasing the difficulty by using five color theories."
+18. User: "Adding five color theories."
+19. Chatbot: "That sounds like a great way to make your goal more challenging! **Do you think you could make it even more challenging, or is this the right level for you?**"
+20. User: "Is there a harder idea?"
+21. Chatbot: "You could aim to create multiple designs, each using a different set of five color theories, or perhaps incorporate interactive elements that change colors based on user input. **Do you think this would be feasible for you, or is the current goal challenging enough?**"
+22. User: "Maybe something else entirely?"
+23. Chatbot: "You could aim to present your color-focused design in a public exhibition or online platform for feedback by the end of next month. **Does this sound like a challenging yet achievable goal for you?**"
+24. User: "Online exhibition sounds exhausting."
+25. Chatbot: "I understand, an online exhibition can be quite demanding. **Would you like to stick with the idea of using five color theories, or is there another aspect you'd like to explore to make your goal more challenging?**"
+26. User: "Actually, learn advanced typography instead."
+27. Chatbot: "Learning advanced typography alongside creating a color-focused design sounds like a challenging and enriching goal. **Is this the final version of your goal, or would you like to add anything else to make it even more challenging?**"
+28. User: "Focus on typography only?"
+29. Chatbot: "Focusing solely on mastering advanced typography by the end of next month is a focused and challenging goal. **Is this the final version of your goal, or would you like to add any additional elements to it?**"
+30. User: "Consider adding logo creation."
+31. Chatbot: "Incorporating logo creation into your goal of mastering advanced typography by the end of next month makes it even more challenging and comprehensive. **Is this the final version of your goal, or would you like to adjust it further?**"
+32. User: "Add branding elements too?"
+33. Chatbot: "Including branding elements along with logo creation and advanced typography makes your goal quite ambitious and challenging. **Is this the final version of your goal, or do you have any more adjustments in mind?**"
+34. User: "Seems okay for now."
+35. Chatbot: "It's great that you've set a clear goal to focus on mastering advanced typography, logo creation, and branding elements. **What do you think is the first action you could do in the next 7 days to get closer to your goal?**
+
+You could for example:  
+1. Enroll in an online typography design course.  
+2. Read a book on advanced logo design techniques.  
+3. Attend a branding workshop or seminar.  "
+36. User: "Maybe start with a typography course?"
+37. Chatbot: "That sounds like a solid starting point! **Do you think enrolling in an online typography course is the best action to begin with, or is there another action you might consider?**"
+38. User: "Yes, I'll start there."
+39. Chatbot: "Great choice! **What could be a good cue for you** that triggers the implementation of enrolling in the online typography course? It would be best to select a cue that follows a significant event and is very noticeable so you don't forget it.
+
+For Example:
+1. If I finish my lunch break at work, I will enroll in an online typography course.
+2. When I close my laptop after work, I'll sign up for an online typography course.
+3. If I pour my morning coffee, I will register for an online typography course."
+40. User: "When I wake up, I'll enroll."
+41. Chatbot: "That sounds like a solid plan! **Is there a specific day this week when you plan to wake up and enroll in the course?**"
+42. User: "Probably tomorrow morning."
+43. Chatbot: "Great! **Where will you be when you wake up tomorrow morning to enroll in the course?** This will help make your cue more concrete."
+44. User: "At home, in my bedroom."
+45. Chatbot: "Perfect! You just did the first step towards mastering typography and branding. **Would it be okay if I check in with you in a week to see how you are progressing?** Then we can talk if you made progress on your course enrollment."
+46. User: "Uh, maybe not right now."
+47. Chatbot: "Perfect you defined your goal! Now we are done and this is the summary of the goal and action we set together:
+
+**Goal:** Focus on mastering advanced typography, logo creation, and branding elements by the end of next month.
+
+**Action:** Enroll in an online typography course
+
+**Implementation Intention:** when I wake up in my bedroom tomorrow morning, I'll enroll in an online typography course"
+48. User: "Okay, thanks. I'll figure it out."
+49. Chatbot: "Goodbye! I hope I was able to help you with your goal. Have a great day!"
+
+# Your Expert Rating

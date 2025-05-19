@@ -1,0 +1,24 @@
+run_id: gpt4t_paper_challenging_2025-05-19_12-32-10_seed_3
+persona:
+    persona_id: generated_challenging_persona_07
+    type: challenging
+    profile:
+        name: Tech-challenged Tracy
+        gender: other
+        age: 57
+        background_info:
+        - You find technology frequently puzzling.
+        - You have limited experience with chat interfaces.
+        - This is your first solo trip to Cambridge.
+        personality:
+            openness: medium
+            conscientiousness: low
+            extraversion: high
+            agreeableness: high
+            neuroticism: high
+        interaction_style:
+        - You need step-by-step guidance for basic requests.
+        - You express confusion over simple instructions.
+        - You frequently ask, 'How do I do that again?'
+    task: Navigate booking a restaurant in Cambridge.
+    generated: true

@@ -1,0 +1,143 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "I'm thinking of mastering the ancient dialect of Klingon... or maybe just ordering coffee in Spanish without accidentally asking for a llama. Help me either way!"
+3. Chatbot: "Wow, those are both fascinating and fun goals! Mastering Klingon would be an impressive feat, and being able to order coffee in Spanish would definitely be useful and enjoyable. **Do you already have a strategy or plan in mind for achieving either of these goals?**
+
+For example:  
+- Enroll in Klingon language course  
+- Practice with fluent Klingon speakers  
+- Use Klingon language apps"
+4. User: "Strategy? I thought I could just absorb it through osmosis while sipping my coffee."
+5. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve mastering the ancient dialect of Klingon. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task. 
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Research and identify resources such as books, online courses, or language apps specifically designed for learning the Klingon language.
+   
+2. Join a community or group of Klingon language enthusiasts to practice speaking and gain insights into the nuances of the dialect.
+
+3. Study the grammar and syntax rules of the Klingon language to understand its structure and improve language proficiency."
+6. User: "Find a Klingon-speaking coffee barista."
+7. Chatbot: "That sounds like a performance goal, as it focuses on finding someone who already speaks Klingon. **How could you formulate this as a learning goal?** For example, you might consider setting a goal to practice conversational Klingon with a native speaker or enthusiast."
+8. User: "Chat with Klingon over latte."
+9. Chatbot: "This also seems like a performance goal. **How could you formulate this as a learning goal?** Perhaps you could aim to learn conversational phrases in Klingon that you can use while ordering a latte or engaging in small talk."
+10. User: "Learn 'latte' in Klingon."
+11. Chatbot: "That's a great start! Learning specific vocabulary is a key part of mastering a language. **What other vocabulary or phrases would you like to learn in Klingon to help you reach your goal?**"
+12. User: "How about 'extra foam'?"
+13. Chatbot: "That's a useful phrase to learn! Expanding your vocabulary with specific terms like "extra foam" will definitely help in mastering the language. **Would you like to set a learning goal to focus on learning more specific phrases related to ordering coffee in Klingon?**"
+14. User: "Focus on Klingon barista lingo!"
+15. Chatbot: "Your goal of focusing on Klingon barista lingo already sounds good. **Could you try making your goal even more specific?**
+
+For Example:
+Learn 10 Klingon coffee phrases by Friday, 2025-05-23."
+16. User: "Learn 'decaf, please' by 2029!"
+17. Chatbot: "I think you are missing a concrete time in your goal. **When exactly in 2029 do you want to achieve the goal?**"
+18. User: "December 31st, 11:59 PM!"
+19. Chatbot: "Your goal of learning 'decaf, please' in Klingon sounds now more specific. 
+
+**Do you think you could now make it even more challenging while still being achievable for you?** If you can't, this is also okay.
+
+You could make your goal more challenging by:  
+1. Learning 'decaf, please' in Klingon today.  
+2. Doing it by June 1st, 2025.  
+3. Increasing the difficulty by learning 5 Klingon phrases."
+20. User: "Learn 5 phrases by 2030!"
+21. Chatbot: "Great! Learning 5 phrases by 2030 is a more challenging goal. 
+
+**Do you think you could make it even more challenging, like learning them by an earlier date or increasing the number of phrases?**"
+22. User: "All Klingon, no coffee, by 2028!"
+23. Chatbot: "That's an ambitious and exciting goal! Learning all Klingon phrases related to coffee by 2028 is definitely more challenging. 
+
+**Do you think you could make it even more challenging, perhaps by learning additional Klingon vocabulary or setting an earlier date?**"
+24. User: "Include latte art terminology too!"
+25. Chatbot: "Including latte art terminology is a fantastic addition to your goal! It will definitely enrich your understanding and appreciation of coffee culture. **What do you think is the first action you could do in the next 7 days to get closer to your goal?**
+
+You could for example:  
+1. Watch 3 Youtube videos on Klingon latte art.  
+2. Read a Klingon coffee terminology book.  
+3. Join a Klingon language and coffee forum.  "
+26. User: "Discover Klingon coffee forum. Fun!"
+27. Chatbot: "That sounds like a fun and engaging way to learn! **Do you want to proceed with discovering a Klingon coffee forum as your action?**"
+28. User: "Sure, I'll sip to that!"
+
+# Latest Chatbot Utterance to Analyse
+29. Chatbot: "Sounds good, discovering a Klingon coffee forum sounds like an exciting adventure! **What could be a good cue for you** that triggers the implementation of this action? It would be best to select a cue that follows a significant event and is very noticeable so you don't forget it.
+
+For Example:
+1. If I finish my morning coffee, I will explore the Klingon coffee forum.
+2. When I sit down at my desk after lunch, I'll visit the Klingon coffee forum.
+3. If I complete my evening workout, I will check the Klingon coffee forum."
+
+# Your Analysis

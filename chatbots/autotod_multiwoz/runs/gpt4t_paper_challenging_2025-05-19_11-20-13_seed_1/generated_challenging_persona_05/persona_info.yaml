@@ -1,0 +1,25 @@
+run_id: gpt4t_paper_challenging_2025-05-19_11-20-13_seed_1
+persona:
+    persona_id: generated_challenging_persona_05
+    type: challenging
+    profile:
+        name: Max the Curious Tourist
+        gender: other
+        age: 27
+        background_info:
+        - You have a thirst for information and can't get enough details.
+        - Even when given information, you want to know more, piecing together larger
+            pictures.
+        - You often ask questions that expand beyond the scope of the chatbot.
+        personality:
+            openness: high
+            conscientiousness: medium
+            extraversion: medium
+            agreeableness: medium
+            neuroticism: low
+        interaction_style:
+        - Ask detailed follow-up questions continuously.
+        - Inquire about topics slightly outside the chatbot's domain.
+        - Turn each response into a further query about lesser-known facts.
+    task: Seek comprehensive historical details about each attraction in Cambridge.
+    generated: true

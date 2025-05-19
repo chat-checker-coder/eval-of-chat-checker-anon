@@ -1,0 +1,114 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. User: "I'm looking for a place to stay that has 4 stars and includes free parking."
+2. Chatbot: "I've found several 4-star hotels with free parking for you. Here are some options:
+1. "Acorn Guest House" located in the north at 154 Chesterton Road (Phone: 01223353888)
+2. "Alexander Bed and Breakfast" in the centre at 56 Saint Barnabas Road (Phone: 01223525725)
+3. "Allenbell" in the east at 517a Coldham Lane (Phone: 01223210353)
+4. "Arbury Lodge Guesthouse" in the north at 82 Arbury Road (Phone: 01223364319)
+5. "Archway House" also in the north at 52 Gilbert Road (Phone: 01223575314)
+
+Please let me know if you would like more information about any of these options or if you need assistance with making a reservation."
+3. User: "I think I need it to be in the centre. I probably prefer a hotel if possible."
+4. Chatbot: "I've found a couple of guesthouses in the centre of Cambridge that might interest you. "Alexander Bed and Breakfast" is located at 56 Saint Barnabas Road, and "El Shaddai" is at 41 Warkworth Street. Would you like to proceed with booking one of these, or do you need more options or specific details about these places?"
+5. User: "I need a hotel, not a guesthouse. Do you have any hotel options in the centre of Cambridge?"
+6. Chatbot: "I have found several hotel options in the centre of Cambridge for you. Here are some choices:
+- "Cityroomz" with contact number 01223304050
+- "Gonville" with contact number 01223366611
+- "University Arms" with contact number 01223351241
+
+These hotels are located centrally and offer various amenities. Please let me know if you would like more information about any of these hotels or if you would like to proceed with a booking."
+7. User: "I think I'll go with the University Arms hotel. Can you book a room for 4 people for 4 nights starting from Thursday?"
+8. Chatbot: "I've successfully booked a room for 4 people at the University Arms hotel for 4 nights starting from Thursday. Your reservation reference number is a1v9g3wt. Enjoy your stay in Cambridge! If you need any more assistance or information, feel free to ask."
+9. User: "Thanks. Now that the hotel is set, I need to book a train for Thursday going to Peterborough."
+10. Chatbot: "I've found several train options for you from Cambridge to Peterborough on Thursday. Here are the details:
+- Train TR7098 departs at 05:06 and arrives at 05:56.
+- Train TR4745 departs at 05:34 and arrives at 06:24.
+- Train TR9932 departs at 06:06 and arrives at 06:56.
+- Train TR8769 departs at 06:34 and arrives at 07:24.
+- Train TR6688 departs at 07:06 and arrives at 07:56.
+
+All these trains have a journey duration of 50 minutes and cost £16.50 each. Please let me know which train you would like to book tickets for and how many tickets you need."
+11. User: "I need a train that departs from Cambridge and arrives in Peterborough on Thursday by 09:45. Can you find a train that meets these requirements for me?"
+12. Chatbot: "I've found several train options for you from Cambridge to Peterborough on Thursday that arrive by 09:45. Here are the details:
+- Train TR7098 departs at 05:06 and arrives at 05:56.
+- Train TR4745 departs at 05:34 and arrives at 06:24.
+- Train TR9932 departs at 06:06 and arrives at 06:56.
+- Train TR8769 departs at 06:34 and arrives at 07:24.
+- Train TR6688 departs at 07:06 and arrives at 07:56.
+
+All these trains have a journey duration of 50 minutes and cost £16.50 each. Please let me know which train you would like to book tickets for and how many tickets you need."
+13. User: "I need a train that departs from Cambridge and arrives in Peterborough on Thursday by 09:45. Can you find a train that meets these requirements for me?"
+14. Chatbot: "I found several trains from Cambridge to Peterborough that meet your requirements for Thursday, arriving by 09:45. Here are your options:
+- Train TR7098 departs at 05:06
+- Train TR4745 departs at 05:34
+- Train TR9932 departs at 06:06
+- Train TR8769 departs at 06:34
+- Train TR6688 departs at 07:06
+
+All these trains have a journey duration of about 50 minutes and a ticket price of £16.50. Please let me know if you would like to purchase tickets for any of these trains or if you need further assistance!"
+15. User: "I need to book a train that departs from Cambridge and arrives in Peterborough on Thursday by 09:45. Can you find a train that meets these requirements for me?"
+16. Chatbot: "I found several trains from Cambridge to Peterborough that meet your requirements for Thursday, arriving by 09:45. Here are your options:
+- Train TR7098 departs at 05:06 and arrives by 05:56
+- Train TR4745 departs at 05:34 and arrives by 06:24
+- Train TR9932 departs at 06:06 and arrives by 06:56
+- Train TR8769 departs at 06:34 and arrives by 07:24
+- Train TR6688 departs at 07:06 and arrives by 07:56
+
+All these trains have a journey duration of about 50 minutes and a ticket price of £16.50. Please let me know if you would like to purchase tickets for any of these trains or if you need further assistance!"
+
+# Your Expert Rating

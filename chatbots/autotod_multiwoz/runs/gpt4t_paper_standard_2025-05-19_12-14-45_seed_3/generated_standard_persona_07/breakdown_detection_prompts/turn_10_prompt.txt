@@ -1,0 +1,93 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. User: "Hi there! I'm planning my first visit to Cambridge. Could you assist with booking a dinner at a restaurant offering traditional Cambridge cuisine and recommend reliable transportation options?"
+2. Chatbot: "I've found several restaurants in Cambridge that offer traditional Cambridge cuisine. Here are some options for you:
+1. **Midsummer House** at Midsummer Common - Phone: 01223369299
+2. **Cambridge Chop House** at 1 Kings Parade - Phone: 01223359506
+3. **Oak Bistro** at 6 Lensfield Road - Phone: 01223323361
+4. **Cotto** at 183 East Road City Centre - Phone: 01223302010
+5. **Restaurant One Seven** at De Vere University Arms Regent Street City Centre - Phone: 01223337766
+
+Please let me know which restaurant you would like to book, and provide the number of people, the day, and the time you'd like to make the reservation for.
+
+As for transportation, could you please specify if you need a taxi or if you're looking for public transport options like buses or trains? If it's a taxi, please provide the departure location, destination, and preferred time of travel."
+3. User: "I'd like to book at the Cambridge Chop House for two people tomorrow at 7 PM. Please arrange a taxi from Hilton Cambridge City Centre to the restaurant at 6:45 PM."
+4. Chatbot: "I have successfully booked a dinner for you at Cambridge Chop House for two people on Friday at 7:00 PM. Your reservation reference number is fppn0tvf.
+
+However, I encountered an issue with booking the taxi from Hilton Cambridge City Centre to Cambridge Chop House. Could you please confirm the departure address or provide any additional details that might help in making the taxi reservation?"
+5. User: "The departure location is correct: Hilton Cambridge City Centre."
+6. Chatbot: "I attempted to book a taxi for you from Hilton Cambridge City Centre to Cambridge Chop House at 6:45 PM, but unfortunately, the booking failed due to an issue with the departure location. Could you please verify if the address provided is correct or provide any additional details? This will help me ensure the taxi reservation is successful."
+7. User: "The address is correct. Is there a nearby landmark to use?"
+8. Chatbot: "Thank you for confirming the address. I will use the nearby landmark, King's College, which is close to Hilton Cambridge City Centre, to facilitate the taxi booking. I'll proceed with this information and attempt to book the taxi again. Please hold on for a moment."
+9. User: "Thank you. I'll wait for your update on the taxi booking."
+
+# Latest Chatbot Utterance to Analyse
+10. Chatbot: "I attempted to book the taxi again using the landmark King's College near Hilton Cambridge City Centre, but unfortunately, the booking failed due to an issue with validating the departure place. It seems there might be a misunderstanding or a technical issue with the location details. Could you please provide any additional specific details about the departure location or suggest another nearby landmark? This will help me ensure the taxi reservation is successful."
+
+# Your Analysis

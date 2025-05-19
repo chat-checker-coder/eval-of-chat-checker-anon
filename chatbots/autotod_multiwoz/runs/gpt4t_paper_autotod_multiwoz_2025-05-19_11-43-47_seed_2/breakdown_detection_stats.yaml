@@ -1,0 +1,465 @@
+chatbot_id: autotod_multiwoz
+real_dialogue: false
+run_id: gpt4t_paper_autotod_multiwoz_2025-05-19_11-43-47_seed_2
+subfolder: null
+dialogue_file: null
+extra_output_file: false
+stats:
+    start_time: '2025-05-19 11:52:59'
+    end_time: '2025-05-19 11:56:28'
+    n_analyzed_dialogues: 10
+    n_dialogues_with_breakdowns: 7
+    total_breakdown_count: 13
+    n_analyzed_chatbot_turns: 58
+    breakdowns_per_chatbot_turn: 0.22413793103448276
+    avg_turn_number_of_first_breakdown: 6.571428571428571
+    avg_turn_quality_score: 0.868888888888889
+    scores_of_turns_with_breakdowns:
+        min: 0.0
+        q1: 0.3
+        median: 0.3
+        q3: 0.5
+        max: 0.8
+    scores_of_turns_with_breakdowns_excluding_chatbot_crashes:
+        min: 0.2
+        q1: 0.3
+        median: 0.35
+        q3: 0.575
+        max: 0.8
+    dialogues_with_breakdowns:
+    - 02_autotod_mwoz_MUL0915_dialogue_1
+    - 03_autotod_mwoz_SNG01252_dialogue_1
+    - 05_autotod_mwoz_PMUL3330_dialogue_1
+    - 06_autotod_mwoz_PMUL1849_dialogue_1
+    - 07_autotod_mwoz_MUL2374_dialogue_1
+    - 08_autotod_mwoz_SNG01579_dialogue_1
+    - 10_autotod_mwoz_MUL0087_dialogue_1
+    counts_per_breakdown_type:
+        uninterpretable: 0
+        grammatical_error: 0
+        semantic_error: 0
+        wrong_information: 0
+        ignore_question: 0
+        ignore_request: 1
+        ignore_proposal: 0
+        ignore_greeting: 0
+        ignore_expectation: 0
+        unclear_intention: 0
+        topic_transition_error: 1
+        lack_of_information: 2
+        self_contradiction: 0
+        contradiction: 0
+        repetition: 1
+        lack_of_sociality: 0
+        lack_of_common_sense: 0
+        in_domain_task_failure: 4
+        update_info_failure: 0
+        clarification_failure: 2
+        redundancy: 5
+        lack_of_brevity: 0
+        lack_of_clarity: 0
+        failure_to_recognize_out_of_domain: 1
+        failure_to_communicate_capabilities: 2
+        failure_to_resolve_out_of_domain: 0
+        chatbot_crash: 1
+    n_unique_breakdown_types: 10
+    breakdown_matches_per_user: 0.0
+    breakdown_matches_per_user_str: 0/10
+    users_with_matches: []
+    detection_cost_stats:
+        prompt_tokens: 97969
+        completion_tokens: 6703
+        total_tokens: 104672
+        cost: 0.22315250000000003
+        avg_prompt_tokens: 9796.9
+        avg_completion_tokens: 670.3
+        avg_total_tokens: 10467.2
+        avg_cost: 0.022315250000000002
+breakdown_excerpts:
+-   dialogue_id: 02_autotod_mwoz_MUL0915_dialogue_1
+    previous_turn:
+        turn_id: 7
+        role: user
+        content: Can I have the phone number and address of the King's College Chapel?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 8
+        role: dialogue_system
+        content: chatbot_error
+        breakdown_annotation:
+            reasoning: 'Received error: 500 Server Error: INTERNAL SERVER ERROR for
+                url: http://127.0.0.1:8401/get-answer'
+            score: 0.0
+            decision: breakdown
+            breakdown_types:
+            - Chatbot Crash
+-   dialogue_id: 03_autotod_mwoz_SNG01252_dialogue_1
+    previous_turn:
+        turn_id: 7
+        role: user
+        content: I need a train going to Birmingham New Street leaving on Monday.
+            The train should depart from Cambridge and should leave after 18:30.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 8
+        role: dialogue_system
+        content: 'I''ve found several trains from Cambridge to Birmingham New Street
+            on Monday, departing after 18:30. Here are your options:
+
+            - Train TR3283 departs at 19:01
+
+            - Train TR2850 departs at 20:01
+
+            - Train TR2392 departs at 21:01
+
+            - Train TR7001 departs at 22:01
+
+            - Train TR6495 departs at 23:01
+
+
+            Each journey takes approximately 163 minutes and costs £75.10. Please
+            let me know if you would like to proceed with booking any of these trains
+            or if you need further assistance!'
+        breakdown_annotation:
+            reasoning: The chatbot's latest response is a repetition of its previous
+                response in turn 4. The user has reiterated their request in turn
+                7, which matches the information the chatbot provided in turn 4. The
+                chatbot's response in turn 8 does not add any new information or address
+                any new queries from the user, leading to redundancy. However, the
+                response is relevant and accurate based on the user's request, so
+                it does not cause a complete breakdown. The conversation can still
+                proceed smoothly if the user chooses to book one of the trains listed.
+            score: 0.8
+            decision: breakdown
+            breakdown_types:
+            - Repetition
+-   dialogue_id: 05_autotod_mwoz_PMUL3330_dialogue_1
+    previous_turn:
+        turn_id: 5
+        role: user
+        content: I apologize. I may have confused you a bit. I would like to leave
+            after 18:30.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 6
+        role: dialogue_system
+        content: 'No worries at all! Could you please specify where you would like
+            to depart from and your destination? This will help me find the best taxi
+            options for you.
+
+            ```'
+        breakdown_annotation:
+            reasoning: The user has already specified the departure location (Cambridge)
+                and the destination (Stansted Airport) in the previous turns. The
+                user also clarified the departure time as after 18:30. The chatbot's
+                latest response asks for information that has already been provided,
+                which is redundant. Additionally, the user was discussing train options,
+                not taxi options, so the chatbot's response is off-topic and indicates
+                a topic transition error. This response could confuse the user and
+                disrupt the flow of the conversation.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Redundancy
+            - Topic transition error
+-   dialogue_id: 05_autotod_mwoz_PMUL3330_dialogue_1
+    previous_turn:
+        turn_id: 7
+        role: user
+        content: I would like to leave from Cambridge and go to Stansted Airport.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 8
+        role: dialogue_system
+        content: It seems there was an issue with the taxi booking. Could you please
+            confirm the departure and destination places? Let's ensure they are entered
+            correctly to proceed with your taxi reservation.
+        breakdown_annotation:
+            reasoning: 'The user has clearly stated their departure and destination
+                in the previous message: "I would like to leave from Cambridge and
+                go to Stansted Airport." The chatbot''s latest response asks the user
+                to confirm the departure and destination places, which is redundant
+                because the user has already provided this information. This leads
+                to a breakdown as it causes unnecessary repetition and may confuse
+                the user. The chatbot should have proceeded with the taxi booking
+                instead of asking for information that was already given.'
+            score: 0.4
+            decision: breakdown
+            breakdown_types:
+            - Redundancy
+-   dialogue_id: 05_autotod_mwoz_PMUL3330_dialogue_1
+    previous_turn:
+        turn_id: 9
+        role: user
+        content: The destination is stansted airport, and I would like to leave on
+            Sunday.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 10
+        role: dialogue_system
+        content: It appears there was an issue with the taxi booking. The departure
+            and destination places need to be specified more clearly. Could you please
+            confirm the exact departure location in Cambridge and the time you would
+            like to leave? This will help us proceed with your taxi reservation to
+            Stansted Airport.
+        breakdown_annotation:
+            reasoning: The user has already specified the departure location as Cambridge
+                and the destination as Stansted Airport in previous turns. The chatbot's
+                latest response repeats the request for information that has already
+                been provided, which indicates a redundancy issue. Additionally, the
+                user has not requested a taxi service but rather train information,
+                which the chatbot seems to have misunderstood, leading to a failure
+                to recognize the user's actual request. This results in a failure
+                to communicate capabilities, as the chatbot is not addressing the
+                user's request for train information and instead is focusing on taxi
+                booking, which was not requested by the user.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Redundancy
+            - Failure to recognize out-of-domain request
+            - Failure to communicate capabilities
+-   dialogue_id: 05_autotod_mwoz_PMUL3330_dialogue_1
+    previous_turn:
+        turn_id: 11
+        role: user
+        content: I would like to leave from Cambridge and go to Stansted Airport on
+            Sunday after 18:30.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 12
+        role: dialogue_system
+        content: I attempted to book a taxi for you from Cambridge to Stansted Airport
+            on Sunday after 18:30, but there was an issue with the booking. It seems
+            there might be a problem with the specified departure or destination.
+            Could you please confirm if the departure should be from a specific location
+            in Cambridge? This will help us ensure the booking is successful. Thank
+            you!
+        breakdown_annotation:
+            reasoning: The chatbot's latest response indicates an attempt to book
+                a taxi but mentions an issue with the booking due to unspecified details.
+                The user has already clearly stated the departure location as 'Cambridge'
+                and the destination as 'Stansted Airport' multiple times. The chatbot's
+                request for further confirmation of the departure location is redundant
+                and does not acknowledge the user's repeated confirmations. This leads
+                to a breakdown as it fails to progress the conversation and resolve
+                the user's request effectively. The breakdown types include 'Redundancy'
+                because the chatbot is asking for information that has already been
+                provided, and 'Task performance failure' because the chatbot fails
+                to perform the task of booking a taxi despite having the necessary
+                information.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Redundancy
+            - Task performance failure
+-   dialogue_id: 06_autotod_mwoz_PMUL1849_dialogue_1
+    previous_turn:
+        turn_id: 3
+        role: user
+        content: Any area is fine I just need info for anyplace where a booking is
+            available.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 4
+        role: dialogue_system
+        content: Could you please specify what type of booking you are looking for?
+            Are you interested in a restaurant, hotel, attraction, train, or taxi?
+            This will help me assist you better.
+        breakdown_annotation:
+            reasoning: The user has clearly stated that they are looking for a guesthouse
+                with a 3-star rating and have asked for information on availability
+                for booking. The chatbot's response, however, asks the user to specify
+                the type of booking they are interested in, which is unnecessary and
+                redundant given the context. The user has already specified their
+                interest in a guesthouse, which falls under the category of a hotel.
+                This indicates a failure to recognize the user's request and a lack
+                of clarity in the chatbot's response. The chatbot should have directly
+                provided information on the availability of bookings for the guesthouses
+                it listed earlier, rather than asking for clarification on the type
+                of booking. This leads to a dialogue breakdown due to redundancy and
+                clarification failure.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Redundancy
+            - Clarification failure
+-   dialogue_id: 07_autotod_mwoz_MUL2374_dialogue_1
+    previous_turn:
+        turn_id: 7
+        role: user
+        content: Could I get the phone number and postcode for Nusha?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 8
+        role: dialogue_system
+        content: The phone number for "Nusha" is 01223902158, and it is located at
+            Unit G6, Cambridge Leisure Park, Clifton Road. Unfortunately, I don't
+            have the postcode information available at the moment. Is there anything
+            else I can assist you with regarding "Nusha" or any other queries?
+        breakdown_annotation:
+            reasoning: The chatbot provides the phone number for "Nusha" as requested
+                by the user, which is correct and helpful. However, it fails to provide
+                the postcode, which the user specifically asked for. The chatbot acknowledges
+                this limitation by stating that it doesn't have the postcode information
+                available. This is a failure to provide complete information as requested
+                by the user, but the chatbot does communicate this limitation clearly.
+                Therefore, the breakdown type is 'Lack of information' because the
+                chatbot is missing the postcode information that the user requested.
+                Despite this, the chatbot maintains a polite tone and offers further
+                assistance, which helps to mitigate the impact of the breakdown.
+            score: 0.8
+            decision: breakdown
+            breakdown_types:
+            - Lack of information
+-   dialogue_id: 07_autotod_mwoz_MUL2374_dialogue_1
+    previous_turn:
+        turn_id: 13
+        role: user
+        content: Can you book a table for 4 at "Amigos Mexican Kitchen" on Thursday
+            at 19:15? And I need the reference as well please.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 14
+        role: dialogue_system
+        content: I attempted to book a table for 4 at "Amigos Mexican Kitchen" on
+            Thursday at 19:15, but unfortunately, the booking failed as "Amigos Mexican
+            Kitchen" is not found in our restaurant database. Could you please verify
+            the restaurant name or provide a different one? I'm here to help!
+        breakdown_annotation:
+            reasoning: The chatbot's response indicates a failure to book a table
+                at "Amigos Mexican Kitchen" because the restaurant is not found in
+                its database. This is a task performance failure as the chatbot is
+                unable to complete the booking task it is designed for. Additionally,
+                the chatbot does not provide any alternative solutions or suggestions,
+                such as offering to search for other Mexican restaurants or asking
+                if the user would like to try a different cuisine. This lack of alternative
+                options could make it difficult for the user to continue the conversation
+                smoothly. However, the chatbot does ask the user to verify the restaurant
+                name or provide a different one, which is a reasonable attempt to
+                resolve the issue. Therefore, while there is a breakdown, it is not
+                a complete one.
+            score: 0.5
+            decision: breakdown
+            breakdown_types:
+            - Task performance failure
+-   dialogue_id: 07_autotod_mwoz_MUL2374_dialogue_1
+    previous_turn:
+        turn_id: 15
+        role: user
+        content: I'm sorry, I made a mistake. Can you book a table for 4 at "Nanna
+            Mexico" on Thursday at 19:15? And I need the reference as well please.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 16
+        role: dialogue_system
+        content: I attempted to book a table for 4 at "Nanna Mexico" on Thursday at
+            19:15, but unfortunately, the booking failed as "Nanna Mexico" is not
+            found in our restaurant database. Could you please verify the restaurant
+            name or provide a different one? I'm here to assist you further!
+        breakdown_annotation:
+            reasoning: The chatbot's response indicates a failure to book a table
+                at "Nanna Mexico" because it is not found in the restaurant database.
+                This is a task performance failure as the chatbot is unable to perform
+                the booking task it is designed for. Additionally, the chatbot does
+                not provide any alternative solutions or suggestions, such as offering
+                to book at another restaurant or suggesting similar options, which
+                could help the user continue the conversation smoothly. This lack
+                of alternative suggestions contributes to the breakdown, as it leaves
+                the user without a clear next step.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Task performance failure
+-   dialogue_id: 08_autotod_mwoz_SNG01579_dialogue_1
+    previous_turn:
+        turn_id: 7
+        role: user
+        content: Yes, please, for 3 people.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 8
+        role: dialogue_system
+        content: It seems like you're interested in making a reservation for 3 people.
+            Could you please specify if you're looking to book a restaurant, a hotel,
+            or perhaps something else? Additionally, if it's a restaurant or hotel,
+            could you provide the name and the date and time you'd like to make the
+            reservation for?
+        breakdown_annotation:
+            reasoning: The user has clearly indicated that they want to purchase train
+                tickets for 3 people. The chatbot's latest response, however, misinterprets
+                this request as a reservation for a restaurant or hotel, which is
+                not relevant to the user's request. This indicates a failure to recognize
+                the context of the conversation and the user's specific request. The
+                chatbot should have proceeded with the train ticket booking process
+                instead of asking about restaurant or hotel reservations. This leads
+                to a breakdown in the conversation as it makes it difficult for the
+                user to continue smoothly with their intended task of booking train
+                tickets.
+            score: 0.2
+            decision: breakdown
+            breakdown_types:
+            - Ignore request
+            - Clarification failure
+-   dialogue_id: 10_autotod_mwoz_MUL0087_dialogue_1
+    previous_turn:
+        turn_id: 3
+        role: user
+        content: I'd like to book the University Arms hotel on Regent Street, please.
+            It should be for 3 people and we'll be staying for 5 nights, beginning
+            on Sunday. And it should include free parking. Can you book that for me
+            and provide the reference number?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 4
+        role: dialogue_system
+        content: I have successfully booked the "University Arms" hotel for you. It's
+            reserved for 3 people for a 5-night stay starting on Sunday. Your booking
+            reference number is uhzvhvt2. If you need any further assistance or additional
+            information, feel free to ask!
+        breakdown_annotation:
+            reasoning: The chatbot successfully completed the user's request by booking
+                the specified hotel and providing a booking reference number. It confirmed
+                the details of the booking, including the number of people, duration
+                of stay, and start date, which aligns with the user's request. However,
+                the user also requested that the booking include free parking, which
+                the chatbot did not address. This omission constitutes a 'Lack of
+                information' breakdown type, as the user might be left wondering whether
+                the parking request was fulfilled. Despite this, the main task of
+                booking was completed, and the conversation can continue smoothly
+                if the user seeks clarification on the parking issue.
+            score: 0.8
+            decision: breakdown
+            breakdown_types:
+            - Lack of information
+-   dialogue_id: 10_autotod_mwoz_MUL0087_dialogue_1
+    previous_turn:
+        turn_id: 7
+        role: user
+        content: I'd like to book a table at "Seoul Dining" for 3 people at 14:15
+            on the same day. Can you book that for me and provide the reference number?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 8
+        role: dialogue_system
+        content: I apologize, but it seems there was an issue with the booking at
+            "Seoul Dining." The restaurant could not be found in our database. Could
+            you please confirm the name or let me know if you would like to book at
+            another restaurant?
+        breakdown_annotation:
+            reasoning: The chatbot's response indicates a failure to book a table
+                at "Seoul Dining" due to the restaurant not being found in its database.
+                This is a breakdown because the user explicitly requested a booking
+                at a specific restaurant, and the chatbot failed to fulfill this request.
+                The breakdown types that apply here are "Task performance failure"
+                because the chatbot could not perform the booking task, and "Failure
+                to communicate capabilities" because the chatbot did not initially
+                inform the user that it might not have the capability to book at all
+                listed restaurants. The chatbot does, however, ask for confirmation
+                or an alternative, which is a positive aspect of the response, but
+                the failure to perform the task is significant.
+            score: 0.4
+            decision: breakdown
+            breakdown_types:
+            - Task performance failure
+            - Failure to communicate capabilities

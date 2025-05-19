@@ -1,0 +1,145 @@
+System prompt:
+# Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Service Chatbot
+description: A multi-domain chatbot designed for interacting with users across a variety
+    of services and APIs. The chatbot can provide answers and services for requests
+    spanning 20 domains, such as banks, events, media, calendar, travel, and weather.
+type: task-oriented
+interaction_method: text-based chat interface
+task: Provide answers and services for requests spanning 20 domains, such as banks,
+    events, media, calendar, travel, and weather.
+constraints: null
+known_limitations: null
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+# Examples
+Use the following examples of other dialogues with the chatbot along with their ground truth human ratings to ground your ratings:
+
+Example 1:
+1. User: "I need you to get me an eye doctor, I'm going blind I think."
+2. Chatbot: "Which city will you need to go to?"
+3. User: "Find SFO. Look under Ophthalmologist please."
+4. Chatbot: "What about trying Alan B. Scott, M.D. in San Francisco. He IS an Ophthalmologist."
+5. User: "Fine, that's good."
+6. Chatbot: "What else do you need?"
+7. User: "What's the weather like there?"
+8. Chatbot: "Well, the temp will be 91 and there is a 29 percent chance of rain."
+9. User: "Fine, get me an appointment then. How about half past 11 in the morning on the 1st of March?"
+10. Chatbot: "Here's what I heard: appointment for Alan B. Scott, M.D., 11:30 am, March 1st."
+11. User: "Fine, what are they rated and where are they?"
+12. Chatbot: "Sorry, no appointment available at the time you asked for. They are at 2100 Webster Street suite 214. The rating is 5.0 I'm sorry though I can't find an appointment at the time you prefer. How about Alan B. Scott, M.D. on March 1st at 11 am?"
+13. User: "Nope, that's not good."
+14. Chatbot: "What can I do to make this up to you?"
+15. User: "No, you've made quite a mess of things as it is."
+16. Chatbot: "I'm quite sorry."
+Average human rating for dimension "overall": 1.60
+
+
+Example 2:
+1. User: "We need to shift to a new apartment with three baths and pets allowed. Can you find one?"
+2. Chatbot: "Are you particular with any place and how many bedrooms you need?"
+3. User: "Find it in Foster City with three bed rooms."
+4. Chatbot: "I think the property Water's Edge at 1200 East Hillsdale boulevard with 3 bed rooms and 3 baths will be suitable for you. You have to pay $4250 per month as rent."
+5. User: "Are there any apartment in Sausalito?"
+6. Chatbot: "there is one Ridgeway Apartments at 141 Donahue street. it has 3 bedrooms and 3 baths. It will cost $3900 as rent per month"
+7. User: "I think that will be the right one."
+8. Chatbot: "Shall I fix a visit there?"
+9. User: "Am I available on March 3rd?"
+10. Chatbot: "There is an empty slot from 11:30 pm till midnight on March 3rd."
+11. User: "Fine, thank you."
+12. Chatbot: "Shall i add that event to your calendar?"
+13. User: "No, avoid it, I wish to schedule a visit to apartment."
+14. Chatbot: "Ok, You are planning to visit Ridgeway Apartments on March 3rd, right?"
+15. User: "Yeah, do you have a phone number of that property?"
+16. Chatbot: "Sorry, I failed to fix your visit. Do you need any other help?"
+17. User: "No, not any."
+18. Chatbot: "Great day, sir."
+Average human rating for dimension "overall": 3.25
+
+
+Example 3:
+1. User: "I need to find one nice apartment for me. Can you help to find the nice one?"
+2. Chatbot: "Yes, let me know the number of bedrooms you want in that apartment."
+3. User: "with two bed rooms. will tell the other details later."
+4. Chatbot: "Do you have any particular City to search for?"
+5. User: "Yes, if you find an apartment in Pleasant Hill then it will be nice to me."
+6. Chatbot: "What about an apartment named Bridge Grayson Creek Associates at 100 Chilpancingo Parkway with 2 bedrooms and 1 bath for which the rent will be $2,650 per month?"
+7. User: "No, I do not like it, search for something else."
+8. Chatbot: "Okay, How about Country View Apartments at 301 Country View Lane # A with 2 bed rooms and 2 baths for rent $2,900 per month?"
+9. User: "I have some pets with me, check it whether they will allow them."
+10. Chatbot: "Sorry, they will not allow pets there."
+11. User: "Get me the contact number."
+12. Chatbot: "Contact number is 925-676-6964. Any thing else?"
+13. User: "Yes please. Search for some other apartments."
+14. Chatbot: "Found a Apartment which is Northridge Apartments at 235 Camelback Road with 2 bed rooms and 1 bath. The rent for the same will be $2,550 per month. How about that, Is that okay?"
+15. User: "Yes, that is perfect for me. Please make an appointment to visit there."
+16. Chatbot: "When do you want to visit that property?"
+17. User: "Schedule the visit on the 4th."
+18. Chatbot: "Please confirm to make a schedule of visit to Northridge Apartments on March 4th."
+19. User: "Please change the visit date to the 1st."
+20. Chatbot: "Please confirm to make a schedule of visit to Northridge Apartments on March 1st."
+21. User: "That is correct, Please also check whether that apartment is fully furnished or not?"
+22. Chatbot: "No, the apartment was not furnished and I have booked your schedule of visit successfully."
+23. User: "Get me the contact number of that apartment for my reference."
+24. Chatbot: "Contact number is 925-671-2460."
+25. User: "That is okay. Please book a Cab to go there."
+26. Chatbot: "Is Cab with a Share ride is okay to you and let me know the number persons?"
+27. User: "Book it for 1 person and shared ride is okay for me."
+28. Chatbot: "Please confirm to book a Cab with shared ride for 1 to 235 Camelback Road."
+29. User: "That is correct to proceed."
+30. Chatbot: "Cab was booked successfully and it will reach you soon."
+31. User: "Thanks, that's all."
+32. Chatbot: "Have a good day."
+Average human rating for dimension "overall": 4.33
+
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+User prompt:
+# Conversation to Rate
+1. User: "I need to find a one-way flight."
+2. Chatbot: "Where are you flying to?"
+3. User: "I'm flying to Chicago."
+4. Chatbot: "What city are you departing from?"
+5. User: "I'm flying from SFO."
+6. Chatbot: "What date would you like to depart?"
+7. User: "I want to leave on March 6th."
+8. Chatbot: "Would you like to fly on an Alaska Airlines flight with 0 stops, leaving at 1:35 pm for $142?"
+9. User: "No, please find another flight."
+10. Chatbot: "Would you like to fly on an American Airlines flight with 1 stop, leaving at 4:25 pm for $257?"
+11. User: "No, please find another flight."
+12. Chatbot: "Would you like to fly on a Delta Airlines flight with 0 stops, leaving at 10:05 pm for $164?"
+13. User: "Okay."
+14. Chatbot: "Can I help you with anything else?"
+15. User: "No, thank you."
+16. Chatbot: "Have a good day."
+
+# Your Expert Rating

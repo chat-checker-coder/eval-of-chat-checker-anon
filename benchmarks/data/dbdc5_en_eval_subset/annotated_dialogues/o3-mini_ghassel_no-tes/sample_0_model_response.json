@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-BLqWrMlNwXE7Igcar4JJJCmLOPJSL",
+  "created": 1744546509,
+  "model": "o3-mini-2025-01-31",
+  "object": "chat.completion",
+  "system_fingerprint": "fp_99801fd0cf",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n    \"reasoning\": \"The bot's utterance, 'i am a little tired from work', is coherent and contextually appropriate following an introduction. It provides a personal detail that, while not directly advancing the conversation, does not disrupt its flow or create incoherence.\",\n    \"decision\": \"NON-BREAKDOWN\",\n    \"score\": 0.9\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null,
+        "annotations": []
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 279,
+    "prompt_tokens": 312,
+    "total_tokens": 591,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 192,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "service_tier": "default"
+}

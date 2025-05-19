@@ -1,0 +1,94 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. User: "Yo! I'm heading to Cambridge. Got any cheap eats tips?"
+2. Chatbot: "I've found some great options for cheap eats in Cambridge! In the city center, you might enjoy "River Bar Steakhouse and Grill" for modern European dishes, "Nandos City Centre" and "Nandos" for Portuguese cuisine, or "Mahal of Cambridge" and "Kohinoor" for Indian food. If you're in the south area, "Rice House" and "Lucky Star" offer delicious Chinese meals at a budget-friendly price. Let me know if you need more information or if you'd like to make a reservation at any of these places!"
+3. User: "Nandos sounds cool. Got any info on student nightlife, too?"
+4. Chatbot: "I've found some information for you! Nandos in Cambridge is a popular spot, known for its delicious Portuguese-style chicken. If you're looking for student nightlife, "Ballare" is a vibrant nightclub open late on Thursdays to Saturdays, and "Club Salsa" offers lively salsa dancing at the university social club on Wednesdays and Fridays. Would you like to make a reservation at Nandos, or need more details on these nightlife spots?"
+5. User: "Let's book Nandos. And Ballare sounds like a blast, details?"
+6. Chatbot: "To book a table at Nandos, I need to know the number of people, the day, and the time you'd like to make the reservation. Could you please provide these details? Regarding Ballare, the entrance fee is 5 pounds. Let me know if you need more information or assistance with anything else!"
+7. User: "Reserve for two at Nandos, Friday 7 PM. Cheers!"
+8. Chatbot: "It seems there was an issue with the reservation time format for Nandos. Could you please specify the time in a format like "08:30 PM"? Once I have the correct time, I'll be happy to proceed with your reservation. Thank you!"
+9. User: "Sure thing. Reserve for two at 07:00 PM. Thanks!"
+10. Chatbot: "I have successfully reserved a table for two at Nandos on Friday at 07:00 PM. Your booking reference number is d3e9lvfo. If there's anything else you need help with, just let me know!"
+11. User: "Awesome, thanks! Know any cheap bars to chill after Nandos?"
+12. Chatbot: "It seems there are no bars listed as "cheap" in the specified areas of Cambridge. However, I can help you find other bars or perhaps suggest some popular spots where you might enjoy a relaxing evening. Let me know how you'd like to proceed or if you have any other preferences!"
+13. User: "What about bars with student deals or happy hours?"
+14. Chatbot: "I'm sorry, but currently, there are no bars listed in our database that specifically feature student deals or happy hours. However, Cambridge has a vibrant nightlife, and many bars might offer such deals informally. You might want to check out some popular areas or ask locals for recommendations. If there's anything else I can assist you with, please let me know!"
+15. User: "Could you recommend popular areas to check? Cheers!"
+16. Chatbot: "Certainly! For train travel, popular departure areas around Cambridge include Cambridge Central, Cambridge North, and Shelford stations. These locations offer good connectivity to various destinations. If you're looking for a departure point with more options, Cambridge Central is highly recommended. How can I assist you further with your travel plans?"
+17. User: "Dude, I meant for nightlife, not trains! Any ideas there?"
+18. Chatbot: "My apologies for the confusion! For a vibrant nightlife experience in Cambridge, you might want to check out areas like the city center around Market Square and Regent Street, which are known for their lively bars, clubs, and pubs. Another great spot is the area around Mill Road, which offers a diverse range of venues with live music and international vibes. Would you like more specific recommendations on bars or clubs, or perhaps help with making any reservations?"
+19. User: "Just looking for cool bars to hang out, no reservations."
+20. Chatbot: "Great choice! For cool bars where you can just hang out, I recommend visiting The Eagle, located near the city center. It's famous for its historical significance and cozy ambiance. Another excellent spot is The Mill Pub by the river, perfect for a relaxed evening with a beautiful view. Both places offer a great selection of drinks and a friendly atmosphere. Enjoy your time out in Cambridge! If you need more suggestions or any other assistance, feel free to ask."
+21. User: "Thanks a ton! Will definitely check those out. Catch you later!"
+
+# Latest Chatbot Utterance to Analyse
+22. Chatbot: "You're very welcome! I'm glad I could help. Have a fantastic time at The Eagle and The Mill Pub. If you ever need more recommendations or assistance in the future, don't hesitate to reach out. Enjoy your evening in Cambridge!"
+
+# Your Analysis

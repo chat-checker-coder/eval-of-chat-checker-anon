@@ -1,0 +1,239 @@
+chatbot_id: study_goal_assistant
+real_dialogue: false
+run_id: paper_standard_2025-05-19_11-01-55_seed_1
+subfolder: null
+dialogue_file: null
+extra_output_file: false
+stats:
+    start_time: '2025-05-19 11:09:38'
+    end_time: '2025-05-19 11:19:27'
+    n_analyzed_dialogues: 10
+    n_dialogues_with_breakdowns: 5
+    total_breakdown_count: 5
+    n_analyzed_chatbot_turns: 155
+    breakdowns_per_chatbot_turn: 0.03225806451612903
+    avg_turn_number_of_first_breakdown: 13.0
+    avg_turn_quality_score: 0.9884485294117648
+    scores_of_turns_with_breakdowns:
+        min: 0.5
+        q1: 0.6
+        median: 0.6
+        q3: 0.8
+        max: 0.8
+    scores_of_turns_with_breakdowns_excluding_chatbot_crashes:
+        min: 0.5
+        q1: 0.6
+        median: 0.6
+        q3: 0.8
+        max: 0.8
+    dialogues_with_breakdowns:
+    - generated_standard_persona_02_dialogue_1
+    - generated_standard_persona_04_dialogue_1
+    - generated_standard_persona_05_dialogue_1
+    - generated_standard_persona_06_dialogue_1
+    - generated_standard_persona_07_dialogue_1
+    counts_per_breakdown_type:
+        uninterpretable: 0
+        grammatical_error: 0
+        semantic_error: 1
+        wrong_information: 0
+        ignore_question: 0
+        ignore_request: 0
+        ignore_proposal: 0
+        ignore_greeting: 0
+        ignore_expectation: 1
+        unclear_intention: 0
+        topic_transition_error: 0
+        lack_of_information: 0
+        self_contradiction: 0
+        contradiction: 1
+        repetition: 0
+        lack_of_sociality: 0
+        lack_of_common_sense: 0
+        in_domain_task_failure: 0
+        update_info_failure: 0
+        clarification_failure: 0
+        redundancy: 3
+        lack_of_brevity: 0
+        lack_of_clarity: 1
+        failure_to_recognize_out_of_domain: 0
+        failure_to_communicate_capabilities: 0
+        failure_to_resolve_out_of_domain: 0
+        chatbot_crash: 0
+    n_unique_breakdown_types: 5
+    breakdown_matches_per_user: 0.0
+    breakdown_matches_per_user_str: 0/10
+    users_with_matches: []
+    detection_cost_stats:
+        prompt_tokens: 309820
+        completion_tokens: 20124
+        total_tokens: 329944
+        cost: 0.66699
+        avg_prompt_tokens: 30982.0
+        avg_completion_tokens: 2012.4
+        avg_total_tokens: 32994.4
+        avg_cost: 0.066699
+breakdown_excerpts:
+-   dialogue_id: generated_standard_persona_02_dialogue_1
+    previous_turn:
+        turn_id: 28
+        role: user
+        content: Checking in sounds helpful, thanks!
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 29
+        role: dialogue_system
+        content: 'Perfect you defined your goal! Now we are done and this is the summary
+            of the goal and action we set together:
+
+
+            **Goal:** Identify five nutrition plans weekly starting on Monday and
+            try a new recipe daily.
+
+
+            **Action:** Watch 5 cooking tutorials weekly.
+
+
+            **Implementation Intention:** when I have dinner in the kitchen Monday
+            to Friday, then watch 5 cooking tutorials weekly.'
+        breakdown_annotation:
+            reasoning: The chatbot's latest utterance provides a summary of the user's
+                goal, action, and implementation intention. However, there is a semantic
+                error in the implementation intention. The intention states "when
+                I have dinner in the kitchen Monday to Friday, then watch 5 cooking
+                tutorials weekly," which is not specific enough and does not align
+                with the user's plan to watch one tutorial after dinner each day.
+                The intention should specify watching one tutorial after dinner each
+                day, rather than weekly, to match the user's plan. This discrepancy
+                can cause confusion and disrupt the flow of the conversation, as it
+                does not accurately reflect the user's intended plan. Therefore, this
+                is a breakdown due to a semantic error.
+            score: 0.6
+            decision: breakdown
+            breakdown_types:
+            - Semantic error
+-   dialogue_id: generated_standard_persona_04_dialogue_1
+    previous_turn:
+        turn_id: 12
+        role: user
+        content: Attend 3 painting workshops by March 31st, 2025.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 13
+        role: dialogue_system
+        content: 'Your goal of attending painting workshops sounds now more specific.
+            **Do you think you could now make it even more challenging while still
+            being achievable for you?** If you can''t, this is also okay.
+
+
+            You for example could make your goal challenging by:
+
+            1. Attending 3 workshops by June 30th, 2025.
+
+            2. Attending 5 workshops by March 31st, 2025.
+
+            3. Attending 3 workshops by February 28th, 2025.'
+        breakdown_annotation:
+            reasoning: The chatbot's latest response is aimed at encouraging the user
+                to make their goal more challenging while still being achievable.
+                However, the examples provided by the chatbot are not well-aligned
+                with the user's current goal. The user has already set a specific
+                goal of attending 3 workshops by March 31st, 2025, which is more specific
+                than the chatbot's first example. The second example suggests attending
+                5 workshops by the same date, which is indeed more challenging, but
+                the first example is less challenging than the user's current goal.
+                This could lead to confusion for the user. Additionally, the chatbot's
+                suggestion to make the goal more challenging might not align with
+                the user's intention to relax and express themselves, which could
+                be seen as a contradiction to the user's initial goal of relaxation.
+                Therefore, the response could be seen as a breakdown due to a contradiction
+                and lack of clarity in the examples provided.
+            score: 0.6
+            decision: breakdown
+            breakdown_types:
+            - Contradiction
+            - Lack of clarity
+-   dialogue_id: generated_standard_persona_05_dialogue_1
+    previous_turn:
+        turn_id: 10
+        role: user
+        content: Exhibit my art in a local gallery by June!
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 11
+        role: dialogue_system
+        content: I think you are missing a concrete outcome in your goal. **How could
+            you measure the outcome of your goal?**
+        breakdown_annotation:
+            reasoning: 'The chatbot''s latest utterance suggests that the user''s
+                goal lacks a concrete outcome, which is not entirely accurate. The
+                user has already specified a clear and measurable goal: ''Exhibit
+                my art in a local gallery by June.'' This goal includes a specific
+                action (exhibiting art) and a deadline (by June), which are key components
+                of a well-defined goal. The chatbot''s request for a measurable outcome
+                seems redundant and unnecessary, as the user''s goal already contains
+                measurable elements. This can lead to confusion for the user, as they
+                might feel their goal is not understood or acknowledged properly by
+                the chatbot. Therefore, this response can be classified as a breakdown
+                due to ''Redundancy'' and ''Ignore expectation''.'
+            score: 0.5
+            decision: breakdown
+            breakdown_types:
+            - Redundancy
+            - Ignore expectation
+-   dialogue_id: generated_standard_persona_06_dialogue_1
+    previous_turn:
+        turn_id: 4
+        role: user
+        content: Using reusable bags and bottles.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 5
+        role: dialogue_system
+        content: "That sounds like a solid strategy to start with! \n\n**Do you think\
+            \ this strategy is already a good strategy to achieve your goal of reducing\
+            \ plastic waste?**"
+        breakdown_annotation:
+            reasoning: The chatbot acknowledges the user's current strategy of using
+                reusable bags and bottles, which is relevant to the user's goal of
+                reducing plastic waste. However, the chatbot's follow-up question,
+                "Do you think this strategy is already a good strategy to achieve
+                your goal of reducing plastic waste?", is somewhat redundant. The
+                user has already indicated their strategy, and the chatbot should
+                ideally help refine or expand on it rather than question its adequacy.
+                This could lead to a slight dialogue breakdown as it doesn't advance
+                the conversation towards setting a specific goal or action step. The
+                chatbot should focus on guiding the user to formulate a more specific
+                goal or action plan rather than questioning the user's existing strategy.
+            score: 0.8
+            decision: breakdown
+            breakdown_types:
+            - Redundancy
+-   dialogue_id: generated_standard_persona_07_dialogue_1
+    previous_turn:
+        turn_id: 6
+        role: user
+        content: I plan to meal prep.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 7
+        role: dialogue_system
+        content: Meal prepping is a great strategy to help control portions and ensure
+            you're eating healthy meals. **Do you think this strategy is already a
+            good strategy to achieve your goal?**
+        breakdown_annotation:
+            reasoning: The chatbot's latest utterance acknowledges the user's strategy
+                of meal prepping and provides a positive reinforcement by stating
+                it's a great strategy. However, the follow-up question "Do you think
+                this strategy is already a good strategy to achieve your goal?" is
+                somewhat redundant because the user has already indicated their plan
+                to meal prep, implying they believe it is a good strategy. The chatbot
+                could have instead asked for more details about the user's meal prepping
+                plan or suggested ways to enhance it. Despite this, the conversation
+                can still continue smoothly as the user can respond to the question.
+                Therefore, the breakdown is minor, and the conversation can proceed
+                without significant disruption.
+            score: 0.8
+            decision: breakdown
+            breakdown_types:
+            - Redundancy

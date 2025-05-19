@@ -1,0 +1,169 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "The shadows whisper of strength."
+3. Chatbot: "That sounds poetic and intriguing! **Does this mean your goal is to find inner strength, or are you striving for a higher goal like personal growth, overcoming challenges, or building resilience?**"
+4. User: "Perhaps the unspoken journey."
+5. Chatbot: "The idea of an "unspoken journey" sounds like a quest for self-discovery or personal growth. **Would you like to set a goal around exploring your personal journey, or is there another specific aspect you'd like to focus on?**"
+6. User: "A dance with endurance, perhaps."
+7. Chatbot: "That sounds like a beautiful and challenging goal! Dancing with endurance requires both physical stamina and artistic expression. 
+
+**Do you already have a strategy or a plan in mind to build your endurance for dancing?**
+
+For example:  
+- Consistent dance practice schedule  
+- Cross-training for stamina  
+- Balanced nutrition and hydration"
+8. User: "The wind knows the plan."
+9. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve a dance with endurance. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task.
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Research and practice different dance techniques that focus on building endurance and stamina.
+2. Learn about proper nutrition and hydration strategies to support sustained energy levels during dance performances.
+3. Study and incorporate cross-training exercises, such as cardio and strength training, to enhance overall endurance for dancing."
+10. User: "The breeze whispers secrets, still."
+11. Chatbot: "That sounds poetic! Let's focus on setting a learning goal related to your dance with endurance. 
+
+**What specific skills or strategies do you think you need to learn to improve your endurance in dance?**"
+12. User: "Perhaps the rhythm's hidden code."
+13. Chatbot: "Understanding the rhythm's hidden code could be a great learning goal to enhance your dance endurance. 
+
+**How about setting a goal to learn and practice rhythm techniques that can help you maintain energy and flow during your dance?**"
+14. User: "The rhythm guides the way."
+15. Chatbot: "It sounds like you're inspired by the rhythm! 
+
+**Would you like to set a learning goal to explore and master rhythm techniques that can enhance your endurance in dance?**"
+16. User: "The dance itself knows best."
+17. Chatbot: "It seems like you're in tune with the dance itself. 
+
+**Would you like to set a learning goal to deepen your understanding of how the dance can naturally guide your endurance and stamina?**"
+18. User: "In the dance, find mystery."
+19. Chatbot: "Embracing the mystery of dance can be a wonderful journey. 
+
+**Would you like to set a learning goal to explore and uncover the mysteries of dance that contribute to building endurance?**"
+20. User: "The mystery shall reveal itself."
+21. Chatbot: "It sounds like you're ready to let the dance guide you. 
+
+**Would you like to set a learning goal to explore different dance styles and techniques to see how they naturally enhance your endurance?**"
+22. User: "The dance weaves its tale."
+23. Chatbot: "It seems like you're captivated by the storytelling aspect of dance. 
+
+**Would you like to set a learning goal to learn how different dance narratives and styles can contribute to building your endurance?**"
+24. User: "The tale unfolds in rhythm."
+25. Chatbot: "It sounds like you're drawn to the rhythm and its role in storytelling through dance. 
+
+**Would you like to set a learning goal to explore how mastering rhythm can enhance your endurance and storytelling in dance?**"
+26. User: "Rhythm whispers endurance secrets."
+27. Chatbot: "That's a beautiful way to put it! 
+
+**Would you like to set a learning goal to uncover and practice the rhythm techniques that can enhance your endurance in dance?**"
+28. User: "Secrets await the patient listener."
+29. Chatbot: "It seems like you're ready to patiently explore the secrets of rhythm and endurance in dance. 
+
+**Would you like to set a learning goal to develop your listening skills to better understand and apply rhythm for improved dance endurance?**"
+30. User: "A listener uncovers hidden truths."
+31. Chatbot: "Embracing the role of a listener can indeed reveal hidden truths in dance. 
+
+**Would you like to set a learning goal to enhance your ability to listen and interpret rhythms, which can lead to improved endurance in your dance practice?**"
+32. User: "The truth lies in silence."
+33. Chatbot: "It sounds like you're embracing the subtlety and depth of dance. 
+
+**Would you like to set a learning goal to explore how moments of silence and stillness can enhance your understanding and endurance in dance?**"
+34. User: "Silence speaks its own rhythm."
+35. Chatbot: "Embracing the rhythm in silence can be a profound learning experience. 
+
+**Would you like to set a learning goal to explore and practice how silence and pauses can contribute to your dance endurance and expression?**"
+36. User: "Silence dances with hidden grace."
+37. Chatbot: "It seems like you're inspired by the grace found in silence. 
+
+**Would you like to set a learning goal to explore how incorporating silence and grace can enhance your endurance and fluidity in dance?**"
+38. User: "The dance leads where it may."
+39. Chatbot: "It sounds like you're ready to let the dance guide your journey. 
+
+**Would you like to set a learning goal to follow the natural flow of dance and discover how it can enhance your endurance?**"
+40. User: "The flow knows no bounds."
+41. Chatbot: "Embracing the boundless flow of dance can be truly liberating. 
+
+**Would you like to set a learning goal to explore and practice techniques that allow you to tap into this flow, enhancing your endurance and expression in dance?**"
+42. User: "The flow whispers paths unknown."
+43. Chatbot: "It seems like you're ready to explore new paths through the flow of dance. 
+
+**Would you like to set a learning goal to discover and practice new dance techniques that enhance your endurance by following the flow?**"
+44. User: "The path reveals itself slowly."
+45. Chatbot: "Embracing the gradual revelation of the path can lead to profound learning. 
+
+**Would you like to set a learning goal to patiently explore and practice dance techniques that gradually build your endurance?**"
+46. User: "The journey unveils in time."
+47. Chatbot: "It sounds like you're ready to embrace the journey of dance and endurance. 
+
+**Would you like to set a learning goal to explore and practice dance techniques over time, allowing your endurance to naturally develop?**"
+48. User: "*"Time reveals secret steps."*"
+49. Chatbot: "Embracing the secrets that time reveals can be a beautiful journey in dance. 
+
+**Would you like to set a learning goal to explore and practice dance techniques that unfold over time, enhancing your endurance and understanding?**"
+50. User: "The steps remain uncharted."
+51. Chatbot: "It seems like you're ready to venture into uncharted territory with your dance journey. 
+
+**Would you like to set a learning goal to explore and experiment with new dance steps and techniques to enhance your endurance?**"
+
+# Your Expert Rating

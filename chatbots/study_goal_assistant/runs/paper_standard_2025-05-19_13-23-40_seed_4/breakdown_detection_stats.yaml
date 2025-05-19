@@ -1,0 +1,126 @@
+chatbot_id: study_goal_assistant
+real_dialogue: false
+run_id: paper_standard_2025-05-19_13-23-40_seed_4
+subfolder: null
+dialogue_file: null
+extra_output_file: false
+stats:
+    start_time: '2025-05-19 13:32:41'
+    end_time: '2025-05-19 13:42:30'
+    n_analyzed_dialogues: 10
+    n_dialogues_with_breakdowns: 2
+    total_breakdown_count: 2
+    n_analyzed_chatbot_turns: 164
+    breakdowns_per_chatbot_turn: 0.012195121951219513
+    avg_turn_number_of_first_breakdown: 25.0
+    avg_turn_quality_score: 0.9968235294117648
+    scores_of_turns_with_breakdowns:
+        min: 0.7
+        q1: 0.725
+        median: 0.75
+        q3: 0.775
+        max: 0.8
+    scores_of_turns_with_breakdowns_excluding_chatbot_crashes:
+        min: 0.7
+        q1: 0.725
+        median: 0.75
+        q3: 0.775
+        max: 0.8
+    dialogues_with_breakdowns:
+    - generated_standard_persona_02_dialogue_1
+    - generated_standard_persona_09_dialogue_1
+    counts_per_breakdown_type:
+        uninterpretable: 0
+        grammatical_error: 0
+        semantic_error: 0
+        wrong_information: 0
+        ignore_question: 0
+        ignore_request: 0
+        ignore_proposal: 0
+        ignore_greeting: 0
+        ignore_expectation: 0
+        unclear_intention: 0
+        topic_transition_error: 0
+        lack_of_information: 0
+        self_contradiction: 0
+        contradiction: 0
+        repetition: 0
+        lack_of_sociality: 0
+        lack_of_common_sense: 0
+        in_domain_task_failure: 0
+        update_info_failure: 0
+        clarification_failure: 0
+        redundancy: 0
+        lack_of_brevity: 2
+        lack_of_clarity: 0
+        failure_to_recognize_out_of_domain: 0
+        failure_to_communicate_capabilities: 0
+        failure_to_resolve_out_of_domain: 0
+        chatbot_crash: 0
+    n_unique_breakdown_types: 1
+    breakdown_matches_per_user: 0.0
+    breakdown_matches_per_user_str: 0/10
+    users_with_matches: []
+    detection_cost_stats:
+        prompt_tokens: 329409
+        completion_tokens: 20962
+        total_tokens: 350371
+        cost: 0.7006625000000001
+        avg_prompt_tokens: 32940.9
+        avg_completion_tokens: 2096.2
+        avg_total_tokens: 35037.1
+        avg_cost: 0.07006625000000001
+breakdown_excerpts:
+-   dialogue_id: generated_standard_persona_02_dialogue_1
+    previous_turn:
+        turn_id: 22
+        role: user
+        content: I'll watch them on Thursday.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 23
+        role: dialogue_system
+        content: Great choice! Watching the videos on Thursday will give you time
+            to apply the strategies before your goal deadline on Friday. **Where will
+            you be making your evening tea on Thursday?**
+        breakdown_annotation:
+            reasoning: The chatbot's latest utterance asks the user about the location
+                where they will be making their evening tea on Thursday. This question
+                seems unnecessary and does not contribute to the goal-setting process.
+                The location of making tea is irrelevant to the task of watching YouTube
+                videos for learning task prioritization strategies. This can be seen
+                as a lack of brevity, as the question does not add value to the conversation
+                and could potentially confuse the user. The chatbot should focus on
+                ensuring the user is prepared to watch the videos and apply the strategies,
+                rather than asking about the location of making tea.
+            score: 0.7
+            decision: breakdown
+            breakdown_types:
+            - Lack of brevity
+-   dialogue_id: generated_standard_persona_09_dialogue_1
+    previous_turn:
+        turn_id: 26
+        role: user
+        content: I'll start tomorrow morning.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 27
+        role: dialogue_system
+        content: Great choice! **Where will you be making your morning coffee tomorrow?**
+            This will help solidify your cue.
+        breakdown_annotation:
+            reasoning: The chatbot's latest utterance asks the user about the location
+                where they will be making their morning coffee. This question is intended
+                to help the user solidify their cue for reading articles on balanced
+                diet plans. However, the question about the location seems unnecessary
+                and does not contribute significantly to the goal-setting process.
+                The user has already established a cue (making morning coffee) and
+                a time (tomorrow morning) for reading the articles. Asking about the
+                location does not add value to the conversation and may confuse the
+                user as to why this detail is important. This can be seen as a lack
+                of brevity, as the chatbot is introducing an unnecessary detail that
+                does not aid in achieving the user's goal.
+            score: 0.8
+            decision: breakdown
+            breakdown_types:
+            - Lack of brevity

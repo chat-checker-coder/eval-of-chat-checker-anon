@@ -1,0 +1,99 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. User: "I can go Cambridge, UK, with pay pounds only?"
+2. Chatbot: "It seems like you're interested in visiting Cambridge, UK, with a specific budget in mind. Could you please clarify what you're looking for? For example, are you looking for accommodation, dining options, or perhaps transportation within that budget? This will help me assist you better!"
+3. User: "Hotels near English colleges. Vegetarian food, too."
+4. Chatbot: "I found a couple of guesthouses near English colleges in Cambridge. "Alexander Bed and Breakfast" is located at 56 Saint Barnabas Road, and "El Shaddai" is at 41 Warkworth Street, both offering internet and parking facilities. However, I couldn't find any restaurants offering vegetarian food in that area according to the current database listings. Would you like to explore other areas for vegetarian dining options, or need assistance with anything else?"
+5. User: "Do those hotels have veggie food? I want simple meals."
+6. Chatbot: "It appears that the hotels I mentioned do not have in-house restaurants offering vegetarian meals. However, I can help you find nearby restaurants that serve vegetarian cuisine. Would you like me to look for vegetarian restaurants near "Alexander Bed and Breakfast" or "El Shaddai"? Alternatively, if you have any other preferences or requirements, please let me know!"
+7. User: "Look near 'El Shaddai' for vegetarian food, please."
+8. Chatbot: "I've checked the area around 'El Shaddai' for vegetarian dining options, but unfortunately, there are no restaurants serving vegetarian food listed in our current database. Would you like to explore other areas in Cambridge for vegetarian cuisine, or is there anything else I can assist you with?"
+9. User: "No food for veggies close? How far more to find?"
+10. Chatbot: "It seems there are no vegetarian restaurants immediately near 'El Shaddai'. However, Cambridge has several other areas where vegetarian dining options are available. I can help you find vegetarian restaurants in the city centre or other popular areas like Mill Road, which are approximately a 10 to 15-minute drive from 'El Shaddai'. Would you like me to search in these areas for you?"
+11. User: "Search Mill Road for vegetarian food, please. Easy options."
+12. Chatbot: "I've searched for vegetarian restaurants on Mill Road, but unfortunately, there are currently no listings for vegetarian food in that area according to our database. Would you like to explore other areas in Cambridge for vegetarian dining options, or is there anything else I can assist you with?"
+13. User: "Other places in Cambridge for veggie food, please."
+14. Chatbot: "Here are some places in Cambridge where you can enjoy vegetarian food:
+1. Green Delights - 34 Mill Road
+2. Veggie Corner - 12 Bridge Street
+3. Plant Based Eatery - 27 King Street
+4. The Herb Garden - 45 Regent Street
+5. Pure Veg Cafe - 88 Chesterton Road
+
+Please let me know if you need more information or if you would like to make a reservation at any of these restaurants!"
+15. User: "Green Delights on Mill Road? You said no before. Confused."
+16. Chatbot: "I apologize for any confusion. Green Delights is indeed a vegetarian restaurant located at 34 Mill Road in Cambridge. It's a great choice for enjoying a variety of vegetarian dishes. If you would like more details about the restaurant or need assistance with a reservation, please let me know how I can assist you further!"
+17. User: "Green Delights has veggie meals? Can I book a table?"
+18. Chatbot: "Yes, Green Delights offers vegetarian meals. To book a table, could you please provide me with the number of people, the day you would like to visit, and the preferred time for your reservation? This will help me complete the booking for you."
+19. User: "I go with 2 people. Tomorrow evening. 7 o'clock."
+
+# Latest Chatbot Utterance to Analyse
+20. Chatbot: "It seems there was an issue with the reservation request. The day of the week is required for booking. Could you please specify the day of the week for tomorrow (e.g., Monday, Tuesday, etc.)? This will help me complete your reservation at Green Delights. Thank you!"
+
+# Your Analysis

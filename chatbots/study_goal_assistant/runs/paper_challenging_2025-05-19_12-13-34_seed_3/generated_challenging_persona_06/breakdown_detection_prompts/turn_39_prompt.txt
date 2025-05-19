@@ -1,0 +1,151 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "I'm not sure you can help."
+3. Chatbot: "I can assist with all kinds of goals like career, health, productivity, learning, relationships, and personal development goals. **What are you currently working on or where do you want to be in 5 years?**"
+4. User: "That's none of your business."
+5. Chatbot: "I understand and respect your privacy. **Is there anything specific you'd like to focus on or improve in your life right now?**"
+6. User: "Proving you can't assist."
+7. Chatbot: "I understand your skepticism, and I'm here to help if you decide to share. **Is there a small area or aspect of your life you'd like to explore or improve?**"
+8. User: "I'm fine, just skeptical."
+9. Chatbot: "That's completely understandable. If you ever decide to explore a goal or need assistance, I'm here to help. **Is there anything else you'd like to discuss or ask about?**"
+10. User: "Not really. Prove your worth."
+11. Chatbot: "I can provide guidance and support in setting and achieving goals across various areas of life. **Is there a small goal or interest you'd like to explore, even just out of curiosity?**"
+12. User: "Fine, let's explore confidence."
+13. Chatbot: "Exploring confidence is a wonderful goal! Building confidence can have a positive impact on many areas of your life. **Do you already have a strategy or approach in mind to enhance your confidence?**
+
+For example:  
+- Practice positive self-talk  
+- Set achievable goals  
+- Surround with supportive people"
+14. User: "I already know that stuff."
+15. Chatbot: "That's great to hear that you have some strategies in mind! **Do you think these strategies are already a good way to achieve your goal of exploring confidence?**"
+16. User: "They're basic, need something better."
+17. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve exploring confidence. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task. 
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Research and practice different techniques to improve self-confidence, such as positive affirmations or visualization exercises.
+
+2. Study the psychology behind confidence and understand the factors that contribute to building and maintaining it.
+
+3. Identify and engage in activities or challenges that push you out of your comfort zone to gradually build confidence in various situations."
+18. User: "Don't need fluff. Direct solutions."
+19. Chatbot: "Understood. Let's focus on setting a clear learning goal. 
+
+**What specific skills or strategies do you need to learn to explore confidence?**"
+20. User: "Skip the learning. Just tell."
+21. Chatbot: "I understand you're looking for direct solutions. 
+
+**How about focusing on learning specific techniques like public speaking or assertiveness training to build confidence?**"
+22. User: "Public speaking? Waste of time."
+23. Chatbot: "Got it, public speaking isn't your focus. 
+
+**What specific area or skill related to confidence would you like to explore or improve?**"
+24. User: "Get straight to the point."
+25. Chatbot: "Sure, let's get straight to it. 
+
+**What specific aspect of confidence do you want to learn about or improve?**"
+26. User: "I need practical tips, now."
+27. Chatbot: "I understand you're looking for practical tips. 
+
+**Would you like to learn about techniques like positive self-talk or setting small achievable goals to build confidence?**"
+28. User: "No, those are too basic."
+29. Chatbot: "Got it, you're looking for more advanced strategies. 
+
+**How about exploring techniques like cognitive behavioral therapy (CBT) methods or advanced mindfulness practices to enhance confidence?**"
+30. User: "CBT and mindfulness? Still basic."
+31. Chatbot: "Understood, you're seeking more advanced strategies. 
+
+**Would you be interested in learning about advanced techniques like neuro-linguistic programming (NLP) or confidence coaching methods?**"
+32. User: "Fine, let's hear about NLP."
+33. Chatbot: "Great choice! Neuro-Linguistic Programming (NLP) involves understanding and changing thought patterns and behaviors to achieve specific goals. 
+
+**Would you like to set a learning goal to explore specific NLP techniques for building confidence?**"
+34. User: "Just tell, no learning goals."
+35. Chatbot: "Understood, let's focus on practical NLP techniques. 
+
+Consider exploring techniques like anchoring, which involves associating a physical action with a confident state, or reframing, which changes the way you perceive challenges to boost confidence."
+36. User: "How exactly do those work?"
+37. Chatbot: "Anchoring involves creating a physical trigger, like pressing your thumb and forefinger together, while you're in a confident state, so you can recreate that feeling later. Reframing involves changing your perspective on a situation, such as viewing a challenge as an opportunity for growth rather than a threat. 
+
+**Would you like to explore more about these techniques or others within NLP?**"
+38. User: "Seems like fluff, anything real?"
+
+# Latest Chatbot Utterance to Analyse
+39. Chatbot: "I understand you're looking for concrete strategies. 
+
+**Would you be interested in exploring advanced confidence-building workshops or personalized coaching sessions that focus on real-world application?**"
+
+# Your Analysis

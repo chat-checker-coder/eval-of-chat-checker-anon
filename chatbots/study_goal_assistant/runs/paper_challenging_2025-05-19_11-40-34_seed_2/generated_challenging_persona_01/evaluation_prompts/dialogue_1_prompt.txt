@@ -1,0 +1,155 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "Learn a new skill. Quickly."
+3. Chatbot: ""Learn a new skill quickly" sounds more like an action directed toward a broader objective, such as enhancing your career, improving personal development, or increasing productivity. **Would you still like to keep "learn a new skill quickly" as your primary goal?** If not, we could consider setting a more overarching goal."
+4. User: "Yes, keep it simple."
+5. Chatbot: "That's a fantastic choice! Learning a new skill quickly can open up so many opportunities and boost your confidence.
+
+**Which strategy do you currently have to achieve this goal?**
+
+For example:  
+- Use spaced repetition techniques  
+- Set specific, achievable goals  
+- Practice consistently and regularly"
+6. User: "Just get to it. Fast."
+7. Chatbot: "It sounds like you might not have a specific strategy in mind yet. 
+
+**Do you think this approach is a good strategy to achieve your goal?**"
+8. User: "Whatever works quickly. Suggest something."
+9. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve your goal. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task. 
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Research and identify effective learning techniques that can accelerate skill acquisition.
+2. Find and utilize online resources or courses that offer structured learning paths for the skill you want to learn.
+3. Practice time management strategies to allocate dedicated time for focused and consistent practice of the new skill."
+10. User: "Just want quick results. Ideas?"
+11. Chatbot: "I understand the desire for quick results, but focusing on learning strategies can lead to more sustainable success. 
+
+**How could you formulate a learning goal that focuses on acquiring the skill efficiently?**"
+12. User: "Something easy and effective."
+13. Chatbot: "I understand the need for simplicity and effectiveness. 
+
+**How about setting a learning goal to identify and practice the top three techniques that are known to quickly enhance the skill you want to learn?**"
+14. User: "Fine. Recommend top three techniques."
+15. Chatbot: "Here are three techniques that are often effective for quickly learning a new skill:
+
+1. **Focused Practice**: Dedicate short, intense periods of time to practice the skill without distractions.
+2. **Spaced Repetition**: Use spaced repetition to reinforce learning over time, which helps in retaining information.
+3. **Feedback Loop**: Regularly seek feedback and make adjustments to improve your performance.
+
+**Would you like to set this as your learning goal?**"
+16. User: "Sure, sounds efficient enough."
+17. Chatbot: "Your goal of identifying and practicing techniques already sounds good. **Could you try making your goal even more specific?**
+
+For Example:
+Master three techniques to enhance coding skills by June 2."
+18. User: "Master three techniques by June."
+19. Chatbot: "I see you've set a time frame for June. **How could you measure the outcome of mastering these techniques?**"
+20. User: "Not sure, just see improvement."
+21. Chatbot: "I understand wanting to see improvement. **Could you specify a particular skill or area where you'd like to see this improvement, such as improving your coding speed or accuracy?**"
+22. User: "Improve speed, accuracy by June."
+23. Chatbot: "Great! **Could you specify a measurable target for your speed and accuracy improvement by June, like completing a coding task in a certain amount of time or reducing errors by a specific percentage?**"
+24. User: "Finish tasks 20% faster."
+25. Chatbot: "Your goal of mastering techniques to improve coding speed and accuracy sounds now more specific. **Do you think you could now make it even more challenging while still being achievable for you?** If you can't, this is also okay.
+
+You for example could make your goal challenging by:  
+1. Mastering one technique by next Monday.  
+2. Finishing tasks 30% faster by June.  
+3. Identifying five techniques before choosing three."
+26. User: "30% faster by June. Done."
+27. Chatbot: "Great! You've made your goal more challenging by aiming to finish tasks 30% faster by June. **Do you think you could make it even more challenging, or is this the right level for you?**"
+28. User: "Right level. Let's proceed."
+29. Chatbot: "It's fantastic that you've set a clear goal to master techniques for improving coding speed and accuracy. **What do you think is the first action you could do in the next 7 days to get closer to your goal?**
+
+You could for example:  
+1. Complete an online course on coding efficiency.  
+2. Read a book on advanced coding techniques.  
+3. Practice coding challenges on competitive programming platforms."
+30. User: "Complete a course on efficiency."
+31. Chatbot: "That sounds like a great action to take! **Do you have a specific course in mind, or would you like recommendations on where to find one?**"
+32. User: "No time for specifics. Got one?"
+33. Chatbot: "That sounds like a productive step forward! **What could be a good cue for you** that triggers the implementation of completing a course on efficiency? It would be best to select a cue that follows a significant event and is very noticeable so you don't forget it.
+
+For Example:
+1. If I finish my morning coffee, I will study a module on efficiency.
+2. When I log off from work at 5 PM, I'll dedicate 30 minutes to my course.
+3. If I sit down at my desk after lunch, I will complete a lesson on coding speed."
+34. User: "After coffee, I study."
+35. Chatbot: "Great choice! **Is there a specific location where you usually have your coffee that could serve as a reliable cue for you to start studying?**"
+36. User: "At my kitchen table."
+37. Chatbot: "Perfect! **Would you like to set this cue for a specific day or days within the next week?**"
+38. User: "Every weekday, after coffee."
+39. Chatbot: "Perfect! You just did the first step towards improving your coding skills. **Would it be okay if I check in with you in a week to see how you are progressing?** Then we can talk if you made progress on your course."
+40. User: "No need. I'll manage."
+41. Chatbot: "Perfect you defined your goal! Now we are done and this is the summary of the goal and action we set together:
+
+**Goal:** Master three techniques to improve coding speed and accuracy by June, aiming to finish tasks 30% faster.
+
+**Action:** Complete a course on efficiency.
+
+**Implementation Intention:** when I finish my morning coffee at my kitchen table every weekday, then I will complete a course on efficiency."
+42. User: "Got it. Thanks, bye."
+43. Chatbot: "Goodbye! I hope I was able to help you with your goal. Have a great day!"
+
+# Your Expert Rating

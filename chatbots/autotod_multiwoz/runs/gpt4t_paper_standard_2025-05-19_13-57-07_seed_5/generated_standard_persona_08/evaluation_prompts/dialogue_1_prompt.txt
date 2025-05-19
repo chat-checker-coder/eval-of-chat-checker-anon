@@ -1,0 +1,88 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. User: "Hi there! I'm exploring Cambridge's food scene. Any tips?"
+2. Chatbot: "Absolutely, Cambridge has a vibrant food scene! Are you looking for any specific type of cuisine or dining experience? Perhaps you have a preferred area or price range in mind? Let me know, and I can help find the perfect restaurant for you!
+```"
+3. User: "I'm interested in food festivals or unique dining experiences!"
+4. Chatbot: "I found some unique dining experiences for you in Cambridge! Here are a few recommendations: Midsummer House at Midsummer Common, Cambridge Chop House at 1 Kings Parade, Oak Bistro at 6 Lensfield Road, Cotto at 183 East Road City Centre, and Restaurant One Seven at De Vere University Arms Regent Street City Centre. Each offers a distinct and delightful dining experience. Would you like more information on any of these, or perhaps make a reservation?"
+5. User: "Can I get details on Midsummer House? Sounds intriguing!"
+6. Chatbot: "Midsummer House is indeed a unique dining experience located in the centre area at Midsummer Common, postcode CB41HA. It specializes in British cuisine and falls into the expensive price category. Their signature dish includes seared scallops with truffle apple and celeriac. If you're interested, I can assist you with making a reservation or provide more details. Just let me know how I can help further!"
+7. User: "Wow, seared scallops! Can you book me a table for dinner?"
+8. Chatbot: "I'd be happy to help you with the reservation at Midsummer House! Could you please provide me with the number of people, the day of the week, and the time you'd like to have dinner? This information will help me secure your booking."
+9. User: "We're a group of four, looking for a Friday evening spot!"
+10. Chatbot: "It seems there was an issue with the reservation at Midsummer House. To proceed with the booking, I need a specific time, such as "08:30 PM". Could you please provide a precise time for your Friday evening reservation?"
+11. User: "Let's aim for 7:30 PM. Thanks for helping with this!"
+12. Chatbot: "Your reservation at Midsummer House for four people on Friday at 7:30 PM has been successfully booked! Your reference number is mw4e4ojl. Enjoy your dinner and the delightful seared scallops! If you need any further assistance, feel free to ask."
+13. User: "Thanks so much! I'm excited to try the scallops. Any food festivals happening soon?"
+14. Chatbot: "I'm glad to hear you're excited about your dinner at Midsummer House! Regarding food festivals, currently, there are no food festivals listed in our attractions database for Cambridge. However, the city often hosts various culinary events throughout the year. I recommend checking local event listings or the Cambridge tourist website for the most up-to-date information on upcoming food festivals. If there's anything else you'd like to explore or need assistance with, feel free to ask!"
+15. User: "Thank you! I'll check those sites. Any unique food tours?"
+16. Chatbot: "I've found some unique food tours in Cambridge that might interest you. Could you please specify the area you're interested in, or should I list options from the central area of Cambridge?"
+17. User: "I'd love options from the central area, thanks!"
+18. Chatbot: "I'm sorry, but currently, there are no food tours listed in the central area of Cambridge in our database. However, Cambridge offers a variety of other culinary experiences and attractions. If you're interested, I can help you find restaurants or other food-related attractions in the area. How may I assist you further with your culinary exploration in Cambridge?"
+19. User: "That's okay! Any quirky or hidden gem restaurants you'd recommend?"
+20. Chatbot: "It appears that there are currently no quirky or hidden gem restaurants listed in the central Cambridge area in our database. However, Cambridge has a diverse culinary scene with many unique dining options. If you have any other preferences or specific types of cuisine you're interested in, I'd be happy to help you find a restaurant that suits your taste. How else may I assist you with your culinary exploration in Cambridge?"
+21. User: "I'll look around, thanks! Maybe a traditional English breakfast spot?"
+22. Chatbot: "I'm sorry, but it appears there are currently no restaurants serving traditional English breakfast in the central Cambridge area according to our database. However, Cambridge offers a variety of other breakfast options. If you're interested, I can help you find other types of breakfast spots or perhaps another type of cuisine you'd like to try. How may I assist you further with your culinary exploration in Cambridge?"
+23. User: "That's alright, I'll explore on my own. Thanks for the help!"
+24. Chatbot: "You're welcome! If you need any more information or assistance in the future, feel free to reach out. Enjoy exploring Cambridge and have a wonderful time!"
+25. User: "Thanks, I definitely will! Goodbye and take care!"
+26. Chatbot: "Goodbye and take care as well! If you ever need assistance again, I'm here to help. Enjoy your adventures in Cambridge!"
+27. User: "Thanks! I'll make the most of my visit here. Bye!"
+28. Chatbot: "Bye! I'm glad I could assist you. If you have any more questions in the future or need further assistance during your visit, don't hesitate to reach out. Enjoy your time in Cambridge!"
+29. User: "Thanks again! I'll definitely reach out if I need more help."
+
+# Your Expert Rating

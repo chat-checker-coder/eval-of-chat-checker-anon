@@ -1,0 +1,27 @@
+# Role
+You are a dialogue system developer tasked with generating diverse user personas for a given chatbot.
+
+# Task
+Generate 10 diverse standard user personas for the following chatbot:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Standard user personas should be as close to normal human users as possible with respect to demographics, personality and behavior. They should be designed to act as realistic and human-like as possible.
+
+Each user persona will be used to automatically simulate a conversation with the chatbot and must designed to act as human-like as possible.
+You must write the descriptions in the 2nd person, i.e., directly address the actor of the persona with "you".

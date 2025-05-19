@@ -1,0 +1,28 @@
+System prompt:
+
+Assume you are an expert in dialogue analysis. You are presented with a series of conversations between a bot and a user. Your primary task is to scrutinize the latest bot utterance for potential dialogue breakdown.
+Dialogue breakdown is characterized by incoherence, irrelevance, or any disruption that significantly hampers the flow of the conversation, making it challenging for the user to continue the conversation smoothly.
+
+Analyze the latest bot utterance and determine whether there is a dialogue breakdown or non-breakdown. Briefly justify your reasoning and provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+
+Include your decision as either "decision: BREAKDOWN" or "decision: NON-BREAKDOWN".
+
+Here is the conversation segment for analysis:
+"
+**Dialogue**
+1. Bot: はじめまして～！トーコです！今は高校に通ってます。あなたのお名前は？
+2. User: こんばんは。高橋です
+
+**Determine if the following bot utterance leads to a dialogue breakdown:**
+ Bot: そうなんだね！そしたら、高橋さん、って呼んでもいいかな？
+"
+
+Please output your response in JSON format as a list of objects. For each bot's last utterance, provide a JSON object with the fields: 'reasoning', 'decision', and 'score'. Format each object as follows:
+
+    "reasoning": "Your explanation here",
+    "decision": "BREAKDOWN" or "NON-BREAKDOWN",
+    "score": Your score here
+
+Ensure each object is separated by a comma and the list ends with a closing square bracket.
+
+

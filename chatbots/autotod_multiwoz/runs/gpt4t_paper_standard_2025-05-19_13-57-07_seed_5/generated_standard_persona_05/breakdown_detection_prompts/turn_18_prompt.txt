@@ -1,0 +1,90 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. User: "Hey there! I'm visiting Cambridge and looking for outdoor activities. Can you help?"
+2. Chatbot: "It seems there are currently no outdoor attractions listed in Cambridge in our database. Perhaps you might be interested in exploring other types of attractions or activities in the area? I'm here to help with any other information or reservations you might need!"
+3. User: "Sure! What cool landmarks or historical sites can I visit?"
+4. Chatbot: "It appears that there are currently no landmarks or historical sites listed in the central area in our database. However, Cambridge is rich with history and culture. You might consider visiting the Cambridge University colleges, which are not only educational but also quite scenic. Additionally, the Fitzwilliam Museum offers a glimpse into art and antiquities. Would you like more information on these, or is there something else specific you're interested in exploring?"
+5. User: "Tell me more about the Cambridge University colleges, please!"
+6. Chatbot: "The Cambridge University colleges are renowned for their rich history and beautiful architecture. Some of the recommended colleges you can visit include Christ's College, Churchill College, Clare College, Clare Hall, and Corpus Christi. Each of these colleges has its own unique charm and history. Would you like detailed information on any specific college, or need help with directions or other arrangements for your visit?"
+7. User: "Christ's College sounds interesting! Do you have any visitor information?"
+8. Chatbot: "Christ's College is one of the oldest and most distinguished colleges at the University of Cambridge, known for its beautiful architecture and tranquil gardens. Visitors can explore the college grounds and often have access to the chapel and dining hall, which are steeped in history. The college also hosts various events and exhibitions throughout the year. If you're planning a visit, it's a good idea to check their official website for the latest visitor information, including opening hours and any specific visitor guidelines. Would you like assistance with anything else, such as directions to Christ's College or perhaps information on other attractions or dining options in Cambridge?"
+9. User: "Could you suggest transportation options to get to Christ's College?"
+10. Chatbot: "To get to Christ's College, you can consider taking a taxi or a train, depending on your starting location. If you provide me with your departure point and whether you prefer a specific time to leave or arrive, I can assist further with booking a taxi or finding train options."
+11. User: "I'm staying near the train station. What are the best options?"
+12. Chatbot: "Since you're staying near the train station, taking a train would be a convenient option to reach Christ's College. If you let me know the time you'd like to leave or arrive, I can look up the train schedules for you. Alternatively, if you prefer a more direct route, I can arrange a taxi for you. Please specify your preference and any time constraints you might have."
+13. User: "I'd prefer a taxi for a flexible departure. Can you arrange it?"
+14. Chatbot: "I attempted to arrange a taxi for you from near the train station to Christ's College with a flexible departure time, but it seems there was an issue with the departure location. Could you please provide a more specific address or location near the train station? This will help me successfully book your taxi."
+15. User: "I'm at the Cambridge Station Hotel. Can you book from here?"
+16. Chatbot: "I attempted to book a taxi for you from the Cambridge Station Hotel to Christ's College with a flexible departure time, but it seems there was an issue with specifying "flexible" as a departure time. Could you please provide a specific time when you would like to leave? This will help me successfully book your taxi."
+17. User: "Let's try 3 PM for the taxi booking, please!"
+
+# Latest Chatbot Utterance to Analyse
+18. Chatbot: "I attempted to book a taxi for you from the Cambridge Station Hotel to Christ's College at 3 PM, but there was an issue with the departure location. Could you please confirm if "Cambridge Station Hotel" is the correct departure point or provide an alternative specific address? This will help me successfully complete your booking."
+
+# Your Analysis

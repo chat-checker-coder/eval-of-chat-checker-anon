@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-BUx3ScqtyA71Nl5O0XR1g3tKHDkni",
+  "created": 1746716546,
+  "model": "gpt-4o-2024-08-06",
+  "object": "chat.completion",
+  "system_fingerprint": "fp_90122d973c",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n    \"reasoning\": \"The bot's latest utterance 'ん' is a single character that does not provide any meaningful information or context to the user. It is a non-word that does not contribute to the conversation and does not address the user's previous question '何のことですか？' (What do you mean?). This lack of coherence and relevance can confuse the user and disrupt the flow of the conversation, making it difficult for the user to continue the dialogue smoothly.\",\n    \"decision\": \"BREAKDOWN\",\n    \"score\": 0.2\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null,
+        "annotations": []
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 116,
+    "prompt_tokens": 406,
+    "total_tokens": 522,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "service_tier": "default"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-BMBwVYS3Ec60jsjARqw1zz5781t7W",
+  "created": 1744628823,
+  "model": "gpt-3.5-turbo-0125",
+  "object": "chat.completion",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "\n    {\"reasoning\": \"The bot's response directly addresses the user's question about swimming, indicating that it swims and surfs, which is relevant and coherent in the context of the conversation.\", \"decision\": \"NON-BREAKDOWN\", \"score\": 1}",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null,
+        "annotations": []
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 56,
+    "prompt_tokens": 324,
+    "total_tokens": 380,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "service_tier": "default"
+}

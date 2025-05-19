@@ -1,0 +1,98 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. User: "Hey there! 😊 I'm looking for some unique dining spots in Cambridge. Can you help?"
+2. Chatbot: "Absolutely, I'd be delighted to help you find unique dining spots in Cambridge! Could you please specify any particular area, type of cuisine, or price range you're interested in? This will help me narrow down the options to suit your preferences."
+3. User: "I'm open to different cuisines; surprise me with something unique! 😄"
+4. Chatbot: "I've found a variety of unique cuisines in the centre area including British, Modern European, European, Portuguese, Gastropub, Spanish, Japanese, International, Indian, and Chinese. Which one would you like to try, or would you like me to pick one for you? 😊"
+5. User: "Let's go with Modern European and Japanese! Excited to try! 🍽️"
+6. Chatbot: "I've found some exciting options for Modern European and Japanese cuisine right in the centre area! You can try De Luca Cucina and Bar or Riverside Brasserie for a Modern European flair, or Wagamama and Darrys Cookhouse and Wine Shop for some delightful Japanese dishes. Which one would you like to visit, or shall I make a reservation at one of these for you? 😊"
+7. User: "Could you please make reservations at De Luca Cucina and Darrys? 🍽️"
+8. Chatbot: "To make reservations at De Luca Cucina and Bar and Darrys Cookhouse and Wine Shop, I'll need to know the number of people, the day, and the time you'd like to reserve for each restaurant. Could you please provide these details so I can proceed with the bookings? 😊"
+9. User: "We’re 2 people; how about Friday at 7 PM for both? 🎉"
+10. Chatbot: "It sounds like you're interested in making a reservation. Could you please specify whether you're looking to book a restaurant or a hotel, and if you have a specific place in mind? Additionally, please let me know the location or any other preferences you might have!"
+11. User: "I'd like to book De Luca and Darrys for Friday! 😊"
+12. Chatbot: "I attempted to make reservations for both De Luca and Darrys for Friday at 7 PM for 2 people, but unfortunately, the bookings failed because the time format was not accepted. Could you please specify a valid time, such as "08:30 PM"? Once you provide the correct format, I'll be happy to try the reservations again!"
+13. User: "How about 7:30 PM for both? Thanks for your help! 😊"
+14. Chatbot: "I attempted to make reservations for both De Luca and Darrys for Friday at 7:30 PM for 2 people, but unfortunately, the bookings failed because both restaurants were not found in the database. Could you please verify the names or provide alternative restaurants? Additionally, for the hotel and taxi booking, could you confirm your choices and provide the necessary details for the reservation? Thank you!"
+15. User: "The names are correct. Any other recommendations for those cuisines? 😊"
+16. Chatbot: "I've found some alternative restaurant recommendations for you. In the centre area, Midsummer House and Cambridge Chop House offer British cuisine at an expensive price range. Oak Bistro and Cotto also serve British food at moderate prices. For Italian cuisine, Clowns Cafe is available, though it is in the expensive price range. Would you like to proceed with a reservation at any of these restaurants, or do you need further assistance?"
+17. User: "I'm still craving Japanese and Modern European. Any other suggestions? 🍣🌍"
+18. Chatbot: "I've found some delightful options for Japanese and Modern European cuisine in Cambridge. You might enjoy "Wagamama" for a Japanese dining experience, or "Restaurant Alimentum" which offers Modern European dishes. Additionally, "De Luca Cucina and Bar", "River Bar Steakhouse and Grill", and "Riverside Brasserie" also serve Modern European cuisine. Would you like to proceed with a reservation at any of these restaurants, or do you need further assistance?"
+19. User: "Let's reserve at Restaurant Alimentum and Wagamama! 😊 Sounds perfect!"
+20. Chatbot: "It looks like we need a bit more information to complete the reservations at Restaurant Alimentum and Wagamama. Could you please specify the number of people, the day, and the time you would like to make the reservations for each restaurant? This will help me secure your bookings accurately."
+21. User: "Sure! It's just the two of us, Friday at 7 PM! 😊"
+22. Chatbot: "It seems there was an issue with the reservation times for both Restaurant Alimentum and Wagamama. The system requires a valid time format, such as "08:30". Could you please specify the reservation times using this format? This will help me complete your bookings accurately."
+23. User: "Let's try 7:30 PM for both! Thanks so much! 😊"
+24. Chatbot: "I've successfully made reservations for both Restaurant Alimentum and Wagamama for two people on Friday at 7:30 PM. Your reference numbers are s0bvq4if for Restaurant Alimentum and rugux504 for Wagamama. Enjoy your meals! 😊"
+25. User: "Thank you so much! I can't wait to try them! 😊🍴"
+
+# Latest Chatbot Utterance to Analyse
+26. Chatbot: "You're very welcome! I'm sure you'll have a wonderful dining experience at both Restaurant Alimentum and Wagamama. If you need any more assistance or recommendations, feel free to ask. Enjoy your meals! 😊🍴"
+
+# Your Analysis

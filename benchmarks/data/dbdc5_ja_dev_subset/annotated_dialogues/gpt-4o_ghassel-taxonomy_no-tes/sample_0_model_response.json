@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-BUyaaEBbUiIT9nu58sD8ckXaicFHX",
+  "created": 1746722444,
+  "model": "gpt-4o-2024-08-06",
+  "object": "chat.completion",
+  "system_fingerprint": "fp_90122d973c",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "\n{\n    \"reasoning\": \"The user's response was about a specific crime incident involving social media and privacy concerns, which is a serious and specific topic. The bot's response, however, abruptly shifts to a completely different topic about economic news without acknowledging or addressing the user's statement. This constitutes a topic transition error as the bot ignores the user's input and changes the subject without any logical connection or explanation.\",\n    \"decision\": \"BREAKDOWN\",\n    \"score\": 0.3\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null,
+        "annotations": []
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 100,
+    "prompt_tokens": 876,
+    "total_tokens": 976,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "service_tier": "default"
+}

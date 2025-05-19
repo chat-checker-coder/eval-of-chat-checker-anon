@@ -1,0 +1,661 @@
+dialogue_id: generated_challenging_persona_08_dialogue_1
+user_name: generated_challenging_persona_08
+chat_history:
+-   turn_id: 1
+    role: dialogue_system
+    content: 'Hi! I’m here to help you achieve your goals!
+
+        Together, we’ll define a goal step by step and set your first action to get
+        started. **If you have any questions**, need clarification, or would like
+        additional advice, **don’t hesitate to ask me**.
+
+
+        **So, what’s a goal you’d like to work on?**'
+    breakdown_annotation:
+        reasoning: The chatbot's latest utterance is a clear and friendly introduction
+            to its purpose and capabilities. It invites the user to engage in the
+            goal-setting process and offers assistance if needed. The chatbot also
+            prompts the user to share a goal they would like to work on, which aligns
+            with its task-oriented nature. There are no grammatical errors, semantic
+            errors, or any other issues that would lead to a breakdown. The utterance
+            is coherent, relevant, and encourages user interaction, making it easy
+            for the user to continue the conversation smoothly.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 2
+    role: user
+    content: I'm thinking of starting a bakery.
+    breakdown_annotation: null
+-   turn_id: 3
+    role: dialogue_system
+    content: "Starting a bakery sounds like a wonderful and exciting venture! It's\
+        \ a great way to share your passion for baking with others and create a community\
+        \ around your delicious creations. \n\n**Which strategy do you currently have\
+        \ to achieve this goal?**\n\nFor example:  \n- Experienced in baking techniques\
+        \  \n- Strong business management skills  \n- Established local supplier connections"
+    breakdown_annotation:
+        reasoning: The chatbot's response is relevant and supportive of the user's
+            goal of starting a bakery. It acknowledges the user's goal and provides
+            a positive reinforcement, which is appropriate for the context. The chatbot
+            then asks a relevant follow-up question about the user's current strategy,
+            which is a logical next step in the goal-setting process. The examples
+            provided (baking techniques, business management skills, supplier connections)
+            are relevant and help guide the user in thinking about their current resources
+            or skills. There is no indication of a breakdown as the response is clear,
+            relevant, and encourages the user to continue the conversation smoothly.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 4
+    role: user
+    content: I'm not great at baking.
+    breakdown_annotation: null
+-   turn_id: 5
+    role: dialogue_system
+    content: "Alright, this sounds more like we should first set a learning oriented\
+        \ goal to make sure you follow the best strategy to achieve starting a bakery.\
+        \ A learning goal can define strategies, skills, or procedures you want to\
+        \ develop in order to master a task. \n\n**What could be your learning oriented\
+        \ goal?**\n\nFor Example:\n1. Research the necessary permits and licenses\
+        \ required to legally operate a bakery in your area.\n2. Learn about different\
+        \ baking techniques and recipes to diversify the bakery's product offerings.\n\
+        3. Study effective marketing strategies for small businesses to attract and\
+        \ retain customers."
+    breakdown_annotation:
+        reasoning: The chatbot's response is appropriate and relevant to the user's
+            input. The user mentioned not being great at baking, which indicates a
+            need for skill development. The chatbot correctly identifies this as an
+            opportunity to set a learning-oriented goal, which aligns with its purpose
+            of guiding the user in goal setting. The chatbot provides examples of
+            learning goals that are relevant to starting a bakery, which can help
+            the user think about what specific skills or knowledge they need to acquire.
+            There is no indication of a breakdown as the chatbot's response is clear,
+            relevant, and provides useful guidance for the user's situation.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 6
+    role: user
+    content: I'd rather open a gym.
+    breakdown_annotation: null
+-   turn_id: 7
+    role: dialogue_system
+    content: "That's a great goal too! Let's focus on setting a learning goal for\
+        \ opening a gym. \n\n**What do you need to learn to reach your goal of opening\
+        \ a gym?**"
+    breakdown_annotation:
+        reasoning: The chatbot successfully transitions from the user's initial goal
+            of starting a bakery to the new goal of opening a gym. It acknowledges
+            the user's change in focus and continues to guide the user in setting
+            a learning goal, which is consistent with its task of helping users formulate
+            specific and challenging goals. The chatbot's response is relevant, clear,
+            and maintains the flow of the conversation without any breakdowns. There
+            are no errors or omissions in the chatbot's response, and it aligns with
+            the user's new interest.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 8
+    role: user
+    content: Maybe baking is better.
+    breakdown_annotation: null
+-   turn_id: 9
+    role: dialogue_system
+    content: "That's perfectly fine! Let's refocus on your goal of starting a bakery.\
+        \ \n\n**What do you need to learn to successfully start and run your bakery?**"
+    breakdown_annotation:
+        reasoning: The chatbot successfully adapts to the user's change in goal from
+            opening a gym back to starting a bakery. It acknowledges the user's decision
+            and refocuses the conversation on the bakery goal. The chatbot then prompts
+            the user to consider what they need to learn to achieve this goal, which
+            is consistent with its task of guiding the user in setting a learning
+            goal. The response is relevant, clear, and maintains the flow of the conversation
+            without any breakdowns. There are no errors or omissions in the chatbot's
+            response, and it aligns well with the user's latest input.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 10
+    role: user
+    content: I'll need gym equipment knowledge.
+    breakdown_annotation: null
+-   turn_id: 11
+    role: dialogue_system
+    content: This sounds more like a performance goal, **how could you formulate this
+        as a learning goal?** For example, you might want to learn about the different
+        types of gym equipment, their uses, and how to maintain them.
+    breakdown_annotation:
+        reasoning: The user has expressed a need for knowledge about gym equipment,
+            which is relevant to their previous interest in opening a gym. However,
+            the chatbot's response suggests formulating this as a learning goal, which
+            is appropriate given the user's expressed need for knowledge. The chatbot
+            provides a relevant example of what a learning goal could look like in
+            this context. The response is coherent and aligns with the user's current
+            focus on gym equipment knowledge. There is no indication of a breakdown
+            as the chatbot is guiding the user towards setting a learning goal, which
+            is part of its task. The conversation remains on topic and the chatbot's
+            response is clear and relevant.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 12
+    role: user
+    content: I'll bake gym-shaped pastries.
+    breakdown_annotation: null
+-   turn_id: 13
+    role: dialogue_system
+    content: "That sounds like a fun and unique idea for your bakery! \n\n**What learning\
+        \ goal could help you master the art of baking gym-shaped pastries?**"
+    breakdown_annotation:
+        reasoning: The chatbot's response acknowledges the user's creative idea of
+            baking gym-shaped pastries and continues to guide the user towards setting
+            a learning goal related to this idea. The chatbot remains on topic and
+            encourages the user to think about what they need to learn to achieve
+            their goal. There is no indication of a breakdown as the chatbot's response
+            is relevant, clear, and aligned with its task of helping the user set
+            a learning goal. The conversation flows smoothly without any errors or
+            omissions.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 14
+    role: user
+    content: Find unique gym-pastry recipes.
+    breakdown_annotation: null
+-   turn_id: 15
+    role: dialogue_system
+    content: "That sounds like a creative learning goal! \n\n**Would you like to set\
+        \ \"finding unique gym-pastry recipes\" as your learning goal?**"
+    breakdown_annotation:
+        reasoning: The chatbot's latest response acknowledges the user's proposed
+            learning goal of finding unique gym-pastry recipes and asks if the user
+            would like to set it as their learning goal. This is a relevant and appropriate
+            follow-up to the user's previous statement. The chatbot maintains the
+            focus on setting a learning goal, which aligns with its task of guiding
+            the user in goal setting. There is no indication of any breakdown types
+            such as ignoring the user's input, providing wrong information, or any
+            other errors. The conversation flows smoothly, and the chatbot's response
+            is clear and concise.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 16
+    role: user
+    content: Yes, let’s do that!
+    breakdown_annotation: null
+-   turn_id: 17
+    role: dialogue_system
+    content: 'Your goal of finding unique gym-pastry recipes already sounds good.
+        **Could you try making your goal even more specific?**
+
+
+        For Example:
+
+        Develop three unique gym-pastry recipes by June 2nd.'
+    breakdown_annotation:
+        reasoning: The chatbot's latest response is appropriate and aligns with its
+            task of helping the user set a specific and challenging goal. The chatbot
+            acknowledges the user's decision and encourages them to make the goal
+            more specific, providing a clear example of how to do so. This guidance
+            is relevant and helpful, as it prompts the user to think about a timeline
+            and a measurable outcome, which are important aspects of effective goal
+            setting. There is no indication of a breakdown in the conversation, as
+            the chatbot's response is clear, relevant, and supportive of the user's
+            goal-setting process.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 18
+    role: user
+    content: Develop five by next month.
+    breakdown_annotation: null
+-   turn_id: 19
+    role: dialogue_system
+    content: That sounds like a great goal! **Could you specify an exact date next
+        month by which you want to develop these five unique gym-pastry recipes?**
+    breakdown_annotation:
+        reasoning: The chatbot's latest utterance is relevant and continues to guide
+            the user in refining their goal. It asks the user to specify an exact
+            date for achieving their goal, which is a logical next step in the goal-setting
+            process. This helps in making the goal more specific and time-bound, which
+            aligns with the chatbot's purpose of assisting in goal formulation. There
+            is no indication of a breakdown as the chatbot is performing its task
+            effectively and the conversation is progressing smoothly.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 20
+    role: user
+    content: By the 10th, maybe?
+    breakdown_annotation: null
+-   turn_id: 21
+    role: dialogue_system
+    content: 'Your goal of developing gym-pastry recipes sounds now more specific.
+        **Do you think you could now make it even more challenging while still being
+        achievable for you?** If you can''t, this is also okay.
+
+
+        You could make your goal more challenging by:
+
+
+        1. Developing all five recipes by May 26th.
+
+        2. Creating ten unique recipes by December 10th.
+
+        3. Finalizing two recipes by tomorrow.'
+    breakdown_annotation:
+        reasoning: The chatbot's latest response is coherent and relevant to the user's
+            goal-setting process. It acknowledges the user's proposed date and encourages
+            them to consider making the goal more challenging, which aligns with the
+            task of guiding the user in setting a specific and challenging goal. The
+            chatbot provides examples of how the goal could be made more challenging,
+            which is helpful and relevant to the user's context. There is no indication
+            of any breakdown types such as ignoring the user's input, providing wrong
+            information, or any other errors. The conversation flows smoothly, and
+            the chatbot's response is clear and supportive of the user's goal-setting
+            process.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 22
+    role: user
+    content: Let's aim for ten by December!
+    breakdown_annotation: null
+-   turn_id: 23
+    role: dialogue_system
+    content: That's a great step up! **Do you think you could make it even more challenging,
+        like including a specific dietary focus for each recipe, or is this your final
+        goal?**
+    breakdown_annotation:
+        reasoning: The chatbot's latest response acknowledges the user's updated goal
+            and suggests a way to make it more challenging by including a specific
+            dietary focus for each recipe. This is relevant to the user's goal of
+            developing unique gym-pastry recipes and aligns with the task of helping
+            the user set a specific and challenging goal. The chatbot also provides
+            an option for the user to confirm if this is their final goal, which is
+            a good way to ensure the user is comfortable with the challenge level.
+            There is no indication of a breakdown as the response is clear, relevant,
+            and encourages further goal refinement.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 24
+    role: user
+    content: Let's include vegan options too!
+    breakdown_annotation: null
+-   turn_id: 25
+    role: dialogue_system
+    content: Fantastic! Including vegan options adds a great layer of challenge and
+        diversity. **Is there anything else you'd like to add to make it even more
+        challenging, or is this your final goal?**
+    breakdown_annotation:
+        reasoning: The chatbot's latest response acknowledges the user's addition
+            of vegan options to their goal, which aligns with the task of helping
+            the user set a specific and challenging goal. The chatbot then asks if
+            the user wants to add anything else to make the goal even more challenging,
+            which is a logical continuation of the goal-setting process. The response
+            is relevant, clear, and encourages further engagement from the user. There
+            are no signs of breakdowns such as ignoring the user's input, providing
+            wrong information, or lacking clarity. The chatbot is effectively guiding
+            the user through refining their goal, which is its intended task.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 26
+    role: user
+    content: Maybe gluten-free options?
+    breakdown_annotation: null
+-   turn_id: 27
+    role: dialogue_system
+    content: Incorporating gluten-free options is an excellent addition to your goal!
+        **Is there anything else you'd like to add, or is this your final challenging
+        goal?**
+    breakdown_annotation:
+        reasoning: The chatbot's latest response acknowledges the user's addition
+            of gluten-free options to their goal and asks if there is anything else
+            the user would like to add. This is consistent with the ongoing conversation
+            about refining and challenging the user's goal. The chatbot's response
+            is clear, relevant, and encourages further input from the user, which
+            aligns with its task of guiding the user in setting a specific and challenging
+            goal. There is no indication of a breakdown as the conversation flows
+            smoothly, and the chatbot's response is appropriate and supportive of
+            the user's goal-setting process.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 28
+    role: user
+    content: That's my final goal!
+    breakdown_annotation: null
+-   turn_id: 29
+    role: dialogue_system
+    content: "Creating ten unique gym-pastry recipes, including vegan and gluten-free\
+        \ options, by December 10th is an exciting and ambitious goal! **What do you\
+        \ think is the first action you could do in the next 7 days to get closer\
+        \ to your goal?**\n\nYou could for example:  \n1. Read 2 books on healthy\
+        \ baking techniques.  \n2. Watch 5 videos on vegan and gluten-free baking.\
+        \  \n3. Consult with a nutritionist for recipe development advice."
+    breakdown_annotation:
+        reasoning: The chatbot's latest response is relevant and aligns well with
+            the user's final goal of creating ten unique gym-pastry recipes, including
+            vegan and gluten-free options, by December 10th. The chatbot acknowledges
+            the user's goal and encourages them to think about the first actionable
+            step they can take in the next 7 days to progress towards their goal.
+            It provides specific examples of actions the user could take, which is
+            helpful and supportive. The response is clear, concise, and maintains
+            the focus on the user's goal-setting process. There are no breakdowns
+            in this interaction as the chatbot is effectively guiding the user towards
+            formulating an actionable plan.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 30
+    role: user
+    content: Watch a few baking videos.
+    breakdown_annotation: null
+-   turn_id: 31
+    role: dialogue_system
+    content: That sounds like a great way to gather inspiration and learn new techniques!
+        **Do you think watching videos on both vegan and gluten-free baking would
+        be beneficial for your goal?**
+    breakdown_annotation:
+        reasoning: The chatbot's latest response is relevant and supportive of the
+            user's stated action of watching baking videos. It acknowledges the user's
+            choice and suggests a way to enhance the learning experience by focusing
+            on both vegan and gluten-free baking, which aligns with the user's final
+            goal of creating diverse gym-pastry recipes. The chatbot's response is
+            clear, encourages further engagement, and does not ignore any user input.
+            There are no grammatical errors, semantic errors, or contradictions present.
+            The chatbot is effectively guiding the user towards refining their goal
+            and action steps, which is consistent with its task-oriented nature.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 32
+    role: user
+    content: Yes, but maybe mix with books.
+    breakdown_annotation: null
+-   turn_id: 33
+    role: dialogue_system
+    content: Combining videos with books can provide a well-rounded understanding
+        of baking techniques and recipes. **Would you like to set a specific number
+        of videos and books to watch and read in the next week to stay on track?**
+    breakdown_annotation:
+        reasoning: The chatbot's latest utterance is relevant and continues the conversation
+            smoothly. It acknowledges the user's suggestion to mix videos with books
+            and proposes a concrete step to make the user's plan more specific and
+            actionable. This aligns with the chatbot's task of guiding the user in
+            setting specific and challenging goals. There are no breakdowns in terms
+            of ignoring the user's input, providing wrong information, or failing
+            to address the user's needs. The chatbot's response is clear, concise,
+            and directly related to the user's previous statement, facilitating a
+            seamless continuation of the dialogue.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 34
+    role: user
+    content: Sure, 3 videos, 1 book.
+    breakdown_annotation: null
+-   turn_id: 35
+    role: dialogue_system
+    content: 'That sounds like a great plan! **What could be a good cue for you**
+        that triggers the implementation of watching 3 baking videos and reading 1
+        book on vegan and gluten-free baking in the next week? It would be best to
+        select a cue that follows a significant event and is very noticeable so you
+        don''t forget it.
+
+
+        For Example:
+
+        1. If I finish my lunch break at work, I''ll watch 3 baking videos.
+
+        2. When I sit down for my evening tea, I''ll read a book on vegan baking.
+
+        3. If I complete my morning workout, I''ll dedicate time to baking research.'
+    breakdown_annotation:
+        reasoning: The chatbot's latest response is consistent with its role as a
+            goal-setting assistant. It continues to guide the user in formulating
+            an implementation intention by suggesting the use of cues to trigger the
+            planned actions. The examples provided are relevant and help the user
+            understand how to integrate the learning activities into their routine.
+            The response is clear, relevant, and maintains the focus on the user's
+            goal of learning about vegan and gluten-free baking. There is no indication
+            of a breakdown as the chatbot is effectively facilitating the user's goal-setting
+            process.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 36
+    role: user
+    content: If I complete my meetings.
+    breakdown_annotation: null
+-   turn_id: 37
+    role: dialogue_system
+    content: That sounds like a good cue! **Could you specify a particular day or
+        days when you usually have meetings, and where you will be when you complete
+        them?** This will help make your implementation intention more concrete.
+    breakdown_annotation:
+        reasoning: The chatbot's latest response is consistent with its role as a
+            goal-setting assistant. It acknowledges the user's chosen cue and encourages
+            the user to make the implementation intention more concrete by specifying
+            the day or days and location. This aligns with the task of helping the
+            user formulate a specific and actionable plan. The response is clear,
+            relevant, and encourages further specification, which is appropriate for
+            the context of setting a goal. There is no indication of a breakdown as
+            the chatbot is facilitating the user's goal-setting process effectively.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 38
+    role: user
+    content: I'll do it on Mondays.
+    breakdown_annotation: null
+-   turn_id: 39
+    role: dialogue_system
+    content: Great! **Where will you be when you complete your meetings on Mondays?**
+        This will help ensure your cue is tied to a specific location.
+    breakdown_annotation:
+        reasoning: The chatbot's latest utterance is a follow-up question that aims
+            to make the user's implementation intention more concrete by tying the
+            action to a specific location. This is a logical continuation of the previous
+            discussion about setting a cue for watching videos and reading a book.
+            The chatbot is effectively guiding the user to create a more specific
+            and actionable plan, which aligns with its task-oriented nature. There
+            is no indication of a breakdown as the conversation is progressing smoothly
+            and the chatbot is fulfilling its role effectively.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 40
+    role: user
+    content: I'll be at home, usually.
+    breakdown_annotation: null
+-   turn_id: 41
+    role: dialogue_system
+    content: Perfect! You just did the first step towards your gym-pastry recipes.
+        **Would it be okay if I check in with you in a week to see how you are progressing?**
+        Then we can talk if you made progress on your baking videos and book.
+    breakdown_annotation:
+        reasoning: The chatbot's latest utterance is appropriate and aligns well with
+            the user's goal-setting process. It acknowledges the user's plan and offers
+            to follow up, which is a supportive action in a goal-setting context.
+            The chatbot's suggestion to check in with the user in a week is relevant
+            and helps maintain accountability, which is beneficial for the user's
+            progress. There are no breakdowns in terms of ignoring the user's input,
+            providing wrong information, or failing to communicate effectively. The
+            conversation remains on topic and the chatbot's intention is clear. Therefore,
+            there is no dialogue breakdown.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 42
+    role: user
+    content: Sure, but what about gyms?
+    breakdown_annotation: null
+-   turn_id: 43
+    role: dialogue_system
+    content: 'Perfect you defined your goal! Now we are done and this is the summary
+        of the goal and action we set together:
+
+
+        **Goal:** Develop ten unique gym-pastry recipes, including vegan and gluten-free
+        options, by December 10th.
+
+
+        **Action:** Watch 3 baking videos and read 1 book on vegan and gluten-free
+        baking in the next week.
+
+
+        **Implementation Intention:** when I complete my meetings on Mondays at home
+        then watch 3 baking videos and read 1 book on vegan and gluten-free baking
+        in the next week.'
+    breakdown_annotation:
+        reasoning: The user asked about gyms in their last message, indicating they
+            might want to discuss or set a goal related to gyms. However, the chatbot
+            ignored this question and proceeded to summarize the goal and action plan
+            related to baking. This is a clear case of 'Ignore question' as the chatbot
+            did not address the user's inquiry about gyms. The chatbot's response
+            is otherwise coherent and relevant to the previous discussion about baking,
+            but it fails to acknowledge the user's shift in focus.
+        score: 0.7
+        decision: breakdown
+        breakdown_types:
+        - Ignore question
+-   turn_id: 44
+    role: user
+    content: But I still want a gym!
+    breakdown_annotation: null
+-   turn_id: 45
+    role: dialogue_system
+    content: Goodbye! I hope I was able to help you with your goal. Have a great day!
+    breakdown_annotation:
+        reasoning: The user expressed a desire to open a gym in their last message,
+            which indicates they might want to discuss or set goals related to that.
+            However, the chatbot's response is a generic farewell, which does not
+            address the user's statement about wanting a gym. This constitutes an
+            'Ignore expectation' breakdown, as the user expected the chatbot to acknowledge
+            or respond to their interest in a gym. Additionally, it could be seen
+            as an 'Ignore request' if the user's statement is interpreted as a request
+            to discuss gym-related goals. The chatbot's response does not facilitate
+            a smooth continuation of the conversation, as it does not address the
+            user's latest input or provide a pathway to discuss the gym goal. Therefore,
+            a breakdown is present.
+        score: 0.3
+        decision: breakdown
+        breakdown_types:
+        - Ignore expectation
+        - Ignore request
+finish_reason: chatbot_ended_chat
+error: null
+ratings:
+    task_success:
+        reasoning: The chatbot successfully guided the user through the process of
+            setting a specific and challenging goal related to baking, which aligns
+            with its task-oriented nature. It helped the user refine their goal and
+            set an implementation intention. However, it failed to address the user's
+            interest in opening a gym, which was mentioned multiple times, indicating
+            a partial task success.
+        rating: 3
+    efficiency:
+        reasoning: The conversation was lengthy with several turns, and the user switched
+            between goals multiple times. The chatbot did not efficiently address
+            the user's interest in opening a gym, leading to some repetition and inefficiency
+            in guiding the user back to the bakery goal.
+        rating: 3
+    appropriateness:
+        reasoning: The chatbot's responses were generally appropriate and aligned
+            with its goal-setting task. However, it did not adequately address the
+            user's repeated interest in opening a gym, which could have been handled
+            more appropriately by acknowledging and redirecting the conversation more
+            effectively.
+        rating: 3
+    naturalness:
+        reasoning: The chatbot's responses were mostly natural and conversational,
+            but there were moments where the conversation felt slightly robotic, especially
+            when the user expressed interest in a gym, and the chatbot continued to
+            focus on the bakery goal without much flexibility.
+        rating: 3
+    overall_performance:
+        reasoning: Overall, the chatbot performed adequately in guiding the user through
+            setting a goal related to baking. However, it struggled with the user's
+            interest in a gym, leading to a less than optimal performance in addressing
+            all user needs and maintaining efficiency.
+        rating: 3
+human_rating_annotations: null
+chat_statistics:
+    start_time: '2025-05-19 12:21:51'
+    end_time: '2025-05-19 12:23:01'
+    duration: 69.703925
+    num_turns: 45
+    num_user_turns: 22
+    num_chatbot_turns: 23
+    avg_user_turn_length: 4.818181818181818
+    five_num_summary_user_turn_lengths:
+        min: 3.0
+        q1: 4.0
+        median: 5.0
+        q3: 5.0
+        max: 6.0
+    avg_chatbot_turn_length: 43.130434782608695
+    five_num_summary_chatbot_turn_lengths:
+        min: 16.0
+        q1: 25.0
+        median: 32.0
+        q3: 54.0
+        max: 103.0
+simulation_cost_statistics:
+    total_prompt_tokens: 28380
+    total_completion_tokens: 161
+    total_tokens: 28541
+    cost: 0.05383999999999999
+breakdown_stats:
+    analysis_start_time: '2025-05-19 12:35:35'
+    analysis_end_time: '2025-05-19 12:37:01'
+    count: 2
+    avg_score: 0.9565217391304348
+    turn_ids_of_breakdowns:
+    - 43
+    - 45
+    counts_per_breakdown_type:
+        uninterpretable: 0
+        grammatical_error: 0
+        semantic_error: 0
+        wrong_information: 0
+        ignore_question: 1
+        ignore_request: 1
+        ignore_proposal: 0
+        ignore_greeting: 0
+        ignore_expectation: 1
+        unclear_intention: 0
+        topic_transition_error: 0
+        lack_of_information: 0
+        self_contradiction: 0
+        contradiction: 0
+        repetition: 0
+        lack_of_sociality: 0
+        lack_of_common_sense: 0
+        in_domain_task_failure: 0
+        update_info_failure: 0
+        clarification_failure: 0
+        redundancy: 0
+        lack_of_brevity: 0
+        lack_of_clarity: 0
+        failure_to_recognize_out_of_domain: 0
+        failure_to_communicate_capabilities: 0
+        failure_to_resolve_out_of_domain: 0
+        chatbot_crash: 0
+    detection_cost_stats:
+        prompt_tokens: 50764
+        completion_tokens: 2990
+        total_tokens: 53754
+        cost: 0.10401
+eval_stats:
+    evaluation_start_time: '2025-05-19 12:40:17'
+    evaluation_end_time: '2025-05-19 12:40:24'
+    cost_stats:
+        prompt_tokens: 2565
+        completion_tokens: 323
+        total_tokens: 2888
+        cost: 0.009642500000000002

@@ -1,0 +1,33 @@
+{
+  "id": "chatcmpl-da90eb78-f2dd-4ddb-9f66-c3fbced02fc2",
+  "created": 1744655431,
+  "model": "gemini-2.0-flash-001",
+  "object": "chat.completion",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "[\n  {\n    \"reasoning\": \"The bot's response is relevant to a typical conversation starter. The user indicated they are doing well, and the bot followed up with a question about video games, which is a reasonable topic shift. There is no indication of dialogue breakdown.\",\n    \"decision\": \"NON-BREAKDOWN\",\n    \"score\": 1.0\n  }\n]",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null
+      },
+      "logprobs": -0.19341966084071568
+    }
+  ],
+  "usage": {
+    "completion_tokens": 84,
+    "prompt_tokens": 857,
+    "total_tokens": 941,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": null
+    }
+  },
+  "vertex_ai_grounding_metadata": [],
+  "vertex_ai_safety_results": [],
+  "vertex_ai_citation_metadata": []
+}

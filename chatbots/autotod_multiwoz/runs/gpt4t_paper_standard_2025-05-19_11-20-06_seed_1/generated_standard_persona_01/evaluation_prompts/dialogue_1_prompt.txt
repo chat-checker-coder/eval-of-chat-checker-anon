@@ -1,0 +1,87 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. User: "Hi there! 😊 I'm planning a weekend getaway to Cambridge and need help with accommodations and dinner recommendations. Could you assist me?"
+2. Chatbot: "Of course, I'd be delighted to assist you with your weekend getaway to Cambridge! Could you please provide me with some details about your accommodation preferences, such as the area you'd like to stay in, your budget, and any specific requirements like parking or internet? Also, for dinner recommendations, could you let me know your preferred cuisine, price range, and the area you'd like to dine in? This will help me find the best options for you."
+3. User: "I'd prefer to stay in the city center with a moderate budget. For dinner, I'm interested in trying local British cuisine, and I'm open to any area that's not too far from central Cambridge. 😊"
+4. Chatbot: "I've found some options for you! For your stay, Cityroomz in the city center offers rooms at moderate prices: double rooms at £67, family rooms at £77, and single rooms at £47. For dining, you might enjoy "Midsummer House" located at Midsummer Common, "Cambridge Chop House" at 1 Kings Parade, "Oak Bistro" at 6 Lensfield Road, "Cotto" at 183 East Road City Centre, or "Restaurant One Seven" at De Vere University Arms on Regent Street. All these restaurants offer delightful British cuisine and are conveniently located near central Cambridge."
+5. User: "Those sound fantastic, thank you! 😊 Could you book a table at Cambridge Chop House for dinner, please?"
+6. Chatbot: "I'd be happy to help you with the reservation at Cambridge Chop House, but I need a bit more information first. Could you please tell me how many people will be dining, on what day, and at what time you'd like to reserve the table?"
+7. User: "It'll be for two people on Saturday at 7 PM. 😊"
+8. Chatbot: "Your reservation at Cambridge Chop House has been successfully booked for two people on Saturday at 7 PM. Your reference number is 85zddq32. Enjoy your dinner! 😊"
+9. User: "Thank you so much! Could you recommend any historical tours?" 😊"
+10. Chatbot: "It appears that there are currently no attractions listed specifically as 'historical tours' in Cambridge. However, Cambridge is rich in history and offers many other historical sites and museums that might interest you. Would you like recommendations on other types of historical attractions or perhaps a guided walking tour of the city's historical landmarks?"
+11. User: "A guided walking tour of historical landmarks sounds perfect! 😊"
+12. Chatbot: "Wonderful choice! Cambridge offers several guided walking tours that cover historical landmarks. You might enjoy the "Historic Cambridge: A Guided Walking Tour" which starts from the city center and covers key sites like King's College, Queens' College, and the Cambridge University Botanic Garden. Another option is the "Cambridge University & City Tour" which provides insights into the university's history and its famous colleges. Would you like more details on these tours or assistance with booking one?"
+13. User: "I'd love more details on the 'Historic Cambridge' tour, please! 😊"
+14. Chatbot: "The "Historic Cambridge: A Guided Walking Tour" is a wonderful way to explore the city's rich history. This tour typically lasts about 2 hours and covers significant landmarks such as King's College, Queens' College, and other notable sites around the city center. The tour is known for its knowledgeable guides who provide in-depth commentary on the history and architecture of Cambridge. Tours usually start in the morning and afternoon. Would you like assistance with booking this tour, or do you have any other questions? 😊"
+15. User: "Yes, please assist with booking the Historic Cambridge tour! 😊"
+16. Chatbot: "I'd be delighted to assist with booking the "Historic Cambridge: A Guided Walking Tour" for you. Could you please provide the number of people attending, the preferred day, and whether you'd like a morning or afternoon tour? This information will help me finalize your booking. 😊"
+17. User: "It'll be for two people on Sunday, preferably a morning tour. 😊"
+18. Chatbot: "It seems there was a misunderstanding in booking the "Historic Cambridge: A Guided Walking Tour." The tour duration is typically measured in hours, not days. Could you please confirm if you'd like to book the tour for two people on Sunday morning? Once confirmed, I'll proceed with the correct booking details. Thank you for your patience! 😊"
+19. User: "Yes, please book the tour for two people on Sunday morning! 😊"
+20. Chatbot: "I apologize for the confusion earlier. It seems there was an error in the booking process for the "Historic Cambridge: A Guided Walking Tour." The tour cannot be booked as a hotel stay. Instead, I will need to arrange the booking through the appropriate tour reservation system. Could you please confirm if you'd like any additional information or assistance with another request while I correct this? Thank you for your understanding! 😊"
+21. User: "Please proceed with the tour booking. No additional info needed. 😊"
+22. Chatbot: "It seems like you'd like to book a tour, but I need a bit more information to assist you effectively. Could you please specify what type of tour you are interested in? For example, are you looking for a restaurant, hotel, attraction, train, or taxi service? Additionally, any specific preferences or constraints you have would be very helpful!"
+23. User: "I'm interested in the "Historic Cambridge" walking tour for two. 😊"
+24. Chatbot: "It sounds like you're interested in the "Historic Cambridge" walking tour for two people. However, I currently specialize in providing assistance with restaurants, hotels, attractions, trains, and taxis in Cambridge. I don't have the capability to book walking tours directly. I recommend checking with local tour providers or visiting the official tourism website for Cambridge to find and book the "Historic Cambridge" walking tour. If you need help with anything else, such as finding a place to eat or stay during your visit, feel free to ask!"
+25. User: "Thank you for your help! I'll check the tourism website. 😊"
+26. Chatbot: "You're very welcome! I'm glad I could assist you. If you have any more questions in the future or need help with anything else during your visit to Cambridge, don't hesitate to reach out. Enjoy your exploration of the city! 😊"
+27. User: "Thanks so much! I'll definitely reach out if needed. 😊"
+28. Chatbot: "You're always welcome! I'm here to help whenever you need. Have a wonderful time in Cambridge, and I look forward to assisting you again in the future! 😊"
+29. User: "Thank you! I'm excited about the trip! 😊"
+
+# Your Expert Rating

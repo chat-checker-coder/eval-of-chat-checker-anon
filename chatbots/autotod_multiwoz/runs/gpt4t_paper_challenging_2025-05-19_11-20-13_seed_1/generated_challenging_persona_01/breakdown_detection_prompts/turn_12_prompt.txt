@@ -1,0 +1,84 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. User: "I NEED TO SEE THREE TOURIST SPOTS FAST! WHERE DO I START?"
+2. Chatbot: "It seems there are currently no tourist attractions listed in the central area in our database. Could you please specify another area or type of attraction you're interested in? I'm here to help you find the best spots to visit!"
+3. User: "I can't wait! Just pick some popular ones asap! NOW!"
+4. Chatbot: "I've found some popular attractions for you! You can visit the "ADC Theatre" for some live performances, admire the architecture at "All Saints Church", enjoy a night out at "Ballare" nightclub, explore art at "Broughton House Gallery", or catch a play at "Cambridge Arts Theatre". Enjoy your visits!"
+5. User: "These are outdated! I need CURRENT hot spots NOW!"
+6. Chatbot: "I apologize for the inconvenience. It seems there might be an issue with our current listings for tourist attractions in the central area. Could you please specify another area or type of attraction you're interested in? I'm here to help you find the most current and exciting spots to visit!"
+7. User: "Just give me any NEW museums and landmarks FAST!"
+8. Chatbot: "I've found some new museum landmarks in Cambridge for you to explore! You can visit "Broughton House Gallery" at 98 King Street, "Byard Art" at 14 King's Parade, "Cafe Jello Gallery" at 13 Magdalene Street, "Cambridge and County Folk Museum" at 2-3 Castle Street, and "Cambridge Artworks" at 5 Greens Road. Enjoy your visits to these exciting spots!"
+9. User: "I said **NEW**! Are you hearing me?! Faster recommendations!"
+10. Chatbot: "I apologize for any confusion. Let's focus on the newest attractions. You might want to check out "The Heong Gallery" at Downing College, which showcases modern and contemporary art, or "The Museum of Zoology" recently renovated and reopened, offering a fascinating look at animal life. Another fresh highlight is "The Rising Tide" sculpture installation by the river. I hope these suggestions are helpful for your exploration!"
+11. User: "Finally! How do I get to these spots quickly?!"
+
+# Latest Chatbot Utterance to Analyse
+12. Chatbot: "To quickly get to the attractions I mentioned, you can consider taking a taxi for convenience. If you provide me with your current location and which attraction you'd like to visit first, I can assist you in booking a taxi. Alternatively, Cambridge is well-connected by public transport, and you can use buses or trains depending on your starting point and destination. Let me know how you'd like to proceed!"
+
+# Your Analysis

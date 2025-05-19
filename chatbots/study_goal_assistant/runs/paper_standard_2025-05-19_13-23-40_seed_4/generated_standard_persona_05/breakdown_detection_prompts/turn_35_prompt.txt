@@ -1,0 +1,147 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "I want to balance studies and social life."
+3. Chatbot: "Balancing studies and social life is a wonderful goal that can lead to a more fulfilling and well-rounded life. **Which strategy do you currently have to achieve this goal?**
+
+For example:  
+- Time management skills  
+- Prioritize tasks effectively  
+- Set clear boundaries"
+4. User: "I try to prioritize tasks."
+5. Chatbot: "That sounds like a solid approach. **Do you think this strategy is already a good strategy to achieve your goal?**"
+6. User: "It could use some improvement."
+7. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve balance between studies and social life. A learning goal can define strategies, skills, or procedures you want to develop in order to master this task.
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Research time management techniques to effectively allocate time for both studies and social activities.
+2. Learn about setting priorities and boundaries to maintain a healthy balance between academic responsibilities and social engagements.
+3. Explore strategies for effective communication to negotiate and plan social activities around study commitments."
+8. User: "Learn time management techniques."
+9. Chatbot: "Your goal of learning time management techniques already sounds good. **Could you try making your goal even more specific?**
+
+For Example:
+Identify three time management techniques by Friday, implement one."
+10. User: "Identify two techniques this week."
+11. Chatbot: "I think you are missing a concrete outcome in your goal. **How could you measure the outcome of your goal?**"
+12. User: "I'll apply them on tasks."
+13. Chatbot: "Great! So your goal is to identify two time management techniques this week and apply them to tasks. **When exactly this week do you want to achieve this goal?**"
+14. User: "By Saturday evening."
+15. Chatbot: "Your goal of balancing studies and social life sounds now more specific. **Do you think you could now make it even more challenging while still being achievable for you?** If you can't, this is also okay.
+
+You could make your goal more challenging by:  
+1. Identifying two techniques and applying them today.  
+2. Applying techniques to all tasks by Friday evening.  
+3. Identifying four techniques before choosing two to apply."
+16. User: "I'll identify four techniques."
+17. Chatbot: "Great! Identifying four techniques will give you a broader perspective on time management. **Do you think you could apply these techniques to all your tasks by Friday evening instead of Saturday?**"
+18. User: "I can try for Friday."
+19. Chatbot: "That's a fantastic approach! Applying the techniques by Friday will give you a head start on the weekend. **Do you think you could also track your progress and reflect on the effectiveness of these techniques by Sunday?**"
+20. User: "Yes, I can do that."
+21. Chatbot: "It's great to see your commitment to improving your time management skills. Now that I know you want to identify and apply time management techniques, **what do you think is the first action you could do in the next 7 days to get closer to your goal?**
+
+You could for example:  
+1. Read a book on time management strategies.  
+2. Watch 4 YouTube videos on time management techniques.  
+3. Attend a webinar on effective time management skills."
+22. User: "I'll watch 4 videos."
+23. Chatbot: "That sounds like a practical and engaging way to learn new techniques. **Do you think watching these videos will provide you with the insights you need to apply the techniques effectively?**"
+24. User: "Yes, I believe so."
+25. Chatbot: "That sounds like a great plan to enhance your time management skills. **What could be a good cue for you** that triggers the implementation of watching these videos? It would be best to select a cue that follows a significant event and is very noticeable so you don't forget it.
+
+For Example:
+1. If I finish my lunch break at work, I will watch 4 YouTube videos on time management techniques.
+2. When I sit down at my desk after dinner, I'll watch 4 YouTube videos on time management techniques.
+3. If I complete my morning workout, I will watch 4 YouTube videos on time management techniques."
+26. User: "When I finish homework, I'll watch."
+27. Chatbot: "That sounds like a good cue! **Is there a specific day or days when you usually finish your homework, so you can consistently watch the videos?**"
+28. User: "I usually finish homework Monday."
+29. Chatbot: "Great! **Where do you usually finish your homework on Mondays, so you can have a clear location for your cue?**"
+30. User: "At my desk in my room."
+31. Chatbot: "Perfect! You just did the first step towards better time management. Would it be okay if I check in with you in a week to see how you are progressing? Then we can talk if you made progress on your video watching."
+32. User: "Yes, that sounds good."
+33. Chatbot: "Perfect you defined your goal! Now we are done and this is the summary of the goal and action we set together:
+
+**Goal:** Identify four time management techniques by Saturday evening, apply them to all tasks by Friday, and track progress and reflect on their effectiveness by Sunday.
+
+**Action:** Watch 4 YouTube videos on time management techniques.
+
+**Implementation Intention:** when I finish homework at my desk in my room on Monday, I'll watch 4 YouTube videos on time management techniques."
+34. User: "Thanks! Looking forward to it."
+
+# Latest Chatbot Utterance to Analyse
+35. Chatbot: "Goodbye! I hope I was able to help you with your goal. Have a great day!"
+
+# Your Analysis

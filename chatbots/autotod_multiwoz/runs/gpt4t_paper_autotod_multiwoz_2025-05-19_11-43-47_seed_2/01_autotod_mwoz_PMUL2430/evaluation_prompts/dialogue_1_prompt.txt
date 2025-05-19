@@ -1,0 +1,72 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. User: "I am looking for a park east of town with a playground."
+2. Chatbot: "I found a park that matches your criteria. Cherry Hinton Water Play is located at Cherry Hinton Hall, Cherry Hinton Road, and it features a playground. Would you like more information about this park or help with anything else?"
+3. User: "Could you kindly tell me of the entrance fee for Cherry Hinton Water Play?"
+4. Chatbot: "Cherry Hinton Water Play does not have an entrance fee; it is free to the public. Is there anything else I can assist you with regarding your visit or any other inquiries?"
+5. User: "I also need to find a moderately priced restaurant. Can you help me with that too?"
+6. Chatbot: "I found some moderately priced restaurants in the centre area for you. "De Luca Cucina and Bar" offers modern European cuisine and is located at 83 Regent Street. Additionally, "Hotel Du Vin and Bistro" and "Galleria," both serving European dishes, are located at 15 - 19 Trumpington Street and 33 Bridge Street respectively. Would you like to make a reservation at one of these restaurants or need further assistance?"
+7. User: "Does "De Luca Cucina and Bar" serve North African or British foods?"
+8. Chatbot: ""De Luca Cucina and Bar" specializes in modern European cuisine and does not offer North African or British foods. Would you like to explore other restaurants that serve these specific cuisines, or is there anything else I can assist you with?"
+9. User: "I would like to find a restaurant that serves North African food. If there are no such restaurants, I would like to find one that serves British food."
+10. Chatbot: "I found several restaurants serving British cuisine in the centre area. Here are some options: Midsummer House at Midsummer Common, Cambridge Chop House at 1 Kings Parade, Oak Bistro at 6 Lensfield Road, Cotto at 183 East Road City Centre, and Restaurant One Seven at De Vere University Arms Regent Street City Centre. Unfortunately, there are no restaurants serving North African food in the area. Would you like to make a reservation at one of these British cuisine restaurants, or is there anything else I can assist you with?"
+11. User: "I would like to make a reservation for 7 people at 19:30 on Friday at "Midsummer House" and book a taxi to commute between the park and the restaurant. I need the taxi to arrive at the restaurant by the booked time. Can you provide me with the reference number for the restaurant reservation and the contact number and car type for the taxi?"
+12. Chatbot: "Your reservation at "Midsummer House" for 7 people at 19:30 on Friday has been successfully made. The reference number for your reservation is yrsstb5v. Additionally, I have arranged a taxi for you. A grey Lexus will pick you up from Cherry Hinton Water Play at 19:00 and take you to Midsummer House. The contact number for the taxi is 0962616160. Is there anything else I can assist you with today?"
+13. User: "Thank you. That is all I need."
+14. Chatbot: "You're welcome! I'm glad I could assist you with your plans. If you have any more questions or need further assistance in the future, feel free to reach out. Have a wonderful visit to Cherry Hinton Water Play and a delightful dinner at Midsummer House!"
+
+# Your Expert Rating

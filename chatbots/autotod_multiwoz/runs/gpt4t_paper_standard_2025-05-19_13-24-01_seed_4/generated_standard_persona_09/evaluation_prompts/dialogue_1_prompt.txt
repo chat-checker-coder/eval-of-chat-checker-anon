@@ -1,0 +1,87 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. User: "Hey! Can you help me plan a tech-friendly visit to Cambridge? 😊"
+2. Chatbot: "Absolutely, I'd be delighted to help you plan a tech-friendly visit to Cambridge! Could you please specify what kind of tech-friendly places you're interested in? For example, are you looking for tech museums, innovative companies, tech hubs, or something else? Additionally, do you need recommendations for a place to stay or transportation options during your visit?"
+3. User: "I'm interested in tech museums and innovative companies. Any app suggestions? 🤔"
+4. Chatbot: "That sounds like a fascinating theme for your visit! For tech museums, the Centre for Computing History would be a perfect start. It's packed with interactive exhibits and historical insights into the computing world. As for innovative companies, you might enjoy a tour of the Cambridge Science Park, which houses numerous tech startups and established tech companies.
+
+Regarding app suggestions, I recommend using "Visit Cambridge," an official app that provides information on attractions, tours, and events in Cambridge. It could be very handy for planning your visits and navigating the city.
+
+Would you like more details on these places, or perhaps help with arranging visits or transportation to these locations?"
+5. User: "I'd love more details and transport tips to both places! 🚶‍♀️💡"
+6. Chatbot: "Could you please specify which places you are referring to? Once I know the specific locations or attractions, I can certainly help with more details and transport tips!"
+7. User: "The Centre for Computing History and Cambridge Science Park, please! 🚀"
+8. Chatbot: "It seems that The Centre for Computing History is not listed in our available data. However, for Cambridge Science Park, it is a renowned technology and science hub. If you need specific transport tips to Cambridge Science Park or any other assistance, please let me know!"
+9. User: "Transport tips to Cambridge Science Park would be great, thanks! 🚌"
+10. Chatbot: "To get to Cambridge Science Park, you have several transport options:
+
+1. **By Bus**: You can take the bus from Cambridge city center, which offers frequent services directly to the Science Park. The journey typically takes about 15-20 minutes depending on traffic.
+
+2. **By Train**: If you're coming from outside Cambridge, you can take a train to Cambridge North Station, which is the closest station to the Science Park. From there, it's a short taxi ride or a possible bus connection to the park.
+
+3. **By Bike**: Cambridge is very cycle-friendly, and there are ample cycle paths leading to the Science Park. It's a healthy and eco-friendly option if you're staying within the city.
+
+4. **By Car**: There is parking available at the Science Park for visitors. If you're driving, you can use satellite navigation to reach the postcode CB4 0GF.
+
+If you need more detailed information or assistance with booking a taxi or train, feel free to ask!"
+11. User: "Thanks for the tips! I'll use the bus or bike option. 🚴‍♀️🚌"
+12. Chatbot: "You're welcome! Both the bus and biking are excellent choices for reaching Cambridge Science Park. If you need any further assistance or specific details later on, don't hesitate to reach out. Enjoy your visit to the Science Park and have a great trip! 🚴‍♀️🚌"
+13. User: "Thanks a lot! I'll explore the apps for more insights. 📱✨"
+14. Chatbot: "You're very welcome! Exploring the apps will definitely provide you with more insights and useful information. If you have any more questions or need further assistance in the future, feel free to ask. Enjoy your exploration and have a wonderful time! 🌟📱"
+15. User: "Will do! Appreciate your help. Have a great day! 😊✨"
+
+# Your Expert Rating

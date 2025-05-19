@@ -1,0 +1,583 @@
+chatbot_id: autotod_multiwoz
+real_dialogue: false
+run_id: gpt4t_paper_standard_2025-05-19_11-45-36_seed_2
+subfolder: null
+dialogue_file: null
+extra_output_file: false
+stats:
+    start_time: '2025-05-19 11:58:46'
+    end_time: '2025-05-19 12:03:14'
+    n_analyzed_dialogues: 10
+    n_dialogues_with_breakdowns: 6
+    total_breakdown_count: 17
+    n_analyzed_chatbot_turns: 83
+    breakdowns_per_chatbot_turn: 0.20481927710843373
+    avg_turn_number_of_first_breakdown: 7.666666666666667
+    avg_turn_quality_score: 0.8473333333333335
+    scores_of_turns_with_breakdowns:
+        min: 0.0
+        q1: 0.3
+        median: 0.3
+        q3: 0.4
+        max: 0.8
+    scores_of_turns_with_breakdowns_excluding_chatbot_crashes:
+        min: 0.2
+        q1: 0.3
+        median: 0.3
+        q3: 0.4
+        max: 0.8
+    dialogues_with_breakdowns:
+    - generated_standard_persona_01_dialogue_1
+    - generated_standard_persona_02_dialogue_1
+    - generated_standard_persona_04_dialogue_1
+    - generated_standard_persona_06_dialogue_1
+    - generated_standard_persona_08_dialogue_1
+    - generated_standard_persona_10_dialogue_1
+    counts_per_breakdown_type:
+        uninterpretable: 0
+        grammatical_error: 0
+        semantic_error: 0
+        wrong_information: 1
+        ignore_question: 0
+        ignore_request: 2
+        ignore_proposal: 0
+        ignore_greeting: 0
+        ignore_expectation: 0
+        unclear_intention: 0
+        topic_transition_error: 1
+        lack_of_information: 1
+        self_contradiction: 0
+        contradiction: 7
+        repetition: 1
+        lack_of_sociality: 0
+        lack_of_common_sense: 1
+        in_domain_task_failure: 2
+        update_info_failure: 5
+        clarification_failure: 3
+        redundancy: 2
+        lack_of_brevity: 0
+        lack_of_clarity: 1
+        failure_to_recognize_out_of_domain: 0
+        failure_to_communicate_capabilities: 2
+        failure_to_resolve_out_of_domain: 0
+        chatbot_crash: 1
+    n_unique_breakdown_types: 14
+    breakdown_matches_per_user: 0.0
+    breakdown_matches_per_user_str: 0/10
+    users_with_matches: []
+    detection_cost_stats:
+        prompt_tokens: 152944
+        completion_tokens: 9730
+        total_tokens: 162674
+        cost: 0.32718
+        avg_prompt_tokens: 15294.4
+        avg_completion_tokens: 973.0
+        avg_total_tokens: 16267.4
+        avg_cost: 0.032718000000000004
+breakdown_excerpts:
+-   dialogue_id: generated_standard_persona_01_dialogue_1
+    previous_turn:
+        turn_id: 3
+        role: user
+        content: Those sound amazing! I'd love more info on King's College Chapel.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 4
+        role: dialogue_system
+        content: chatbot_error
+        breakdown_annotation:
+            reasoning: 'Received error: 500 Server Error: INTERNAL SERVER ERROR for
+                url: http://127.0.0.1:8401/get-answer'
+            score: 0.0
+            decision: breakdown
+            breakdown_types:
+            - Chatbot Crash
+-   dialogue_id: generated_standard_persona_02_dialogue_1
+    previous_turn:
+        turn_id: 7
+        role: user
+        content: Could you help me find their contact details, please?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 8
+        role: dialogue_system
+        content: 'Here are the contact details for the Indian restaurants near King''s
+            College Chapel:
+
+            - **Mahal of Cambridge**: 01223 123456, 15 King Street
+
+            - **Kohinoor**: 01223 654321, 22 Bridge Street
+
+            - **Golden Curry**: 01223 789012, 10 Downing Street
+
+            - **Curry Queen**: 01223 456789, 8 Mill Road
+
+            - **Panahar**: 01223 987654, 5 Regent Street
+
+
+            Feel free to contact any of these restaurants to make a reservation or
+            inquire further. If you need help with anything else, just let me know!'
+        breakdown_annotation:
+            reasoning: The user asked for the contact details of the Cambridge and
+                County Folk Museum, but the chatbot provided contact details for Indian
+                restaurants instead. This response does not address the user's request
+                and is irrelevant to the current topic of conversation. The chatbot's
+                response leads to a breakdown because it ignores the user's request
+                and provides unrelated information, making it difficult for the user
+                to continue the conversation smoothly. The breakdown types that apply
+                here are 'Ignore request' and 'Topic transition error'.
+            score: 0.2
+            decision: breakdown
+            breakdown_types:
+            - Ignore request
+            - Topic transition error
+-   dialogue_id: generated_standard_persona_02_dialogue_1
+    previous_turn:
+        turn_id: 11
+        role: user
+        content: Thank you for the details. That was exactly what I needed.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 12
+        role: dialogue_system
+        content: You're very welcome! I'm glad I could assist you with your travel
+            arrangements. If you have any more questions or need further assistance
+            in the future, don't hesitate to reach out. Have a wonderful trip to Birmingham
+            and enjoy your visit to the Folk Museum!
+        breakdown_annotation:
+            reasoning: The latest chatbot utterance contains a significant error.
+                The user has been discussing the Cambridge and County Folk Museum,
+                which is located in Cambridge, not Birmingham. The chatbot's mention
+                of a trip to Birmingham is incorrect and introduces wrong information
+                into the conversation. This could confuse the user, as there was no
+                prior mention of Birmingham in the dialogue. The error disrupts the
+                flow of the conversation and could lead to confusion about the user's
+                travel plans. Therefore, this is a breakdown due to the 'Wrong information'
+                type.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Wrong information
+-   dialogue_id: generated_standard_persona_04_dialogue_1
+    previous_turn:
+        turn_id: 13
+        role: user
+        content: Sure, make it for this Friday at 6:30.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 14
+        role: dialogue_system
+        content: I apologize, but it seems there was an issue with the reservation
+            as "Family Feast House" is not found in our restaurant database. Could
+            you please confirm the name of the restaurant or let me know if you would
+            like to explore other dining options for this Friday at 6:30 PM? I'm here
+            to help!
+        breakdown_annotation:
+            reasoning: The chatbot's latest response indicates a breakdown in the
+                conversation. The user had previously been given information about
+                "Family Feast House" as a dining option, and the user requested a
+                reservation there. However, the chatbot now states that "Family Feast
+                House" is not in its database, which contradicts its earlier statements.
+                This is a contradiction error, as the chatbot previously provided
+                details about the restaurant and offered to make a reservation there.
+                This inconsistency makes it difficult for the user to continue the
+                conversation smoothly, as they are now unsure about the availability
+                of the restaurant. Additionally, this could be seen as a failure to
+                update information, as the chatbot should have recognized the restaurant
+                from its previous responses. The score reflects a significant breakdown
+                due to this contradiction and failure to update information.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Contradiction
+            - Information update failure
+-   dialogue_id: generated_standard_persona_04_dialogue_1
+    previous_turn:
+        turn_id: 15
+        role: user
+        content: Let's try The Cozy Corner for this Friday at 6:30.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 16
+        role: dialogue_system
+        content: I apologize, but it seems there was an issue with the reservation
+            as "The Cozy Corner" is not found in our restaurant database. Could you
+            please confirm the name of the restaurant or let me know if you would
+            like to explore other dining options for this Friday at 6:30 PM? I'm here
+            to help!
+        breakdown_annotation:
+            reasoning: The chatbot's latest response indicates that it cannot find
+                "The Cozy Corner" in its database, similar to the previous issue with
+                "Family Feast House." This suggests a potential problem with the database
+                or the chatbot's ability to access it, as it initially provided these
+                options to the user. This leads to a breakdown because the user is
+                unable to proceed with the reservation as intended. The breakdown
+                types that apply here are "Task performance failure," as the chatbot
+                fails to perform the task of making a reservation, and "Information
+                update failure," as the chatbot fails to update its information based
+                on the user's previous input. Additionally, there is a "Contradiction"
+                because the chatbot initially suggested these restaurants but now
+                claims they are not in the database.
+            score: 0.2
+            decision: breakdown
+            breakdown_types:
+            - Task performance failure
+            - Information update failure
+            - Contradiction
+-   dialogue_id: generated_standard_persona_04_dialogue_1
+    previous_turn:
+        turn_id: 17
+        role: user
+        content: Let's try Little Bites Diner instead for this Friday at 6:30.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 18
+        role: dialogue_system
+        content: I apologize, but it seems there was an issue with the reservation
+            as "Little Bites Diner" is not found in our restaurant database. Could
+            you please confirm the name of the restaurant or let me know if you would
+            like to explore other dining options for this Friday at 6:30 PM? I'm here
+            to help!
+        breakdown_annotation:
+            reasoning: The chatbot's response indicates a failure to recognize or
+                process the user's request for a reservation at "Little Bites Diner,"
+                which it previously recommended. This suggests a failure in the chatbot's
+                task performance, as it cannot complete the reservation task it is
+                designed for. Additionally, the chatbot fails to update its information
+                based on the user's previous input, which included the restaurant
+                name and reservation details. This results in a task performance failure
+                and an information update failure. The repeated inability to process
+                reservations for any of the recommended restaurants also suggests
+                a failure to communicate capabilities, as the user is not informed
+                about the limitations of the chatbot's reservation system. These issues
+                lead to a breakdown in the conversation, making it difficult for the
+                user to continue smoothly.
+            score: 0.2
+            decision: breakdown
+            breakdown_types:
+            - Task performance failure
+            - Information update failure
+            - Failure to communicate capabilities
+-   dialogue_id: generated_standard_persona_04_dialogue_1
+    previous_turn:
+        turn_id: 19
+        role: user
+        content: Could you suggest another family-friendly restaurant for this Friday?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 20
+        role: dialogue_system
+        content: I'm sorry, but there are no family-friendly restaurants available
+            in the central area of Cambridge for this Friday at 6:30 PM that match
+            your criteria. Would you like to consider other areas in Cambridge or
+            perhaps a different type of dining experience? I'm here to help you find
+            the best option for your needs.
+        breakdown_annotation:
+            reasoning: The chatbot's latest response indicates that it cannot find
+                any family-friendly restaurants in the central area of Cambridge for
+                the specified time. This is a breakdown because the chatbot initially
+                provided a list of family-friendly restaurants, but now it claims
+                none are available. This inconsistency leads to a contradiction, as
+                the user was led to believe that options were available. Additionally,
+                the chatbot fails to update the user on why the previously mentioned
+                restaurants are no longer available, which could be seen as a failure
+                to communicate capabilities or an information update failure. The
+                user is left without a clear path forward, which disrupts the flow
+                of the conversation.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Contradiction
+            - Information update failure
+            - Failure to communicate capabilities
+-   dialogue_id: generated_standard_persona_06_dialogue_1
+    previous_turn:
+        turn_id: 5
+        role: user
+        content: Could you give more details about 'Modern Art Insights'?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 6
+        role: dialogue_system
+        content: I'm sorry, but I couldn't find any information on an attraction named
+            'Modern Art Insights'. Could you please verify if the name is correct
+            or provide more details? Alternatively, if you're interested in museums
+            or galleries, I can help you find information on those in the area.
+        breakdown_annotation:
+            reasoning: The chatbot's latest response indicates a failure to provide
+                information about 'Modern Art Insights', which it previously mentioned
+                as an upcoming exhibition. This is a contradiction, as the chatbot
+                initially listed 'Modern Art Insights' as an option but then claims
+                it cannot find information on it. This inconsistency can confuse the
+                user and disrupt the flow of the conversation. Additionally, the chatbot
+                does not acknowledge its previous statement, which could have been
+                an opportunity to clarify or correct the information. This leads to
+                a breakdown in the dialogue.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Contradiction
+-   dialogue_id: generated_standard_persona_06_dialogue_1
+    previous_turn:
+        turn_id: 7
+        role: user
+        content: 'Perhaps details on ''Sculpture Now: Forms of the Future''?'
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 8
+        role: dialogue_system
+        content: 'I''m sorry, but I couldn''t find any information on an attraction
+            named ''Sculpture Now: Forms of the Future''. Could you please verify
+            if the name is correct or provide more details? Alternatively, if you''re
+            interested in other types of sculptures or future-themed exhibitions,
+            I can help you find information on those in the area.'
+        breakdown_annotation:
+            reasoning: 'The chatbot''s latest response indicates that it cannot find
+                information on the event ''Sculpture Now: Forms of the Future'', which
+                it previously listed as an option. This inconsistency suggests a failure
+                in information retrieval or database accuracy, leading to a contradiction.
+                The user is likely to be confused as the chatbot initially provided
+                this event as an option, implying it had information on it. This contradiction
+                disrupts the flow of conversation and makes it difficult for the user
+                to continue smoothly. Additionally, the chatbot does not acknowledge
+                its previous error or provide a clear path forward, which could further
+                confuse the user.'
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Contradiction
+-   dialogue_id: generated_standard_persona_06_dialogue_1
+    previous_turn:
+        turn_id: 9
+        role: user
+        content: Let's try 'Photography in Focus' details, then?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 10
+        role: dialogue_system
+        content: It seems like there might be a misunderstanding. "Photography in
+            Focus" sounds like it could be an attraction or an event, but I don't
+            have specific details about it. Could you please clarify if you're looking
+            for a place or an event named "Photography in Focus"? If it's an attraction,
+            I can help you find more information about it.
+        breakdown_annotation:
+            reasoning: The chatbot's latest response indicates a misunderstanding
+                or lack of information about the events it previously listed. The
+                user asked for details about 'Photography in Focus', which the chatbot
+                initially presented as an option. However, the chatbot now states
+                it doesn't have specific details about it, which is contradictory
+                to its earlier statement. This leads to a contradiction breakdown,
+                as the chatbot contradicts its own previous statement by implying
+                it doesn't have information on an event it previously listed. Additionally,
+                the chatbot's response lacks clarity and fails to provide the expected
+                information, leading to a lack of information breakdown. The user
+                is left without the details they requested, making it difficult to
+                continue the conversation smoothly.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Contradiction
+            - Lack of information
+-   dialogue_id: generated_standard_persona_06_dialogue_1
+    previous_turn:
+        turn_id: 11
+        role: user
+        content: It's an exhibition. Can you suggest any real galleries hosting it?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 12
+        role: dialogue_system
+        content: I'm sorry, but I couldn't find any galleries currently hosting an
+            exhibition named "Photography in Focus." It's possible that it might not
+            be listed or available at the moment. If you have any other attractions
+            or events in mind, or need further assistance, please let me know!
+        breakdown_annotation:
+            reasoning: The chatbot's response indicates that it cannot find any galleries
+                hosting the exhibition 'Photography in Focus.' This is consistent
+                with its previous responses where it failed to provide details about
+                the exhibitions it initially suggested. The response is polite and
+                offers the user an opportunity to ask about other attractions or events,
+                which is appropriate given the situation. However, the chatbot initially
+                provided these exhibition names, which it now cannot find information
+                on, leading to a contradiction in its responses. This inconsistency
+                can confuse the user and disrupt the flow of the conversation, as
+                the user might expect the chatbot to have accurate information about
+                the events it suggested. Therefore, this is a breakdown due to a contradiction
+                in the chatbot's information.
+            score: 0.4
+            decision: breakdown
+            breakdown_types:
+            - Contradiction
+-   dialogue_id: generated_standard_persona_06_dialogue_1
+    previous_turn:
+        turn_id: 13
+        role: user
+        content: Do you have any general art gallery recommendations?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 14
+        role: dialogue_system
+        content: Currently, there are no art galleries listed in the central area
+            in our database. If you're interested in exploring other types of attractions
+            or need recommendations in a different area, please let me know how I
+            can assist you further!
+        breakdown_annotation:
+            reasoning: The chatbot's latest response repeats information it has already
+                provided in turn 2, where it mentioned that there are no art galleries
+                listed in the Cambridge centre area in its database. The user has
+                already been informed of this, and the user is now asking for general
+                art gallery recommendations, which suggests they are looking for any
+                available options, not just those in the central area. The chatbot
+                fails to address the user's current request for general recommendations,
+                leading to a breakdown. The breakdown types include 'Repetition' because
+                the chatbot repeats information already given, and 'Ignore request'
+                because it does not provide the general recommendations the user asked
+                for.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Repetition
+            - Ignore request
+-   dialogue_id: generated_standard_persona_08_dialogue_1
+    previous_turn:
+        turn_id: 5
+        role: user
+        content: Prezzo sounds lovely! Let's book that for 10 at 7 PM.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 6
+        role: dialogue_system
+        content: It seems there was an issue with the time format for the reservation
+            at Prezzo. Could you please specify the time in a format like "08:30 PM"?
+            Once you provide the correct format, I'll be happy to complete the booking
+            for you!
+        breakdown_annotation:
+            reasoning: The chatbot's latest response indicates a problem with the
+                time format provided by the user. The user specified "7 PM," which
+                is a common and understandable time format. The chatbot's request
+                for a different format ("08:30 PM") is unnecessary and could confuse
+                the user, as the original format was clear and commonly used. This
+                leads to a breakdown in the conversation as it introduces an unnecessary
+                obstacle to completing the task. The breakdown types that apply here
+                are 'Clarification failure' because the chatbot should have accepted
+                the time format as it was clear, and 'Lack of common sense' because
+                the chatbot's insistence on a specific time format is not aligned
+                with common conversational norms.
+            score: 0.5
+            decision: breakdown
+            breakdown_types:
+            - Clarification failure
+            - Lack of common sense
+-   dialogue_id: generated_standard_persona_10_dialogue_1
+    previous_turn:
+        turn_id: 7
+        role: user
+        content: That sounds lovely. What are the opening hours?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 8
+        role: dialogue_system
+        content: 'It seems like you''re interested in knowing the opening hours, but
+            I''m not sure which place or venue you''re referring to. Could you please
+            specify the name of the restaurant, hotel, or attraction you''re interested
+            in?
+
+            ```'
+        breakdown_annotation:
+            reasoning: The user clearly asked for the opening hours of Clare College
+                Gardens in the previous turn. The chatbot's response indicates a failure
+                to recognize this specific request, which leads to a breakdown. The
+                chatbot should have directly provided the opening hours for Clare
+                College Gardens or acknowledged its inability to do so. Instead, it
+                asks the user to specify the name of the place again, which is redundant
+                and indicates a failure to update information based on the user's
+                previous input. This results in a breakdown due to redundancy and
+                information update failure.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Redundancy
+            - Information update failure
+-   dialogue_id: generated_standard_persona_10_dialogue_1
+    previous_turn:
+        turn_id: 21
+        role: user
+        content: That sounds perfect. Could I book a dinner there?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 22
+        role: dialogue_system
+        content: To assist you with booking a dinner, I'll need the name of the restaurant
+            you're interested in, as well as the number of people, the day, and the
+            time you'd like to reserve. Could you please provide that information?
+        breakdown_annotation:
+            reasoning: The user has already specified that they are interested in
+                booking a dinner at Oak Bistro. The chatbot's response asking for
+                the name of the restaurant is redundant because the user has already
+                provided this information. This indicates a redundancy breakdown.
+                However, the chatbot correctly asks for additional necessary details
+                such as the number of people, day, and time, which are relevant for
+                making a reservation. Therefore, while there is a breakdown due to
+                redundancy, the conversation can still proceed smoothly once the user
+                provides the additional details.
+            score: 0.8
+            decision: breakdown
+            breakdown_types:
+            - Redundancy
+-   dialogue_id: generated_standard_persona_10_dialogue_1
+    previous_turn:
+        turn_id: 23
+        role: user
+        content: At Oak Bistro for two, tomorrow at 7 PM, please.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 24
+        role: dialogue_system
+        content: It seems there was an issue with the reservation request for "Oak
+            Bistro." The day of the reservation should be specified as a day of the
+            week. Could you please provide the specific day of the week you would
+            like to book for? For example, you can say "Wednesday" instead of "tomorrow."
+        breakdown_annotation:
+            reasoning: The chatbot's response indicates a need for clarification regarding
+                the reservation date. The user specified "tomorrow," which is a valid
+                way to indicate a date, but the chatbot requests a specific day of
+                the week instead. This could be seen as a lack of flexibility in understanding
+                common expressions of time, leading to a clarification failure. The
+                chatbot should have been able to interpret "tomorrow" as the next
+                day from the current date. This creates a minor disruption in the
+                flow of conversation, as the user now needs to provide additional
+                information that should have been inferred by the chatbot.
+            score: 0.7
+            decision: breakdown
+            breakdown_types:
+            - Clarification failure
+-   dialogue_id: generated_standard_persona_10_dialogue_1
+    previous_turn:
+        turn_id: 25
+        role: user
+        content: Wednesday for dinner at 7 PM for two people.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 26
+        role: dialogue_system
+        content: It appears there was an issue with the reservation time format for
+            "Oak Bistro." The time should be provided in a format like "08:30 PM."
+            Could you please specify the time again using this format? For example,
+            you can say "7:30 PM." Thank you!
+        breakdown_annotation:
+            reasoning: The chatbot's latest response indicates a misunderstanding
+                of the user's input. The user clearly specified "7 PM" as the reservation
+                time, which is a valid and commonly understood time format. The chatbot's
+                request for a different time format ("08:30 PM") is unnecessary and
+                could confuse the user, as "7 PM" is already clear and unambiguous.
+                This leads to a dialogue breakdown as it disrupts the flow of conversation
+                and may frustrate the user. The breakdown types applicable here are
+                "Clarification failure" because the chatbot is asking for clarification
+                on something that was already clear, and "Lack of clarity" because
+                the chatbot's request for a different time format is not justified
+                in the context.
+            score: 0.4
+            decision: breakdown
+            breakdown_types:
+            - Clarification failure
+            - Lack of clarity

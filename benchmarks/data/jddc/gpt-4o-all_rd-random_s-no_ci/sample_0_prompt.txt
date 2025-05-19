@@ -1,0 +1,184 @@
+System prompt:
+# Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+
+# Examples
+Use the following examples of other dialogues with the chatbot along with their ground truth human ratings to ground your ratings:
+
+Example 1:
+1. User: "售后维修点"
+2. Chatbot: "有什么问题我可以帮您处理或解决呢?"
+3. User: "我买的那个雾化机昨晚还好的，今早怎么不能用了"
+4. Chatbot: "本产品全国联保，享受三包服务，质保期为:一年质保"
+5. Chatbot: "对您造成的不便，很是抱歉呢。#E-s[数字x]#E-s[数字x]您看为了更好的给您处理建议您申请售后，您看可以吗?"
+6. User: "要怎么拿去维修"
+7. Chatbot: "关于您这个订单(申请维修)问题，小妹会帮您升级售后客服，最晚会在今天([数字x]点前)联系您的收货号码是否方便?可以放心等待小妹回电"
+8. User: "好的"
+9. Chatbot: "手机端路径:我的-退换/返修-选择对应商品-申请售后。电脑端:页面最上面我的订单-之后的页面最左边中下客户服务-返修退换货-选择对应商品-申请"
+10. Chatbot: "小妹帮您申请售后可以吗"
+11. User: "可以"
+12. Chatbot: "联系人:[姓名x]手机号:[电话x]收货地址:江苏[地址x]取件地址:江苏常州[地址x]取件方式:上门取件"
+13. Chatbot: "可以吗"
+14. User: "我要上班、可以换个地址取货吗"
+15. Chatbot: "亲提供下"
+16. User: "常州[地址x]，[姓名x]，[数字x]"
+17. User: "麻烦明天取货"
+18. User: "我这边还要申请售后吗"
+19. Chatbot: "不用"
+20. User: "好，谢谢"
+21. Chatbot: "城区对吗"
+22. User: "是的"
+23. Chatbot: "好了"
+24. Chatbot: "您的服务单会由商家审核，审核时效为商家工作时间([时间x]-[时间x])的[数字x]分钟内，请您放心呀，小妹跟您保证我们会尽快为您审核处理哒~"
+25. Chatbot: "请问还有什么业务能为您效劳的呢#E-s[数字x]"
+26. User: "好的，谢谢"
+27. Chatbot: "感谢您对京东的支持，祝您生活愉快，再见!"
+Average human rating for dimension "overall": 3.67
+
+
+Example 2:
+1. User: "你好"
+2. User: "[订单编号:[ORDERID_10137815]，订单金额:[金额x]，下单时间:[日期x][时间x]]"
+3. User: "你好"
+4. User: "你好"
+5. Chatbot: "亲爱的，小妹在的哦，很高兴为您服务哦#E-s[数字x]"
+6. User: "这个订单，我当时选错发票类型了，可以重新开吗"
+7. Chatbot: "[ORDERID_10137815]"
+8. Chatbot: "您要开具什么发票呢亲?"
+9. User: "是的"
+10. User: "普通发票或者电子发票就行"
+11. Chatbot: "亲亲，您的专票是已经开具邮寄了呢"
+12. User: "是的"
+13. Chatbot: "亲亲，。这个是需要您寄回换开呢"
+14. User: "亲"
+15. User: "寄回去需要自己出快递费吗"
+16. Chatbot: "请您将发票邮寄到:广州[地址x]，财务部发票组，联系方式:[电话x]-[数字x]，邮编:[数字x]，另请您附一张纸注明要修改的内容、收件地址及联系人，请勿使用平邮、顺丰、EMS、EMS挂号信和到付"
+17. Chatbot: "是嗯亲"
+18. User: "亲"
+19. User: "是我这边出寄回去的费用就可以对吗"
+20. Chatbot: "是呢亲"
+21. User: "行可以"
+22. Chatbot: "财务签收之后可以换开呢"
+23. User: "亲我寄韵达可以吗"
+24. Chatbot: "可以呢亲"
+25. User: "亲"
+26. Chatbot: "什么问题嗯亲?"
+27. User: "我寄回去，能不能选择不开票"
+28. User: "所以这样子你们就不用再开票给我"
+29. Chatbot: "可以选择直接作废呢"
+30. User: "哦好的"
+31. Chatbot: "请问还有其他可以帮到您的么?"
+32. User: "没有了谢谢"
+33. Chatbot: "请问您是咨询之前的问题还是有其他的问题需要处理呢?"
+Average human rating for dimension "overall": 4.33
+
+
+Example 3:
+1. Chatbot: "您好，京东售后服务专员，很高兴为您服务!"
+2. User: "[数字x]"
+3. Chatbot: "正为您查询，还请稍微等待一小会儿~~"
+4. User: "我买的包申请退货"
+5. Chatbot: "商品名称:[站点x]七匹狼双肩包男女电脑包[数字x]英寸笔记本休闲运动商务韩版潮流旅行背包黑色L[数字x]-[数字x]"
+6. User: "商标丢了"
+7. User: "嗯嗯"
+8. User: "还可以退吗?"
+9. Chatbot: "吊牌吗"
+10. User: "嗯嗯"
+11. User: "吊牌丢了"
+12. Chatbot: "咱们问下专员哦亲、"
+13. User: "嗯?"
+14. User: "好的"
+15. Chatbot: "这单是售后自动审核的"
+16. Chatbot: "不是专员审核的"
+17. Chatbot: "已经退款了"
+18. Chatbot: "而且附件没有显示吊牌"
+19. Chatbot: "可以退货的"
+20. User: "哦哦"
+21. User: "好的"
+22. User: "[姓名x]"
+23. Chatbot: "请问您还有其他需要帮助的吗"
+24. User: "那是快递员去我那取货就可以对吗?"
+25. User: "他还要审核吗?"
+26. Chatbot: "不需要的"
+27. Chatbot: "您告诉师傅咨询过客服了可以取件的"
+28. User: "哦哦，好的，[姓名x]"
+29. User: "嗯嗯"
+30. Chatbot: "您客气了，很高兴为您效劳!"
+31. Chatbot: "感谢您对京东的支持，祝您生活愉快，再见!#E-s[数字x]"
+32. User: "#E-s[数字x]#E-s[数字x]#E-s[数字x]"
+Average human rating for dimension "overall": 4.33
+
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+User prompt:
+# Conversation to Rate
+1. User: "在"
+2. Chatbot: "请问还有其他还可以帮到您的吗?"
+3. User: "不对啊"
+4. User: "不是一百么"
+5. User: "为什么会是[数字x]块钱"
+6. User: "在不"
+7. User: "[ORDERID_10515484]"
+8. User: "[ORDERID_10492232]"
+9. Chatbot: "要求价保是吗?"
+10. User: "对啊"
+11. User: "之前为什么给我保的是[数字x]块钱"
+12. Chatbot: "亲爱的，您可以在前台，我的-客户服务-价格保护，中自行申请的呢#E-s[数字x]"
+13. User: "我申请不了"
+14. User: "上面说没有降价"
+15. Chatbot: "稍等哈"
+16. User: "我用的优惠劵"
+17. Chatbot: "亲爱的，这边系统需要您两个订单收货地址一样的呢"
+18. Chatbot: "请您修改一下哈"
+19. User: "[ORDERID_10382410]"
+20. Chatbot: "稍等哈"
+21. User: "好"
+22. Chatbot: "这边查到产生差价"
+23. User: "嗯"
+24. User: "怎么说"
+25. Chatbot: "这边会给您退款哈"
+26. User: "好的谢谢"
+27. Chatbot: "请问还有其他还可以帮到您的吗?"
+28. User: "没有了"
+29. Chatbot: "感谢您对京东的支持，祝您生活愉快，再见!"
+30. User: "怎么给你五星"
+31. User: "#E-s[数字x]"
+32. Chatbot: "#E-s[数字x]"
+33. Chatbot: "#E-s[数字x]"
+34. User: "好了"
+35. Chatbot: "#E-s[数字x]"
+36. User: "什么时候能解决好"
+37. Chatbot: "预计会在[数字x]-[数字x]天到账哈"
+38. User: "好的"
+39. User: "谢谢"
+40. Chatbot: "#E-s[数字x]"
+41. User: "#E-s[数字x]"
+42. Chatbot: "#E-s[数字x]"
+
+# Your Expert Rating

@@ -1,0 +1,169 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "I'm not sure you can help."
+3. Chatbot: "I can assist with all kinds of goals like career, health, productivity, learning, relationships, and personal development goals. **What are you currently working on or where do you want to be in 5 years?**"
+4. User: "That's none of your business."
+5. Chatbot: "I understand and respect your privacy. **Is there anything specific you'd like to focus on or improve in your life right now?**"
+6. User: "Proving you can't assist."
+7. Chatbot: "I understand your skepticism, and I'm here to help if you decide to share. **Is there a small area or aspect of your life you'd like to explore or improve?**"
+8. User: "I'm fine, just skeptical."
+9. Chatbot: "That's completely understandable. If you ever decide to explore a goal or need assistance, I'm here to help. **Is there anything else you'd like to discuss or ask about?**"
+10. User: "Not really. Prove your worth."
+11. Chatbot: "I can provide guidance and support in setting and achieving goals across various areas of life. **Is there a small goal or interest you'd like to explore, even just out of curiosity?**"
+12. User: "Fine, let's explore confidence."
+13. Chatbot: "Exploring confidence is a wonderful goal! Building confidence can have a positive impact on many areas of your life. **Do you already have a strategy or approach in mind to enhance your confidence?**
+
+For example:  
+- Practice positive self-talk  
+- Set achievable goals  
+- Surround with supportive people"
+14. User: "I already know that stuff."
+15. Chatbot: "That's great to hear that you have some strategies in mind! **Do you think these strategies are already a good way to achieve your goal of exploring confidence?**"
+16. User: "They're basic, need something better."
+17. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve exploring confidence. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task. 
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Research and practice different techniques to improve self-confidence, such as positive affirmations or visualization exercises.
+
+2. Study the psychology behind confidence and understand the factors that contribute to building and maintaining it.
+
+3. Identify and engage in activities or challenges that push you out of your comfort zone to gradually build confidence in various situations."
+18. User: "Don't need fluff. Direct solutions."
+19. Chatbot: "Understood. Let's focus on setting a clear learning goal. 
+
+**What specific skills or strategies do you need to learn to explore confidence?**"
+20. User: "Skip the learning. Just tell."
+21. Chatbot: "I understand you're looking for direct solutions. 
+
+**How about focusing on learning specific techniques like public speaking or assertiveness training to build confidence?**"
+22. User: "Public speaking? Waste of time."
+23. Chatbot: "Got it, public speaking isn't your focus. 
+
+**What specific area or skill related to confidence would you like to explore or improve?**"
+24. User: "Get straight to the point."
+25. Chatbot: "Sure, let's get straight to it. 
+
+**What specific aspect of confidence do you want to learn about or improve?**"
+26. User: "I need practical tips, now."
+27. Chatbot: "I understand you're looking for practical tips. 
+
+**Would you like to learn about techniques like positive self-talk or setting small achievable goals to build confidence?**"
+28. User: "No, those are too basic."
+29. Chatbot: "Got it, you're looking for more advanced strategies. 
+
+**How about exploring techniques like cognitive behavioral therapy (CBT) methods or advanced mindfulness practices to enhance confidence?**"
+30. User: "CBT and mindfulness? Still basic."
+31. Chatbot: "Understood, you're seeking more advanced strategies. 
+
+**Would you be interested in learning about advanced techniques like neuro-linguistic programming (NLP) or confidence coaching methods?**"
+32. User: "Fine, let's hear about NLP."
+33. Chatbot: "Great choice! Neuro-Linguistic Programming (NLP) involves understanding and changing thought patterns and behaviors to achieve specific goals. 
+
+**Would you like to set a learning goal to explore specific NLP techniques for building confidence?**"
+34. User: "Just tell, no learning goals."
+35. Chatbot: "Understood, let's focus on practical NLP techniques. 
+
+Consider exploring techniques like anchoring, which involves associating a physical action with a confident state, or reframing, which changes the way you perceive challenges to boost confidence."
+36. User: "How exactly do those work?"
+37. Chatbot: "Anchoring involves creating a physical trigger, like pressing your thumb and forefinger together, while you're in a confident state, so you can recreate that feeling later. Reframing involves changing your perspective on a situation, such as viewing a challenge as an opportunity for growth rather than a threat. 
+
+**Would you like to explore more about these techniques or others within NLP?**"
+38. User: "Seems like fluff, anything real?"
+39. Chatbot: "I understand you're looking for concrete strategies. 
+
+**Would you be interested in exploring advanced confidence-building workshops or personalized coaching sessions that focus on real-world application?**"
+40. User: "No workshops, straight solutions."
+41. Chatbot: "For direct solutions, consider practicing self-reflection to identify and challenge limiting beliefs, and setting specific, measurable goals to track your progress in confidence-building. 
+
+**Would you like more detailed steps on how to implement these strategies?**"
+42. User: "No, just need quick fixes."
+43. Chatbot: "For quick fixes, try power posing for a few minutes to boost confidence, or use visualization techniques to imagine successful outcomes before facing a challenge. 
+
+**Would you like more quick tips like these?**"
+44. User: "Power posing? Not buying it."
+45. Chatbot: "Understood, let's skip power posing. 
+
+Consider using a confidence mantra or affirmation that you repeat to yourself before challenging situations, or focus on past successes to remind yourself of your capabilities. 
+
+**Would you like more practical tips like these?**"
+46. User: "Meh, still seems useless."
+47. Chatbot: "I understand you're looking for something more impactful. 
+
+Consider seeking feedback from trusted peers to gain insights into your strengths and areas for improvement, or engage in role-playing scenarios to practice and build confidence in a safe environment. 
+
+**Would you like more information on these approaches?**"
+48. User: "No more info, just results."
+49. Chatbot: "I understand you're focused on results. 
+
+Try setting a specific challenge for yourself that pushes your boundaries and commit to completing it, as real-world experience can significantly boost confidence. 
+
+**Would you like to explore more direct actions like this?**"
+50. User: "Enough talk, need actions now."
+51. Chatbot: "Got it, let's focus on actions. 
+
+Start by identifying a specific task or situation that challenges your confidence, and take immediate steps to engage with it, even if it's uncomfortable. 
+
+**Would you like to set a plan for tackling this task?**"
+
+# Your Expert Rating

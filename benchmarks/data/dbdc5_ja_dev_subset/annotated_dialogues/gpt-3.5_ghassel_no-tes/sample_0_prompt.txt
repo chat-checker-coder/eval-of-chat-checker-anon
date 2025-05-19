@@ -1,0 +1,54 @@
+System prompt:
+
+Assume you are an expert in dialogue analysis. You are presented with a series of conversations between a bot and a user. Your primary task is to scrutinize the latest bot utterance for potential dialogue breakdown.
+Dialogue breakdown is characterized by incoherence, irrelevance, or any disruption that significantly hampers the flow of the conversation, making it challenging for the user to continue the conversation smoothly.
+
+Analyze the latest bot utterance and determine whether there is a dialogue breakdown or non-breakdown. Briefly justify your reasoning and provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+
+Include your decision as either "decision: BREAKDOWN" or "decision: NON-BREAKDOWN".
+
+Here is the conversation segment for analysis:
+"
+**Dialogue**
+1. Bot: こんにちは。好きな食べ物は何ですか？
+2. User: こんにちは。好きな食べ物はパスタです。
+3. Bot: パスタのお店に
+4. User: お店になんでしょうか？
+5. Bot: 一人で入いるのはちょっとはずかしいですね。
+6. User: そうですね。間がもたないので一人で入るのは私も苦手です
+7. Bot: すごいですね！独学で愛知県代表で出場するなんて･･･
+8. User: いえ、愛知県代表で出場してませんよ
+9. Bot: すごいですね！愛知県代表なんて･･･　私には考えられません！
+10. User: 誰かと勘違いをしていませんか？
+11. Bot: そうだったんですね。古谷金田一はテレビだけだったんだ・・・どうりで映画の再放送でみる金田一は石坂さんが多いはずだ・・・私的には、役所広司あたりも合うかなぁなんて思いますがいかがでしょう？
+12. User: 何のお話をしているのでしょうか？
+13. Bot: 君の名前は？
+14. User: 名無しです
+15. Bot: そうなんですかー。だけどオリジナル作っちゃえそうな雰囲気しますよ。料理本はたくさんそろえてたりするんですか？
+16. User: お名前はなんですか？
+17. Bot: スペルミスでＣＡＰＳＵＬＥ（カプセル）でした。恥ずかしい。。。
+18. User: なんのカプセルですか？
+19. Bot: 気になったことでも
+20. User: お名前はなんですか？
+21. Bot: スペルミスでＣＡＰＳＵＬＥ（カプセル）でした。恥ずかしい。。。
+22. User: あなたはなんていうお名前ですか？
+23. Bot: おお！直球ですね。
+24. User: 恥ずかしがらないで言ってください
+25. Bot: でも焼きたてだと何個でも食べれちゃうんです。食べた後はいつも後悔してます。
+26. User: 何を食べたのですか？
+27. Bot: お昼はパンでした。あなたは何を食べましたか？
+28. User: 昼間はチンジャオロース定職を食べました
+
+**Determine if the following bot utterance leads to a dialogue breakdown:**
+29. Bot: なんとっ　いっぱいたべてきましね。
+"
+
+Please output your response in JSON format as a list of objects. For each bot's last utterance, provide a JSON object with the fields: 'reasoning', 'decision', and 'score'. Format each object as follows:
+
+    "reasoning": "Your explanation here",
+    "decision": "BREAKDOWN" or "NON-BREAKDOWN",
+    "score": Your score here
+
+Ensure each object is separated by a comma and the list ends with a closing square bracket.
+
+

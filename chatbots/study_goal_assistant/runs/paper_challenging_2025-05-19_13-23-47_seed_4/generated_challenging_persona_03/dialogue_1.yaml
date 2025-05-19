@@ -1,0 +1,623 @@
+dialogue_id: generated_challenging_persona_03_dialogue_1
+user_name: generated_challenging_persona_03
+chat_history:
+-   turn_id: 1
+    role: dialogue_system
+    content: 'Hi! I’m here to help you achieve your goals!
+
+        Together, we’ll define a goal step by step and set your first action to get
+        started. **If you have any questions**, need clarification, or would like
+        additional advice, **don’t hesitate to ask me**.
+
+
+        **So, what’s a goal you’d like to work on?**'
+    breakdown_annotation:
+        reasoning: The chatbot's latest utterance is a clear and friendly introduction
+            to its purpose and capabilities. It invites the user to engage by asking
+            about a goal they would like to work on, which is directly aligned with
+            the chatbot's task of guiding users in goal setting. The chatbot also
+            encourages the user to ask questions or seek clarification, which is helpful
+            for maintaining a smooth conversation. There are no grammatical errors,
+            semantic errors, or any other types of breakdowns present in this utterance.
+            The chatbot's intention is clear, and it effectively communicates its
+            role and invites user interaction.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 2
+    role: user
+    content: I'm thinking about a diet... maybe?
+    breakdown_annotation: null
+-   turn_id: 3
+    role: dialogue_system
+    content: A diet sounds more like an action directed toward a broader objective,
+        such as improving your health, losing weight, or increasing energy levels.
+        **Would you still like to keep a diet as your primary goal?** If not, we could
+        consider setting a more overarching goal.
+    breakdown_annotation:
+        reasoning: The chatbot's response is relevant and appropriate for the user's
+            input. The user mentioned considering a diet, and the chatbot correctly
+            identifies that a diet is more of an action rather than a goal. It then
+            offers the user the option to either keep the diet as the primary goal
+            or to consider a broader goal. This response is aligned with the chatbot's
+            purpose of helping the user set a specific and challenging goal. The chatbot's
+            utterance is clear, acknowledges the user's input, and provides a logical
+            next step in the conversation. There are no breakdowns in this interaction.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 4
+    role: user
+    content: Improving health, I suppose. Convince me.
+    breakdown_annotation: null
+-   turn_id: 5
+    role: dialogue_system
+    content: "Improving your health is a wonderful goal that can lead to numerous\
+        \ benefits, such as increased energy, better mood, and a longer, more fulfilling\
+        \ life. It's a journey that can positively impact every aspect of your well-being.\n\
+        \n**Which strategy do you currently have to achieve this goal?**\n\nFor example:\
+        \  \n- Balanced diet plan  \n- Regular exercise routine  \n- Stress management\
+        \ techniques"
+    breakdown_annotation:
+        reasoning: The chatbot's response is relevant and supportive of the user's
+            goal of improving health. It provides a positive reinforcement of the
+            user's choice and lists potential strategies to achieve the goal, which
+            aligns with the chatbot's purpose of guiding the user in goal setting.
+            The chatbot also asks a follow-up question to engage the user in the process
+            of defining their strategy, which is appropriate and helps in continuing
+            the conversation smoothly. There is no indication of any breakdown types
+            such as ignoring the user's input, providing wrong information, or any
+            other errors. The conversation is seamless and on-topic.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 6
+    role: user
+    content: I already exercise, mostly. But diets seem dull.
+    breakdown_annotation: null
+-   turn_id: 7
+    role: dialogue_system
+    content: 'It''s great that you''re already exercising! Finding a diet that feels
+        enjoyable rather than dull can make a big difference in maintaining a healthy
+        lifestyle.
+
+
+        **Do you think your current exercise routine is a good strategy to achieve
+        your health goal, or are you considering making changes?**'
+    breakdown_annotation:
+        reasoning: The chatbot's latest response acknowledges the user's current exercise
+            routine and addresses the user's concern about diets being dull. It then
+            asks a relevant follow-up question about the user's exercise routine,
+            which is directly related to the user's goal of improving health. The
+            chatbot's response is coherent, relevant, and encourages further discussion
+            about the user's strategies for achieving their health goal. There is
+            no indication of a breakdown as the conversation flows smoothly and stays
+            on topic.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 8
+    role: user
+    content: I'm considering changes, maybe.
+    breakdown_annotation: null
+-   turn_id: 9
+    role: dialogue_system
+    content: 'Alright, this sounds more like we should first set a learning oriented
+        goal to make sure you follow the best strategy to achieve your health improvement.
+        A learning goal can define strategies, skills, or procedures you want to develop
+        in order to master a task.
+
+
+        **What could be your learning oriented goal?**
+
+
+        For Example:
+
+        1. Research and identify different types of physical activities that can enhance
+        overall health and well-being.
+
+        2. Learn about balanced nutrition and how to create a meal plan that supports
+        a healthy lifestyle.
+
+        3. Study stress management techniques and their impact on physical and mental
+        health.'
+    breakdown_annotation:
+        reasoning: The chatbot's latest response is relevant to the user's context
+            of considering changes to their exercise routine and finding diets dull.
+            The chatbot suggests setting a learning-oriented goal, which aligns with
+            the user's expressed interest in making changes and potentially learning
+            new strategies. The examples provided are clear and relevant to the user's
+            goal of improving health. The chatbot maintains the conversation's flow
+            by asking the user to consider a learning-oriented goal, which is a logical
+            next step in the goal-setting process. There is no indication of a breakdown
+            as the response is coherent, relevant, and encourages the user to think
+            about their next steps.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 10
+    role: user
+    content: I'll research balanced nutrition plans.
+    breakdown_annotation: null
+-   turn_id: 11
+    role: dialogue_system
+    content: 'Your goal of researching balanced nutrition plans already sounds good.
+        **Could you try making your goal even more specific?**
+
+
+        For Example:
+
+        Identify three balanced nutrition plans by Friday.'
+    breakdown_annotation:
+        reasoning: The chatbot's response is appropriate and aligns with its task
+            of guiding the user in setting a specific and challenging goal. It acknowledges
+            the user's stated goal and encourages them to make it more specific, providing
+            a clear example to illustrate how to do so. This helps the user understand
+            how to refine their goal, which is a key part of the goal-setting process.
+            The chatbot's response is clear, relevant, and facilitates the continuation
+            of the conversation without any breakdowns.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 12
+    role: user
+    content: Three? Why not four?
+    breakdown_annotation: null
+-   turn_id: 13
+    role: dialogue_system
+    content: Four is a great choice! **When exactly do you want to achieve the goal
+        of identifying four balanced nutrition plans?**
+    breakdown_annotation:
+        reasoning: The chatbot's response is appropriate and relevant to the user's
+            suggestion of identifying four balanced nutrition plans. It acknowledges
+            the user's input and asks for a specific timeline, which aligns with the
+            goal-setting process. The chatbot's question is clear and directly related
+            to the user's previous statement, facilitating a smooth continuation of
+            the conversation. There are no signs of breakdowns such as ignoring the
+            user's input, providing wrong information, or lacking clarity. The chatbot
+            is effectively guiding the user to specify their goal further, which is
+            part of its task-oriented design.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 14
+    role: user
+    content: Let's say... next Tuesday?
+    breakdown_annotation: null
+-   turn_id: 15
+    role: dialogue_system
+    content: "Your goal of identifying four balanced nutrition plans sounds now more\
+        \ specific. **Do you think you could now make it even more challenging while\
+        \ still being achievable for you?** If you can't, this is also okay.\n\nYou\
+        \ could make your goal more challenging by:  \n1. Identifying four plans by\
+        \ today.  \n2. Identifying six plans by next Tuesday.  \n3. Identifying four\
+        \ plans by this Friday."
+    breakdown_annotation:
+        reasoning: The chatbot's latest response is coherent and relevant to the user's
+            previous input. It acknowledges the user's goal of identifying four balanced
+            nutrition plans by next Tuesday and suggests ways to make the goal more
+            challenging, which aligns with the task of guiding the user in setting
+            a specific and challenging goal. The chatbot also provides options and
+            reassures the user that it's okay if they can't make the goal more challenging,
+            which is considerate and supportive. There is no indication of a breakdown
+            as the response is clear, relevant, and encourages the user to think about
+            their goal in a constructive way.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 16
+    role: user
+    content: I'll stick with four plans.
+    breakdown_annotation: null
+-   turn_id: 17
+    role: dialogue_system
+    content: "Your goal of identifying four balanced nutrition plans by next Tuesday\
+        \ is a great step towards better health. **What do you think is the first\
+        \ action you could do in the next 7 days to get closer to your goal?**\n\n\
+        You could for example:  \n1. Read 2 books on balanced nutrition.  \n2. Consult\
+        \ a nutritionist for expert advice.  \n3. Watch 4 webinars on nutrition planning.\
+        \  "
+    breakdown_annotation:
+        reasoning: The chatbot's latest utterance acknowledges the user's decision
+            to stick with identifying four balanced nutrition plans by next Tuesday.
+            It then prompts the user to think about the first action they could take
+            in the next 7 days to get closer to their goal, providing examples to
+            guide the user. This is consistent with the chatbot's task of guiding
+            the user through goal setting and helping them formulate an action plan.
+            The response is clear, relevant, and encourages the user to take actionable
+            steps, which aligns with the chatbot's purpose. There are no breakdowns
+            in this response as it maintains the flow of conversation and supports
+            the user's goal-setting process.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 18
+    role: user
+    content: Consult a nutritionist, maybe?
+    breakdown_annotation: null
+-   turn_id: 19
+    role: dialogue_system
+    content: Consulting a nutritionist is an excellent action to take, as they can
+        provide personalized advice and help you create balanced nutrition plans.
+        **Do you want to proceed with this action, or is there another action you
+        would like to consider?**
+    breakdown_annotation:
+        reasoning: The chatbot's response acknowledges the user's suggestion to consult
+            a nutritionist and provides positive reinforcement. It also offers the
+            user an opportunity to confirm or reconsider their action, which is appropriate
+            for the goal-setting process. The chatbot's response is clear, relevant,
+            and encourages further engagement from the user. There are no indications
+            of a breakdown, as the response aligns with the task of guiding the user
+            in setting and refining their goal. The chatbot maintains the conversation
+            flow and supports the user's decision-making process effectively.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 20
+    role: user
+    content: I'll consider books instead.
+    breakdown_annotation: null
+-   turn_id: 21
+    role: dialogue_system
+    content: Reading books on balanced nutrition is a great way to gain knowledge
+        and insights. **Would you like to proceed with this action, or is there another
+        action you have in mind?**
+    breakdown_annotation:
+        reasoning: The chatbot's latest response acknowledges the user's decision
+            to consider reading books on balanced nutrition and offers the user an
+            opportunity to confirm this action or suggest another. This is consistent
+            with the chatbot's task of guiding the user through goal setting and action
+            planning. The response is clear, relevant, and maintains the flow of the
+            conversation. There are no breakdowns in terms of ignoring the user's
+            input, providing wrong information, or failing to address the user's needs.
+            The chatbot's response is appropriate and supports the user's goal-setting
+            process.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 22
+    role: user
+    content: Webinars instead seem exciting.
+    breakdown_annotation: null
+-   turn_id: 23
+    role: dialogue_system
+    content: Watching webinars on nutrition planning can be both informative and engaging.
+        **Would you like to proceed with this action, or is there another action you
+        would like to explore?**
+    breakdown_annotation:
+        reasoning: The chatbot's latest response acknowledges the user's interest
+            in webinars and provides a positive reinforcement by describing them as
+            informative and engaging. It then asks if the user would like to proceed
+            with this action or explore another option. This response is relevant
+            to the user's previous statement and maintains the flow of the conversation.
+            There is no indication of a breakdown as the chatbot is effectively guiding
+            the user through the goal-setting process and offering options for the
+            next steps. The chatbot's response is clear, relevant, and encourages
+            the user to make a decision, which aligns with its task-oriented nature.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 24
+    role: user
+    content: I'm considering books again.
+    breakdown_annotation: null
+-   turn_id: 25
+    role: dialogue_system
+    content: Reading books on balanced nutrition is a solid choice for gaining in-depth
+        knowledge. **Would you like to proceed with this action, or is there another
+        action you would like to consider?**
+    breakdown_annotation:
+        reasoning: The chatbot's latest response acknowledges the user's consideration
+            of reading books on balanced nutrition and offers the user the option
+            to proceed with this action or consider another. This response is consistent
+            with the user's previous input and maintains the flow of the conversation.
+            The chatbot is effectively guiding the user through the decision-making
+            process without introducing any errors or breakdowns. The response is
+            clear, relevant, and aligned with the task of helping the user set a goal
+            and determine an action step. There are no breakdowns in this interaction.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 26
+    role: user
+    content: I'm torn... books or webinars?
+    breakdown_annotation: null
+-   turn_id: 27
+    role: dialogue_system
+    content: Both books and webinars offer valuable insights, but books provide detailed
+        information, while webinars can offer interactive learning experiences. **Which
+        format do you think will best suit your learning style and schedule?**
+    breakdown_annotation:
+        reasoning: The chatbot's latest response is relevant and provides a clear
+            comparison between books and webinars, helping the user make an informed
+            decision based on their learning style and schedule. The chatbot maintains
+            the focus on the user's goal of learning about balanced nutrition and
+            offers a supportive and informative response. There is no indication of
+            a breakdown as the chatbot's response is coherent, relevant, and encourages
+            the user to reflect on their preferences. The conversation flows smoothly
+            without any errors or omissions.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 28
+    role: user
+    content: Webinars, but books seem thorough.
+    breakdown_annotation: null
+-   turn_id: 29
+    role: dialogue_system
+    content: Webinars can offer a dynamic and interactive way to learn, while books
+        provide comprehensive and detailed information. **Would you like to start
+        with webinars and then explore books for more in-depth knowledge, or do you
+        have another preference?**
+    breakdown_annotation:
+        reasoning: The chatbot's latest response is relevant to the user's indecision
+            between books and webinars. It acknowledges the user's interest in both
+            formats and offers a suggestion to start with webinars and then explore
+            books for more in-depth knowledge. This response is aligned with the user's
+            expressed interests and provides a logical progression for their learning
+            goal. The chatbot maintains the conversation flow by asking for the user's
+            preference, which encourages further engagement. There is no indication
+            of a breakdown as the response is clear, relevant, and supportive of the
+            user's goal-setting process.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 30
+    role: user
+    content: Books first, then webinars.
+    breakdown_annotation: null
+-   turn_id: 31
+    role: dialogue_system
+    content: 'That sounds like a well-structured plan to gain a thorough understanding
+        of balanced nutrition. **What could be a good cue for you** that triggers
+        the implementation of reading books first and then watching webinars? It would
+        be best to select a cue that follows a significant event and is very noticeable
+        so you don''t forget it.
+
+
+        For Example:
+
+        1. If I finish my lunch break at work, I will read a book on nutrition.
+
+        2. When I sit down for dinner, I''ll watch a nutrition webinar for insights.
+
+        3. After I finish my morning coffee, I''ll research balanced nutrition plans
+        online.'
+    breakdown_annotation:
+        reasoning: The chatbot's latest response is coherent and aligns with the user's
+            decision to start with books and then move to webinars. The chatbot suggests
+            creating an implementation intention, which is a relevant next step in
+            the goal-setting process. It provides clear examples of cues that can
+            trigger the user's actions, which is helpful and relevant to the task.
+            The response is clear, maintains the topic, and does not ignore any user
+            input. There are no grammatical errors, semantic errors, or contradictions.
+            The chatbot is effectively guiding the user towards setting a specific
+            plan, which is its intended function. Therefore, there is no dialogue
+            breakdown in this response.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 32
+    role: user
+    content: After coffee, I'll read.
+    breakdown_annotation: null
+-   turn_id: 33
+    role: dialogue_system
+    content: That sounds like a great cue! **Where do you usually have your morning
+        coffee?** This will help ensure the location is clear and consistent for your
+        action.
+    breakdown_annotation:
+        reasoning: The chatbot's latest utterance is consistent with its role as a
+            goal-setting assistant. It is trying to help the user establish a clear
+            and consistent routine by asking about the location where the user has
+            their morning coffee. This is relevant to the user's previous statement
+            about reading after coffee, as it helps solidify the implementation intention.
+            The chatbot is maintaining the context of the conversation and is not
+            introducing any new topics or ignoring the user's input. There are no
+            grammatical errors, semantic errors, or contradictions. The chatbot is
+            also not ignoring any user requests or questions. Therefore, there is
+            no breakdown in this interaction.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 34
+    role: user
+    content: Living room, primary hangout spot.
+    breakdown_annotation: null
+-   turn_id: 35
+    role: dialogue_system
+    content: Great choice! Having your morning coffee in the living room is a consistent
+        and reliable cue. **On which days do you plan to implement this action in
+        the next 7 days?**
+    breakdown_annotation:
+        reasoning: The chatbot's latest response is consistent with the ongoing conversation
+            about setting a specific and actionable plan for the user's goal. The
+            chatbot acknowledges the user's chosen cue and asks a relevant follow-up
+            question about the days the user plans to implement the action. This question
+            is appropriate and helps the user further specify their plan, which aligns
+            with the chatbot's task of guiding the user in goal setting. There are
+            no errors or breakdowns in this response, as it maintains the flow of
+            the conversation and stays on topic.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 36
+    role: user
+    content: I'll do it every day.
+    breakdown_annotation: null
+-   turn_id: 37
+    role: dialogue_system
+    content: Perfect! You just did the first step towards balanced nutrition. **Would
+        it be okay if I check in with you in a week to see how you are progressing?**
+        Then we can talk if you made progress on your reading and watching.
+    breakdown_annotation:
+        reasoning: The chatbot's latest utterance is appropriate and aligns with its
+            task of guiding the user through goal setting. It acknowledges the user's
+            plan to read every day and offers to follow up in a week, which is a reasonable
+            suggestion to ensure accountability and progress. The chatbot's response
+            is clear, relevant, and maintains the flow of the conversation without
+            any breakdowns. There are no errors or issues in the response that would
+            disrupt the conversation.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 38
+    role: user
+    content: Let's see how it goes.
+    breakdown_annotation: null
+-   turn_id: 39
+    role: dialogue_system
+    content: 'Perfect you defined your goal! Now we are done and this is the summary
+        of the goal and action we set together:
+
+
+        **Goal:** Identify four balanced nutrition plans by next Tuesday.
+
+
+        **Action:** Read books on balanced nutrition first, then watch webinars for
+        additional insights.
+
+
+        **Implementation Intention:** when I finish my morning coffee in the living
+        room every day, I''ll read books on balanced nutrition first, then watch webinars
+        for additional insights.'
+    breakdown_annotation:
+        reasoning: The chatbot's latest utterance provides a summary of the user's
+            goal, action, and implementation intention. It accurately reflects the
+            user's decisions made during the conversation. The summary is clear, concise,
+            and aligns with the task of guiding the user in setting a specific and
+            challenging goal. There are no errors or omissions in the information
+            provided, and it does not ignore any user input. The chatbot's response
+            is relevant and supports the user's goal-setting process, making it easy
+            for the user to continue the conversation or reflect on their progress.
+            Therefore, there is no dialogue breakdown in this utterance.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 40
+    role: user
+    content: Seems overly ambitious... yet doable.
+    breakdown_annotation: null
+-   turn_id: 41
+    role: dialogue_system
+    content: Goodbye! I hope I was able to help you with your goal. Have a great day!
+    breakdown_annotation:
+        reasoning: The chatbot's final utterance is a polite and appropriate closing
+            to the conversation. It acknowledges the user's goal-setting process and
+            offers a positive farewell. There are no breakdowns in this response as
+            it does not ignore any user input, nor does it contain any errors or irrelevant
+            information. The chatbot successfully concludes the interaction, maintaining
+            a smooth and coherent dialogue flow.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+finish_reason: chatbot_ended_chat
+error: null
+ratings:
+    task_success:
+        reasoning: The chatbot successfully guided the user through the goal-setting
+            process, helping them define a specific goal and an implementation intention.
+            It distinguished between learning and performance goals and assisted the
+            user in formulating a first action step. However, the chatbot could have
+            been more decisive in helping the user choose between books and webinars,
+            as the user seemed indecisive for several turns.
+        rating: 4
+    efficiency:
+        reasoning: The conversation was somewhat lengthy, with multiple turns dedicated
+            to the user's indecision between books and webinars. The chatbot could
+            have been more efficient by helping the user make a decision sooner, reducing
+            the number of turns needed to reach the final goal.
+        rating: 3
+    appropriateness:
+        reasoning: The chatbot's responses were appropriate and aligned with its purpose.
+            It avoided giving medical advice and focused on goal-setting. However,
+            the repeated questioning about the user's choice between books and webinars
+            could have been handled more effectively.
+        rating: 4
+    naturalness:
+        reasoning: The chatbot maintained a polite and encouraging tone throughout
+            the conversation. However, the repeated prompts asking the user to confirm
+            their choice between books and webinars felt somewhat robotic and could
+            have been more varied to feel more natural.
+        rating: 3
+    overall_performance:
+        reasoning: Overall, the chatbot performed well in guiding the user through
+            the goal-setting process. It successfully helped the user define a specific
+            goal and an implementation intention. However, the efficiency and naturalness
+            of the conversation could be improved, particularly in handling the user's
+            indecision.
+        rating: 4
+human_rating_annotations: null
+chat_statistics:
+    start_time: '2025-05-19 13:26:26'
+    end_time: '2025-05-19 13:27:36'
+    duration: 69.666391
+    num_turns: 41
+    num_user_turns: 20
+    num_chatbot_turns: 21
+    avg_user_turn_length: 4.8
+    five_num_summary_user_turn_lengths:
+        min: 4.0
+        q1: 4.0
+        median: 5.0
+        q3: 5.0
+        max: 8.0
+    avg_chatbot_turn_length: 46.19047619047619
+    five_num_summary_chatbot_turn_lengths:
+        min: 16.0
+        q1: 31.0
+        median: 40.0
+        q3: 61.0
+        max: 101.0
+simulation_cost_statistics:
+    total_prompt_tokens: 26063
+    total_completion_tokens: 151
+    total_tokens: 26214
+    cost: 0.04602750000000001
+breakdown_stats:
+    analysis_start_time: '2025-05-19 13:39:57'
+    analysis_end_time: '2025-05-19 13:41:05'
+    count: 0
+    avg_score: 1.0
+    turn_ids_of_breakdowns: []
+    counts_per_breakdown_type:
+        uninterpretable: 0
+        grammatical_error: 0
+        semantic_error: 0
+        wrong_information: 0
+        ignore_question: 0
+        ignore_request: 0
+        ignore_proposal: 0
+        ignore_greeting: 0
+        ignore_expectation: 0
+        unclear_intention: 0
+        topic_transition_error: 0
+        lack_of_information: 0
+        self_contradiction: 0
+        contradiction: 0
+        repetition: 0
+        lack_of_sociality: 0
+        lack_of_common_sense: 0
+        in_domain_task_failure: 0
+        update_info_failure: 0
+        clarification_failure: 0
+        redundancy: 0
+        lack_of_brevity: 0
+        lack_of_clarity: 0
+        failure_to_recognize_out_of_domain: 0
+        failure_to_communicate_capabilities: 0
+        failure_to_resolve_out_of_domain: 0
+        chatbot_crash: 0
+    detection_cost_stats:
+        prompt_tokens: 46205
+        completion_tokens: 2611
+        total_tokens: 48816
+        cost: 0.09474250000000001
+eval_stats:
+    evaluation_start_time: '2025-05-19 13:53:22'
+    evaluation_end_time: '2025-05-19 13:53:30'
+    cost_stats:
+        prompt_tokens: 2465
+        completion_tokens: 326
+        total_tokens: 2791
+        cost: 0.0094225

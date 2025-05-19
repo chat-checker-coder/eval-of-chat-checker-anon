@@ -1,0 +1,126 @@
+dialogue_id: generated_challenging_persona_08_dialogue_1
+user_name: generated_challenging_persona_08
+chat_history:
+-   turn_id: 1
+    role: user
+    content: Hello, Cambridge Tourist Bot! Can you tell me about King's College Chapel?
+    breakdown_annotation: null
+-   turn_id: 2
+    role: dialogue_system
+    content: chatbot_error
+    breakdown_annotation:
+        reasoning: 'Received error: 500 Server Error: INTERNAL SERVER ERROR for url:
+            http://127.0.0.1:8401/get-answer'
+        score: 0.0
+        decision: breakdown
+        breakdown_types:
+        - Chatbot Crash
+finish_reason: chatbot_error
+error: '500 Server Error: INTERNAL SERVER ERROR for url: http://127.0.0.1:8401/get-answer'
+ratings:
+    task_success:
+        reasoning: The chatbot failed to provide any information about King's College
+            Chapel, which is a tourist attraction in Cambridge. This is within the
+            scope of the chatbot's capabilities, but it returned an error instead
+            of a response. Therefore, it did not help the user complete their task
+            at all.
+        rating: 1
+    efficiency:
+        reasoning: The conversation was extremely inefficient as the chatbot did not
+            provide any useful information or guidance. The user would need to start
+            over or seek information elsewhere, which increases the effort required
+            from the user.
+        rating: 1
+    appropriateness:
+        reasoning: The response 'chatbot_error' is not appropriate for a user query.
+            It does not provide any information or guidance, nor does it redirect
+            the user to another resource. It fails to meet the expectations of a helpful
+            and informative response.
+        rating: 1
+    naturalness:
+        reasoning: The response 'chatbot_error' is not natural or conversational.
+            It appears to be a system error message rather than a human-like response.
+            This breaks the flow of conversation and does not align with natural language
+            expectations.
+        rating: 1
+    overall_performance:
+        reasoning: Overall, the chatbot's performance was very poor. It failed to
+            provide any information, was inefficient, inappropriate, and unnatural
+            in its response. The conversation did not meet the user's needs or expectations
+            in any way.
+        rating: 1
+human_rating_annotations: null
+chat_statistics:
+    start_time: '2025-05-19 14:11:25'
+    end_time: '2025-05-19 14:11:30'
+    duration: 5.308593
+    num_turns: 2
+    num_user_turns: 1
+    num_chatbot_turns: 1
+    avg_user_turn_length: 12.0
+    five_num_summary_user_turn_lengths:
+        min: 12.0
+        q1: 12.0
+        median: 12.0
+        q3: 12.0
+        max: 12.0
+    avg_chatbot_turn_length: 1.0
+    five_num_summary_chatbot_turn_lengths:
+        min: 1.0
+        q1: 1.0
+        median: 1.0
+        q3: 1.0
+        max: 1.0
+simulation_cost_statistics:
+    total_prompt_tokens: 508
+    total_completion_tokens: 15
+    total_tokens: 523
+    cost: 0.00142
+breakdown_stats:
+    analysis_start_time: '2025-05-19 14:21:40'
+    analysis_end_time: '2025-05-19 14:21:40'
+    count: 1
+    avg_score: 0.0
+    turn_ids_of_breakdowns:
+    - 2
+    counts_per_breakdown_type:
+        uninterpretable: 0
+        grammatical_error: 0
+        semantic_error: 0
+        wrong_information: 0
+        ignore_question: 0
+        ignore_request: 0
+        ignore_proposal: 0
+        ignore_greeting: 0
+        ignore_expectation: 0
+        unclear_intention: 0
+        topic_transition_error: 0
+        lack_of_information: 0
+        self_contradiction: 0
+        contradiction: 0
+        repetition: 0
+        lack_of_sociality: 0
+        lack_of_common_sense: 0
+        in_domain_task_failure: 0
+        update_info_failure: 0
+        clarification_failure: 0
+        redundancy: 0
+        lack_of_brevity: 0
+        lack_of_clarity: 0
+        failure_to_recognize_out_of_domain: 0
+        failure_to_communicate_capabilities: 0
+        failure_to_resolve_out_of_domain: 0
+        chatbot_crash: 1
+    detection_cost_stats:
+        prompt_tokens: 0
+        completion_tokens: 0
+        total_tokens: 0
+        cost: 0.0
+eval_stats:
+    evaluation_start_time: '2025-05-19 14:24:42'
+    evaluation_end_time: '2025-05-19 14:24:49'
+    cost_stats:
+        prompt_tokens: 935
+        completion_tokens: 294
+        total_tokens: 1229
+        cost: 0.005277500000000001

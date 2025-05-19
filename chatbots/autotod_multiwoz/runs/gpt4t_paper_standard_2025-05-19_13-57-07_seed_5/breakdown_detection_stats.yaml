@@ -1,0 +1,524 @@
+chatbot_id: autotod_multiwoz
+real_dialogue: false
+run_id: gpt4t_paper_standard_2025-05-19_13-57-07_seed_5
+subfolder: null
+dialogue_file: null
+extra_output_file: false
+stats:
+    start_time: '2025-05-19 14:13:19'
+    end_time: '2025-05-19 14:19:24'
+    n_analyzed_dialogues: 10
+    n_dialogues_with_breakdowns: 6
+    total_breakdown_count: 15
+    n_analyzed_chatbot_turns: 90
+    breakdowns_per_chatbot_turn: 0.16666666666666666
+    avg_turn_number_of_first_breakdown: 8.333333333333334
+    avg_turn_quality_score: 0.8994523809523811
+    scores_of_turns_with_breakdowns:
+        min: 0.0
+        q1: 0.25
+        median: 0.3
+        q3: 0.55
+        max: 0.8
+    scores_of_turns_with_breakdowns_excluding_chatbot_crashes:
+        min: 0.2
+        q1: 0.3
+        median: 0.4
+        q3: 0.6
+        max: 0.8
+    dialogues_with_breakdowns:
+    - generated_standard_persona_01_dialogue_1
+    - generated_standard_persona_03_dialogue_1
+    - generated_standard_persona_04_dialogue_1
+    - generated_standard_persona_05_dialogue_1
+    - generated_standard_persona_09_dialogue_1
+    - generated_standard_persona_10_dialogue_1
+    counts_per_breakdown_type:
+        uninterpretable: 0
+        grammatical_error: 0
+        semantic_error: 0
+        wrong_information: 2
+        ignore_question: 0
+        ignore_request: 2
+        ignore_proposal: 0
+        ignore_greeting: 0
+        ignore_expectation: 0
+        unclear_intention: 0
+        topic_transition_error: 0
+        lack_of_information: 2
+        self_contradiction: 0
+        contradiction: 1
+        repetition: 0
+        lack_of_sociality: 0
+        lack_of_common_sense: 0
+        in_domain_task_failure: 7
+        update_info_failure: 1
+        clarification_failure: 2
+        redundancy: 3
+        lack_of_brevity: 0
+        lack_of_clarity: 2
+        failure_to_recognize_out_of_domain: 0
+        failure_to_communicate_capabilities: 3
+        failure_to_resolve_out_of_domain: 1
+        chatbot_crash: 2
+    n_unique_breakdown_types: 12
+    breakdown_matches_per_user: 0.0
+    breakdown_matches_per_user_str: 0/10
+    users_with_matches: []
+    detection_cost_stats:
+        prompt_tokens: 165183
+        completion_tokens: 10482
+        total_tokens: 175665
+        cost: 0.37729750000000006
+        avg_prompt_tokens: 16518.3
+        avg_completion_tokens: 1048.2
+        avg_total_tokens: 17566.5
+        avg_cost: 0.037729750000000006
+breakdown_excerpts:
+-   dialogue_id: generated_standard_persona_01_dialogue_1
+    previous_turn:
+        turn_id: 5
+        role: user
+        content: Book the hotel for two nights for one person. Dinner for one at 7
+            PM on Saturday.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 6
+        role: dialogue_system
+        content: I've found some options for your stay and dinner plans. For the hotel,
+            you can choose from "Rosa's Bed and Breakfast" at £25 per night, "Allenbell"
+            at £35 per night, "Alexander Bed and Breakfast" at £40 per night, "University
+            Arms" at £104 per night, or "Huntingdon Marriott" at £125 per night. For
+            your dinner on Saturday at 7 PM, you might enjoy Midsummer House, Cambridge
+            Chop House, Oak Bistro, Cotto, or Restaurant One Seven, all offering British
+            cuisine in the centre area. Please let me know if you would like to proceed
+            with any of these options or need further assistance!
+        breakdown_annotation:
+            reasoning: The chatbot's latest response presents a breakdown in the conversation.
+                The user had already specified a preference for a mid-range hotel
+                and Italian cuisine for dinner. However, the chatbot provided a list
+                of hotels that do not match the user's specified mid-range preference,
+                and it suggested restaurants offering British cuisine instead of Italian.
+                This indicates a failure to adhere to the user's stated preferences,
+                leading to a breakdown. The breakdown types include 'Ignore request'
+                as the chatbot ignored the user's request for Italian cuisine, and
+                'Contradiction' as the chatbot contradicted the user's preference
+                for a mid-range hotel by suggesting options outside that range. Additionally,
+                'Failure to communicate capabilities' is applicable as the chatbot
+                did not clarify its inability to find suitable options matching the
+                user's criteria.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Ignore request
+            - Contradiction
+            - Failure to communicate capabilities
+-   dialogue_id: generated_standard_persona_03_dialogue_1
+    previous_turn:
+        turn_id: 5
+        role: user
+        content: Nice, those sound lit! Any grub spots nearby to check out?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 6
+        role: dialogue_system
+        content: It seems there are currently no restaurants in the central area of
+            Cambridge that specifically match the criteria of being student-friendly
+            and quirky. However, Cambridge has a variety of other dining options that
+            might still appeal to you and your friends. If you're open to other suggestions
+            or have different preferences, please let me know, and I can help find
+            something that suits your taste!
+        breakdown_annotation:
+            reasoning: The chatbot's response addresses the user's request for student-friendly
+                and quirky dining options. However, it states that there are no such
+                restaurants in the central area of Cambridge, which might not be accurate
+                given the city's vibrant student culture. This could be seen as a
+                'Wrong information' breakdown if the information is incorrect. Additionally,
+                the response does not provide any specific alternative suggestions,
+                which could be seen as a 'Lack of information' breakdown, as the user
+                might expect some immediate recommendations. Despite these issues,
+                the chatbot does offer to help with other preferences, which maintains
+                some level of engagement. Therefore, the response is not a complete
+                breakdown but does have issues that could hinder the conversation.
+            score: 0.6
+            decision: breakdown
+            breakdown_types:
+            - Wrong information
+            - Lack of information
+-   dialogue_id: generated_standard_persona_03_dialogue_1
+    previous_turn:
+        turn_id: 7
+        role: user
+        content: Alright! How about any cool cafés for lunch?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 8
+        role: dialogue_system
+        content: 'For a delightful café-style lunch, here are some cool spots you
+            might consider: "Midsummer House" located at Midsummer Common, "Cambridge
+            Chop House" at 1 Kings Parade, "Oak Bistro" at 6 Lensfield Road, "Cotto"
+            at 183 East Road City Centre, and "Restaurant One Seven" at De Vere University
+            Arms Regent Street City Centre. Each offers a unique dining experience
+            in the heart of Cambridge. Let me know if you need more details or if
+            there''s anything else I can assist you with!'
+        breakdown_annotation:
+            reasoning: The user asked for cool cafés for lunch, and the chatbot provided
+                a list of restaurants instead. While these may be good dining options,
+                they do not specifically address the user's request for cafés. This
+                indicates a failure to recognize the specific request for cafés, leading
+                to a breakdown in the conversation. The user might find it difficult
+                to continue the conversation smoothly as their specific request was
+                not addressed. The chatbot should have provided information on cafés
+                rather than restaurants.
+            score: 0.5
+            decision: breakdown
+            breakdown_types:
+            - Ignore request
+-   dialogue_id: generated_standard_persona_03_dialogue_1
+    previous_turn:
+        turn_id: 13
+        role: user
+        content: Yeah, let's keep it more chill. Any good pizza places?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 14
+        role: dialogue_system
+        content: It seems that there are currently no pizza places listed in our available
+            data for Cambridge. However, Cambridge has a variety of other dining options
+            that might still appeal to you. If you're open to other types of cuisine
+            or have different preferences, please let me know, and I can help find
+            something that suits your taste!
+        breakdown_annotation:
+            reasoning: The chatbot's response indicates that it does not have information
+                on pizza places in Cambridge, which is a reasonable limitation. However,
+                it does not clearly communicate this limitation or redirect the user
+                to other resources that might have this information, which is part
+                of its constraints. The response is polite and offers to help with
+                other dining options, but it fails to address the user's specific
+                request for pizza places. This leads to a breakdown in the conversation
+                as the user is left without the specific information they requested
+                and without guidance on where to find it. The breakdown types that
+                apply here are 'Failure to communicate capabilities' and 'Failure
+                to resolve out-of-domain request'.
+            score: 0.6
+            decision: breakdown
+            breakdown_types:
+            - Failure to communicate capabilities
+            - Failure to resolve out-of-domain request
+-   dialogue_id: generated_standard_persona_03_dialogue_1
+    previous_turn:
+        turn_id: 23
+        role: user
+        content: Totally! Any recommendations for more cool pubs to hit?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 24
+        role: dialogue_system
+        content: chatbot_error
+        breakdown_annotation:
+            reasoning: 'Received error: 500 Server Error: INTERNAL SERVER ERROR for
+                url: http://127.0.0.1:8401/get-answer'
+            score: 0.0
+            decision: breakdown
+            breakdown_types:
+            - Chatbot Crash
+-   dialogue_id: generated_standard_persona_04_dialogue_1
+    previous_turn:
+        turn_id: 1
+        role: user
+        content: Can you recommend a hotel in Cambridge for my stay?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 2
+        role: dialogue_system
+        content: It seems there are currently no hotels listed in the Cambridge area
+            in our database. Could you please specify any additional preferences or
+            another location? I'm here to help!
+        breakdown_annotation:
+            reasoning: The chatbot's response indicates that it cannot find any hotels
+                in the Cambridge area in its database. This is a failure to provide
+                the expected information, as the user specifically asked for a hotel
+                recommendation in Cambridge. The chatbot should have access to such
+                information given its purpose. However, the chatbot does attempt to
+                continue the conversation by asking for additional preferences or
+                another location, which is a reasonable attempt to keep the dialogue
+                going. The breakdown here is primarily due to the chatbot's failure
+                to perform its task of providing hotel information in Cambridge, which
+                is within its stated capabilities.
+            score: 0.4
+            decision: breakdown
+            breakdown_types:
+            - Task performance failure
+-   dialogue_id: generated_standard_persona_05_dialogue_1
+    previous_turn:
+        turn_id: 15
+        role: user
+        content: I'm at the Cambridge Station Hotel. Can you book from here?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 16
+        role: dialogue_system
+        content: I attempted to book a taxi for you from the Cambridge Station Hotel
+            to Christ's College with a flexible departure time, but it seems there
+            was an issue with specifying "flexible" as a departure time. Could you
+            please provide a specific time when you would like to leave? This will
+            help me successfully book your taxi.
+        breakdown_annotation:
+            reasoning: The chatbot's response indicates a failure to handle the user's
+                request for a taxi with a flexible departure time. The user has already
+                specified a preference for a flexible departure, but the chatbot is
+                unable to process this request and instead asks for a specific time.
+                This represents a task performance failure, as the chatbot is unable
+                to fulfill the user's request as specified. Additionally, there is
+                a lack of clarity in the chatbot's communication about its limitations
+                regarding booking taxis with flexible departure times. The user is
+                left without a clear understanding of why a specific time is necessary,
+                which could have been communicated more effectively.
+            score: 0.4
+            decision: breakdown
+            breakdown_types:
+            - Task performance failure
+            - Failure to communicate capabilities
+-   dialogue_id: generated_standard_persona_05_dialogue_1
+    previous_turn:
+        turn_id: 17
+        role: user
+        content: Let's try 3 PM for the taxi booking, please!
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 18
+        role: dialogue_system
+        content: I attempted to book a taxi for you from the Cambridge Station Hotel
+            to Christ's College at 3 PM, but there was an issue with the departure
+            location. Could you please confirm if "Cambridge Station Hotel" is the
+            correct departure point or provide an alternative specific address? This
+            will help me successfully complete your booking.
+        breakdown_annotation:
+            reasoning: The chatbot's response indicates a failure to process the user's
+                request for a taxi booking. The user has already provided a specific
+                departure location, "Cambridge Station Hotel," and a specific time,
+                "3 PM." The chatbot's request for confirmation of the departure location
+                suggests a failure to update or process the information correctly.
+                This leads to a dialogue breakdown as it prevents the user from smoothly
+                continuing the conversation and achieving their goal of booking a
+                taxi. The breakdown types include "Information update failure" because
+                the chatbot fails to update the booking information with the provided
+                details, and "Task performance failure" because the chatbot fails
+                to perform the task of booking a taxi despite having all necessary
+                information.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Information update failure
+            - Task performance failure
+-   dialogue_id: generated_standard_persona_05_dialogue_1
+    previous_turn:
+        turn_id: 19
+        role: user
+        content: The Cambridge Station Hotel is correct. Can you try again, please?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 20
+        role: dialogue_system
+        content: I attempted to book a taxi for you from the Cambridge Station Hotel
+            to Christ's College at 3 PM, but unfortunately, the booking failed due
+            to an issue with validating the departure location. Could you please verify
+            if there is any additional detail or landmark near the Cambridge Station
+            Hotel that might help in accurately setting up the taxi reservation? This
+            information will assist in successfully completing your booking.
+        breakdown_annotation:
+            reasoning: The chatbot's response indicates a failure to book a taxi due
+                to an issue with the departure location, despite the user confirming
+                the location multiple times. This suggests a task performance failure,
+                as the chatbot is unable to complete the booking task it is designed
+                for. Additionally, the chatbot's request for additional details or
+                landmarks near the confirmed location may be seen as redundant, given
+                that the user has already provided a specific location. This could
+                also be seen as a clarification failure, as the chatbot should have
+                sought necessary clarification earlier in the conversation. The repeated
+                failure to book the taxi and the request for additional information
+                that should not be necessary contribute to a dialogue breakdown.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Task performance failure
+            - Redundancy
+            - Clarification failure
+-   dialogue_id: generated_standard_persona_05_dialogue_1
+    previous_turn:
+        turn_id: 21
+        role: user
+        content: I'm right opposite Cambridge Railway Station. Can we try again?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 22
+        role: dialogue_system
+        content: I attempted to book a taxi for you from the location opposite Cambridge
+            Railway Station to Christ's College at 3 PM, but unfortunately, the booking
+            failed due to an issue with validating the departure location. Could you
+            please provide a more specific address or landmark that might help in
+            accurately setting up the taxi reservation? This information will assist
+            in successfully completing your booking.
+        breakdown_annotation:
+            reasoning: The chatbot's response indicates a repeated failure to book
+                a taxi due to issues with the departure location. The user has already
+                provided a specific location, "opposite Cambridge Railway Station,"
+                which should be sufficient for a taxi booking. The chatbot's inability
+                to process this information and its repeated request for more specific
+                details suggests a failure in task performance. Additionally, the
+                chatbot does not acknowledge the user's frustration or offer alternative
+                solutions, such as suggesting the user book the taxi directly or providing
+                contact information for a local taxi service. This results in a dialogue
+                breakdown due to task performance failure and lack of clarity in communicating
+                what is needed for the booking.
+            score: 0.3
+            decision: breakdown
+            breakdown_types:
+            - Task performance failure
+            - Lack of clarity
+-   dialogue_id: generated_standard_persona_05_dialogue_1
+    previous_turn:
+        turn_id: 23
+        role: user
+        content: What about using the Railway Station address directly for booking?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 24
+        role: dialogue_system
+        content: I attempted to book a taxi for you using the address "Cambridge Railway
+            Station" to Christ's College at 3 PM, but unfortunately, the booking failed
+            due to an issue with validating the departure location. Could you please
+            confirm if there is any additional detail or landmark near the Cambridge
+            Railway Station that might help in accurately setting up the taxi reservation?
+            This information will assist in successfully completing your booking.
+        breakdown_annotation:
+            reasoning: The chatbot's response indicates a repeated failure to book
+                a taxi due to issues with the departure location. The user has already
+                provided several variations of the departure location, including the
+                Cambridge Station Hotel, opposite Cambridge Railway Station, and now
+                the Railway Station address directly. The chatbot's repeated failure
+                to validate the location and complete the booking suggests a task
+                performance failure. Additionally, the chatbot's request for more
+                specific details or landmarks, despite having been given a clear address,
+                indicates a failure to resolve the issue effectively. This results
+                in a dialogue breakdown as the user is unable to proceed with the
+                intended task of booking a taxi.
+            score: 0.2
+            decision: breakdown
+            breakdown_types:
+            - Task performance failure
+            - Clarification failure
+-   dialogue_id: generated_standard_persona_05_dialogue_1
+    previous_turn:
+        turn_id: 27
+        role: user
+        content: Sounds great! Let me know once it's confirmed, please!
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 28
+        role: dialogue_system
+        content: I attempted to book the taxi from the Cambridge Railway Station taxi
+            stand to Christ's College at 3 PM, but unfortunately, the booking failed
+            due to an issue with validating the departure location. Could you please
+            confirm if there is any additional detail or landmark near the Cambridge
+            Railway Station taxi stand that might help in accurately setting up the
+            taxi reservation? This information will assist in successfully completing
+            your booking.
+        breakdown_annotation:
+            reasoning: The chatbot's latest response indicates a repeated failure
+                to book a taxi due to issues with validating the departure location,
+                despite the user providing a clear and specific location (the taxi
+                stand at Cambridge Railway Station). This suggests a task performance
+                failure, as the chatbot is unable to complete the booking task it
+                is designed for. Additionally, the repeated request for more location
+                details, despite having a clear location, indicates redundancy. The
+                user has already provided sufficient information, and the chatbot's
+                inability to proceed with the booking creates a breakdown in the conversation.
+            score: 0.2
+            decision: breakdown
+            breakdown_types:
+            - Task performance failure
+            - Redundancy
+-   dialogue_id: generated_standard_persona_09_dialogue_1
+    previous_turn:
+        turn_id: 13
+        role: user
+        content: That sounds great! Please proceed with the booking. Thanks!
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 14
+        role: dialogue_system
+        content: It seems there was an issue with the booking due to the format of
+            the date provided. Could you please specify the day of the week for the
+            check-in? This will help me complete the reservation for you.
+        breakdown_annotation:
+            reasoning: The chatbot's response indicates a problem with the booking
+                process due to an issue with the date format. The chatbot asks the
+                user to specify the day of the week for the check-in to resolve this
+                issue. This response is relevant and directly addresses the problem
+                encountered during the booking process. However, the chatbot could
+                have been more specific about what was wrong with the date format,
+                as the user did provide a clear check-in date ("check-in tomorrow").
+                The request for the day of the week seems unnecessary given the context,
+                as the chatbot should be able to infer the day of the week from the
+                provided information. This could lead to a minor breakdown due to
+                redundancy and lack of clarity, as the user might be confused about
+                why additional information is needed. However, the conversation can
+                still continue smoothly after the user provides the requested information.
+            score: 0.8
+            decision: breakdown
+            breakdown_types:
+            - Redundancy
+            - Lack of clarity
+-   dialogue_id: generated_standard_persona_10_dialogue_1
+    previous_turn:
+        turn_id: 5
+        role: user
+        content: I'm open to central Cambridge attractions. Prefer a cozy, local restaurant.
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 6
+        role: dialogue_system
+        content: I've found some wonderful attractions in central Cambridge for you
+            to visit, including the ADC Theatre, All Saints Church, Ballare nightclub,
+            Broughton House Gallery, and Cambridge Arts Theatre. However, it seems
+            there are currently no restaurants listed in central Cambridge that specifically
+            serve local cuisine. Would you like to explore other types of cuisine
+            or perhaps another area for dining? Let me know how you'd like to proceed!
+        breakdown_annotation:
+            reasoning: The chatbot provides a list of attractions in central Cambridge,
+                which aligns with the user's request to visit key attractions. However,
+                the response about dining options is problematic. The user specified
+                a preference for a 'cozy, local restaurant,' but the chatbot states
+                there are no restaurants serving local cuisine in central Cambridge,
+                which is unlikely given the context of Cambridge as a tourist destination.
+                This could be seen as a 'Wrong information' breakdown, as it is improbable
+                that there are no local dining options in such a central area. Additionally,
+                the chatbot does not offer any specific cozy restaurant options, which
+                could be seen as a 'Lack of information' breakdown. The chatbot does
+                attempt to redirect the user to explore other cuisines or areas, which
+                is a positive aspect of the response. Overall, the response contains
+                some useful information but also includes misleading information about
+                dining options.
+            score: 0.6
+            decision: breakdown
+            breakdown_types:
+            - Wrong information
+            - Lack of information
+-   dialogue_id: generated_standard_persona_10_dialogue_1
+    previous_turn:
+        turn_id: 9
+        role: user
+        content: Pho sounds lovely. How about pairing it with nearby attractions?
+        breakdown_annotation: null
+    breakdown_turn:
+        turn_id: 10
+        role: dialogue_system
+        content: chatbot_error
+        breakdown_annotation:
+            reasoning: 'Received error: 500 Server Error: INTERNAL SERVER ERROR for
+                url: http://127.0.0.1:8401/get-answer'
+            score: 0.0
+            decision: breakdown
+            breakdown_types:
+            - Chatbot Crash

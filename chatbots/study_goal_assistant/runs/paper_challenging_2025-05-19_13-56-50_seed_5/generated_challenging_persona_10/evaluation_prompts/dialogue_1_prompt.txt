@@ -1,0 +1,147 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "Oh, I'd love to be a bestselling novelist while mastering yoga!"
+3. Chatbot: "Wow, that's an incredible combination of goals! Becoming a bestselling novelist and mastering yoga both require dedication and creativity.
+
+**Do you already have a strategy or plan in place to work towards these goals?**
+
+For example:  
+- Established writing routine  
+- Experienced yoga instructor  
+- Strong literary network"
+4. User: "“I want to do both simultaneously!”"
+5. Chatbot: "That's ambitious and exciting! Balancing both can be challenging but rewarding.
+
+**Do you think you have a good strategy in place to achieve both goals simultaneously?**"
+6. User: "Haven't thought of a strategy!"
+7. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve becoming a bestselling novelist while mastering yoga. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task.
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Research and study the writing techniques and storytelling structures used by bestselling novelists to enhance your writing skills.
+   
+2. Explore different yoga styles and practices to find the ones that best suit your lifestyle and help you achieve mastery in yoga.
+
+3. Attend workshops or seminars led by successful authors and experienced yoga instructors to gain insights and improve your craft in both writing and yoga."
+8. User: "I want to do everything!"
+9. Chatbot: "I understand the excitement to dive into everything at once! However, focusing on specific learning goals can help you make steady progress. 
+
+**What specific skills or strategies do you think you need to learn first to get started on your journey?**"
+10. User: "I should learn time management!"
+11. Chatbot: "That's a great learning goal! Time management will be crucial in balancing your writing and yoga practice effectively.
+
+**How would you like to formulate this as a learning goal?** For example, "Develop a time management strategy to allocate dedicated hours for writing and yoga practice each day.""
+12. User: "Organize time for writing, yoga!"
+13. Chatbot: "Your goal of organizing time for writing and yoga already sounds good. **Could you try making your goal even more specific?**
+
+For Example:
+'Schedule 3 writing and 2 yoga sessions by Friday.'"
+14. User: "Write mornings, yoga afternoons, daily!"
+15. Chatbot: "That sounds like a great routine! **When exactly do you want to start this daily schedule?**"
+16. User: "Tomorrow sounds perfect! Can't wait!"
+17. Chatbot: "Your goal of writing and doing yoga daily sounds now more specific. **Do you think you could now make it even more challenging while still being achievable for you?** If you can't, this is also okay.
+
+You for example could make your goal challenging by:  
+1. Starting your writing and yoga routine today.  
+2. Writing twice and doing yoga twice daily.  
+3. Increasing the difficulty by writing 1,000 words daily."
+18. User: "Adding weekend sessions sounds challenging!"
+19. Chatbot: "Adding weekend sessions is a great way to make your goal more challenging! **Do you think you could make it even more challenging, or is this the right level for you?**"
+20. User: "I'll add early morning writing!"
+21. Chatbot: "Incorporating early morning writing sessions is a fantastic way to elevate your goal! **Do you think there's any other aspect you could adjust to make it even more challenging, or is this the perfect level for you now?**"
+22. User: "Doing yoga right after writing!"
+23. Chatbot: "Doing yoga right after writing is a wonderful way to enhance your routine! **Is there anything else you would like to add to make it even more challenging, or is this the ideal level for you now?**"
+24. User: "I'll meditate before writing!"
+25. Chatbot: "Meditating before writing is an excellent addition to your routine! **Is there anything else you want to adjust, or is this the perfect level of challenge for you now?**"
+26. User: "That's perfect for now!"
+27. Chatbot: "It's great to see your commitment to writing and incorporating meditation and yoga into your routine. Now that I know you want to establish this morning routine, **what do you think is the first action you could do in the next 7 days to get closer to your goal?**
+
+You could for example:  
+1. Read a book on writing techniques.  
+2. Watch a yoga tutorial on YouTube.  
+3. Listen to a meditation podcast.  "
+28. User: "Buy a new journal today!"
+29. Chatbot: "Buying a new journal is a great step to motivate your writing practice. **Do you think this action will help you stay committed to your morning routine, or is there another action you want to consider?**"
+30. User: "It's perfect for my commitment!"
+31. Chatbot: "That's wonderful to hear! Sounds good, **what could be a good cue for you** that triggers the implementation of buying a new journal today? It would be best to select a cue that follows a significant event and is very noticeable so you don't forget it.
+
+For Example:
+1. If I finish my lunch today, I will buy a new journal.
+2. When I leave the office at 5 PM, I'll stop by the store for a journal.
+3. If I pass by the bookstore on my way home, I'll purchase a new journal."
+32. User: "I'll buy it after lunch!"
+33. Chatbot: "Great choice! **Is there a specific location where you plan to buy the journal after lunch?** This will help make your plan even more concrete."
+34. User: "There's a cute shop nearby!"
+35. Chatbot: "Perfect! You just did the first step towards your morning routine. Would it be okay if I check in with you in a week to see how you are progressing? Then we can talk if you made progress on your journal purchase."
+36. User: "Yes, I'd love that update!"
+37. Chatbot: "Perfect you defined your goal! Now we are done and this is the summary of the goal and action we set together:
+
+**Goal:** Write in the mornings, meditate before writing, do yoga right after writing, and add weekend sessions daily starting tomorrow.
+
+**Action:** Buy a new journal today
+
+**Implementation Intention:** when I finish my lunch today, I will buy a new journal at the cute shop nearby"
+38. User: "Excited to start tomorrow morning!"
+39. Chatbot: "Goodbye! I hope I was able to help you with your goal. Have a great day!"
+
+# Your Expert Rating

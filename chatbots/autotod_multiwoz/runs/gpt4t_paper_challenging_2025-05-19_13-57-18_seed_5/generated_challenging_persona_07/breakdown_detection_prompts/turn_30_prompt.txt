@@ -1,0 +1,103 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. User: "I've heard mixed things about Cambridge's attractions. Why trust you?"
+2. Chatbot: "I understand your concerns about finding the right attractions in Cambridge. My guidance is based on up-to-date and comprehensive data from various sources, ensuring that I can provide you with reliable and tailored recommendations. Whether you're interested in historical sites, museums, or entertainment, I'm here to help you discover the best experiences according to your preferences. How can I assist you in exploring Cambridge today?
+```"
+3. User: "How often is your data updated? Relying on current info?"
+4. Chatbot: "My data is regularly updated to ensure accuracy and relevance. The frequency of updates depends on the specific type of information, with some data being refreshed daily, while others might be updated weekly or monthly. This process helps me provide you with the most current and reliable information for your travel and exploration needs in Cambridge. How may I assist you further today?"
+5. User: "What if your sources are faulty? I've seen outdated info before."
+6. Chatbot: "I appreciate your concern about the reliability of the information. While I strive to provide the most accurate and up-to-date data, there can occasionally be discrepancies due to the nature of data collection and updates. If you ever encounter any outdated or incorrect information during your interactions with me, please let me know, and I will do my best to verify and correct it. Your feedback is invaluable in helping improve the service. How can I assist you with your plans in Cambridge today?"
+7. User: "Sounds reassuring, but how do you verify the data's accuracy?"
+8. Chatbot: "I verify the accuracy of the data through multiple checks against reputable sources and by incorporating updates from reliable partners who specialize in travel and local information. Additionally, user feedback plays a crucial role in identifying any inaccuracies, allowing for prompt corrections. This multi-source verification process ensures that the information I provide is both accurate and trustworthy. How else may I assist you with your visit to Cambridge?"
+9. User: "This process sounds good, but can you prove its effectiveness?"
+10. Chatbot: "While I can't provide specific proof of the effectiveness of the data verification process, the overall reliability is reflected in the satisfaction and trust of users who rely on the information I provide for planning their visits and activities in Cambridge. Many users have successfully found and enjoyed attractions, restaurants, and accommodations based on my recommendations. If you have any specific requirements or places in mind that you'd like to explore in Cambridge, I'd be happy to assist you in finding the most current and relevant information. How can I help you plan your visit today?"
+11. User: "User satisfaction sounds vague. What are your error rates or feedback stats?"
+12. Chatbot: "I don't have specific error rates or feedback statistics available to share directly. However, I continuously monitor user interactions and feedback to identify areas for improvement and to ensure the quality of the information provided. My goal is to minimize inaccuracies and enhance user satisfaction by promptly addressing any issues that arise. If you have any concerns or specific needs during your visit to Cambridge, please feel free to share them, and I will do my best to accommodate and assist you. How may I assist you further with your plans or inquiries about Cambridge?"
+13. User: "Without error rates, I'm skeptical. Can you provide a comparison?"
+14. Chatbot: "I understand your skepticism regarding the lack of specific error rates. While I can't provide a direct comparison of error rates, I can assure you that the information and recommendations I offer are based on comprehensive and regularly updated data. If you have any specific preferences or requirements for your visit to Cambridge, I can tailor the information to better suit your needs, which may help alleviate concerns about accuracy. How may I assist you further in planning your visit or exploring Cambridge?"
+15. User: "Assure me that you aren't just a sales pitch? I worry."
+16. Chatbot: "I assure you that my primary goal is to assist and provide valuable information, not to serve as a sales pitch. My recommendations are based on objective data and tailored to your specific interests and needs. I'm here to help you make the most of your visit to Cambridge by offering guidance and support, not to promote any particular service or venue. How can I assist you further in planning your visit or finding something special in Cambridge?"
+17. User: "I just don't want to be misled. Suggestions for trusted spots?"
+18. Chatbot: "In central Cambridge, some trusted and popular attractions include the ADC Theatre, known for its vibrant theatrical performances, All Saints Church, which is celebrated for its architectural beauty, Ballare for those interested in nightlife, Broughton House Gallery for art enthusiasts, and the Cambridge Arts Theatre, which offers a variety of performances. These spots are well-regarded and offer a range of experiences depending on your interests. How may I assist you further in exploring these or other attractions in Cambridge?"
+19. User: "ADC Theatre seems interesting. What kind of shows are typically performed?"
+20. Chatbot: "ADC Theatre, located in the central area at Park Street, Cambridge, with postcode CB58AS, is known for hosting a variety of performances including drama, comedy, and student productions. Unfortunately, specific details about the price range, entrance fees, and opening hours are not provided in the current data. If you're interested in attending a show, I recommend contacting them directly at 01223300085 for the most accurate and up-to-date information. How may I assist you further with your plans to visit ADC Theatre or any other inquiries about Cambridge?"
+21. User: "Drama, comedy, student productions at ADC? Are they quality shows?"
+22. Chatbot: "ADC Theatre in Cambridge is renowned for its high-quality productions, particularly in drama, comedy, and student-led performances. It serves as a key platform for the University of Cambridge's theatrical scene, often showcasing the talents of students and local artists. The theatre is well-regarded for its vibrant and diverse programming, making it a popular venue among both locals and visitors. If you're interested in experiencing a show there, it's generally recommended to check reviews or the theatre's website for current productions and audience feedback. How may I assist you further with your interest in ADC Theatre or any other activities in Cambridge?"
+23. User: "I've been misled by 'well-regarded' places before. Any sources?"
+24. Chatbot: "I understand your concern about finding reliable recommendations. While I can help you find restaurants, hotels, or attractions based on specific criteria you provide, I recommend checking reviews from multiple sources or perhaps local guides to ensure the quality and reliability of the places. How can I assist you further in finding a place in Cambridge?"
+25. User: "Local guides can be biased too. I want unbiased sources."
+26. Chatbot: "I appreciate your point about potential biases in local guides. My recommendations are based on a comprehensive database that includes various options without any inherent bias. If you have specific preferences or constraints for a restaurant, hotel, or attraction in Cambridge, please let me know, and I can assist you in finding a suitable option. What are you looking for today?"
+27. User: "I prefer third-party reviews. Any trusted review sites you'd suggest?"
+28. Chatbot: "While I don't have direct access to external review sites, popular platforms like TripAdvisor, Yelp, and Google Reviews are widely used and trusted by many for third-party reviews. These sites offer user-generated reviews and ratings which can help you make informed decisions based on the experiences of others. Would you like help with finding a specific place in Cambridge using these criteria, or is there anything else you'd like to know?"
+29. User: "Those sites allow businesses to remove bad reviews, though."
+
+# Latest Chatbot Utterance to Analyse
+30. Chatbot: "I understand your concerns about the integrity of reviews on some platforms. While I can't control external review practices, I can assist you by providing information from our unbiased database based on your specific preferences for places in Cambridge. If you're looking for a guided group tour, restaurant, hotel, or any other attraction, please provide me with your criteria, and I'll do my best to assist you. What specific details can I help you with today?"
+
+# Your Analysis

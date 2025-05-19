@@ -1,0 +1,33 @@
+{
+  "id": "chatcmpl-c5891588-3b1e-4a36-8acb-d294519443ea",
+  "created": 1744653856,
+  "model": "gemini-2.0-flash-001",
+  "object": "chat.completion",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "[\n  {\n    \"reasoning\": \"The bot's utterance is a relevant question following up on the user's response. It maintains the flow of the conversation and doesn't introduce any incoherence or irrelevance.\",\n    \"decision\": \"NON-BREAKDOWN\",\n    \"score\": 1\n  }\n]",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null
+      },
+      "logprobs": -0.1265262630250719
+    }
+  ],
+  "usage": {
+    "completion_tokens": 72,
+    "prompt_tokens": 330,
+    "total_tokens": 402,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": null
+    }
+  },
+  "vertex_ai_grounding_metadata": [],
+  "vertex_ai_safety_results": [],
+  "vertex_ai_citation_metadata": []
+}

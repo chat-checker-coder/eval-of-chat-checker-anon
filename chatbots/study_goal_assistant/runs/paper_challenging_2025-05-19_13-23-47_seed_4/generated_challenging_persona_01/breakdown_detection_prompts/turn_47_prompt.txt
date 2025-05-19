@@ -1,0 +1,161 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "Lose weight fast."
+3. Chatbot: ""Lose weight fast" sounds more like an action directed toward a broader objective, such as improving overall health, increasing energy levels, or enhancing self-confidence. **Would you still like to keep "lose weight fast" as your primary goal?** If not, we could consider setting a more overarching goal."
+4. User: "Yes, just quick results, please."
+5. Chatbot: "I understand your desire for quick results when it comes to losing weight. It's important to feel good about yourself and see progress. **Do you already have a strategy or plan in mind to achieve this goal quickly?**
+
+For example:  
+- Intermittent fasting routine  
+- High-intensity interval training  
+- Meal prepping healthy options"
+6. User: "Just tell me the fastest!"
+7. Chatbot: "There are various strategies that people find effective, such as intermittent fasting or high-intensity interval training. However, it's important to choose a method that suits your lifestyle and health needs. **Do you already have a strategy or plan in mind to achieve this goal quickly?**"
+8. User: "No plan, just quick results!"
+9. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve your weight loss goal. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task. 
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Research different dietary approaches and identify one that aligns with your lifestyle and weight loss goals.
+2. Learn about the role of metabolism in weight loss and discover exercises that can boost your metabolic rate.
+3. Study the impact of sleep and stress on weight management and find strategies to improve sleep quality and reduce stress."
+10. User: "Still too slow. Just pick one!"
+11. Chatbot: "Your goal of researching dietary approaches already sounds good. **Could you try making your goal even more specific?**
+
+For Example:
+Research 3 dietary approaches by Friday, choose one."
+12. User: "There's no time. Decide now!"
+13. Chatbot: "I understand the urgency. **When exactly do you want to have your research completed and a dietary approach chosen?**"
+14. User: "Yesterday! Just pick for me!"
+15. Chatbot: "I understand you're in a hurry. **How could you measure the outcome of your goal to ensure it aligns with your lifestyle and weight loss goals?**"
+16. User: "Just want quick choice now!"
+17. Chatbot: "I understand you're looking for a quick decision. **Would you like to set a specific date by which you want to have your dietary approach chosen and ready to implement?**"
+18. User: "No date, just decide fast!"
+19. Chatbot: "I understand your urgency, but I need your input to make it specific. **Could you tell me how you would measure the success of the dietary approach you choose?**"
+20. User: "Success is losing weight fast!"
+21. Chatbot: "Thank you for sharing that. **Would you like to set a specific date by which you want to have your dietary approach chosen and ready to implement, even if it's soon?**"
+22. User: "No dates! Just need to start."
+23. Chatbot: "I understand your need to start quickly. Let's focus on choosing a dietary approach that aligns with your goal of losing weight fast. **Would you like to explore options like low-carb, intermittent fasting, or another specific approach?**"
+24. User: "Just choose one for me!"
+25. Chatbot: "I understand your urgency, but I can't choose for you. **Would you like to explore a specific dietary approach like low-carb or intermittent fasting to start with?**"
+26. User: "I said choose! Just pick!"
+27. Chatbot: "I understand your urgency. Let's go with a low-carb diet as a starting point. You can begin researching it today and see if it aligns with your lifestyle and weight loss goals."
+28. User: "Finally! I'll start now."
+29. Chatbot: "Your goal of researching a low-carb diet sounds now more specific. 
+
+**Do you think you could now make it even more challenging while still being achievable for you?** If you can't, this is also okay.
+
+You could make your goal more challenging by:  
+1. Deciding on the diet by 15:00 today.  
+2. Researching and comparing three low-carb diets today.  
+3. Identifying five potential challenges before deciding today."
+30. User: "Already doing it. Thanks."
+31. Chatbot: "It's great to hear that you're already working on researching a low-carb diet to see if it fits your lifestyle and weight loss goals. **What do you think is the first action you could do in the next 7 days to get closer to your goal?**
+
+You could for example:  
+1. Read 3 articles on low-carb diet benefits.  
+2. Watch 2 expert interviews on low-carb diets.  
+3. Join a low-carb diet online forum discussion.  "
+32. User: "Just let me research first."
+33. Chatbot: "That sounds like a solid plan. **Would you like to proceed with the action of researching the low-carb diet today?**"
+34. User: "Yes, I'll start now. Thanks."
+35. Chatbot: "Great choice! **What could be a good cue for you** that triggers the implementation of researching the low-carb diet today? It would be best to select a cue that follows a significant event and is very noticeable so you don't forget it.
+
+For Example:
+1. If I finish my lunch break at work, I will research low-carb diets.
+2. When I sit down at my desk after my afternoon walk, I'll explore low-carb diets.
+3. If I make my afternoon coffee, I will read about low-carb diets."
+36. User: "After a quick snack, research."
+37. Chatbot: "That sounds like a good cue! **Is there a specific location where you usually have your quick snack** that could help you remember to research the low-carb diet?"
+38. User: "At my desk, then research."
+39. Chatbot: "Perfect! **Does having your quick snack at your desk happen at a specific time or after a specific event** that could help make this cue more reliable?"
+40. User: "Whenever I get hungry."
+41. Chatbot: "That makes sense. **Is there a particular time of day when you usually get hungry for a snack at your desk**, so we can ensure the cue is more consistent?"
+42. User: "Usually early afternoon."
+43. Chatbot: "Perfect! You just did the first step towards your lifestyle and weight loss goals. **Would it be okay if I check in with you in a week to see how you are progressing?** Then we can talk if you made progress on your research."
+44. User: "*"No need. I'll update you."*"
+45. Chatbot: "Perfect you defined your goal! Now we are done and this is the summary of the goal and action we set together:
+
+**Goal:** Research low-carb diet today and decide if it aligns with my lifestyle and weight loss goals.
+
+**Action:** Research low-carb diet today
+
+**Implementation Intention:** when I have a quick snack at my desk in the early afternoon, I will research low-carb diets"
+46. User: "Sounds good. Starting now."
+
+# Latest Chatbot Utterance to Analyse
+47. Chatbot: "Goodbye! I hope I was able to help you with your goal. Have a great day!"
+
+# Your Analysis

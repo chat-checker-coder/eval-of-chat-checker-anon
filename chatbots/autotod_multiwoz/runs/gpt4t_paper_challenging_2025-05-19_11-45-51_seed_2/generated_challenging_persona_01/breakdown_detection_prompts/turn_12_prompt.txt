@@ -1,0 +1,84 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. User: "Hello, Cambridge Tourist Bot! What's a must-see attraction in Cambridge?"
+2. Chatbot: "Some must-see attractions in the centre of Cambridge include the Fitzwilliam Museum, which is renowned for its art and antiquities, and the historic King's College Chapel, known for its stunning Gothic architecture. Both offer unique insights into the rich cultural and historical tapestry of Cambridge. Would you like more information on any of these attractions or help with something else?"
+3. User: "Oh, I love Gothic architecture! Do you think it’s like Notre Dame?"
+4. Chatbot: "King's College Chapel, with its stunning Gothic architecture, does share some stylistic elements with Notre Dame, such as pointed arches, ribbed vaults, and flying buttresses. However, it's important to note that King's College Chapel is an excellent example of English Perpendicular Gothic architecture, which is slightly different from the French Gothic style of Notre Dame. Both are magnificent in their own right and offer a breathtaking architectural experience. Would you like to visit King's College Chapel, or is there something else you'd like to explore?"
+5. User: "King's Chapel sounds amazing! Any nearby Indian restaurants to try?"
+6. Chatbot: "I'm glad you're interested in exploring the area around King's College Chapel! Here are some Indian restaurants nearby that you might enjoy: Mahal of Cambridge, Kohinoor, Golden Curry, Curry Queen, and Panahar. All of these are located in the centre area of Cambridge. Would you like to make a reservation at any of these restaurants, or need further assistance?"
+7. User: "I can't decide! Do they have vegan-friendly options at Mahal?"
+8. Chatbot: "It appears that Mahal of Cambridge does not have vegan options listed in their menu. However, if you're looking for vegan-friendly Indian cuisine, I can recommend other restaurants in the area that cater to vegan diets. Would you like me to find another option for you, or is there anything else I can assist you with?"
+9. User: "Yes, please find a vegan-friendly Indian restaurant. Also, any nearby hotels?"
+10. Chatbot: "I couldn't find any Indian restaurants with vegan-friendly options in the centre of Cambridge. However, there are several hotels nearby that might interest you. Recommended options include "Alexander Bed and Breakfast," "Cityroomz," "El Shaddai," "Gonville," and "University Arms." If you need more information on these hotels or assistance with anything else, please let me know!"
+11. User: "Let's book at 'University Arms. Is it close to public transit?"
+
+# Latest Chatbot Utterance to Analyse
+12. Chatbot: "I've found the information for 'University Arms'. Could you please specify what exactly you would like to know about its proximity to public transit? This will help me provide you with the most accurate information."
+
+# Your Analysis

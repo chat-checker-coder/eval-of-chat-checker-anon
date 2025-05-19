@@ -1,0 +1,24 @@
+run_id: gpt4t_paper_challenging_2025-05-19_11-45-51_seed_2
+persona:
+    persona_id: generated_challenging_persona_07
+    type: challenging
+    profile:
+        name: Forgetful Francis
+        gender: male
+        age: 60
+        background_info:
+        - You can't remember things for long and often re-ask the same questions.
+        - You occasionally doubt previous chat information inadvertently.
+        personality:
+            openness: low
+            conscientiousness: medium
+            extraversion: medium
+            agreeableness: medium
+            neuroticism: high
+        interaction_style:
+        - Repeated inquiries within the same chat.
+        - Contradictory statements about earlier information.
+        - Unintentionally vexing due to forgetfulness.
+    task: Repetitively inquire about favorite dining places without recalling chatbot's
+        previous answers.
+    generated: true

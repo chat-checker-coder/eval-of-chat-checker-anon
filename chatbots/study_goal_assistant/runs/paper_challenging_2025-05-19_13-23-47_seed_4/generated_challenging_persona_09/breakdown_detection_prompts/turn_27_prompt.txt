@@ -1,0 +1,135 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "The shadows whisper of strength."
+3. Chatbot: "That sounds poetic and intriguing! **Does this mean your goal is to find inner strength, or are you striving for a higher goal like personal growth, overcoming challenges, or building resilience?**"
+4. User: "Perhaps the unspoken journey."
+5. Chatbot: "The idea of an "unspoken journey" sounds like a quest for self-discovery or personal growth. **Would you like to set a goal around exploring your personal journey, or is there another specific aspect you'd like to focus on?**"
+6. User: "A dance with endurance, perhaps."
+7. Chatbot: "That sounds like a beautiful and challenging goal! Dancing with endurance requires both physical stamina and artistic expression. 
+
+**Do you already have a strategy or a plan in mind to build your endurance for dancing?**
+
+For example:  
+- Consistent dance practice schedule  
+- Cross-training for stamina  
+- Balanced nutrition and hydration"
+8. User: "The wind knows the plan."
+9. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve a dance with endurance. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task.
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Research and practice different dance techniques that focus on building endurance and stamina.
+2. Learn about proper nutrition and hydration strategies to support sustained energy levels during dance performances.
+3. Study and incorporate cross-training exercises, such as cardio and strength training, to enhance overall endurance for dancing."
+10. User: "The breeze whispers secrets, still."
+11. Chatbot: "That sounds poetic! Let's focus on setting a learning goal related to your dance with endurance. 
+
+**What specific skills or strategies do you think you need to learn to improve your endurance in dance?**"
+12. User: "Perhaps the rhythm's hidden code."
+13. Chatbot: "Understanding the rhythm's hidden code could be a great learning goal to enhance your dance endurance. 
+
+**How about setting a goal to learn and practice rhythm techniques that can help you maintain energy and flow during your dance?**"
+14. User: "The rhythm guides the way."
+15. Chatbot: "It sounds like you're inspired by the rhythm! 
+
+**Would you like to set a learning goal to explore and master rhythm techniques that can enhance your endurance in dance?**"
+16. User: "The dance itself knows best."
+17. Chatbot: "It seems like you're in tune with the dance itself. 
+
+**Would you like to set a learning goal to deepen your understanding of how the dance can naturally guide your endurance and stamina?**"
+18. User: "In the dance, find mystery."
+19. Chatbot: "Embracing the mystery of dance can be a wonderful journey. 
+
+**Would you like to set a learning goal to explore and uncover the mysteries of dance that contribute to building endurance?**"
+20. User: "The mystery shall reveal itself."
+21. Chatbot: "It sounds like you're ready to let the dance guide you. 
+
+**Would you like to set a learning goal to explore different dance styles and techniques to see how they naturally enhance your endurance?**"
+22. User: "The dance weaves its tale."
+23. Chatbot: "It seems like you're captivated by the storytelling aspect of dance. 
+
+**Would you like to set a learning goal to learn how different dance narratives and styles can contribute to building your endurance?**"
+24. User: "The tale unfolds in rhythm."
+25. Chatbot: "It sounds like you're drawn to the rhythm and its role in storytelling through dance. 
+
+**Would you like to set a learning goal to explore how mastering rhythm can enhance your endurance and storytelling in dance?**"
+26. User: "Rhythm whispers endurance secrets."
+
+# Latest Chatbot Utterance to Analyse
+27. Chatbot: "That's a beautiful way to put it! 
+
+**Would you like to set a learning goal to uncover and practice the rhythm techniques that can enhance your endurance in dance?**"
+
+# Your Analysis

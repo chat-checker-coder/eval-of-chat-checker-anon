@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-BLE8sU0OAuTgaG8iGntif8Fp7NyW9",
+  "created": 1744398950,
+  "model": "gpt-4o-2024-08-06",
+  "object": "chat.completion",
+  "system_fingerprint": "fp_92f14e8683",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\"dimension_ratings\":[{\"key\":\"overall_performance\",\"reasoning\":\"The chatbot performed well in this conversation. It maintained a coherent and relevant dialogue, responding appropriately to the user's inputs. The chatbot showed understanding by acknowledging the user's mention of marathon times and expressing interest in a triathlon. It also demonstrated inquisitiveness by asking about the Spartan race, which the user mentioned. However, the chatbot's response to the user's initial question about marathon time was slightly vague, as it didn't specify the exact improvement. Overall, the conversation was smooth and engaging, with minor room for improvement in providing more detailed responses.\",\"rating\":4}]}",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null,
+        "annotations": []
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 128,
+    "prompt_tokens": 1900,
+    "total_tokens": 2028,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "service_tier": "default"
+}

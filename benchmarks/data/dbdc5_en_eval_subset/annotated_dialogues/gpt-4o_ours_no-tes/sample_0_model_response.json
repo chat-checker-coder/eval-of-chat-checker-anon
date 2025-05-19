@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-BLZdRuNs0gkOViFJ6ko8AHFWTaqGs",
+  "created": 1744481569,
+  "model": "gpt-4o-2024-08-06",
+  "object": "chat.completion",
+  "system_fingerprint": "fp_92f14e8683",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\"reasoning\":\"The user greeted the chatbot with 'hi Alex', which is a greeting. The chatbot responded with 'How's it going?', which is a relevant follow-up question to a greeting. The chatbot did not ignore the user's greeting and continued the conversation smoothly. There is no breakdown in this exchange as the chatbot's response is appropriate and encourages further interaction.\",\"score\":1,\"decision\":\"no_breakdown\",\"breakdown_types\":[]}",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null,
+        "annotations": []
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 89,
+    "prompt_tokens": 910,
+    "total_tokens": 999,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "service_tier": "default"
+}

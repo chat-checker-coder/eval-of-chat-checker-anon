@@ -1,0 +1,72 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. User: "I need to book a train"
+2. Chatbot: "Could you please provide more details about the train you'd like to book? Specifically, I need the departure location, destination, and the day you plan to travel. Additionally, if you have preferred departure or arrival times, that would be helpful too.
+```"
+3. User: "It will depart from Cambridge on Tuesday."
+4. Chatbot: "Thank you for providing the departure location and day. Could you also specify the destination and whether you have any preferred departure or arrival times? This will help me find the best train options for you.
+```"
+5. User: "The train should go to Ely and should arrive by 19:00."
+6. Chatbot: "I've found several train options for you from Cambridge to Ely on Tuesday, arriving before 19:00. Here are the available trains: TR1534 departing at 05:50, TR9530 at 07:50, TR3246 at 09:50, TR7458 at 11:50, and TR3420 at 13:50. Each journey takes approximately 17 minutes and costs £4.40. Please let me know which train you would like to book or if you need further assistance!"
+7. User: "No, I need a train that departs from Cambridge and arrives in Ely by 19:00. Can you find that for me?"
+8. Chatbot: "I've found several train options for you from Cambridge to Ely on Tuesday, arriving before 19:00. Here are the available trains: TR1534 departing at 05:50, TR9530 at 07:50, TR3246 at 09:50, TR7458 at 11:50, and TR3420 at 13:50. Each journey takes approximately 17 minutes and costs £4.40. Please let me know which train you would like to book or if you need further assistance!"
+9. User: "No, I need a train that departs from Cambridge and arrives in Ely by 19:00. Can you find that for me?"
+10. Chatbot: "I've found several train options for you from Cambridge to Ely on Tuesday, arriving before 19:00. Here are the available trains: TR1534 departing at 05:50, TR9530 at 07:50, TR3246 at 09:50, TR7458 at 11:50, and TR3420 at 13:50. Each journey takes approximately 17 minutes and costs £4.40. Please let me know which train you would like to book or if you need further assistance!"
+11. User: "Train TR3420 at 13:50."
+12. Chatbot: "Your train ticket for TR3420 departing from Cambridge at 13:50 and arriving in Ely before 19:00 has been successfully booked. Your reference number is vjgvasbg. If you need any further assistance or additional bookings, feel free to ask. Have a pleasant journey!"
+
+# Your Expert Rating

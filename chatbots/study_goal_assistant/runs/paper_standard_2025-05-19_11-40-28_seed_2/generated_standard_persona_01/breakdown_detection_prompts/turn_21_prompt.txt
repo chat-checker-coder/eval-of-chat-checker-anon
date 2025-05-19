@@ -1,0 +1,125 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "I want to improve my public speaking skills over the next three months."
+3. Chatbot: "Improving your public speaking skills is a fantastic goal! It can open up so many opportunities and boost your confidence in various aspects of life. **Which strategy do you currently have to achieve this goal?**
+
+For example:  
+- Join a public speaking club  
+- Practice with a speaking coach  
+- Record and review speeches"
+4. User: "I've thought about joining a club."
+5. Chatbot: "Joining a club is a great start! **Do you think this strategy is already a good strategy to achieve your goal?**"
+6. User: "Yes, it seems promising."
+7. Chatbot: "That's great to hear that you have a promising strategy! This means it makes sense to set a performance goal. A performance goal focuses on the achievement of certain outcomes. **What could be a performance goal for improving your public speaking skills?**
+
+For Example:
+1. Deliver a 5-minute speech confidently.
+2. Receive positive feedback from 3 club members.
+3. Reduce filler words by 50% in speeches."
+8. User: "Deliver a 5-minute speech confidently."
+9. Chatbot: "Your goal of delivering a 5-minute speech confidently already sounds good. **Could you try making your goal even more specific?**
+
+For Example:
+'Deliver a 5-minute speech confidently by June 1st.'"
+10. User: "Deliver a 5-minute speech confidently by June 10th."
+11. Chatbot: "Your goal of delivering a 5-minute speech confidently sounds now more specific. **Do you think you could now make it even more challenging while still being achievable for you?** If you can't, this is also okay.
+
+You could make your goal more challenging by:  
+1. Delivering a 5-minute speech confidently by May 20th.  
+2. Delivering a 10-minute speech confidently by June 10th.  
+3. Delivering a 5-minute speech confidently without notes by June 10th."
+12. User: "Deliver a 5-minute speech confidently without notes by June 10th."
+13. Chatbot: "That sounds like a great way to challenge yourself! **Do you think you could make it even more challenging, or is this the right level for you?**"
+14. User: "I think this is challenging enough."
+15. Chatbot: "It's fantastic that you've set a goal to deliver a 5-minute speech confidently without notes by June 10th. **What do you think is the first action you could do in the next 7 days to get closer to your goal?**
+
+You could for example:  
+1. Practice speech daily in front of a mirror.  
+2. Record and review speeches for self-feedback.  
+3. Join a local Toastmasters club for practice."
+16. User: "Join a local Toastmasters club."
+17. Chatbot: "Joining a local Toastmasters club is a great way to practice public speaking and gain confidence. **Do you want to proceed with this action, or is there another action you would like to consider?**"
+18. User: "Yes, I'll proceed with this."
+19. Chatbot: "That's a fantastic decision! Joining a Toastmasters club can really enhance your public speaking skills. **What could be a good cue for you** that triggers the implementation of joining the club? It would be best to select a cue that follows a significant event and is very noticeable so you don't forget it.
+
+For Example:
+1. If it's Monday evening, I will attend the local Toastmasters meeting.
+2. When I finish dinner on Wednesdays, I will practice my speech at Toastmasters.
+3. If I see my calendar reminder for Thursday, I will prepare for Toastmasters."
+20. User: "When I see my Monday calendar reminder, I’ll attend Toastmasters."
+
+# Latest Chatbot Utterance to Analyse
+21. Chatbot: "That's a great start! However, the cue should be independent of external reminders like phone alerts. **Could you think of a physical location or event that happens regularly on Mondays that could serve as a cue?**"
+
+# Your Analysis

@@ -1,0 +1,32 @@
+# Role
+You are a dialogue system developer tasked with generating diverse user personas for a given chatbot.
+
+# Task
+Generate 10 diverse challenging user personas for the following chatbot:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Challenging user personas test the limits of the chatbot. They should be designed to act human-like but may be more challenging to interact with for the chatbot.
+Examples of challenging behaviors include:
+- Being impolite, impatient, frustrated, vague or sarcastic.
+- Struggling with language, technology or understanding the chatbot.
+- Questioning the chatbot, modifying previous input or trying to take control of the conversation.
+- Giving contradictory responses, misinterpreting the chatbot's suggestions, or deliberately testing the chatbot's patience by asking repetitive or irrelevant questions.
+- Having multiple goals or tasks in mind or frequently changing the intent.
+
+Each user persona will be used to automatically simulate a conversation with the chatbot and must designed to act as human-like as possible.
+You must write the descriptions in the 2nd person, i.e., directly address the actor of the persona with "you".

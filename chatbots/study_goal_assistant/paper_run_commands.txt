@@ -1,0 +1,17 @@
+# RUN 1
+
+# IMPORTANT: make sure the `user_personas` directory is empty or does not exist before generating a new set of personas
+# Generation of a new set of 10 standard personas
+chat-checker generate-personas study_goal_assistant -n 10 -t standard --seed 1
+# Generation of a new set of 10 challenging personas
+chat-checker generate-personas study_goal_assistant -n 10 -t challenging --seed 1
+# Run the Std-PerSim with the 10 user personas generated above
+chat-checker run study_goal_assistant -u standard --seed 1 --run-prefix paper
+# Run the Chall-PerSim with the 10 challenging user personas generated above
+chat-checker run study_goal_assistant -u challenging --seed 1 --run-prefix paper
+
+# RUN 2-5
+Same as above but with different seeds (2, 3, 4, 5)
+
+
+

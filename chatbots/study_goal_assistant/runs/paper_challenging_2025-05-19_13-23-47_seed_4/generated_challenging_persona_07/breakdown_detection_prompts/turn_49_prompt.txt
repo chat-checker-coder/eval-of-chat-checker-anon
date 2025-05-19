@@ -1,0 +1,171 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "What's the sound of growing money?"
+3. Chatbot: "The sound of growing money might be the "cha-ching" of a cash register or the quiet hum of investments compounding over time. **Does that mean your goal is to increase your financial wealth, or are you striving for a higher goal like financial independence, building a successful business, or achieving a specific savings target?**"
+4. User: "Whispers in a ledger's ear."
+5. Chatbot: "That sounds poetic! **Are you aiming for a goal related to financial literacy, mastering accounting, or perhaps starting a career in finance?**"
+6. User: "Numbers dance in shadowed halls."
+7. Chatbot: "That evokes a mysterious and intriguing image! **Could your goal be related to understanding complex financial systems, becoming a data analyst, or perhaps exploring the world of investments?**"
+8. User: "Seeking treasures in fiscal fog."
+9. Chatbot: "That sounds like a quest for financial clarity and success! **Is your goal to uncover hidden financial opportunities, achieve financial freedom, or perhaps become an expert in financial planning?**"
+10. User: "Navigating mazes of golden streams."
+11. Chatbot: "That sounds like a fascinating journey into the world of finance! **Do you already have a strategy or plan in place to navigate these golden streams effectively?**
+
+For example:  
+- Expert in maze-solving  
+- Skilled in map reading  
+- Strong spatial awareness"
+12. User: "Maps drawn with invisible ink."
+13. Chatbot: "It seems like you might not have a clear strategy yet. **Would you say that you are unsure about how to achieve your goal, or do you think you have a good strategy in mind?**"
+14. User: "Does strategy shimmer in moonlight?"
+15. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve navigating mazes of golden streams. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task. 
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Research techniques and strategies for effectively navigating complex mazes.
+2. Study the properties and characteristics of golden streams to understand their patterns and flow.
+3. Practice problem-solving skills by working on puzzles and mazes to improve spatial awareness and decision-making."
+16. User: "Speak softly, carry a calculator."
+17. Chatbot: "It seems like you're emphasizing the importance of being prepared and analytical. 
+
+**How could you translate this idea into a learning goal related to navigating mazes of golden streams?**"
+18. User: "Crunch numbers, unveil hidden paths."
+19. Chatbot: "This sounds like a performance goal focused on using calculations to discover paths. 
+
+**How could you formulate this as a learning goal, perhaps focusing on developing skills in mathematical analysis or pattern recognition?**"
+20. User: "Find patterns in numerical whispers."
+21. Chatbot: "That sounds like a great learning goal focused on developing skills in pattern recognition and analysis. 
+
+**Would you like to set this as your learning goal?**"
+22. User: "Do patterns hide in plain sight?"
+23. Chatbot: "Patterns often do hide in plain sight, and recognizing them can be a valuable skill. 
+
+**Would you like to set a learning goal to develop your ability to identify and analyze patterns in various contexts?**"
+24. User: "Do skills bloom in shadows?"
+25. Chatbot: "Skills can indeed develop in unexpected or less obvious situations, often through practice and exploration. 
+
+**Would you like to set a learning goal to explore and develop skills in recognizing and analyzing hidden patterns?**"
+26. User: "Do hidden paths require a key?"
+27. Chatbot: "Hidden paths often require a key, which can be a specific skill or knowledge to unlock them. 
+
+**Would you like to set a learning goal to acquire the skills or knowledge needed to uncover hidden paths in mazes of golden streams?**"
+28. User: "Is knowledge the master key?"
+29. Chatbot: "Knowledge can indeed serve as a master key, unlocking many hidden paths and opportunities. 
+
+**Would you like to set a learning goal to expand your knowledge in areas that will help you navigate mazes of golden streams?**"
+30. User: "Are secrets revealed through learning?"
+31. Chatbot: "Yes, learning often reveals secrets and insights that were previously hidden or unknown. 
+
+**Would you like to set a learning goal to uncover secrets related to navigating mazes of golden streams through dedicated study and practice?**"
+32. User: "Must mysteries blend with intention?"
+33. Chatbot: "Mysteries often require intentional exploration and focus to be unraveled. 
+
+**Would you like to set a learning goal to intentionally explore and understand the mysteries of navigating mazes of golden streams?**"
+34. User: "How do intentions light the way?"
+35. Chatbot: "Intentions provide direction and focus, guiding your efforts and helping you stay committed to your goals. 
+
+**Would you like to set a learning goal to harness your intentions in mastering the navigation of mazes of golden streams?**"
+36. User: "Do intentions spark stars ablaze?"
+37. Chatbot: "Intentions can indeed ignite passion and drive, illuminating the path to achieving your goals. 
+
+**Would you like to set a learning goal to channel your intentions into mastering the skills needed for navigating mazes of golden streams?**"
+38. User: "Do stars guide through shadows?"
+39. Chatbot: "Stars can serve as guiding lights, helping to navigate through darkness and uncertainty. 
+
+**Would you like to set a learning goal to develop skills that will guide you through the complexities of navigating mazes of golden streams?**"
+40. User: "Do guides need a shining path?"
+41. Chatbot: "Guides often benefit from a clear path or vision to effectively lead the way. 
+
+**Would you like to set a learning goal to create or identify a clear path for mastering the navigation of mazes of golden streams?**"
+42. User: "Do paths weave their own tales?"
+43. Chatbot: "Paths can indeed tell stories, revealing the journey and experiences encountered along the way. 
+
+**Would you like to set a learning goal to explore and understand the stories and patterns within the paths of mazes of golden streams?**"
+44. User: "Do stories whisper of secrets?"
+45. Chatbot: "Stories often contain hidden secrets and lessons waiting to be discovered. 
+
+**Would you like to set a learning goal to uncover the secrets within the stories of navigating mazes of golden streams?**"
+46. User: "Do secrets hide between lines?"
+47. Chatbot: "Yes, secrets often hide between the lines, requiring careful attention and analysis to uncover. 
+
+**Would you like to set a learning goal to develop the skills needed to read between the lines and uncover hidden secrets in mazes of golden streams?**"
+48. User: "Can whispers lead to keys?"
+
+# Latest Chatbot Utterance to Analyse
+49. Chatbot: "Whispers, or subtle hints, can indeed lead to keys that unlock deeper understanding and solutions. 
+
+**Would you like to set a learning goal to become adept at recognizing and interpreting subtle clues in navigating mazes of golden streams?**"
+
+# Your Analysis

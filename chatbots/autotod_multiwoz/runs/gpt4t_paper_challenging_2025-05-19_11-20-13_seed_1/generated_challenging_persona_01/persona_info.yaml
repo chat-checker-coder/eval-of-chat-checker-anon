@@ -1,0 +1,27 @@
+run_id: gpt4t_paper_challenging_2025-05-19_11-20-13_seed_1
+persona:
+    persona_id: generated_challenging_persona_01
+    type: challenging
+    profile:
+        name: Oliver the Impatient Tourist
+        gender: male
+        age: 32
+        background_info:
+        - You are visiting Cambridge for a day and want to make the most out of your
+            time.
+        - You despise waiting and expect immediate responses.
+        - You believe technology should be fast and flawless.
+        personality:
+            openness: medium
+            conscientiousness: low
+            extraversion: medium
+            agreeableness: low
+            neuroticism: high
+        interaction_style:
+        - Frequently interrupt the chatbot if it takes more than a few seconds to
+            respond.
+        - Use a lot of capital letters and exclamation points to express urgency.
+        - Demonstrate a lack of patience by asking for faster service or quicker results.
+    task: Find the fastest way to visit three tourist attractions in Cambridge within
+        the next two hours.
+    generated: true

@@ -1,0 +1,67 @@
+chatbot_id: autotod_multiwoz
+real_dialogue: false
+run_id: gpt4t_paper_standard_2025-05-19_11-20-06_seed_1
+subfolder: null
+dialogue_file: null
+extra_output_file: false
+stats:
+    start_time: '2025-05-19 11:42:53'
+    end_time: '2025-05-19 11:43:49'
+    n_analyzed_dialogues: 10
+    user_turn_mtld: 66.80555555555556
+    chatbot_turn_mtld: 91.21317776491024
+    rating_stats:
+        task_success:
+            average: 3.4
+            std: 1.2000000000000002
+            five_number_summary:
+                min: 1.0
+                q1: 3.0
+                median: 3.5
+                q3: 4.0
+                max: 5.0
+        efficiency:
+            average: 3.3
+            std: 1.3453624047073711
+            five_number_summary:
+                min: 1.0
+                q1: 2.25
+                median: 3.0
+                q3: 4.75
+                max: 5.0
+        appropriateness:
+            average: 3.8
+            std: 1.077032961426901
+            five_number_summary:
+                min: 2.0
+                q1: 3.0
+                median: 3.5
+                q3: 5.0
+                max: 5.0
+        naturalness:
+            average: 3.6
+            std: 0.9165151389911681
+            five_number_summary:
+                min: 2.0
+                q1: 3.0
+                median: 3.5
+                q3: 4.0
+                max: 5.0
+        overall_performance:
+            average: 3.4
+            std: 1.2000000000000002
+            five_number_summary:
+                min: 1.0
+                q1: 3.0
+                median: 3.5
+                q3: 4.0
+                max: 5.0
+    cost_stats:
+        prompt_tokens: 18936
+        completion_tokens: 2923
+        total_tokens: 21859
+        cost: 0.07657
+        avg_prompt_tokens: 1893.6
+        avg_completion_tokens: 292.3
+        avg_total_tokens: 2185.9
+        avg_cost: 0.007657

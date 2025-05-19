@@ -1,0 +1,33 @@
+{
+  "id": "chatcmpl-8af5174d-786c-4d6e-a8a6-2874dceac4d9",
+  "created": 1744652297,
+  "model": "gemini-2.0-flash-001",
+  "object": "chat.completion",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n  \"breakdown_types\": [],\n  \"decision\": \"no_breakdown\",\n  \"reasoning\": \"The chatbot's response is a relevant question following up on the user's previous statement. There is no breakdown.\",\n  \"score\": 1.0\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null
+      },
+      "logprobs": -0.12673610937399943
+    }
+  ],
+  "usage": {
+    "completion_tokens": 61,
+    "prompt_tokens": 831,
+    "total_tokens": 892,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": null
+    }
+  },
+  "vertex_ai_grounding_metadata": [],
+  "vertex_ai_safety_results": [],
+  "vertex_ai_citation_metadata": []
+}

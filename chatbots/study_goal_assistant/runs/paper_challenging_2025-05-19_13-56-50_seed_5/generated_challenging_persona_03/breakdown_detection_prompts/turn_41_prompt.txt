@@ -1,0 +1,152 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "Too many options to decide!"
+3. Chatbot: "I understand that it can be overwhelming to choose. **What are you currently working on, or where do you see yourself in 5 years?** This might help narrow down your options."
+4. User: "Can't see five years ahead."
+5. Chatbot: "That's okay! Let's focus on the present. **What are you currently working on or struggling with right now?** This might help us identify a goal."
+6. User: "Still seems too broad."
+7. Chatbot: "No worries, I can help with all kinds of goals like career, health, productivity, learning, relationships, and personal development. **Which area would you like to focus on?**"
+8. User: "Technology troubles are confusing."
+9. Chatbot: "I understand how technology can be challenging. **Does that mean your goal is to become more tech-savvy, or are you striving for a higher goal like improving productivity, learning new skills, or enhancing your career?**"
+10. User: "Improve my career, I guess."
+11. Chatbot: "Improving your career is a fantastic goal and can open up many new opportunities for you. **Do you already have a strategy or plan in place to achieve this career advancement?**
+
+For example:  
+- Networking with industry leaders  
+- Pursuing relevant certifications  
+- Seeking mentorship opportunities"
+12. User: "Strategy sounds high-tech!"
+13. Chatbot: "I understand that it might sound a bit complex, but it simply means having a plan or approach to reach your goal. **Do you have any ideas or steps in mind that you think could help you improve your career?**"
+14. User: "I'm clueless about steps."
+15. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve your career improvement. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task. 
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Identify and enroll in a course or workshop that enhances skills relevant to your career field.
+2. Research and implement effective networking strategies to connect with professionals in your industry.
+3. Seek feedback from a mentor or supervisor to identify areas for professional development and growth."
+16. User: "I'm overwhelmed! Sounds too much."
+17. Chatbot: "I understand that it can feel overwhelming to set a learning goal. Let's break it down into something more manageable. 
+
+**What is one specific skill or area you feel would most benefit your career right now?**"
+18. User: "Skill? Umm, maybe communication?"
+19. Chatbot: "Improving communication skills is a great choice and can significantly impact your career. 
+
+**How about setting a learning goal to develop effective communication strategies, such as active listening or public speaking?**"
+20. User: "Active listening? I'm confused."
+21. Chatbot: "Active listening involves fully concentrating, understanding, and responding thoughtfully to what others are saying. It's a key component of effective communication. 
+
+**Would you like to set a learning goal to develop active listening skills, or is there another aspect of communication you'd prefer to focus on?**"
+22. User: "Another aspect? Explain more!"
+23. Chatbot: "Certainly! Here are a few aspects of communication you might consider:
+
+1. **Public Speaking**: Enhancing your ability to speak confidently in front of groups.
+2. **Non-Verbal Communication**: Understanding and using body language effectively.
+3. **Written Communication**: Improving clarity and effectiveness in emails and reports.
+4. **Interpersonal Communication**: Building better relationships through empathy and understanding.
+
+**Do any of these resonate with you as a learning goal?**"
+24. User: "Public speaking sounds interesting."
+25. Chatbot: "Great choice! Public speaking can open many doors in your career by boosting your confidence and ability to convey ideas clearly.
+
+**Would you like to set a learning goal to develop public speaking skills, such as enrolling in a course or practicing with a group?**"
+26. User: "Practicing with a group, maybe."
+27. Chatbot: "Your goal of practicing public speaking already sounds good. **Could you try making your goal even more specific?**
+
+For Example:
+Deliver a 5-minute speech to peers by Friday."
+28. User: "Peers? Like talking to friends?"
+29. Chatbot: "Yes, practicing with friends or colleagues can be a great way to enhance your public speaking skills. **Would you like to set a specific date to practice with them?**"
+30. User: "Date? I'm unsure about timing."
+31. Chatbot: "That's understandable. **When do you think you might have some free time to practice with your friends or colleagues?**"
+32. User: "Busy all the time, sadly."
+33. Chatbot: "I understand how busy schedules can be. **Is there a specific day or time in the next week that might work, even if it's just a short session?**"
+34. User: "Finding that hard to decide."
+35. Chatbot: "I understand it can be challenging to find time. **Would it help to start with a short 10-minute session on a weekend or during a lunch break?**"
+36. User: "Could work, during lunch."
+37. Chatbot: "Great! **Would you like to set a specific day next week during lunch to practice your public speaking with friends?**"
+38. User: "Tuesday could be okay."
+39. Chatbot: "Your goal of practicing public speaking sounds now more specific. **Do you think you could now make it even more challenging while still being achievable for you?** If you can't, this is also okay.
+
+You could make your goal more challenging by:  
+1. Practicing for 20 minutes during lunch on Tuesday.  
+2. Practicing for 10 minutes today with a friend.  
+3. Practicing with two friends for 10 minutes on Tuesday."
+40. User: "20 minutes sounds tough."
+
+# Latest Chatbot Utterance to Analyse
+41. Chatbot: "I understand that 20 minutes might be a bit much. **Would you be comfortable with practicing for 15 minutes instead?**"
+
+# Your Analysis

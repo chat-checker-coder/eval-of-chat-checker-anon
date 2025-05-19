@@ -1,0 +1,83 @@
+MultiWOZ Dataset Statistics
+==================================================
+
+Number of dialogues: 10438
+
+Number of user utterances: 71524
+
+Number of system utterances: 71524
+
+Turns per dialogue:
+min: 2.00
+q1: 10.00
+median: 14.00
+q3: 18.00
+max: 44.00
+mean: 13.70
+std: 5.25
+
+Turns per dialogue (without outliers):
+min: 2.00
+q1: 10.00
+median: 14.00
+q3: 16.00
+max: 30.00
+mean: 13.65
+std: 5.14
+
+Average user utterance lengths (words):
+min: 1.00
+q1: 7.00
+median: 11.00
+q3: 15.00
+max: 38.00
+mean: 11.48
+std: 5.51
+
+Average system utterance lengths (words):
+min: 1.00
+q1: 9.00
+median: 14.00
+q3: 20.00
+max: 75.00
+mean: 14.88
+std: 7.06
+
+Average utterance lengths (words):
+min: 1.00
+q1: 8.00
+median: 12.00
+q3: 17.00
+max: 75.00
+mean: 13.18
+std: 6.56
+
+Average user utterance unique terms:
+min: 1.00
+q1: 7.00
+median: 10.00
+q3: 14.00
+max: 33.00
+mean: 11.04
+std: 4.96
+
+Average system utterance unique terms:
+min: 1.00
+q1: 9.00
+median: 14.00
+q3: 19.00
+max: 47.00
+mean: 14.17
+std: 6.37
+
+Unique user utterance terms:
+4859
+
+Unique system utterance terms:
+17446
+
+Total user utterance MTLD:
+Total user utterance MTLD (lex_div): 73.48695936323594
+
+Total system utterance MTLD:
+Total system utterance MTLD (lex_div): 80.01519799734584

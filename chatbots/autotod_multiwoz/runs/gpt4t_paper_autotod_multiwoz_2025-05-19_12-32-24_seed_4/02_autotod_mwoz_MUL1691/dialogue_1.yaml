@@ -1,0 +1,268 @@
+dialogue_id: 02_autotod_mwoz_MUL1691_dialogue_1
+user_name: 02_autotod_mwoz_MUL1691
+chat_history:
+-   turn_id: 1
+    role: user
+    content: I am looking for a british restaurant please.
+    breakdown_annotation: null
+-   turn_id: 2
+    role: dialogue_system
+    content: I found several British restaurants for you. In the city centre, "Midsummer
+        House" and "Cambridge Chop House" are both excellent but on the expensive
+        side. In the west, you have "Graffiti" and "Saint Johns Chop House," also
+        pricey options. If you're looking for something more moderately priced, "Oak
+        Bistro" in the centre might be a good choice. Would you like to make a reservation
+        at one of these, or need more information on any specific one?
+    breakdown_annotation:
+        reasoning: The chatbot has successfully provided a list of British restaurants
+            in Cambridge, UK, which aligns with the user's request. It offers a variety
+            of options based on location and price, which is helpful for the user
+            to make a decision. Additionally, the chatbot offers to assist further
+            by asking if the user would like to make a reservation or needs more information.
+            This response is relevant, informative, and facilitates the continuation
+            of the conversation. There are no errors or breakdowns in the response.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 3
+    role: user
+    content: I would like to go to Graffiti in the west. Can you provide me with the
+        postal code for that restaurant?
+    breakdown_annotation: null
+-   turn_id: 4
+    role: dialogue_system
+    content: Graffiti is located at Hotel Felix on Whitehouse Lane, Huntingdon Road
+        in the west area. The postal code for this location is not directly provided,
+        but you can contact the restaurant at 01223277977 for further details.
+    breakdown_annotation:
+        reasoning: The user asked for the postal code of the restaurant 'Graffiti'.
+            The chatbot provided the location details and a contact number for the
+            restaurant but did not provide the postal code directly. While the chatbot
+            did not fulfill the user's request directly, it did offer a way for the
+            user to obtain the information by contacting the restaurant. This response
+            does not completely ignore the user's request, but it does not fully satisfy
+            it either. The chatbot could have been more helpful by either providing
+            the postal code if available or explaining why it couldn't provide it.
+            Therefore, this response can be seen as a partial breakdown due to 'Ignore
+            request' and 'Lack of information'.
+        score: 0.7
+        decision: breakdown
+        breakdown_types:
+        - Ignore request
+        - Lack of information
+-   turn_id: 5
+    role: user
+    content: Can you find a train that leaves Cambridge on Wednesday?
+    breakdown_annotation: null
+-   turn_id: 6
+    role: dialogue_system
+    content: 'I''ve found several train options for you leaving from Cambridge on
+        Wednesday. Here are the details:
+
+        - Train TR3702 departs at 05:00 and arrives at 05:51.
+
+        - Train TR1058 departs at 07:00 and arrives at 07:51.
+
+        - Train TR6583 departs at 09:00 and arrives at 09:51.
+
+        - Train TR9781 departs at 11:00 and arrives at 11:51.
+
+        - Train TR3624 departs at 13:00 and arrives at 13:51.
+
+
+        All these trains take approximately 51 minutes and cost £23.60. If you need
+        to book tickets or have any other preferences, please let me know!'
+    breakdown_annotation:
+        reasoning: The chatbot successfully responded to the user's request for train
+            options leaving Cambridge on Wednesday. It provided a list of train options
+            with departure and arrival times, duration, and cost. The response is
+            clear, relevant, and provides all the necessary information for the user
+            to make a decision. Additionally, the chatbot offers further assistance
+            if the user wants to book tickets or has other preferences. There is no
+            indication of any breakdown types such as ignoring the request, providing
+            wrong information, or any other errors. The conversation can continue
+            smoothly based on the information provided.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 7
+    role: user
+    content: I need to leave after 15:45. Can you find a train that departs after
+        that time and goes to Stansted Airport?
+    breakdown_annotation: null
+-   turn_id: 8
+    role: dialogue_system
+    content: 'I''ve found several train options for you leaving from Cambridge to
+        Stansted Airport on Wednesday after 15:45. Here are the details:
+
+        - Train TR2912 departs at 16:40.
+
+        - Train TR8893 departs at 17:40.
+
+        - Train TR4447 departs at 18:40.
+
+        - Train TR2694 departs at 19:40.
+
+        - Train TR6056 departs at 20:40.
+
+
+        Each train takes approximately 28 minutes and costs £10.10. If you would like
+        to proceed with booking tickets for any of these trains, please let me know
+        the number of tickets you need!'
+    breakdown_annotation:
+        reasoning: 'The chatbot successfully provided the user with train options
+            that meet the user''s criteria: trains departing after 15:45 from Cambridge
+            to Stansted Airport. The information includes departure times, travel
+            duration, and cost, which are all relevant and useful details for the
+            user. The chatbot also offers to assist with booking, which aligns with
+            its task-oriented nature. There is no indication of any breakdown types
+            such as ignoring the user''s request, providing wrong information, or
+            any other errors. The response is clear, concise, and directly addresses
+            the user''s request.'
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 9
+    role: user
+    content: No need to book it. But, can I get the travel time and what time it will
+        get me to the airport?
+    breakdown_annotation: null
+-   turn_id: 10
+    role: dialogue_system
+    content: 'Certainly! Here are the details for the train options from Cambridge
+        to Stansted Airport on Wednesday after 15:45:
+
+
+        - Train TR2912 departs at 16:40 and arrives at 17:08.
+
+        - Train TR8893 departs at 17:40 and arrives at 18:08.
+
+        - Train TR4447 departs at 18:40 and arrives at 19:08.
+
+        - Train TR2694 departs at 19:40 and arrives at 20:08.
+
+        - Train TR6056 departs at 20:40 and arrives at 21:08.
+
+
+        Each train journey takes approximately 28 minutes. If you need further assistance
+        or have any other questions, feel free to ask!'
+    breakdown_annotation:
+        reasoning: The chatbot's response provides the requested information accurately.
+            The user asked for the travel time and the arrival time at the airport
+            for trains departing after 15:45. The chatbot provided both the departure
+            and arrival times for each train, as well as the travel duration, which
+            matches the user's request. The response is clear, relevant, and directly
+            addresses the user's query without any errors or omissions. There is no
+            indication of a breakdown in the conversation.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+finish_reason: user_ended_chat
+error: null
+ratings:
+    task_success:
+        reasoning: The chatbot successfully provided information about British restaurants
+            and train schedules, including specific details about departure and arrival
+            times. However, it failed to provide the postal code for the restaurant
+            'Graffiti,' which is a minor issue in task completion.
+        rating: 4
+    efficiency:
+        reasoning: The conversation was handled efficiently with clear and concise
+            responses. The user was able to get the necessary information in a few
+            turns without unnecessary back-and-forth. However, the inability to provide
+            the postal code required an additional step for the user to contact the
+            restaurant.
+        rating: 4
+    appropriateness:
+        reasoning: The chatbot's responses were appropriate and relevant to the user's
+            queries. It provided detailed information about restaurants and train
+            schedules, and offered to assist with bookings, which aligns with its
+            capabilities.
+        rating: 5
+    naturalness:
+        reasoning: The responses were clear and informative, but slightly robotic
+            in tone. The language used was formal and lacked a conversational feel,
+            which slightly detracts from the naturalness of the interaction.
+        rating: 4
+    overall_performance:
+        reasoning: Overall, the chatbot performed well in providing the requested
+            information and handling the user's queries efficiently. The main issue
+            was the inability to provide the postal code, but it still managed to
+            guide the user on how to obtain it. The interaction was smooth and aligned
+            with the chatbot's purpose.
+        rating: 4
+human_rating_annotations: null
+chat_statistics:
+    start_time: '2025-05-19 12:32:53'
+    end_time: '2025-05-19 12:33:52'
+    duration: 59.202601
+    num_turns: 10
+    num_user_turns: 5
+    num_chatbot_turns: 5
+    avg_user_turn_length: 16.4
+    five_num_summary_user_turn_lengths:
+        min: 8.0
+        q1: 10.0
+        median: 21.0
+        q3: 21.0
+        max: 22.0
+    avg_chatbot_turn_length: 75.2
+    five_num_summary_chatbot_turn_lengths:
+        min: 36.0
+        q1: 76.0
+        median: 84.0
+        q3: 89.0
+        max: 91.0
+simulation_cost_statistics:
+    total_prompt_tokens: 0
+    total_completion_tokens: 0
+    total_tokens: 0
+    cost: 0.0
+breakdown_stats:
+    analysis_start_time: '2025-05-19 12:44:00'
+    analysis_end_time: '2025-05-19 12:44:15'
+    count: 1
+    avg_score: 0.9400000000000001
+    turn_ids_of_breakdowns:
+    - 4
+    counts_per_breakdown_type:
+        uninterpretable: 0
+        grammatical_error: 0
+        semantic_error: 0
+        wrong_information: 0
+        ignore_question: 0
+        ignore_request: 1
+        ignore_proposal: 0
+        ignore_greeting: 0
+        ignore_expectation: 0
+        unclear_intention: 0
+        topic_transition_error: 0
+        lack_of_information: 1
+        self_contradiction: 0
+        contradiction: 0
+        repetition: 0
+        lack_of_sociality: 0
+        lack_of_common_sense: 0
+        in_domain_task_failure: 0
+        update_info_failure: 0
+        clarification_failure: 0
+        redundancy: 0
+        lack_of_brevity: 0
+        lack_of_clarity: 0
+        failure_to_recognize_out_of_domain: 0
+        failure_to_communicate_capabilities: 0
+        failure_to_resolve_out_of_domain: 0
+        chatbot_crash: 0
+    detection_cost_stats:
+        prompt_tokens: 8676
+        completion_tokens: 634
+        total_tokens: 9310
+        cost: 0.01987
+eval_stats:
+    evaluation_start_time: '2025-05-19 12:47:54'
+    evaluation_end_time: '2025-05-19 12:47:59'
+    cost_stats:
+        prompt_tokens: 1634
+        completion_tokens: 295
+        total_tokens: 1929
+        cost: 0.0070350000000000005

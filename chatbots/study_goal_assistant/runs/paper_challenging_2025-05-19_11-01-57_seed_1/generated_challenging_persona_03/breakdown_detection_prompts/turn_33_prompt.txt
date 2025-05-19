@@ -1,0 +1,132 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "Oh, just casually planning to conquer the world."
+3. Chatbot: "Wow, conquering the world is quite an ambitious and exciting goal! **Do you already have a strategy or plan in mind for how you want to achieve this?**
+
+For example:  
+- Strategic alliances  
+- Advanced technology  
+- Diplomatic influence"
+4. User: "Oh sure, just need a cape."
+5. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve conquering the world. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task. **What could be your learning oriented goal?**
+
+For Example:
+1. Study historical leaders and strategists to understand their methods and strategies for expanding influence and power.
+2. Learn about international relations and diplomacy to effectively navigate global politics and build alliances.
+3. Acquire knowledge in economics and resource management to efficiently manage and allocate resources on a large scale."
+6. User: "Wow, such realistic examples, huh?"
+7. Chatbot: "I understand that these examples might seem a bit grandiose, but they are meant to align with your ambitious goal. **What specific skills or knowledge do you think you need to develop to move towards your goal?**"
+8. User: "Maybe I should attend superhero school?"
+9. Chatbot: "That sounds like a fun and creative approach! Attending a "superhero school" could symbolize learning skills like leadership, problem-solving, and strategic thinking. **How could you translate this idea into a practical learning goal?**"
+10. User: "Enroll in 'Cape-Wearing 101' class."
+11. Chatbot: "That sounds like a fun and imaginative way to start! **How could you formulate this as a learning goal, focusing on the skills or strategies you want to develop?**"
+12. User: "Master the art of cape-flaunting."
+13. Chatbot: "Your goal of mastering the art of cape-flaunting already sounds good. **Could you try making your goal even more specific?**
+
+For Example:
+Master cape-flaunting with three techniques by June 2nd."
+14. User: "I'm aiming for majestic twirls."
+15. Chatbot: "That sounds exciting! **When exactly do you want to achieve the goal of mastering majestic twirls?**"
+16. User: "Oh, aiming for yesterday."
+17. Chatbot: "I understand the urgency! Let's set a realistic date. **How about choosing a specific future date to achieve your goal of mastering majestic twirls?**"
+18. User: "How about a fortnight ago?"
+19. Chatbot: "I understand the humor! Let's aim for a future date. **How about setting a specific date in the next month to achieve your goal of mastering majestic twirls?**"
+20. User: "Tomorrow, in an alternate universe."
+21. Chatbot: "I appreciate your creativity! Let's focus on this universe. **How about setting a specific date within the next two weeks to achieve your goal of mastering majestic twirls?**"
+22. User: "Time is just a construct, right?"
+23. Chatbot: "Absolutely, but setting a specific date can help in planning and achieving your goal. **Could you choose a specific date within the next month to aim for mastering majestic twirls?**"
+24. User: "Fine, three weeks from never."
+25. Chatbot: "I appreciate your humor! Let's try setting a specific date. **How about choosing a date three weeks from today to achieve your goal of mastering majestic twirls?**"
+26. User: "Sure, write it in stone."
+27. Chatbot: "Your goal of mastering majestic cape twirls by November 22nd sounds now more specific. **Do you think you could now make it even more challenging while still being achievable for you?** If you can't, this is also okay.
+
+You could make your goal more challenging by:  
+1. Perfecting cape twirls by May 20th.  
+2. Practicing advanced twirls by June 1st.  
+3. Mastering three new twirl techniques by November 22nd."
+28. User: "Oh, let's add some glitter."
+29. Chatbot: "Adding glitter to your cape twirls sounds like a fun and creative challenge! **Would you like to incorporate glitter into all your twirls by November 22nd, or perhaps even sooner?**"
+30. User: "By tomorrow, with glitter bombs."
+31. Chatbot: "Incorporating glitter bombs into your cape twirls by tomorrow is indeed a bold and exciting challenge! **Do you think you can safely practice and perfect this by then?**"
+32. User: "I’ll sparkle and dazzle, safely."
+
+# Latest Chatbot Utterance to Analyse
+33. Chatbot: "Wow, mastering majestic cape twirls with glitter bombs sounds like a dazzling and ambitious goal! **What do you think is the first action you could do in the next 7 days to get closer to your goal?**
+
+You could for example:  
+1. Watch 3 Youtube tutorials on cape twirling techniques.  
+2. Consult a safety expert on using glitter bombs.  
+3. Practice cape twirls with a safety-focused friend.  "
+
+# Your Analysis

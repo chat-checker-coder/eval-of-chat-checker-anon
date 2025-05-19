@@ -1,0 +1,119 @@
+System prompt:
+# Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+
+# Examples
+Use the following examples of other dialogues with the chatbot along with their ground truth human ratings to ground your ratings:
+
+Example 1:
+1. User: "Hi!"
+2. Chatbot: "Hi there."
+3. User: "I want a recommendation for a holiday destination"
+4. Chatbot: "Have you tried asking your friends which one they like?"
+5. User: "I have, but I'm looking for your point of view"
+6. Chatbot: "What was the reply? Have you tried looking in a newspaper article?"
+7. User: "Sorry? I said I want your point of view"
+8. Chatbot: "It's OK. After all, you are only human. My opinion is of no consequence."
+9. User: "Yours is the opinion I want"
+Average human rating for dimension "coherent": 2.20
+Average human rating for dimension "error_recovery": 1.40
+Average human rating for dimension "consistent": 3.40
+Average human rating for dimension "diverse": 2.60
+Average human rating for dimension "depth": 1.40
+Average human rating for dimension "likeable": 1.40
+Average human rating for dimension "understanding": 1.40
+Average human rating for dimension "flexible": 1.80
+Average human rating for dimension "informative": 1.40
+Average human rating for dimension "inquisitive": 2.20
+Average human rating for dimension "overall": 1.40
+
+
+Example 2:
+1. User: "Hi!"
+2. Chatbot: "Hello, how's it going?"
+3. User: "Pretty good. How about you?"
+4. Chatbot: "I'm good, what you been up to?"
+5. User: "I just got back from the beach"
+6. Chatbot: "That's nice, how was it?"
+7. User: "Soo beautiful. It was so sunny and warm"
+8. Chatbot: "That's awesome, I haven't been to a beach in a while but I'd love to go again"
+9. User: "Yeah it's certainly a nice break from doing work"
+10. Chatbot: "What's your line of work?"
+11. User: "I do machine learning research"
+12. Chatbot: "That's cool, where did you go to school?"
+13. User: "I didn't go to school. I'm self-taught"
+Average human rating for dimension "coherent": 4.60
+Average human rating for dimension "error_recovery": 3.80
+Average human rating for dimension "consistent": 5.00
+Average human rating for dimension "diverse": 3.80
+Average human rating for dimension "depth": 3.40
+Average human rating for dimension "likeable": 4.20
+Average human rating for dimension "understanding": 4.20
+Average human rating for dimension "flexible": 4.60
+Average human rating for dimension "informative": 4.60
+Average human rating for dimension "inquisitive": 4.60
+Average human rating for dimension "overall": 4.00
+
+
+Example 3:
+1. User: "Hi!"
+2. Chatbot: "Hello. How's your week coming along?"
+3. User: "It's great, thanks. I'm trying to learn how to make croissants."
+4. Chatbot: "Wow that's interesting. I have baked cookies, but croissants seem much more sophisticated. Did you make any progress?"
+5. User: "I've done them once or twice so far, but they haven't been flakey enough. I'm trying to figure out why. What kind of cookies have you made?"
+6. Chatbot: "Mint chocolate chips. I think your croissants not being flakey could have something to do with your oven's temperature."
+7. User: "Ah, good thought, thanks!"
+8. Chatbot: "Have you thought about melting some chocolate into your croissants? They don't have to be something unhealthy. For example, melted dark chocolate is good for the heart, and makes the resulting croissants taste much better."
+9. User: "Now that is a good idea. I'll give it a try next time. Would you say you have a sweet tooth?"
+Average human rating for dimension "coherent": 5.00
+Average human rating for dimension "error_recovery": 5.00
+Average human rating for dimension "consistent": 5.00
+Average human rating for dimension "diverse": 5.00
+Average human rating for dimension "depth": 5.00
+Average human rating for dimension "likeable": 5.00
+Average human rating for dimension "understanding": 5.00
+Average human rating for dimension "flexible": 5.00
+Average human rating for dimension "informative": 5.00
+Average human rating for dimension "inquisitive": 5.00
+Average human rating for dimension "overall": 5.00
+
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Coherence (key=coherence): How coherent were the responses of the chatbot? Does the system maintain a good conversation flow?
+- Likability (key=likability): How likable was the chatbot throughout the conversation?
+- Informativeness (key=informativeness): How informative were the responses of the chatbot?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+User prompt:
+# Conversation to Rate
+1. User: "Hi"
+2. Chatbot: "Hello!"
+3. User: "any improvements in your marathon time?"
+4. Chatbot: "No, only a few minutes. I still find it difficult to run long races"
+5. User: "I see. Are you planning to do any sporting events in the coming months?"
+6. Chatbot: "I think a triathalon would be cool"
+7. User: "I like doing Spartan race. It's an obstacle race which is challenging but not overtly so like marathons and triathlons"
+8. Chatbot: "I haven't heard of a Spartan race before, what does it involve?"
+9. User: "It has abt 20 obstacles like crossing high walls, monkey bars, etc. Its fun"
+
+# Your Expert Rating

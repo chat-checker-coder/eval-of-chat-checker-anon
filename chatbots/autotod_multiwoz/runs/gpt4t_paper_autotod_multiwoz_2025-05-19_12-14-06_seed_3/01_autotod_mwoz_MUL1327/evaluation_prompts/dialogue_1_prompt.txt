@@ -1,0 +1,82 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. User: "Hi, I'm trying to find a good place to eat. I heard about restaurant alimentum. What can you tell me about it?"
+2. Chatbot: "I'm sorry, but I couldn't find any information on a restaurant named "alimentum" in our database. Perhaps it might be listed under a different name, or there might be other restaurants in Cambridge that could interest you. If you have any other preferences or if you'd like me to search for restaurants based on specific criteria like cuisine, price range, or area, please let me know!"
+3. User: "I'm specifically looking for the restaurant called "restaurant alimentum." Can you please provide me with information about it?"
+4. Chatbot: "I've checked again, and unfortunately, there is still no information available for a restaurant named "restaurant alimentum" in our database. It's possible that this restaurant might not be listed or could be known under a different name. If you have any other preferences or if you'd like me to search for restaurants based on specific criteria like cuisine, price range, or area, please let me know how else I may assist you!"
+5. User: "I am not quite ready to reserve a table, but may I have the phone number for this European restaurant?"
+6. Chatbot: "I found several European restaurants in Cambridge that might interest you. Here are some options:
+1. De Luca Cucina and Bar - Located in the centre area with moderate pricing.
+2. Hotel Du Vin and Bistro - Also in the centre, known for its moderate pricing.
+3. Galleria - Situated in the centre, serves European cuisine at moderate prices.
+4. River Bar Steakhouse and Grill - Offers modern European dishes at a budget-friendly price.
+5. Riverside Brasserie - Provides modern European food at moderate prices, located in the centre.
+
+Please let me know if you would like the phone number for any specific restaurant from this list or if there's anything else I can assist you with!"
+7. User: "I'm specifically looking for the phone number for restaurant alimentum. Can you please provide me with that information?"
+8. Chatbot: "I'm sorry, but I couldn't find any information on a restaurant named "Alimentum" in the database. Is there anything else I can assist you with or perhaps another restaurant you're interested in?"
+9. User: "I am looking for a moderate priced guesthouse with a 4-star rating in the east. Can you help me find one?"
+10. Chatbot: "I've found several 4-star guesthouses in the east area with moderate pricing for you. Here are some options:
+1. "A and B Guest House" - Prices: Double room £70, Single room £50, Family room £90
+2. "Carolina Bed and Breakfast" - Prices: Double room £75, Single room £45, Family room £100
+3. "Warkworth House" - Prices: Double room £75, Single room £55, Family room £95
+
+Please let me know if you would like more information about any of these guesthouses or if you want to proceed with a reservation."
+11. User: "Can you just get me the phone number, address, and postcode for the "A and B Guest House"?"
+12. Chatbot: "I'm sorry, but I couldn't find specific contact details for "A and B Guest House" in the database. Is there anything else I can assist you with or perhaps another guesthouse you're interested in?"
+
+# Your Expert Rating

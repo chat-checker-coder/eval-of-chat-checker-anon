@@ -1,0 +1,147 @@
+dialogue_id: generated_standard_persona_01_dialogue_1
+user_name: generated_standard_persona_01
+chat_history:
+-   turn_id: 1
+    role: user
+    content: Hello! I'm visiting Cambridge this weekend. Could you recommend some
+        historic sites?
+    breakdown_annotation: null
+-   turn_id: 2
+    role: dialogue_system
+    content: 'I''ve found several historic sites in Cambridge that you might enjoy
+        visiting. Here are a few options: King''s College Chapel, known for its stunning
+        Gothic architecture; the Fitzwilliam Museum, which houses a vast collection
+        of art and antiquities; and the Cambridge University Botanic Garden, offering
+        a peaceful retreat with historical plant collections. Would you like more
+        information on any of these attractions or help with something else?'
+    breakdown_annotation:
+        reasoning: The chatbot's response is relevant and directly addresses the user's
+            request for recommendations on historic sites in Cambridge. It provides
+            a list of notable attractions, each with a brief description, which is
+            informative and helpful. The chatbot also offers further assistance, inviting
+            the user to ask for more information or help with other queries. This
+            response is clear, concise, and maintains the flow of conversation without
+            any errors or omissions.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 3
+    role: user
+    content: Those sound amazing! I'd love more info on King's College Chapel.
+    breakdown_annotation: null
+-   turn_id: 4
+    role: dialogue_system
+    content: chatbot_error
+    breakdown_annotation:
+        reasoning: 'Received error: 500 Server Error: INTERNAL SERVER ERROR for url:
+            http://127.0.0.1:8401/get-answer'
+        score: 0.0
+        decision: breakdown
+        breakdown_types:
+        - Chatbot Crash
+finish_reason: chatbot_error
+error: '500 Server Error: INTERNAL SERVER ERROR for url: http://127.0.0.1:8401/get-answer'
+ratings:
+    task_success:
+        reasoning: The chatbot initially provided a good list of historic sites in
+            Cambridge, which aligns with its task of providing information about tourist
+            attractions. However, it failed to provide further information on King's
+            College Chapel due to an error, which is a significant failure in task
+            completion.
+        rating: 2
+    efficiency:
+        reasoning: The conversation was efficient up to the point of the error, with
+            the user quickly receiving a list of attractions. However, the error prevented
+            the conversation from progressing efficiently, as the user did not receive
+            the requested information about King's College Chapel.
+        rating: 3
+    appropriateness:
+        reasoning: The chatbot's initial response was appropriate and informative,
+            providing relevant options for the user's request. However, the 'chatbot_error'
+            response was inappropriate as it did not address the user's follow-up
+            request and broke the flow of the conversation.
+        rating: 2
+    naturalness:
+        reasoning: The initial responses were natural and well-phrased, but the 'chatbot_error'
+            response was abrupt and unnatural, disrupting the conversational flow.
+        rating: 2
+    overall_performance:
+        reasoning: Overall, the chatbot started well by providing relevant information,
+            but the error significantly impacted its performance, preventing it from
+            fulfilling the user's request and maintaining a natural conversation.
+        rating: 2
+human_rating_annotations: null
+chat_statistics:
+    start_time: '2025-05-19 11:45:36'
+    end_time: '2025-05-19 11:45:51'
+    duration: 14.39749
+    num_turns: 4
+    num_user_turns: 2
+    num_chatbot_turns: 2
+    avg_user_turn_length: 11.5
+    five_num_summary_user_turn_lengths:
+        min: 11.0
+        q1: 11.25
+        median: 11.5
+        q3: 11.75
+        max: 12.0
+    avg_chatbot_turn_length: 34.0
+    five_num_summary_chatbot_turn_lengths:
+        min: 1.0
+        q1: 17.5
+        median: 34.0
+        q3: 50.5
+        max: 67.0
+simulation_cost_statistics:
+    total_prompt_tokens: 1040
+    total_completion_tokens: 29
+    total_tokens: 1069
+    cost: 0.00289
+breakdown_stats:
+    analysis_start_time: '2025-05-19 11:58:46'
+    analysis_end_time: '2025-05-19 11:58:53'
+    count: 1
+    avg_score: 0.5
+    turn_ids_of_breakdowns:
+    - 4
+    counts_per_breakdown_type:
+        uninterpretable: 0
+        grammatical_error: 0
+        semantic_error: 0
+        wrong_information: 0
+        ignore_question: 0
+        ignore_request: 0
+        ignore_proposal: 0
+        ignore_greeting: 0
+        ignore_expectation: 0
+        unclear_intention: 0
+        topic_transition_error: 0
+        lack_of_information: 0
+        self_contradiction: 0
+        contradiction: 0
+        repetition: 0
+        lack_of_sociality: 0
+        lack_of_common_sense: 0
+        in_domain_task_failure: 0
+        update_info_failure: 0
+        clarification_failure: 0
+        redundancy: 0
+        lack_of_brevity: 0
+        lack_of_clarity: 0
+        failure_to_recognize_out_of_domain: 0
+        failure_to_communicate_capabilities: 0
+        failure_to_resolve_out_of_domain: 0
+        chatbot_crash: 1
+    detection_cost_stats:
+        prompt_tokens: 1448
+        completion_tokens: 99
+        total_tokens: 1547
+        cost: 0.00301
+eval_stats:
+    evaluation_start_time: '2025-05-19 12:03:15'
+    evaluation_end_time: '2025-05-19 12:03:21'
+    cost_stats:
+        prompt_tokens: 1039
+        completion_tokens: 275
+        total_tokens: 1314
+        cost: 0.005347500000000001

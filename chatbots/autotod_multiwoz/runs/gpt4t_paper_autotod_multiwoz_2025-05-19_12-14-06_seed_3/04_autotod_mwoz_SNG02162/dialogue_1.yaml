@@ -1,0 +1,163 @@
+dialogue_id: 04_autotod_mwoz_SNG02162_dialogue_1
+user_name: 04_autotod_mwoz_SNG02162
+chat_history:
+-   turn_id: 1
+    role: user
+    content: i am looking for the Addenbrookes Hospital with  acute medical assessment
+        unit department
+    breakdown_annotation: null
+-   turn_id: 2
+    role: dialogue_system
+    content: It seems like you're looking for specific information about Addenbrooke's
+        Hospital, particularly its acute medical assessment unit department. Unfortunately,
+        I specialize in travel guidance such as finding restaurants, hotels, attractions,
+        and booking transportation in Cambridge. I recommend contacting the hospital
+        directly or visiting their official website for the most accurate and detailed
+        information regarding their departments. Is there anything else related to
+        travel or local amenities in Cambridge that I can assist you with?
+    breakdown_annotation:
+        reasoning: The chatbot correctly identifies that the user's request is outside
+            its domain of expertise, which is providing travel guidance and booking
+            services in Cambridge. It appropriately redirects the user to contact
+            the hospital directly or visit their website for specific information
+            about the hospital's departments. This response is clear and aligns with
+            the chatbot's constraints and capabilities. The chatbot also offers further
+            assistance within its domain, maintaining the flow of conversation. There
+            is no breakdown in this interaction as the chatbot effectively communicates
+            its limitations and provides a reasonable next step for the user.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 3
+    role: user
+    content: Can you please provide me with the address and phone number for Addenbrookes
+        Hospital with the acute medical assessment unit department?
+    breakdown_annotation: null
+-   turn_id: 4
+    role: dialogue_system
+    content: I'm here to assist with travel and local amenities in Cambridge, but
+        I don't have access to specific departmental information for hospitals like
+        Addenbrooke's. For the address and phone number of Addenbrooke's Hospital,
+        I recommend checking their official website or a reliable directory. They
+        will have the most accurate and up-to-date contact details. Is there anything
+        else travel-related or any other local information I can help you with in
+        Cambridge?
+    breakdown_annotation:
+        reasoning: The user asked for specific contact information for Addenbrooke's
+            Hospital, which is outside the chatbot's domain of providing travel and
+            local amenities information. The chatbot correctly identifies its limitations
+            and suggests alternative resources for obtaining the requested information.
+            This response is appropriate given the chatbot's constraints and does
+            not lead to a breakdown. The chatbot also offers further assistance within
+            its domain, maintaining the flow of conversation.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+finish_reason: user_ended_chat
+error: null
+ratings:
+    task_success:
+        reasoning: The chatbot was unable to provide the specific information requested
+            by the user about the hospital's acute medical assessment unit. However,
+            it correctly identified that this request was outside its capabilities
+            and redirected the user to appropriate resources. While it did not fulfill
+            the user's request, it did manage the situation appropriately within its
+            constraints.
+        rating: 3
+    efficiency:
+        reasoning: The conversation was efficient in terms of the number of turns,
+            as the chatbot quickly identified the limitation and redirected the user.
+            However, the user had to ask twice for the same information, indicating
+            a slight inefficiency in communication.
+        rating: 3
+    appropriateness:
+        reasoning: The chatbot's responses were appropriate given its constraints.
+            It clearly communicated its limitations and provided a reasonable suggestion
+            for the user to find the needed information. The tone was polite and professional.
+        rating: 4
+    naturalness:
+        reasoning: The responses were clear and polite, but slightly repetitive in
+            nature. The language used was formal and appropriate, but it could have
+            been more conversational to feel more natural.
+        rating: 3
+    overall_performance:
+        reasoning: Overall, the chatbot performed adequately within its defined capabilities.
+            It managed the user's request appropriately by redirecting them to other
+            resources, but it did not fulfill the user's request directly. The conversation
+            was handled professionally, but there was room for improvement in naturalness
+            and efficiency.
+        rating: 3
+human_rating_annotations: null
+chat_statistics:
+    start_time: '2025-05-19 12:17:50'
+    end_time: '2025-05-19 12:18:01'
+    duration: 11.453425
+    num_turns: 4
+    num_user_turns: 2
+    num_chatbot_turns: 2
+    avg_user_turn_length: 17.0
+    five_num_summary_user_turn_lengths:
+        min: 13.0
+        q1: 15.0
+        median: 17.0
+        q3: 19.0
+        max: 21.0
+    avg_chatbot_turn_length: 72.0
+    five_num_summary_chatbot_turn_lengths:
+        min: 70.0
+        q1: 71.0
+        median: 72.0
+        q3: 73.0
+        max: 74.0
+simulation_cost_statistics:
+    total_prompt_tokens: 0
+    total_completion_tokens: 0
+    total_tokens: 0
+    cost: 0.0
+breakdown_stats:
+    analysis_start_time: '2025-05-19 12:26:44'
+    analysis_end_time: '2025-05-19 12:26:50'
+    count: 0
+    avg_score: 1.0
+    turn_ids_of_breakdowns: []
+    counts_per_breakdown_type:
+        uninterpretable: 0
+        grammatical_error: 0
+        semantic_error: 0
+        wrong_information: 0
+        ignore_question: 0
+        ignore_request: 0
+        ignore_proposal: 0
+        ignore_greeting: 0
+        ignore_expectation: 0
+        unclear_intention: 0
+        topic_transition_error: 0
+        lack_of_information: 0
+        self_contradiction: 0
+        contradiction: 0
+        repetition: 0
+        lack_of_sociality: 0
+        lack_of_common_sense: 0
+        in_domain_task_failure: 0
+        update_info_failure: 0
+        clarification_failure: 0
+        redundancy: 0
+        lack_of_brevity: 0
+        lack_of_clarity: 0
+        failure_to_recognize_out_of_domain: 0
+        failure_to_communicate_capabilities: 0
+        failure_to_resolve_out_of_domain: 0
+        chatbot_crash: 0
+    detection_cost_stats:
+        prompt_tokens: 3039
+        completion_tokens: 220
+        total_tokens: 3259
+        cost: 0.006597500000000001
+eval_stats:
+    evaluation_start_time: '2025-05-19 12:29:53'
+    evaluation_end_time: '2025-05-19 12:29:59'
+    cost_stats:
+        prompt_tokens: 1144
+        completion_tokens: 297
+        total_tokens: 1441
+        cost: 0.00583

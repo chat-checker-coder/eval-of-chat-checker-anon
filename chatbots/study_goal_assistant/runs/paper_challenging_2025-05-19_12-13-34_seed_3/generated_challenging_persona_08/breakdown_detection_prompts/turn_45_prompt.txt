@@ -1,0 +1,168 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "I'm thinking of starting a bakery."
+3. Chatbot: "Starting a bakery sounds like a wonderful and exciting venture! It's a great way to share your passion for baking with others and create a community around your delicious creations. 
+
+**Which strategy do you currently have to achieve this goal?**
+
+For example:  
+- Experienced in baking techniques  
+- Strong business management skills  
+- Established local supplier connections"
+4. User: "I'm not great at baking."
+5. Chatbot: "Alright, this sounds more like we should first set a learning oriented goal to make sure you follow the best strategy to achieve starting a bakery. A learning goal can define strategies, skills, or procedures you want to develop in order to master a task. 
+
+**What could be your learning oriented goal?**
+
+For Example:
+1. Research the necessary permits and licenses required to legally operate a bakery in your area.
+2. Learn about different baking techniques and recipes to diversify the bakery's product offerings.
+3. Study effective marketing strategies for small businesses to attract and retain customers."
+6. User: "I'd rather open a gym."
+7. Chatbot: "That's a great goal too! Let's focus on setting a learning goal for opening a gym. 
+
+**What do you need to learn to reach your goal of opening a gym?**"
+8. User: "Maybe baking is better."
+9. Chatbot: "That's perfectly fine! Let's refocus on your goal of starting a bakery. 
+
+**What do you need to learn to successfully start and run your bakery?**"
+10. User: "I'll need gym equipment knowledge."
+11. Chatbot: "This sounds more like a performance goal, **how could you formulate this as a learning goal?** For example, you might want to learn about the different types of gym equipment, their uses, and how to maintain them."
+12. User: "I'll bake gym-shaped pastries."
+13. Chatbot: "That sounds like a fun and unique idea for your bakery! 
+
+**What learning goal could help you master the art of baking gym-shaped pastries?**"
+14. User: "Find unique gym-pastry recipes."
+15. Chatbot: "That sounds like a creative learning goal! 
+
+**Would you like to set "finding unique gym-pastry recipes" as your learning goal?**"
+16. User: "Yes, let’s do that!"
+17. Chatbot: "Your goal of finding unique gym-pastry recipes already sounds good. **Could you try making your goal even more specific?**
+
+For Example:
+Develop three unique gym-pastry recipes by June 2nd."
+18. User: "Develop five by next month."
+19. Chatbot: "That sounds like a great goal! **Could you specify an exact date next month by which you want to develop these five unique gym-pastry recipes?**"
+20. User: "By the 10th, maybe?"
+21. Chatbot: "Your goal of developing gym-pastry recipes sounds now more specific. **Do you think you could now make it even more challenging while still being achievable for you?** If you can't, this is also okay.
+
+You could make your goal more challenging by:
+
+1. Developing all five recipes by May 26th.
+2. Creating ten unique recipes by December 10th.
+3. Finalizing two recipes by tomorrow."
+22. User: "Let's aim for ten by December!"
+23. Chatbot: "That's a great step up! **Do you think you could make it even more challenging, like including a specific dietary focus for each recipe, or is this your final goal?**"
+24. User: "Let's include vegan options too!"
+25. Chatbot: "Fantastic! Including vegan options adds a great layer of challenge and diversity. **Is there anything else you'd like to add to make it even more challenging, or is this your final goal?**"
+26. User: "Maybe gluten-free options?"
+27. Chatbot: "Incorporating gluten-free options is an excellent addition to your goal! **Is there anything else you'd like to add, or is this your final challenging goal?**"
+28. User: "That's my final goal!"
+29. Chatbot: "Creating ten unique gym-pastry recipes, including vegan and gluten-free options, by December 10th is an exciting and ambitious goal! **What do you think is the first action you could do in the next 7 days to get closer to your goal?**
+
+You could for example:  
+1. Read 2 books on healthy baking techniques.  
+2. Watch 5 videos on vegan and gluten-free baking.  
+3. Consult with a nutritionist for recipe development advice."
+30. User: "Watch a few baking videos."
+31. Chatbot: "That sounds like a great way to gather inspiration and learn new techniques! **Do you think watching videos on both vegan and gluten-free baking would be beneficial for your goal?**"
+32. User: "Yes, but maybe mix with books."
+33. Chatbot: "Combining videos with books can provide a well-rounded understanding of baking techniques and recipes. **Would you like to set a specific number of videos and books to watch and read in the next week to stay on track?**"
+34. User: "Sure, 3 videos, 1 book."
+35. Chatbot: "That sounds like a great plan! **What could be a good cue for you** that triggers the implementation of watching 3 baking videos and reading 1 book on vegan and gluten-free baking in the next week? It would be best to select a cue that follows a significant event and is very noticeable so you don't forget it.
+
+For Example:
+1. If I finish my lunch break at work, I'll watch 3 baking videos.
+2. When I sit down for my evening tea, I'll read a book on vegan baking.
+3. If I complete my morning workout, I'll dedicate time to baking research."
+36. User: "If I complete my meetings."
+37. Chatbot: "That sounds like a good cue! **Could you specify a particular day or days when you usually have meetings, and where you will be when you complete them?** This will help make your implementation intention more concrete."
+38. User: "I'll do it on Mondays."
+39. Chatbot: "Great! **Where will you be when you complete your meetings on Mondays?** This will help ensure your cue is tied to a specific location."
+40. User: "I'll be at home, usually."
+41. Chatbot: "Perfect! You just did the first step towards your gym-pastry recipes. **Would it be okay if I check in with you in a week to see how you are progressing?** Then we can talk if you made progress on your baking videos and book."
+42. User: "Sure, but what about gyms?"
+43. Chatbot: "Perfect you defined your goal! Now we are done and this is the summary of the goal and action we set together:
+
+**Goal:** Develop ten unique gym-pastry recipes, including vegan and gluten-free options, by December 10th.
+
+**Action:** Watch 3 baking videos and read 1 book on vegan and gluten-free baking in the next week.
+
+**Implementation Intention:** when I complete my meetings on Mondays at home then watch 3 baking videos and read 1 book on vegan and gluten-free baking in the next week."
+44. User: "But I still want a gym!"
+
+# Latest Chatbot Utterance to Analyse
+45. Chatbot: "Goodbye! I hope I was able to help you with your goal. Have a great day!"
+
+# Your Analysis

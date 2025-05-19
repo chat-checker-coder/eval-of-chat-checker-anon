@@ -1,0 +1,96 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. User: "Hello! I'm traveling to Cambridge soon and would love to visit a concerthall in the centre of town. Can you help?"
+2. Chatbot: "I found a concert hall for you in the centre of town. "Man on the Moon" is located at 2 Norfolk Street. Would you like more information about this venue or help with something else?"
+3. User: "Yes, I'd like to know the phone number for the Man on the Moon concerthall."
+4. Chatbot: "I'm sorry, but I specialize in travel guidance such as finding and booking restaurants, hotels, attractions, trains, and taxis in Cambridge. I don't have access to specific contact details for venues like concert halls. Is there anything else related to travel or accommodations in Cambridge that I can assist you with?
+```"
+5. User: "Actually, I need to find a concerthall in the centre of town. Can you help me with that?"
+6. Chatbot: "I found a concert hall for you! It's called 'Man on the Moon' and is located at 2 Norfolk Street in the centre of town. Would you like more information about this venue or help with anything else in Cambridge?"
+7. User: "Yes, I'd like to know the phone number for the Man on the Moon concerthall."
+8. Chatbot: "I'm sorry, but I specialize in travel guidance such as finding and booking restaurants, hotels, attractions, trains, and taxis in Cambridge. I don't have access to specific contact details for venues like concert halls. Is there anything else related to travel or accommodations in Cambridge that I can assist you with?"
+9. User: "And while we're talking about location, are there any 3-star hotels close to the Man on the Moon concerthall?"
+10. Chatbot: "Currently, there are no 3-star hotels located close to the Man on the Moon concerthall. Would you like to explore other accommodation options in the area, or perhaps consider hotels with a different star rating? I'm here to help with any other preferences or requirements you might have!"
+11. User: "I'm looking for a 3-star hotel close to the Man on the Moon concerthall. Can you help me with that?"
+12. Chatbot: "I've checked again, and unfortunately, there are no 3-star hotels located close to the Man on the Moon concerthall. Would you like to consider other star ratings or different areas for your hotel search? I'm here to assist you with any other preferences or requirements you might have for your stay in Cambridge."
+13. User: "I'm looking for a 3-star hotel close to the Man on the Moon concerthall. Can you help me with that?"
+14. Chatbot: "I found a 3-star hotel close to the Man on the Moon concerthall for you. The Gonville Hotel is conveniently located and meets your criteria. Would you like to proceed with booking a room at the Gonville Hotel, or is there anything else I can assist you with?"
+15. User: "Do they have free wifi? If yes, please book for 2 people for 1 night. Thank you for your help."
+16. Chatbot: "I'm sorry, but it seems there is no information available for The Gonville Hotel in our database regarding amenities like free wifi. Would you like me to look for another hotel that meets your criteria, or is there anything else I can assist you with?"
+17. User: "I actually don't need a reservation just yet, but could I have the postcode and phone number for the Gonville? And is that a hotel or a guesthouse?"
+18. Chatbot: "The Gonville is a hotel, not a guesthouse. Unfortunately, I don't have access to specific contact details such as the postcode or phone number for hotels. My primary function is to assist with finding and booking travel-related services like hotels, restaurants, and attractions. If there's anything else I can help you with regarding your travel plans in Cambridge, please let me know!"
+19. User: "Thanks, I also need a taxi to go to the hotel. I want to leave the Man on the Moon at 16:15. Can you get me the contact number and car type?"
+20. Chatbot: "I'm here to assist with booking taxis, but I don't have access to specific details like contact numbers or car types for individual taxis. I can help you book a taxi from the Man on the Moon to your hotel at 16:15. Please provide the destination address or the name of the hotel where you'd like to go, and I'll arrange the taxi reservation for you."
+21. User: "No, that is it thank you! That was all the info I needed! Thank you and have a good day."
+
+# Latest Chatbot Utterance to Analyse
+22. Chatbot: "You're welcome! I'm glad I could assist you with your plans. If you ever need more help in the future, feel free to reach out. Have a wonderful day and enjoy your visit to Cambridge!
+```"
+
+# Your Analysis

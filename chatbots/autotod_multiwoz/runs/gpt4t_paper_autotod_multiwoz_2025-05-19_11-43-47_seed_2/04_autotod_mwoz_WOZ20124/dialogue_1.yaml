@@ -1,0 +1,184 @@
+dialogue_id: 04_autotod_mwoz_WOZ20124_dialogue_1
+user_name: 04_autotod_mwoz_WOZ20124
+chat_history:
+-   turn_id: 1
+    role: user
+    content: 'I am looking for a restaurant serving scottish food. '
+    breakdown_annotation: null
+-   turn_id: 2
+    role: dialogue_system
+    content: I'm sorry, but it seems there are no restaurants serving Scottish food
+        in our database. Is there another type of cuisine or any other preferences
+        you would like to explore?
+    breakdown_annotation:
+        reasoning: The chatbot's response is appropriate given the user's request.
+            The user asked for a restaurant serving Scottish food, and the chatbot
+            clearly communicated that there are no such restaurants in its database.
+            It then smoothly transitions by asking if the user has other preferences,
+            which is a logical next step in the conversation. This response is relevant,
+            clear, and maintains the flow of the conversation without any breakdowns.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 3
+    role: user
+    content: How about Vietnamese food?
+    breakdown_annotation: null
+-   turn_id: 4
+    role: dialogue_system
+    content: I found a lovely Vietnamese restaurant for you! Thanh Binh is located
+        at 17 Magdalene Street City Centre in the west area. Would you like to make
+        a reservation or need more information about it?
+    breakdown_annotation:
+        reasoning: The chatbot successfully responded to the user's request for a
+            Vietnamese restaurant by providing the name and location of a suitable
+            restaurant. It also offered to assist with making a reservation or providing
+            more information, which aligns with its task-oriented nature. The response
+            is clear, relevant, and directly addresses the user's query without any
+            errors or omissions. Therefore, there is no dialogue breakdown in this
+            interaction.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 5
+    role: user
+    content: Can I have the address of Thanh Binh, please?
+    breakdown_annotation: null
+-   turn_id: 6
+    role: dialogue_system
+    content: The address of Thanh Binh is 17 Magdalene Street, City Centre, in the
+        west area of Cambridge. If you need further assistance or wish to make a reservation,
+        feel free to ask!
+    breakdown_annotation:
+        reasoning: The chatbot's latest response provides the address of Thanh Binh,
+            which the user requested. It repeats the address information that was
+            already provided in the previous response, which could be seen as redundant.
+            However, the repetition is not excessive and serves to confirm the information
+            for the user. The chatbot also offers further assistance, which is appropriate
+            and maintains the flow of the conversation. Therefore, while there is
+            a slight redundancy, it does not significantly disrupt the conversation.
+        score: 0.9
+        decision: no_breakdown
+        breakdown_types: []
+-   turn_id: 7
+    role: user
+    content: Thank you! That's all I needed.
+    breakdown_annotation: null
+-   turn_id: 8
+    role: dialogue_system
+    content: You're welcome! If you have any more questions or need assistance in
+        the future, don't hesitate to reach out. Enjoy your visit to Thanh Binh!
+    breakdown_annotation:
+        reasoning: The chatbot's latest response is appropriate and aligns well with
+            the user's previous statement. The user thanked the chatbot and indicated
+            that they had received all the information they needed. The chatbot responded
+            with a polite and friendly closing statement, encouraging the user to
+            reach out in the future if needed and wishing them an enjoyable visit.
+            This response is socially appropriate and maintains the flow of the conversation
+            without introducing any errors or breakdowns.
+        score: 1.0
+        decision: no_breakdown
+        breakdown_types: []
+finish_reason: user_ended_chat
+error: null
+ratings:
+    task_success:
+        reasoning: The chatbot successfully identified that there were no Scottish
+            restaurants in its database and offered an alternative. It then provided
+            information about a Vietnamese restaurant, including its address, which
+            was the user's request. The task was completed successfully.
+        rating: 5
+    efficiency:
+        reasoning: The conversation was efficient, with the chatbot providing relevant
+            information in a concise manner. The user did not have to repeat themselves
+            or ask for clarification, and the task was completed in a minimal number
+            of turns.
+        rating: 5
+    appropriateness:
+        reasoning: The chatbot's responses were appropriate and polite. It offered
+            alternatives when the initial request could not be fulfilled and provided
+            the requested information without unnecessary details.
+        rating: 5
+    naturalness:
+        reasoning: The chatbot's language was natural and conversational. It used
+            polite and friendly language, making the interaction feel smooth and human-like.
+        rating: 5
+    overall_performance:
+        reasoning: Overall, the chatbot performed excellently in this conversation.
+            It understood the user's requests, provided relevant information efficiently,
+            and maintained a natural and appropriate tone throughout the interaction.
+        rating: 5
+human_rating_annotations: null
+chat_statistics:
+    start_time: '2025-05-19 11:46:39'
+    end_time: '2025-05-19 11:47:01'
+    duration: 22.309488
+    num_turns: 8
+    num_user_turns: 4
+    num_chatbot_turns: 4
+    avg_user_turn_length: 7.0
+    five_num_summary_user_turn_lengths:
+        min: 4.0
+        q1: 5.5
+        median: 7.5
+        q3: 9.0
+        max: 9.0
+    avg_chatbot_turn_length: 30.5
+    five_num_summary_chatbot_turn_lengths:
+        min: 25.0
+        q1: 28.75
+        median: 31.0
+        q3: 32.75
+        max: 35.0
+simulation_cost_statistics:
+    total_prompt_tokens: 0
+    total_completion_tokens: 0
+    total_tokens: 0
+    cost: 0.0
+breakdown_stats:
+    analysis_start_time: '2025-05-19 11:53:44'
+    analysis_end_time: '2025-05-19 11:53:55'
+    count: 0
+    avg_score: 0.975
+    turn_ids_of_breakdowns: []
+    counts_per_breakdown_type:
+        uninterpretable: 0
+        grammatical_error: 0
+        semantic_error: 0
+        wrong_information: 0
+        ignore_question: 0
+        ignore_request: 0
+        ignore_proposal: 0
+        ignore_greeting: 0
+        ignore_expectation: 0
+        unclear_intention: 0
+        topic_transition_error: 0
+        lack_of_information: 0
+        self_contradiction: 0
+        contradiction: 0
+        repetition: 0
+        lack_of_sociality: 0
+        lack_of_common_sense: 0
+        in_domain_task_failure: 0
+        update_info_failure: 0
+        clarification_failure: 0
+        redundancy: 0
+        lack_of_brevity: 0
+        lack_of_clarity: 0
+        failure_to_recognize_out_of_domain: 0
+        failure_to_communicate_capabilities: 0
+        failure_to_resolve_out_of_domain: 0
+        chatbot_crash: 0
+    detection_cost_stats:
+        prompt_tokens: 5942
+        completion_tokens: 404
+        total_tokens: 6346
+        cost: 0.012495
+eval_stats:
+    evaluation_start_time: '2025-05-19 11:56:43'
+    evaluation_end_time: '2025-05-19 11:56:47'
+    cost_stats:
+        prompt_tokens: 1131
+        completion_tokens: 240
+        total_tokens: 1371
+        cost: 0.0052275

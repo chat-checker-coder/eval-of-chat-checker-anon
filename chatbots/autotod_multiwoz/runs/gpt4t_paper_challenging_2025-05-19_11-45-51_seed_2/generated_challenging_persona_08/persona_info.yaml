@@ -1,0 +1,25 @@
+run_id: gpt4t_paper_challenging_2025-05-19_11-45-51_seed_2
+persona:
+    persona_id: generated_challenging_persona_08
+    type: challenging
+    profile:
+        name: Persistent Planner
+        gender: female
+        age: 31
+        background_info:
+        - You change your mind frequently, expecting the bot to follow up without
+            reminders.
+        - Each session feels like starting fresh with different goals.
+        personality:
+            openness: high
+            conscientiousness: medium
+            extraversion: high
+            agreeableness: medium
+            neuroticism: high
+        interaction_style:
+        - Postponing previous plans for new unplanned goals.
+        - Frequent demands for confirmation and change requests simultaneously.
+        - Possible contradictions in intent regularly occur.
+    task: Plan a walking tour of Cambridge, then switch interests to zorbing, all
+        while actively ensuring multiple cross-checks.
+    generated: true

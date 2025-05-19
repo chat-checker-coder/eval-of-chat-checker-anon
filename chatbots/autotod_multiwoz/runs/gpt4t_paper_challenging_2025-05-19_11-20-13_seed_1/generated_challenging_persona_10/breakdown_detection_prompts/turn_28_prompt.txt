@@ -1,0 +1,135 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. User: "Hi there! Can you suggest a few good spots for lunch and maybe some sightseeing in Cambridge afterward? But also, what's the taxi situation like there?"
+2. Chatbot: "It seems there are currently no specific listings for restaurants serving lunch in Cambridge in our database. However, Cambridge is full of diverse dining options, so I'm sure you'll find something delightful on the spot. For sightseeing, unfortunately, there are no attractions listed in the central area of Cambridge in our database at the moment. Regarding taxis, to book one, I would need both a departure point and a destination. If you provide me with these details, I can assist you further with the taxi reservation."
+3. User: "Okay, how about train options first? Then I'll think dinner."
+4. Chatbot: "Here are some train options for your journey:
+1. From Cambridge to London Kings Cross, departing on Friday at 05:00.
+2. From Cambridge to Birmingham New Street, departing on Friday at 05:01.
+3. From Cambridge to Broxbourne, departing on Friday at 05:01.
+4. From Cambridge to Peterborough, departing on Friday at 05:06.
+5. From Leicester to Cambridge, arriving on Friday at 05:09.
+
+Please let me know if you need more details on any specific train or if you would like to proceed with booking tickets. Additionally, when you're ready, I can assist with dinner options as well."
+5. User: "What about trains from Cambridge on Saturday instead? Also, dinner?"
+6. Chatbot: "For your journey on Saturday from Cambridge, here are some train options:
+- Train TR0899 departs at 05:00 and arrives at 05:51.
+- Train TR9941 departs at 07:00 and arrives at 07:51.
+- Train TR2138 departs at 09:00 and arrives at 09:51.
+- Train TR5170 departs at 11:00 and arrives at 11:51.
+- Train TR4003 departs at 13:00 and arrives at 13:51.
+
+Each train journey lasts approximately 51 minutes and the ticket price is 18.88 pounds. If you need to book tickets or require further details, please let me know.
+
+Regarding dinner, would you like to proceed with a reservation at one of the previously mentioned restaurants, or do you need more options or information?"
+7. User: "Can I explore dinner options a bit more? Also, compare train details."
+8. Chatbot: "Certainly! Here's a bit more information about the dinner options:
+
+1. **Midsummer House** - Offers British cuisine in a refined setting at Midsummer Common.
+2. **Cambridge Chop House** - Located at 1 Kings Parade, known for traditional British dishes and a cozy atmosphere.
+3. **Oak Bistro** - Situated at 6 Lensfield Road, known for its intimate dining experience and modern European dishes.
+4. **Cotto** - Located at 183 East Road City Centre, offers a blend of contemporary and classic dishes.
+5. **Restaurant One Seven** - At De Vere University Arms Regent Street City Centre, known for its elegant dining environment.
+
+Please let me know if you would like more details on any of these restaurants or if you wish to make a reservation at one of them.
+
+As for the train details, here's a comparison of the options for your journey on Saturday from Cambridge:
+- **Train TR0899**: Departs at 05:00, arrives at 05:51.
+- **Train TR9941**: Departs at 07:00, arrives at 07:51.
+- **Train TR2138**: Departs at"
+9. User: "TR2138 might work. Can you also give more about Oak Bistro?"
+10. Chatbot: "Oak Bistro is located in the centre area at 6 Lensfield Road, postcode CB21EG. You can contact them at 01223323361. They serve British cuisine, and their pricing is moderate. Their signature dish is chargrilled rib eye steak with truffle butter, mixed salad, and fries. Regarding the train TR2138, please provide more specific details or constraints if you need further assistance with booking or information."
+11. User: "Sounds good! Can you help reserve a table at Oak Bistro?"
+12. Chatbot: "To proceed with the reservation at Oak Bistro, could you please provide the number of people, the day, and the time you would like to reserve the table for?"
+13. User: "Um, let's say for two on Saturday evening, maybe 7 PM?"
+14. Chatbot: "I attempted to reserve a table for two at Oak Bistro for this Saturday at 7 PM, but the booking failed because the time format was not accepted. Could you please specify the time in a format like "08:30 PM"? This will help me complete your reservation successfully."
+15. User: "Let's try 7:30 PM then. And any info on TR2138?"
+16. Chatbot: "I've successfully reserved a table for two at Oak Bistro for this Saturday at 7:30 PM. Your reservation reference number is 1cy6yank. Regarding train TR2138, it departs from Cambridge at 09:00 on Saturday, arrives at London Kings Cross at 09:51, takes 51 minutes, and costs 18.88 pounds. If you need any further assistance or additional information, feel free to ask!"
+17. User: "That works! But is there any sightseeing near Kings Cross?"
+18. Chatbot: "Near King's Cross in London, you can explore several interesting attractions. The British Library is just a short walk away, offering exhibitions and a vast collection of books. Additionally, the area around Granary Square is home to the Central Saint Martins campus and hosts various cultural events and art installations. The Coal Drops Yard shopping district is also nearby, featuring unique shops and eateries in a beautifully renovated setting. If you're interested in a bit of tranquility, Camley Street Natural Park offers a natural escape right in the heart of the city. Let me know if you need more information or directions to any of these places!"
+19. User: "Can you suggest a walk? Also, any quirky shops around there?"
+20. Chatbot: "For a pleasant walk near King's Cross, I recommend strolling along the Regent's Canal, which offers a scenic path that leads you through various parts of London, including Camden Town, where you can explore vibrant street markets. As for quirky shops, you might enjoy visiting Coal Drops Yard, which is known for its unique boutiques and independent stores offering everything from handmade jewelry to bespoke menswear. This area blends historical architecture with contemporary design, making it a delightful place to explore and shop. If you need more specific recommendations or directions, feel free to ask!"
+21. User: "Regent's Canal sounds cool! What's special about Coal Drops Yard?"
+22. Chatbot: "Coal Drops Yard is a distinctive shopping and dining destination located in the heart of King's Cross, London. Originally established in the 1850s for coal storage, the area has been transformed into a vibrant public space that combines the industrial heritage with modern architecture. What makes Coal Drops Yard special is its array of unique shops and restaurants, all housed within the beautifully restored Victorian buildings. You'll find everything from independent fashion boutiques and craft shops to high-end designers and gourmet eateries. The area also frequently hosts events, pop-ups, and exhibitions, making it a dynamic place to visit any time of the year. If you're looking for a blend of history, culture, and contemporary lifestyle, Coal Drops Yard is definitely worth a visit!"
+23. User: "Is there anywhere nearby for live music or entertainment?"
+24. Chatbot: "For live music and entertainment in the centre area, you might want to consider visiting these venues: ADC Theatre on Park Street, Cambridge Arts Theatre at 6 Saint Edward's Passage, Mumford Theatre at Anglia Ruskin Enterprise on East Road, and Cambridge Corn Exchange on Wheeler Street. Each offers a unique experience with a variety of performances."
+25. User: "Do any of those venues have an upcoming show or event?"
+26. Chatbot: "I've found the contact details for the venues you're interested in. Here they are:
+1. ADC Theatre on Park Street, contact number: 01223 300085.
+2. Cambridge Arts Theatre at 6 Saint Edward's Passage, contact number: 01223 503333.
+3. Mumford Theatre at Anglia Ruskin Enterprise on East Road, contact number: 0845 196 2320.
+4. Cambridge Corn Exchange on Wheeler Street, contact number: 01223 357851.
+
+You can contact them directly to inquire about upcoming shows or events. Is there anything else I can assist you with?"
+27. User: "Could you help with bookings at one of those theatres?"
+
+# Latest Chatbot Utterance to Analyse
+28. Chatbot: "To assist with bookings at one of the theatres, I'll need to know which theatre you're interested in and the specifics of your booking, such as the number of people, the day you plan to attend, and the time of the show. Could you please provide these details?"
+
+# Your Analysis

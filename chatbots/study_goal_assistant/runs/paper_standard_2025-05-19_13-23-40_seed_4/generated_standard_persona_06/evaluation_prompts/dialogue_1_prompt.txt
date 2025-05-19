@@ -1,0 +1,131 @@
+system: # Role
+You are an expert in evaluating dialogue systems. You are given a conversation to rate and are asked to rate the chatbot's performance in this conversation.
+# Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Goal Setting Assistant
+description: An AI assistant that guides you through a goal setting process for a
+    single goal. It can help with all kinds of goals, including personal development,
+    health and fitness, and career advancement.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot must guide the user into formulating a specific and challenging
+    goal. It must distinguish between learning goals and performance goals and help
+    the user to formulate the first action step towards their goal as an implementation
+    intention ("if-then plan").
+constraints:
+- The chatbot should not provide medical advice or advice on illegal or harmful activities.
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- The chatbot is only capable of text-based interaction.
+- The chatbot cannot create calendar entries, notifications or interact with other
+    apps on the user's device.
+available_languages:
+- English
+
+
+Consider these characteristics and the purpose of the chatbot when giving your ratings. For user requests outside of this intended purpose consider the chatbot's ability to handle these requests.
+
+
+
+# Task
+Rate the chatbot's performance in the following dimensions on a scale from 1 to 5, where 1 is the worst and 5 is the best:
+- Task success (key=task_success): How well did the chatbot understand and help the user with completing their task? Make sure to consider if all aspects of the task defined for the chatbot were addressed.
+- Efficiency (key=efficiency): How efficiently did the chatbot handle the conversation in terms of effort for the user, number of turns and repetitions?
+- Appropriateness (key=appropriateness): How appropriate were the chatbot's responses?
+- Naturalness (key=naturalness): How natural did the responses of the chatbot feel?
+- Overall performance (key=overall_performance): How well did the chatbot perform in this conversation?
+
+
+Think step by step and provide a reason for the rating of each dimension considering the guidelines below.
+
+## General Evaluation Policy (Strict Human-Like)
+- Be **strict, realistic, and detailed**, like a critical human evaluator.
+- **Compare your scores to human ratings** (if provided) to calibrate accurately.
+- **Do not overlook small flaws**: awkward phrasing, unnatural tone, vague wording, poor formatting, or robotic repetition - all should reduce the score for the respective dimension.
+
+## Score Meanings (General Guidance for All Dimensions)
+- **5 - Excellent:** Near-perfect. Smooth, natural, and accurate. No noticeable issues. Fully aligned with human expectations.
+- **4 - Good:** Generally solid, but minor issues exist (e.g., slightly robotic wording, small tone/grammar issues, or missed nuance).
+- **3 - Acceptable:** Noticeable problems (e.g., awkward responses, confusion, clumsy error recovery, slightly incorrect or incomplete answers). Still functional.
+- **2 - Poor:** Multiple problems in the dialogue flow, accuracy, or tone. May include failed understanding, missing confirmations, or disjointed logic.
+- **1 - Very Poor:** Fails to meet user needs. Confusing, error-filled, or totally off-task.
+
+Note: While these definitions apply broadly, some dimensions may demand additional interpretation (e.g., "fluency" versus "task success"). Always apply the scoring scale according to the intent of that specific dimension.
+
+
+user: # Conversation to Rate
+1. Chatbot: "Hi! I’m here to help you achieve your goals!
+Together, we’ll define a goal step by step and set your first action to get started. **If you have any questions**, need clarification, or would like additional advice, **don’t hesitate to ask me**.
+
+**So, what’s a goal you’d like to work on?**"
+2. User: "Develop leadership skills for promotion."
+3. Chatbot: "That's a fantastic goal! Developing leadership skills can open up many opportunities for growth and advancement in your career. **Which strategy do you currently have to achieve this goal?**
+
+For example:  
+- Attend leadership workshops  
+- Seek mentorship from leaders  
+- Lead team projects"
+4. User: "Attend workshops and seek mentorship."
+5. Chatbot: "That sounds like a solid plan! **Do you think this strategy is already a good strategy to achieve your goal?**"
+6. User: "Yes, but open to more."
+7. Chatbot: "That's great to hear that you have a solid strategy in place! This means it makes sense to set a performance goal. A performance goal focuses on the achievement of certain outcomes. **Now, what could be a performance goal for developing your leadership skills for promotion?**
+
+For Example:
+1. Lead a team project successfully by Q2.
+2. Present at two leadership workshops by year-end.
+3. Mentor a junior colleague for six months."
+8. User: "Lead a project this quarter."
+9. Chatbot: "Your goal of leading a project already sounds good. **Could you try making your goal even more specific?**
+
+For Example:
+'Complete project by July 31st with 10% cost reduction.'"
+10. User: "Complete project by June 30th."
+11. Chatbot: "**How could you measure the outcome of your goal?**"
+12. User: "Meet deadlines and stay on budget."
+13. Chatbot: "Your goal of completing the project by June 30th, meeting deadlines and staying on budget sounds now more specific. 
+
+**Do you think you could now make it even more challenging while still being achievable for you?** If you can't, this is also okay.
+
+You could make your goal more challenging by:  
+1. Finalizing the project plan today.  
+2. Completing the project by June 15th.  
+3. Increasing difficulty by reducing the budget by 10%."
+14. User: "Completing by June 15th works."
+15. Chatbot: "Great! Completing the project by June 15th is a more challenging goal. 
+
+**Do you think you could make it even more challenging, or is this the limit for now?**"
+16. User: "This is the limit for now."
+17. Chatbot: "Completing the project by June 15th while meeting deadlines and staying on budget is a great goal. **What do you think is the first action you could do in the next 7 days to get closer to your goal?**
+
+You could for example:  
+1. Create a detailed project timeline and checklist.  
+2. Schedule weekly progress meetings with the team.  
+3. Monitor expenses weekly to ensure budget adherence."
+18. User: "Create a detailed project timeline."
+19. Chatbot: "Creating a detailed project timeline is a great action to ensure you meet deadlines. **Do you think this is the best action to start with, or is there another action you want to consider?**"
+20. User: "This is the best start."
+21. Chatbot: "Creating a detailed project timeline is a fantastic way to stay organized and on track. **What could be a good cue for you** that triggers the implementation of this action? It would be best to select a cue that follows a significant event and is very noticeable so you don't forget it.
+
+For Example:
+1. If I finish my lunch break at work, I will create a detailed project timeline.
+2. When I sit down at my desk each morning, I'll draft a project timeline.
+3. If I complete my daily team meeting, I will update the project timeline."
+22. User: "When I sit down at my desk."
+23. Chatbot: "That's a great cue! Sitting down at your desk is a reliable and noticeable event. **Could you specify a concrete day or days when this should happen within the next 7 days?**"
+24. User: "Tomorrow and Friday this week."
+25. Chatbot: "Perfect! You've chosen specific days which will help in making this intention more concrete. **Could you confirm the location where this action will take place?**"
+26. User: "My office at work."
+27. Chatbot: "Perfect! You just did the first step towards completing your project. **Would it be okay if I check in with you in a week to see how you are progressing?** Then we can talk if you made progress on your timeline."
+28. User: "Sure, that sounds great."
+29. Chatbot: "Perfect you defined your goal! Now we are done and this is the summary of the goal and action we set together:
+
+**Goal:** Complete project by June 15th, meeting deadlines and staying on budget.
+
+**Action:** Create a detailed project timeline.
+
+**Implementation Intention:** when I sit down at my desk in my office at work tomorrow and Friday this week, then create a detailed project timeline."
+30. User: "Thanks for your help!"
+31. Chatbot: "Goodbye! I hope I was able to help you with your goal. Have a great day!"
+
+# Your Expert Rating

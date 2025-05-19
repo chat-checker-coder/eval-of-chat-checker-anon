@@ -1,0 +1,88 @@
+system: # Role
+You are an expert in identifying dialogue breakdowns in conversations between a chatbot and a user. You are given a dialogue context and the latest chatbot utterance to analyse.
+
+# Breakdown Definition
+A dialogue breakdown is any response of the chatbot that makes it difficult for the user to continue the conversation (smoothly).
+
+## Breakdown Taxonomy
+When evaluating the chatbot's response, consider the following breakdown types, which represent common disruptions:
+- Uninterpretable: The utterance is not understandable. There are no recognizable words, or it is just a fragment of an utterance.
+- Grammatical error: The utterance is not grammatical or lacks important elements, such as necessary arguments and particles, for it to be a valid sentence.
+- Semantic error: The utterance is semantically invalid such as when the combination of a predicate and its arguments cannot constitute any meaning.
+- Wrong information: The utterance contains information that is clearly wrong.
+- Ignore question: The utterance ignores a user's question.
+- Ignore request: The utterance ignores a user's request to do something.
+- Ignore proposal: The utterance ignores a user's proposal/offer to do something.
+- Ignore greeting: The utterance ignores a user's greeting.
+- Ignore expectation: The utterance contains an appropriate backward-looking function for a user's previous forward-looking function; however, the utterance does not have the expected content if the underlying intention has been successfully conveyed.
+- Unclear intention: Although the utterance is on a relevant topic, it does not exhibit underlying intentions (i.e., why it is mentioned) for it to be relevant. This is typically caused by a lack of connectives or background explanation.
+- Topic transition error: The utterance transitions to another topic without reasonable explanation. This error type includes bringing up previous topics without reason.
+- Lack of information: The utterance misses important pieces of information, such as the subject, object, and modifier, for it to be relevant to current topics.
+- Self-contradiction: The utterance contradicts what has been said by that speaker. I.e., the chatbot contradicts its own previous statements.
+- Contradiction: The utterance contradicts or denies what has been said by the conversational partner. I.e., the chatbot contradicts the user's previous statements.
+- Repetition: The utterance repeats the previous utterance (including paraphrases). I.e., the chatbot repeats its own previous statements.
+- Lack of sociality: The utterance lacks consideration toward the conversational partner or particular groups of people (i.e., hate speech). I.e., the chatbot makes inappropriate or offensive statements.
+- Lack of common sense: The utterance lacks common sense. This error type applies when asserting a proposition that differs from the opinion of the majority without any grounds or when the asserted view is the opposite of what is believed to be true by the great majority of people.
+- Task performance failure: The chatbot fails to do the task that its designed for within the dialogue.
+- Information update failure: The chatbot fails to update or modify information in response to new input or the user's update requests.
+- Clarification failure: The user provides a vague, incomplete, or ambiguous input to which the chatbot responds without seeking necessary clarification. The chatbot should ask follow-up questions to confirm unclear or missing details before proceeding with specific actions.
+- Redundancy: The chatbot asks for information that has already been provided. This includes information that can be directly inferred from the context.
+- Lack of brevity: The utterance is is unnecessarily wordy considering the chat context and the task of the chatbot.
+- Lack of clarity: The chatbot utterance is not clear or difficult to understand in the given context.
+- Failure to recognize out-of-domain request: The chatbot fails to recognize an out-of-domain request, i.e., a request that is not part of the chatbot's domain or capabilities.
+- Failure to communicate capabilities: The chatbot doesn't clearly communicate its capabilities or limitations.
+- Failure to resolve out-of-domain request: The chatbot doesn't resolve out-of-domain requests adequately.
+
+## Chatbot Characteristics
+The chatbot in this conversation has the following characteristics:
+name: Cambridge Tourist Bot
+description: A tourist assistance bot for Cambridge, UK that provides information
+    and booking services. It covers local establishments (restaurants, hotels), transportation
+    (trains, taxis), essential services (police, hospitals), and tourist attractions.
+    The bot assists with both informational queries and handles direct bookings for
+    accommodations, dining, and trains.
+type: task-oriented
+interaction_method: text-based chat interface
+task: The chatbot should provide information about local establishments (restaurants,
+    hotels), transportation (trains, taxis), essential services (police, hospitals),
+    and tourist attractions. It should also handle direct bookings for hotels, restaurants,
+    and trains.
+constraints:
+- The chatbot should redirect to other resources if the user's request is not suitable
+    for the chatbot's capabilities.
+known_limitations:
+- Can NOT provide details about the in-room amenities of hotels.
+available_languages:
+- English
+
+
+Consider the chatbot's purpose and constraints in your decision whether the latest chatbot utterance leads to a dialogue breakdown.
+# Task
+Identify whether the latest chatbot utterance leads to a dialogue breakdown. If a breakdown is detected, classify it according to the breakdown taxonomy above.
+Additionally, provide a score ranging from 0 to 1, where 0 indicates a complete breakdown and 1 indicates a seamless conversation.
+If a breakdown is detected, provide a list of all fitting breakdown types.
+
+Think step by step and provide a reason for your decision.
+
+
+user: # Dialogue Context
+1. User: "Hey there! I'm exploring Cambridge for my blog. Any hidden gems?"
+2. Chatbot: "Hello! It seems there are currently no specific hidden gems listed in our database for Cambridge. However, Cambridge is full of wonderful sights and experiences. I recommend exploring the historic colleges of the University of Cambridge, the serene River Cam, and the many local cafes and bookshops that offer a unique charm. If you have any specific type of attraction in mind, please let me know, and I can assist further!"
+3. User: "Thanks! Any quirky cafes or lesser-known spots you'd suggest?"
+4. Chatbot: "It appears that there are no specific cafes listed as attractions in our database. However, Cambridge is home to many charming and unique cafes that might not be widely known but are definitely worth a visit. I recommend exploring areas like Mill Road and the streets around the Grafton Centre for some delightful and quirky cafes. If you need more detailed information or directions, feel free to ask!"
+5. User: "Mill Road sounds perfect! What transportation options are available nearby?"
+6. Chatbot: "Mill Road in Cambridge is well-served by various transportation options. You can easily catch a bus as there are multiple bus stops along the road. Additionally, taxis are readily available, and you can also rent bicycles from several locations if you prefer cycling around the city. If you need help booking a taxi or have any other specific transportation needs, please let me know!"
+7. User: "I'll rent a bicycle. Any bike rental recommendations near Mill Road?"
+8. Chatbot: "Renting a bicycle near Mill Road is a great way to explore Cambridge! While I don't have specific bike rental shops listed in our database, you'll find several options along Mill Road and its surrounding areas. Local shops typically offer a range of bikes, including standard, electric, and even tandem bicycles. If you need directions to a bike rental shop once you're in the area or have any other questions, feel free to ask!"
+9. User: "I'll explore those options, thanks! Any good photo spots nearby?"
+10. Chatbot: "You're welcome! For photo spots near Mill Road, I recommend visiting the Cambridge University Botanic Garden, which offers beautiful landscapes and a variety of plant species. Another great spot is the nearby Parker's Piece, a large green space perfect for capturing the essence of Cambridge's outdoor beauty. Both locations are within a short distance from Mill Road and provide excellent opportunities for photography. Enjoy your exploration and if you need more suggestions or assistance, feel free to ask!"
+11. User: "Awesome tips! I'll check them out. Any events happening soon?"
+12. Chatbot: "I'm glad you found the tips helpful! Currently, I don't have specific information on upcoming events in Cambridge. However, Cambridge often hosts a variety of cultural, academic, and community events throughout the year. I recommend checking local event calendars or visiting the Cambridge Tourist Information Centre for the most up-to-date details on events during your visit. If you have any other questions or need further assistance, just let me know!"
+13. User: "Thanks for your help! I'll look into local event calendars. Cheers!"
+14. Chatbot: "You're very welcome! I'm glad I could assist you. Enjoy exploring Cambridge and all the wonderful experiences it has to offer. If you have any more questions in the future or need further assistance, feel free to reach out. Cheers!"
+15. User: "Thanks, will do! Excited to see what's out there. Cheers!"
+
+# Latest Chatbot Utterance to Analyse
+16. Chatbot: "That's the spirit! I'm sure you'll find plenty of exciting and interesting things to explore in Cambridge. Have a fantastic time, and remember, I'm here if you need any more assistance or information. Cheers!"
+
+# Your Analysis

@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-BLyxjoGmDY9Oqmj2dCyb0sOQvj8ne",
+  "created": 1744578927,
+  "model": "o3-mini-2025-01-31",
+  "object": "chat.completion",
+  "system_fingerprint": "fp_617f206dd9",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\n  \"reasoning\": \"The latest chatbot utterance 'I'm paul.' directly answers the user's question 'What ia your name?' in a clear and concise manner. There is no grammatical error, ignore of request, or any other breakdown type present.\",\n  \"score\": 1,\n  \"decision\": \"no_breakdown\",\n  \"breakdown_types\": []\n}",
+        "role": "assistant",
+        "tool_calls": null,
+        "function_call": null,
+        "annotations": []
+      }
+    }
+  ],
+  "usage": {
+    "completion_tokens": 214,
+    "prompt_tokens": 923,
+    "total_tokens": 1137,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 128,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  },
+  "service_tier": "default"
+}
